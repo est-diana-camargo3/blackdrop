@@ -1,0 +1,83 @@
+/* HOJA DE ESTILO CSS- DE LA PAGINA BLACKDROP */
+
+
+/* El asterisco antes del primer corchete es un selector universal y significa 
+   que el estilo definido después, se aplica a todos los elementos de la página web*/
+
+/* para el cuerpo */
+body 
+    {
+      background-color: #f4f4f4; /* Establece el color de fondo en hexadecimal*/
+      margin: 0; /* Elimina las margenes predeterminadas del navegador */
+      padding: 0; /* Elimina el espacio interno predeterminado, entre el contenido de 
+                    un elemento (como un <div>, <p>, <button>, etc.) y su borde (que es definido por la propiedad border) */
+      font-family: Arial, sans-serif; /* Establece la fuente , primero se hará en Arial, si el navegador no 
+                                        tiene esa letra o fuente, se hará en cualquier fuente que no tenga adornos en los 
+                                        extremos, es decir cualquier fuente sans-serif*/
+      font-size: clamp(14px, calc(1vw + 1vh), 50px); /* El tamaño de la fuente sera responsivo y adaptable, y estará restringido
+                                                        o "clampeado" desde los 14 pixeles hasta los 50 pixeles, de manera que 
+                                                        el texto puede tomar entre esos valores.
+                                                        La forma dinamica como evaluara que tanto crece la letra, será:
+                                                          Si el tamaño de la ventana es 
+                                                              ancho=1000 pix
+                                                              alto= 800 pix
+                                                          En este caso
+                                                              1 vw = 1 % de 1000 pixeles =10 pixeles.
+                                                              1 vh = 1 % de 800 pixeles = 8 pixeles
+                                                              calc(1vw+1vh) =calc(10+8) =calc(18pixeles)
+                                                        El tamaño de la letra para cuando la ventana mide 100*800 pix
+                                                        sera de 18 pixeles.
+                                                        Como ese valor esta entre 14 y 50, sale normal, pero si alguna vea 
+                                                        escalamos la ventana super pequeña, el valor minimo de la letra sera 14 
+                                                        asi los calculos digan un valor menor, y si la escalamos super gigante, el
+                                                        valor máximo de la letra sera 50 pix, asi los cálculos digan un valor mayor.*/
+      line-height: 2em !important; /* con important lo que hacemos es decirle al navegador que esta regla debe aplicarse 
+                                      incluso si hay otras reglas, que podrian tener mayor especifidad, o con las cuales tenga 
+                                      conflicto.*/
+                                  /* "em" es el tamaño de la letra (padre) ,  
+                                      osea, si el tamaño de letra es 16 pix, la linea de altura que divide una
+                                      linea de otra sera 2*16=32 pix, esto lo que nos garantiza es que esta altura es 
+                                      responsiva o adaptable, segun el tamaño que tenga la letra */ 
+      letter-spacing: 0.12em !important;
+      word-spacing: 0.16em !important;
+    }
+
+
+/*para titulo nivel 1*/
+h1 
+  {
+    font-size: clamp(14px, calc(1vw + 1vh), 50px);
+    margin-bottom: 2em !important;
+    /*font-size: 0.3em; /* El tamaño de la fuente será 2 veces el tamaño de la fuente del body 
+    si el tamaño de letra del bpdy es 16 pixeles, en parrafo sera 2*16= (32px) */
+
+
+    line-height: 2em !important;
+    font-weight: bold; /* Esto pone el texto en negrita */
+  }
+
+
+/*para titulo nivel 2*/
+h2 
+  {
+    margin-bottom: 2em !important;
+    /*font-size: 0.3em; /* El tamaño de la fuente será 2 veces el tamaño de la fuente del body 
+    si el tamaño de letra del bpdy es 16 pixeles, en parrafo sera 2*16= (32px) */
+    font-size: clamp(14px, calc(0.5vw + 0.5vh), 50px);  /* de manera personalizada para que no dependa del tamaño de letra del cuerpo.
+    line-height: 2em !important;
+    font-weight: bold; /* Esto pone el texto en negrita */
+    font-weight: normal;    
+  }
+
+/* Para parrafos */
+p 
+  {
+    margin-bottom: 2em !important;
+    /*font-size: 0.3em; /* El tamaño de la fuente será 2 veces el tamaño de la fuente del body 
+    si el tamaño de letra del bpdy es 16 pixeles, en parrafo sera 2*16= (32px) */
+     /* de manera personalizada para que no dependa del tamaño de letra del cuerpo.
+
+    line-height: 2em !important;
+    font-weight: bold; /* Esto pone el texto en negrita */    
+  }
+
