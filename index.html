@@ -1,0 +1,55 @@
+<!-- Página web Blackdrop -->
+
+<!DOCTYPE html> <!-- Paso 1: Declaramos el tipo de documento que vamos a hacer, 
+                     esto no es una etiqueta o elemento html, sino que es un declaración o linea de codigo
+                     para que el browser o navegador entienda que el tipo de archivo es html -->
+
+    <html>      <!-- Paso 2: Indicamos el formato del contenido, denominando el root element o elemento raiz:
+                     nuestro root element es <html> lo cual indica que el formato es html
+                     osea todo lo que esta dentro de esta etiquetas es formato html.
+                     dentro de este elemento,se contiene todo,(de ahi su nombre),no puede haber otro elemento que lo contenga a él -->
+        
+        <head>  <!-- Paso 3: Creamos el head o encabezado, el cual contiene los elementos que 
+                            NO son renderizados ó mostrados al darle display a la pagina
+                            osea no se ven en la pagina real, sino que es codigo que hay "por debajo"
+                            Aqui van los metadatos, por ejemplo: el idioma, el titulo de la pagina, 
+                            los nombre de los autores, la descripcion del contenido de la pagina 
+                            las hojas de estilo CSS (opcional, buena practica manejarlas en una pagina aparte).
+                            ...etc. -->
+            <link rel="stylesheet" href="mihojadeestilo.css"> </link > 
+                  <!-- Paso 4: Opcional- Linkeamos o enlazamos la CSS o cascade style sheet ó "hoja de estilos", que tendra este documento
+                               La cual es un archivo codificado EXTERNO  que esta dentro de la misma carpeta del 
+                               proyecto (Buena practica hacerlo asi) 
+                               donde dice el color, tamaño y estilo visual de toda la página 
+                               ese archivo codificado se llama se llama "mihojadeestilo.css" y su "rel" ó relacion es que es 
+                               una "stylesheet" o hoja de estilo
+                               Como ese archivo codificado esta en una pagina externa dentro de la misma carpeta del proyecto 
+                               se enlaza con "link" y no con <a> que es para enlaces en el mismo documento o pagina o para urls --> 
+                                    
+
+            <meta charset="utf-8"> </meta>  <!-- Paso 5: Definimos la codificacion de caracteres o "idioma", el de nosotros es:
+                                                         Unicode Transformation Format 8 bits, que es un formato de codificacion
+                                                         que acepta: tildes, eñes, simbolos y caracteres del idioma español
+                                                         esto para que cuando se visualice la pagina en chrome aparezcan todas 
+                                                         las letras y caracteres del idioma español, sin error-->
+            
+            <title> Venta de proteinas para deportistas en Colombia, empresa BlackDrop </title>  
+                    <!-- Paso 6: Definimos el titulo que llevara la pagina, en el navegador, el cual, 
+                                 aparecerá en la pestaña de navegación , y servira para que nos encuentren 
+                                 debe ser corto conciso y claro -->
+
+        </head>
+
+
+        </body>  <!-- Paso 7: Creamos el body, el cual contendrá todo lo que se mostrara en el browser o navegador (ejm: en chrome)
+                              al darle display a la pagina -->
+                 <h1> Titulo 1: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                 <!-- Paso 8: Iniciamos a poner elementos en la pagina, ejm: un título de nivel 1  -->
+                 <h2> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h2> 
+                  <p>" Parrafo 3: blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla
+                    blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla
+                  </p>
+
+        <body>  
+
+    </html> 
