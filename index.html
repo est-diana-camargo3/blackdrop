@@ -17,6 +17,14 @@
                             los nombre de los autores, la descripcion del contenido de la pagina 
                             las hojas de estilo CSS (opcional, buena practica manejarlas en una pagina aparte).
                             ...etc. -->
+            <!--esta linea de codigo es para las versiones anteriores de internet explorer,
+                if intenet explorer es less than o menor que la version 9 
+                que es cargar html_shiv, es la que esta en el libro pero me arrooja error 
+                esta linea de codigo debe quedar en comentario y solo se ejectua si la version es menor.-->
+                <!--[if lt IE 9]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                <![endif]-->
+                
             <link rel="stylesheet" href="mihojadeestilo.css"> </link > 
                   <!-- Paso 4: Opcional- Linkeamos o enlazamos la CSS o cascade style sheet ó "hoja de estilos", que tendra este documento
                                La cual es un archivo codificado EXTERNO  que esta dentro de la misma carpeta del 
@@ -54,13 +62,7 @@
                     <img src="logo2.jpg" alt="Descripción de la imagen">
                     <figcaption>Este es un pie de figura que describe la imagen.</figcaption>
                 </figure>
-                <details>
-                  <summary>Más información sobre el producto</summary>
-                  <p>Este producto tiene características muy especiales blab blalasadsdasdasdas
-                    asdadasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                    asdadasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdas
-                    asssssssssssssssssssss assssssssss asssssssss asa...</p>
-              </details>
+                
 
         <body>  
 
