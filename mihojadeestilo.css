@@ -16,10 +16,12 @@ section, article, nav, aside, header, footer, main {
    que el estilo definido después, se aplica a todos los elementos de la página web*/
 
 /* para configuracion de imagenes  */
-.logo {
-  width: 10vw; /* 10% del ancho de la ventana  */
-  height: 15vh; /* 10% del alto de la ventana  */
-} 
+/*
+    .logo {
+      width: 10vw; /* 10% del ancho de la ventana  */
+      /*height: 15vh; /* 10% del alto de la ventana  */
+    /*}*/ 
+
 
 /* para el cuerpo */
 body 
