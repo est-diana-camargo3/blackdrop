@@ -7,6 +7,7 @@
 /* para el cuerpo */
 body 
     {
+      
       background-color: #f4f4f4; /* Establece el color de fondo en hexadecimal*/
       margin: 0; /* Elimina las margenes predeterminadas del navegador */
       padding: 0; /* Elimina el espacio interno predeterminado, entre el contenido de 
