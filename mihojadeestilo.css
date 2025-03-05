@@ -1,5 +1,12 @@
 /* HOJA DE ESTILO CSS- DE LA PAGINA BLACKDROP */
 
+/*indicamos a los navegadores,que formatee cada uno de los elementos como un nivel de bloque, 
+esto para que todos los navegadores admitan nuestras etiquetas html5, 
+y para aquellos que depronto por lo antiguos no lo hacen, formateen estas etiquetas y 
+las puedan mostrar*/
+section, article, nav, aside, header, footer, main {
+  display: block;
+}
 
 /* El asterisco antes del primer corchete es un selector universal y significa 
    que el estilo definido después, se aplica a todos los elementos de la página web*/
