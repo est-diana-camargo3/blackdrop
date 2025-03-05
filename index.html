@@ -52,22 +52,70 @@
 
         </body>  <!-- Paso 7: Creamos el body, el cual contendrá todo lo que se mostrara en el browser o navegador (ejm: en chrome)
                               al darle display a la pagina -->
-                 <h1> Titulo 1: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
-                 <!-- Paso 8: Iniciamos a poner elementos en la pagina, ejm: un título de nivel 1  -->
-                 <h2> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h2> 
-                  <p>" Parrafo 3: blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla
-                    blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla
-                  </p>
-                  <figure>
-                    <img src="logo2.jpg" alt="Descripción de la imagen">
-                    <figcaption>Este es un pie de figura que describe la imagen.</figcaption>
-                </figure>
-                
+              <!-- Paso 8: Iniciamos a poner elementos en la pagina, ejm: un título de nivel 1  -->
 
+              <header> <!-- Diferente al head porque el header es el encabezado de la pagina y el head es donde van los metadatos-->
+                      
+                      <figure> <!-- Imagen logo-->                      
+                            <img src="imagenes/logos/fondo_negro_letras_blancas_rojas.png" alt="Logo de la empresa Blackdrop" class="logo">
+                            <figcaption>Este es un pie de figura que describe la imagen.</figcaption>
+                      </figure>
+                                   
+                      <nav>  <!-- Hacemos la barra de navegacion-->
+                            <ul>
+                            <li><a href="/">Serif</a></li>
+                            <li><a href="/">Sans-serif</a></li>
+                            <li><a href="/">Script</a></li>
+                            <li><a href="/">Display</a></li>
+                            <li><a href="/">Dingbats</a></li>
+                            </ul>
+                      </nav>
+
+                      
+                      
+                      
+
+              </header>
+                  
+              <main>
+                       <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                       <p>" Parrafo 3: blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla
+                             blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla  </p>                            
+          
+                        <dialog id="miDialogo"><!-- ventana emergenete con botones-->
+                              <p>¿Estás seguro de que deseas eliminar este archivo?</p>
+                              <button onclick="document.getElementById('miDialogo').close()">Cancelar</button>
+                              <button onclick="document.getElementById('miDialogo').close()">Aceptar</button>
+                        </dialog>
+
+                        <button onclick="document.getElementById('miDialogo').showModal()">Abrir ventana emergente</button>
+                    
+                      <table><!-- Tabla-->
+                              <tr>
+                                  <td>Juan</td>
+                                  <td>1</td>
+                                  <td>$ 136.000</td>
+                              </tr>
+                              <tr>
+                                  <td>Ana</td>
+                                  <td>5</td>
+                                  <td>$ 144.000</td>
+                              </tr>
+                    </table>
+              </main>
         <body>  
-          
-        <footer>
 
-          
+        <footer> <!-- pie de pagina-->
+               <address>  <!-- Contacto con los autores de la pagina-->
+                    Contacto autores: <a href="https://www.instagram.com/juanita.p28/"> Juanita Palacios</a>,
+                    <a href="https://www.instagram.com/diana.camargo3/"> Mayerly Camargo</a>,
+               </address> 
+                
+                
+                Instagram <a href=" https://www.instagram.com/blackdropsupps?igsh=MXgwZGU5ZWZ3NGJkdg%3D%3D"> Instagram de blackdrop</a>,
+                Drive blackdrop <a href="https://unimilitareduco-my.sharepoint.com/:f:/g/personal/est_diana_camargo3_unimilitar_edu_co/EnmVS41huxhArK-BjJAVD4IBbQMVcVgek7rIbThHeeDK9A?e=Pp5ZI1"> Drive de blackdrop</a>,
+                Figma blackdrop <a href="https://www.figma.com/design/CapSW3cuWKdO5C1PoHPfE9/BlackDrop-MockUp?node-id=23-129&p=f&t=rmNYWm1pkIEDMac8-0"> Figma de blackdrop</a>,
+
         </footer>
+        
     </html> 
