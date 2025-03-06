@@ -16,12 +16,23 @@ section, article, nav, aside, header, footer, main {
    que el estilo definido después, se aplica a todos los elementos de la página web*/
 
 /* para configuracion de imagenes  */
-/*
-    .logo {
+.logo 
+{
       width: 10vw; /* 10% del ancho de la ventana  */
       /*height: 15vh; /* 10% del alto de la ventana  */
-    /*}*/ 
+} 
+.precioenrojo {
+  font-weight: bold;
+  color: red;
+}
 
+#textoenrojo {
+  color: red;
+}
+
+.highlight {
+  background-color: yellow;
+}
 
 /* para el cuerpo */
 body 
@@ -62,7 +73,7 @@ body
       word-spacing: 0.16em !important;
     }
 
-
+    
 /*para titulo nivel 1*/
 h1 
   {
@@ -90,16 +101,16 @@ h2
   }
 
 /* Para parrafos */
-p 
-  {
-    margin-bottom: 2em !important;
-    /*font-size: 0.3em; /* El tamaño de la fuente será 2 veces el tamaño de la fuente del body 
-    si el tamaño de letra del bpdy es 16 pixeles, en parrafo sera 2*16= (32px) */
-     /* de manera personalizada para que no dependa del tamaño de letra del cuerpo.
+p {
+  background: #f2f5d5;
+  box-sizing: border-box;
+  width: 500px;
+  height: 150px;
+  padding: 20px;
+  border: 5px solid gray;
+  margin: 20px;
+ } 
 
-    line-height: 2em !important;
-    font-weight: bold; /* Esto pone el texto en negrita */    
-  }
 
   
 
