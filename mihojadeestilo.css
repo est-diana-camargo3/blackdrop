@@ -10,35 +10,21 @@ section, article, nav, aside, header, footer, main {
   display: block;
 }
 
-
-
-/* El asterisco antes del primer corchete es un selector universal y significa 
-   que el estilo definido después, se aplica a todos los elementos de la página web*/
-
-/* para configuracion de imagenes  */
-.logo 
-{
-      width: 10vw; /* 10% del ancho de la ventana  */
-      /*height: 15vh; /* 10% del alto de la ventana  */
-} 
-.precioenrojo {
-  font-weight: bold;
-  color: red;
-}
-
-#textoenrojo {
-  color: red;
-}
-
-.highlight {
-  background-color: yellow;
-}
-
-/* para el cuerpo */
-body 
+html
     {
-      
-      background-color: #f4f4f4; /* Establece el color de fondo en hexadecimal*/
+      margin:0;
+      padding:0;
+    }
+
+body /* Cuerpo */
+    {
+      width:98.7vw; /* 100% del ancho de la ventana  */
+      height: 100vh; /* 100% del alto de la ventana  */       
+      display: flex; /*el contenido interno se adapta a la caja invisible del body*/
+      flex-direction: column; /* Alineamos los elementos en una columna */
+      justify-content: flex-start; /* Alineamos los elementos en la parte superior */
+
+      background-color: gray; /* Establece el color de fondo en hexadecimal*/
       margin: 0; /* Elimina las margenes predeterminadas del navegador */
       padding: 0; /* Elimina el espacio interno predeterminado, entre el contenido de 
                     un elemento (como un <div>, <p>, <button>, etc.) y su borde (que es definido por la propiedad border) */
@@ -73,6 +59,79 @@ body
       word-spacing: 0.16em !important;
     }
 
+header /* encabezado */
+      {
+        width: 98.7w; /* 100% del ancho de la ventana  */
+        height: 13vh; /* 20% del alto de la ventana */
+        padding: 0; /* sin padding */
+        margin: 0; /* cero margenes*/
+        border:0; /*sin borde*/
+        
+        background-color: white;
+        background-image: url('imagenes\texturas\textura fondo blanco.jpg'); /* Ruta de tu imagen */
+        background-size: cover; /* Hace que la imagen cubra todo el espacio del header */
+        background-position: center center; /* Centra la imagen dentro del header */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+        display: flex; /*el contenido interno se adapta o se entra en la caja invisible del header*/
+        justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
+        align-items: center; /*alinea los elementos dentro verticalmente en el centro.*/
+      }
+
+.logoencabezado /* clase para logo del encabezado  */
+      {
+        width: 6em; /* 10% del ancho de la ventana  */
+        height: 6em; /* 10% del alto de la ventana  */       
+        cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+        transition: color 0.3s ease; /*que las transiciones que haga cuando le den clic sean en 0.3 seg*/
+      }
+
+.logoencabezado:hover 
+      {
+        /* Cambia el color del fondo cuando se pasa el mouse */ 
+        /*border: 25px solid red; */ /*sólido*/
+        box-shadow: 0px 0px 100px red; /* Sombra */
+      }
+
+.iconoiniciarsesion
+      {
+        width: 6em; /* 10% del ancho de la ventana  */
+        height: 6em; /* 10% del alto de la ventana  */        
+        cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+        transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
+      }
+
+.iconoiniciarsesion:hover 
+      {
+        /* Cambia el color del fondo cuando se pasa el mouse */
+        /*border: 25px solid red; */ /*sólido*/
+        box-shadow: 0px 0px 100px red; /* Sombra  */
+      }
+
+figure
+      {
+        display: flex; /*el contenido interno se adapta a la caja invisible del figure*/
+        align-items: center; /*alinea los elementos dentro verticalmente en el centro.*/
+        margin:1em;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 /*para titulo nivel 1*/
 h1 
@@ -104,13 +163,42 @@ h2
 p {
   background: #f2f5d5;
   box-sizing: border-box;
-  width: 500px;
-  height: 150px;
-  padding: 20px;
-  border: 5px solid gray;
-  margin: 20px;
- } 
+  width: 75vw;
+  height: 25vh;
+  padding: 2px;
+  border: 2px solid gray;
+  margin: 10vw;
+ }
 
+ span {
+  display: inline;
+  margin: 10px;  /* Márgenes en línea: funcionarán solo en los lados izquierdo y derecho */
+  background-color: lightblue;
+  padding: 5px;
+}
+
+a {
+  display: inline;
+  margin-left: 20px; /* Márgenes izquierdo y derecho funcionan */
+  margin-right: 20px;
+  padding: 5px;
+  text-decoration: none;
+  background-color: lightcoral;
+}
+
+.precioenrojo {
+  font-weight: bold;
+  color: red;
+}
+
+#textoenrojo {
+  color: red;
+}
+
+.highlight {
+  background-color: yellow;
+}
 
   
+
 
