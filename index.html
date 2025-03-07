@@ -5,102 +5,91 @@
                      esto no es una etiqueta o elemento html, sino que es un declaración o linea de codigo
                      para que el browser o navegador entienda que el tipo de archivo es html -->
 
-    <html>      <!-- Paso 2: Indicamos el formato del contenido, denominando el root element o elemento raiz:
+      <html>      <!-- Paso 2: Indicamos el formato del contenido, denominando el root element o elemento raiz:
                      nuestro root element es <html> lo cual indica que el formato es html
                      osea todo lo que esta dentro de esta etiquetas es formato html.
                      dentro de este elemento,se contiene todo,(de ahi su nombre),no puede haber otro elemento que lo contenga a él -->
-        
-        <head>  <!-- Paso 3: Creamos el head o encabezado, el cual contiene los elementos que 
-                            NO son renderizados ó mostrados al darle display a la pagina
-                            osea no se ven en la pagina real, sino que es codigo que hay "por debajo"
-                            Aqui van los metadatos, por ejemplo: el idioma, el titulo de la pagina, 
-                            los nombre de los autores, la descripcion del contenido de la pagina 
-                            las hojas de estilo CSS (opcional, buena practica manejarlas en una pagina aparte).
-                            ...etc. -->
-            <!--esta linea de codigo es para las versiones anteriores de internet explorer,
-                if intenet explorer es less than o menor que la version 9 
-                que es cargar html_shiv, es la que esta en el libro pero me arrooja error 
-                esta linea de codigo debe quedar en comentario y solo se ejectua si la version es menor.-->
-                <!--[if lt IE 9]>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-                <![endif]-->
                 
-            <link rel="stylesheet" href="mihojadeestilo.css"> </link > 
-                  <!-- Paso 4: Opcional- Linkeamos o enlazamos la CSS o cascade style sheet ó "hoja de estilos", que tendra este documento
-                               La cual es un archivo codificado EXTERNO  que esta dentro de la misma carpeta del 
-                               proyecto (Buena practica hacerlo asi) 
-                               donde dice el color, tamaño y estilo visual de toda la página 
-                               ese archivo codificado se llama se llama "mihojadeestilo.css" y su "rel" ó relacion es que es 
-                               una "stylesheet" o hoja de estilo
-                               Como ese archivo codificado esta en una pagina externa dentro de la misma carpeta del proyecto 
-                               se enlaza con "link" y no con <a> que es para enlaces en el mismo documento o pagina o para urls --> 
-                                    
+            <code> <head> <!-- Head ó Metadatos-->        
+                        <!-- Paso 3: Creamos el head o encabezado, el cual contiene los elementos que 
+                              NO son renderizados ó mostrados al darle display a la pagina
+                              osea no se ven en la pagina real, sino que es codigo que hay "por debajo"
+                              Aqui van los metadatos, por ejemplo: el idioma, el titulo de la pagina, 
+                              los nombre de los autores, la descripcion del contenido de la pagina 
+                              las hojas de estilo CSS (opcional, buena practica manejarlas en una pagina aparte).
+                              ...etc. -->
+                        <!--esta linea de codigo es para las versiones anteriores de internet explorer,
+                        if intenet explorer es less than o menor que la version 9 
+                        que es cargar html_shiv, es la que esta en el libro pero me arrooja error 
+                        esta linea de codigo debe quedar en comentario y solo se ejectua si la version es menor.-->
+                        <!--[if lt IE 9]>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                        <![endif]-->  
 
-            <meta charset="utf-8"> </meta>  <!-- Paso 5: Definimos la codificacion de caracteres o "idioma", el de nosotros es:
-                                                         Unicode Transformation Format 8 bits, que es un formato de codificacion
-                                                         que acepta: tildes, eñes, simbolos y caracteres del idioma español
-                                                         esto para que cuando se visualice la pagina en chrome aparezcan todas 
-                                                         las letras y caracteres del idioma español, sin error-->
+                        <link rel="stylesheet" href="mihojadeestilo.css"> </link > 
+                              <!-- Paso 4: Opcional- Linkeamos o enlazamos la CSS o cascade style sheet ó "hoja de estilos", que tendra este documento
+                                          La cual es un archivo codificado EXTERNO  que esta dentro de la misma carpeta del 
+                                          proyecto (Buena practica hacerlo asi) 
+                                          donde dice el color, tamaño y estilo visual de toda la página 
+                                          ese archivo codificado se llama se llama "mihojadeestilo.css" y su "rel" ó relacion es que es 
+                                          una "stylesheet" o hoja de estilo
+                                          Como ese archivo codificado esta en una pagina externa dentro de la misma carpeta del proyecto 
+                                          se enlaza con "link" y no con <a> que es para enlaces en el mismo documento o pagina o para urls --> 
             
-            <title> Venta de proteinas para deportistas en Colombia, empresa BlackDrop </title>  
-                    <!-- Paso 6: Definimos el titulo que llevara la pagina, en el navegador, el cual, 
-                                 aparecerá en la pestaña de navegación , y servira para que nos encuentren 
-                                 debe ser corto conciso y claro -->
-                                 
+                        <meta charset="utf-8"> </meta>  <!-- Paso 5: Definimos la codificacion de caracteres o "idioma", el de nosotros es:
+                                                                  Unicode Transformation Format 8 bits, que es un formato de codificacion
+                                                                  que acepta: tildes, eñes, simbolos y caracteres del idioma español
+                                                                  esto para que cuando se visualice la pagina en chrome aparezcan todas 
+                                                                  las letras y caracteres del idioma español, sin error-->
+                        
+                        <title> Venta de proteinas para deportistas en Colombia, empresa BlackDrop </title>  
+                              <!-- Paso 6: Definimos el titulo que llevara la pagina, en el navegador, el cual, 
+                                          aparecerá en la pestaña de navegación , y servira para que nos encuentren 
+                                          debe ser corto conciso y claro -->                  
+            </head></code>
 
-        </head>
+            <code> <body>  <!-- Body-->
+                        <!-- Paso 7: Creamos el body, el cual contendrá todo lo que se mostrara en el browser o navegador (ejm: en chrome)
+                                    al darle display a la pagina -->
+                        <!-- Paso 8: Iniciamos a poner elementos en la pagina, ejm: un título de nivel 1  -->
+                        <code><header> <!-- headER ó encabezado-->
+                             <!-- Diferente al head porque el header es el encabezado de la pagina y el head es donde van los metadatos-->
+                              <figure> <!--Imagen logo-->               
+                                    <img src="imagenes/logos/fondo_negro_letras_blancas_rojas.png" alt="Logo de la empresa Blackdrop" class="logoencabezado" id="logoencabezado">
+                              </figure>
 
-
-        </body>  <!-- Paso 7: Creamos el body, el cual contendrá todo lo que se mostrara en el browser o navegador (ejm: en chrome)
-                              al darle display a la pagina -->
-              <!-- Paso 8: Iniciamos a poner elementos en la pagina, ejm: un título de nivel 1  -->
-
-              <header> <!-- Diferente al head porque el header es el encabezado de la pagina y el head es donde van los metadatos-->
-                      <figure> <!--Imagen logo-->               
-                            <img src="imagenes/logos/fondo_negro_letras_blancas_rojas.png" alt="Logo de la empresa Blackdrop" class="logo">
-                            <figcaption>Este es un pie de figura que describe la imagen.</figcaption>
-                      </figure>
-                                                         
-                      <nav>  <!-- Hacemos la barra de navegacion-->
-                            <ul>
-                            <li><a href="/">Serif</a></li>
-                            <li><a href="/">Sans-serif</a></li>
-                            <li><a href="/">Script</a></li>
-                            <li><a href="/">Display</a></li>
-                            <li><a href="/">Dingbats</a></li>
-                            </ul>
-                      </nav>
-
-                      
-                      
-                      
-
-              </header>
+                              <figure> <!--Imagen logo-->               
+                                    <img src="imagenes/iconos/iniciar_sesion.png" alt="Icono para iniciar sesion" class="iconoiniciarsesion" id="iconoiniciarsesion">                        
+                              </figure> 
+                        </header></code>
                   
-              <main>
-                       <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
-                       <p>hola que mas asdasdsd sdasfas asdasdasda sdasdadasdas asdasdasdaasd asd
-                              asdasd asd asd asdasdas dasda
-                              asdasdas asda sdasd asdasdasd asdasdas
-                              sdasdadasdasasdasda
-                              asdasdasdaasdasdadasd
-                              sdasdasdas</p>                
-          
+                        <code> <main> <!-- Main, contenido principal del body-->
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                                    <h1> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
+                        </main></code>
 
-              </main>
-        <body>  
+            </body> </code> 
 
-        <footer> <!-- pie de pagina-->
-               <address>  <!-- Contacto con los autores de la pagina-->
-                    Contacto autores: <a href="https://www.instagram.com/juanita.p28/"> Juanita Palacios</a>,
-                    <a href="https://www.instagram.com/diana.camargo3/"> Mayerly Camargo</a>,
-               </address> 
-                
-                
-                Instagram <a href=" https://www.instagram.com/blackdropsupps?igsh=MXgwZGU5ZWZ3NGJkdg%3D%3D"> Instagram de blackdrop</a>,
-                Drive blackdrop <a href="https://unimilitareduco-my.sharepoint.com/:f:/g/personal/est_diana_camargo3_unimilitar_edu_co/EnmVS41huxhArK-BjJAVD4IBbQMVcVgek7rIbThHeeDK9A?e=Pp5ZI1"> Drive de blackdrop</a>,
-                Figma blackdrop <a href="https://www.figma.com/design/CapSW3cuWKdO5C1PoHPfE9/BlackDrop-MockUp?node-id=23-129&p=f&t=rmNYWm1pkIEDMac8-0"> Figma de blackdrop</a>,
-
-        </footer>
-        
-    </html> 
+            <code> <footer> <!-- Footer, pie de pagina-->
+                        <address>  <!-- Contacto con los autores de la pagina-->
+                                    Contacto autores: <a href="https://www.instagram.com/juanita.p28/"> Juanita Palacios</a>,
+                                    <a href="https://www.instagram.com/diana.camargo3/"> Mayerly Camargo</a>,
+                        </address> 
+                        Instagram <a href=" https://www.instagram.com/blackdropsupps?igsh=MXgwZGU5ZWZ3NGJkdg%3D%3D"> Instagram de blackdrop</a>,
+                        Drive blackdrop <a href="https://unimilitareduco-my.sharepoint.com/:f:/g/personal/est_diana_camargo3_unimilitar_edu_co/EnmVS41huxhArK-BjJAVD4IBbQMVcVgek7rIbThHeeDK9A?e=Pp5ZI1"> Drive de blackdrop</a>,
+                        Figma blackdrop <a href="https://www.figma.com/design/CapSW3cuWKdO5C1PoHPfE9/BlackDrop-MockUp?node-id=23-129&p=f&t=rmNYWm1pkIEDMac8-0"> Figma de blackdrop</a>,
+            </footer></code> 
+      </html> 
