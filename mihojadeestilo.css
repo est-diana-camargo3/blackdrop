@@ -9,7 +9,7 @@ body
     {
       
       background-color: #f4f4f4; /* Establece el color de fondo en hexadecimal*/
-      margin: 0; /* Elimina las margenes predeterminadas del navegador */
+      margin: 5; /* Elimina las margenes predeterminadas del navegador */
       padding: 0; /* Elimina el espacio interno predeterminado, entre el contenido de 
                     un elemento (como un <div>, <p>, <button>, etc.) y su borde (que es definido por la propiedad border) */
       font-family: Arial, sans-serif; /* Establece la fuente , primero se hará en Arial, si el navegador no 
