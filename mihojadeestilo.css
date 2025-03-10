@@ -12,8 +12,13 @@ section, article, nav, aside, header, footer, main {
 
 html
     {
-      margin:0;
-      padding:0;
+      /*modelo que usaremos en la estructura: grid o grilla a 12 columnas*/
+      /*display:grid*/
+      /*se decidió no usar este modelo en la estructura porque tendriamos que hacer 
+        muchisimas media queries o configuraciones para que mi pagina se adapte a los diferentes tamaños, 
+        por esto se decició usar display flex; que lo que  
+      margin:0; 
+      padding:0;*/
     }
 
 body /* Cuerpo */
