@@ -12,7 +12,7 @@ section, article, nav, aside, header, footer, main {
 
 /* ================================================================================
            COnfiguracion para ESCRITORIO: pantallas más grandes que 1024 px
-   ================================================================================ */
+   =============================================================================== */
 
 @media (min-width: 1081px) 
 { 
@@ -31,7 +31,7 @@ section, article, nav, aside, header, footer, main {
                         /*decidimos manejar celular y tablet en una sola*/
           grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
           grid-template-rows: repeat(23, 1fr);  /* Definir las 23 filas, cada una ocupará 1/23 del alto de la ventana */
-          gap: 5pix; /* Espacio entre las columnas y entre las filas= 5 pixeles */
+          gap: 5px; /* Espacio entre las columnas y entre las filas= 5 pixeles */
         }
 
     body /* Cuerpo */
