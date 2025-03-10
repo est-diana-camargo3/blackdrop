@@ -1,51 +1,63 @@
+
 /* HOJA DE ESTILO CSS- DE LA PAGINA BLACKDROP */
 
-/*indicamos a los navegadores,que formatee cada uno de los elementos como un nivel de bloque,
-a la veersion que concuerde. 
-esto para que todos los navegadores admitan nuestras etiquetas html5, 
-y para aquellos que depronto por lo antiguos no lo hacen, posteriores a internet explorer
-version 8 o anteriores, formateamos estas etiquetas y 
-y buscamos la version que las puedan mostrar*/
-section, article, nav, aside, header, footer, main {
-  display: block;
-}
+section, article, nav, aside, header, footer, main {  display: block; } 
+        /*indicamos a los navegadores,que formatee cada uno de los elementos como un nivel de bloque,
+        a la veersion que concuerde. Esto para que todos los navegadores admitan nuestras etiquetas html5, 
+        y para aquellos que depronto por lo antiguos no lo hacen, posteriores a internet explorer
+        version 8 o anteriores, formateamos estas etiquetas y buscamos la version que las puedan mostrar*/
 
 /* ================================================================================
            COnfiguracion para ESCRITORIO: pantallas más grandes que 1024 px
-   =============================================================================== */
+   ================================================================================ */
 
-@media (min-width: 1081px) 
+@media (min-width: 1024px) 
 { 
-    html /* aqui configuramos TODA la página( body (header+main) + footer )*/
+    html /* No tiene papá, El es el papá, aqui configuramos TODA la página( body (header+main) + footer )*/
         {
+          display:grid;/*modelo que usaremos en la estructura: grid o grilla
+                          12 columnas para resolucion de 1024 a 1920 o mas
+                          4 columnas para celular y tablet de 0 a 1024 pixeles de ancho*/
+                          /*decidimos manejar celular y tablet en una sola*/
+          grid-template-columns: repeat(3, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
+                                                 /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+          grid-template-rows: repeat(3, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+                                                  /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+          gap: 0px; /*espacio entre las columnas cera cero porque el fondo total siempre debe ser solido y asi yo le diera
+                      aqui algun espacio, lo ignoraria porque no hay un fondo debajo de este, osea no hay otra etiqueta 
+                      que contenga a html*/
+
           width:100vw;  /*que el ancho de la pagina completa sea igual al 100% de la ventana*/
           height:100vh; /*que el alto de la pagina completa sea igual al 100% de la ventana*/
           margin:0;     /*reiniciamos las margenes a cero*/
           padding:0;    /*reiniciamos el padding o relleno a cero*/
           border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
           margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/
-
-          display:grid;/*modelo que usaremos en la estructura: grid o grilla
-                        12 columnas para resolucion de 1024 a 1920 o mas
-                        4 columnas para celular y tablet de 0 a 1024 pixeles de ancho*/
-                        /*decidimos manejar celular y tablet en una sola*/
-          grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
-          grid-template-rows: repeat(23, 1fr);  /* Definir las 23 filas, cada una ocupará 1/23 del alto de la ventana */
-          gap: 5px; /* Espacio entre las columnas y entre las filas= 5 pixeles */
+          background-color: black; /* Establece el color de fondo en hexadecimal*/
+          z-index:0; /*entre mas alto sea el valor, se sobrepone sobre los de menor valor, este seria el que esta al fondo*/
         }
 
-    body /* Cuerpo */
+    body /* Cuerpo , su papa es html */
         {
-          width:98.7vw; /* 100% del ancho de la ventana  */
-          height: 100vh; /* 100% del alto de la ventana  */       
-          display: flex; /*el contenido interno se adapta a la caja invisible del body*/
-          flex-direction: column; /* Alineamos los elementos en una columna */
-          justify-content: flex-start; /* Alineamos los elementos en la parte superior */
+          /*como el body es hijo de html, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
+          grid-column: 1 / 2; /* ocupara 12 columnas (de la 1 a la 12, sin incluir el 13) */
+          grid-row: 1 / 2; /* ocupara 22 filas (de la 1 a la 22, sin incluir la 23 ) */
+          gap: 50px; /*espacio entre las columnas 0 pix; se va a configurar con margin */
+          
+          background-color: burlywood; /* Establece el color de fondo en hexadecimal*/
 
-          background-color: gray; /* Establece el color de fondo en hexadecimal*/
-          margin: 0; /* Elimina las margenes predeterminadas del navegador */
-          padding: 0; /* Elimina el espacio interno predeterminado, entre el contenido de 
-                        un elemento (como un <div>, <p>, <button>, etc.) y su borde (que es definido por la propiedad border) */
+/*           /*El body EN SI MISMO también sera  desarrollado como un modelo de grid*/
+ /*              display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
+ /*               grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
+                                                        /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+/*                grid-template-rows: repeat(24, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+                                                        /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)
+/*                gap: 0px; /* Espacio entre las columnas y entre las filas= 0 pixeles */
+          margin:0;     /*reiniciamos las margenes a cero*/
+          padding:0;    /*reiniciamos el padding o relleno a cero*/
+          border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+          margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
+
           font-family: Arial, sans-serif; /* Establece la fuente , primero se hará en Arial, si el navegador no 
                                             tiene esa letra o fuente, se hará en cualquier fuente que no tenga adornos en los 
                                             extremos, es decir cualquier fuente sans-serif*/
@@ -66,19 +78,68 @@ section, article, nav, aside, header, footer, main {
                                                             escalamos la ventana super pequeña, el valor minimo de la letra sera 14 
                                                             asi los calculos digan un valor menor, y si la escalamos super gigante, el
                                                             valor máximo de la letra sera 50 pix, asi los cálculos digan un valor mayor.*/
-          line-height: 2em !important; /* con important lo que hacemos es decirle al navegador que esta regla debe aplicarse 
+ /*         line-height: 2em !important; /* con important lo que hacemos es decirle al navegador que esta regla debe aplicarse 
                                           incluso si hay otras reglas, que podrian tener mayor especifidad, o con las cuales tenga 
                                           conflicto.*/
                                       /* "em" es el tamaño de la letra (padre) ,  
                                           osea, si el tamaño de letra es 16 pix, la linea de altura que divide una
                                           linea de otra sera 2*16=32 pix, esto lo que nos garantiza es que esta altura es 
                                           responsiva o adaptable, segun el tamaño que tenga la letra */ 
-          letter-spacing: 0.12em !important;
-          word-spacing: 0.16em !important;
+ /*         letter-spacing: 0.12em !important;
+    /*      word-spacing: 0.16em !important;
+
+          /*display: flex; /*el contenido interno se adapta a la caja invisible del body*/
+          /*flex-direction: column; /* Alineamos los elementos en una columna */
+          /*justify-content: flex-start; /* Alineamos los elementos en la parte superior */
+          z-index: 1;
+
+
+
+        }
+
+        /* Establecemos que la grilla ocupe el 100% del ancho y alto de la ventana */
+        .contenedordelagrilla {
+          width: 100vw;   /* 100% del ancho de la ventana */
+          height: 100vh;  /* 100% del alto de la ventana */
+      }
+
+      .grilla {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);  /* 12 columnas */
+          grid-template-rows: 100%;                 /* Aseguramos que las filas ocupen el 100% del alto de la ventana */
+          width: 100%;  /* Ocupa todo el ancho del contenedor */
+          height: 100%; /* Ocupa todo el alto del contenedor */
+          gap: 1vw;     /* El espacio entre las celdas será el 1% del ancho de la ventana */
+          background-color: rgb(127, 127, 127);  /* Fondo negro para los espacios entre las celdas */
+      }
+
+      .grilla div {
+          background-color: rgb(183, 177, 165);  /* Color de fondo para las celdas */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 24px;
+          height: 100%; /* Aseguramos que las celdas ocupen todo el alto de la ventana */
+      }
+
+    footer 
+        {
+          /*como el footer es hijo de html, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
+          grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, sin incluir el 13) */
+          grid-row: 23 / 25; /* ocupara 2 filas (de la 23 a la 24, sin incluir la 25 ) */
+          gap: 0px; /*espacio entre las columnas 0 pix; se va a configurar con margin */
+          
+          background-color: purple; /* Establece el color de fondo en hexadecimal*/
+          z-index:1;
         }
 
     header /* encabezado */
         {
+                    /*como el body es hijo de html, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
+                    grid-column: 1 / 13; /* 12 columnas (de la 1 a la 13) */
+                    grid-row: 1 / 3; /* 24 filas (de la 1 a la 24) */
+
           position: relative;
           top: 10vh; /* Mueve el header 10px hacia abajo */
 
@@ -88,7 +149,24 @@ section, article, nav, aside, header, footer, main {
           margin: 0; /* cero margenes*/
           border:0; /*sin borde*/
           
-          background-image: url('imagenes/texturas/textura_fondo_blanco_desvanecida.jpg');
+          background-color: aqua;
+          /*background-image: url('imagenes/texturas/textura_fondo_blanco_desvanecida.jpg');*/
+          background-size: cover; /* Hace que la imagen cubra todo el espacio del header */
+          background-position: center center; /* Centra la imagen dentro del header */
+          background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+          display: flex; /*flex es para poder ajustar los dos iconos dentro del papá:header ya que 
+                            con el metodo de cajas no se pueden ajustar los iconos, solo el texto*/
+          justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
+          align-items: center; /*alinea los elementos dentro verticalmente en el centro.de la caja*/
+        }
+
+        html body main /* encabezado */
+        {
+
+          
+          background-color: yellow;
+          /*background-image: url('imagenes/texturas/textura_fondo_blanco_desvanecida.jpg');*/
           background-size: cover; /* Hace que la imagen cubra todo el espacio del header */
           background-position: center center; /* Centra la imagen dentro del header */
           background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -223,3 +301,39 @@ a {
   
 }
 
+
+
+
+/* ================================================================================
+       COnfiguracion para MOVIL-tablets: pantallas más grandes de 0 a 1023  px
+   ================================================================================ */
+
+@media (max-width: 1023px) 
+  {
+    /*aqui iria toda la configuracion para movil*/
+    html /* aqui configuramos TODA la página( body (header+main) + footer )*/
+    {
+        width:100vw;  /*que el ancho de la pagina completa sea igual al 100% de la ventana*/
+        height:100vh; /*que el alto de la pagina completa sea igual al 100% de la ventana*/
+        margin:0;     /*reiniciamos las margenes a cero*/
+        padding:0;    /*reiniciamos el padding o relleno a cero*/
+        border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+        margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/
+
+        display:grid;/*modelo que usaremos en la estructura: grid o grilla
+                      12 columnas para resolucion de 1024 a 1920 o mas
+                      4 columnas para celular y tablet de 0 a 1024 pixeles de ancho*/
+                      /*decidimos manejar celular y tablet en una sola*/
+        grid-template-columns: repeat(4, 1fr); /* Definir las 4 columnas, cada una ocupará 1/4 del ancho de la ventana */
+        grid-template-rows: repeat(23, 1fr);  /* Definir las 23 filas, cada una ocupará 1/23 del alto de la ventana */
+        gap: 5px; /* Espacio entre las columnas y entre las filas= 5 pixeles */
+    }
+
+
+
+
+
+
+
+
+  }
