@@ -123,6 +123,19 @@ section, article, nav, aside, header, footer, main {  display: block; }
           height: 100%; /* Aseguramos que las celdas ocupen todo el alto de la ventana */
       }
 
+              /* Ejemplo de cómo agregar un elemento encima de la grilla */
+              .overlay {
+                position: absolute;
+                top: 70%;
+                left: 70%;
+                transform: translate(-50%, -50%);
+                background-color: rgba(0, 255, 0, 0.5); /* Fondo translúcido */
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 18px;
+            }
+
     footer 
         {
           /*como el footer es hijo de html, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
