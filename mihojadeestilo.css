@@ -10,131 +10,115 @@ section, article, nav, aside, header, footer, main {
   display: block;
 }
 
-/* ================================================================================
-           COnfiguracion para ESCRITORIO: pantallas más grandes que 1024 px
-   ================================================================================ */
+html
+    {
+      /*modelo que usaremos en la estructura: grid o grilla a 12 columnas*/
+      /*display:grid*/
+      /*se decidió no usar este modelo en la estructura porque tendriamos que hacer 
+        muchisimas media queries o configuraciones para que mi pagina se adapte a los diferentes tamaños, 
+        por esto se decició usar display flex; que lo que  
+      margin:0; 
+      padding:0;*/
+    }
 
-@media (min-width: 1081px) 
-{ 
-    html /* aqui configuramos TODA la página( body (header+main) + footer )*/
-        {
-          width:100vw;  /*que el ancho de la pagina completa sea igual al 100% de la ventana*/
-          height:100vh; /*que el alto de la pagina completa sea igual al 100% de la ventana*/
-          margin:0;     /*reiniciamos las margenes a cero*/
-          padding:0;    /*reiniciamos el padding o relleno a cero*/
-          border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-          margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/
+body /* Cuerpo */
+    {
+      width:98.7vw; /* 100% del ancho de la ventana  */
+      height: 100vh; /* 100% del alto de la ventana  */       
+      display: flex; /*el contenido interno se adapta a la caja invisible del body*/
+      flex-direction: column; /* Alineamos los elementos en una columna */
+      justify-content: flex-start; /* Alineamos los elementos en la parte superior */
 
-          display:grid;/*modelo que usaremos en la estructura: grid o grilla
-                        12 columnas para resolucion de 1024 a 1920 o mas
-                        4 columnas para celular y tablet de 0 a 1024 pixeles de ancho*/
-                        /*decidimos manejar celular y tablet en una sola*/
-          grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
-          grid-template-rows: repeat(23, 1fr);  /* Definir las 23 filas, cada una ocupará 1/23 del alto de la ventana */
-          gap: 5pix; /* Espacio entre las columnas y entre las filas= 5 pixeles */
-        }
+      background-color: gray; /* Establece el color de fondo en hexadecimal*/
+      margin: 0; /* Elimina las margenes predeterminadas del navegador */
+      padding: 0; /* Elimina el espacio interno predeterminado, entre el contenido de 
+                    un elemento (como un <div>, <p>, <button>, etc.) y su borde (que es definido por la propiedad border) */
+      font-family: Arial, sans-serif; /* Establece la fuente , primero se hará en Arial, si el navegador no 
+                                        tiene esa letra o fuente, se hará en cualquier fuente que no tenga adornos en los 
+                                        extremos, es decir cualquier fuente sans-serif*/
+      font-size: clamp(14px, calc(1vw + 1vh), 50px); /* El tamaño de la fuente sera responsivo y adaptable, y estará restringido
+                                                        o "clampeado" desde los 14 pixeles hasta los 50 pixeles, de manera que 
+                                                        el texto puede tomar entre esos valores.
+                                                        La forma dinamica como evaluara que tanto crece la letra, será:
+                                                          Si el tamaño de la ventana es 
+                                                              ancho=1000 pix
+                                                              alto= 800 pix
+                                                          En este caso
+                                                              1 vw = 1 % de 1000 pixeles =10 pixeles.
+                                                              1 vh = 1 % de 800 pixeles = 8 pixeles
+                                                              calc(1vw+1vh) =calc(10+8) =calc(18pixeles)
+                                                        El tamaño de la letra para cuando la ventana mide 100*800 pix
+                                                        sera de 18 pixeles.
+                                                        Como ese valor esta entre 14 y 50, sale normal, pero si alguna vea 
+                                                        escalamos la ventana super pequeña, el valor minimo de la letra sera 14 
+                                                        asi los calculos digan un valor menor, y si la escalamos super gigante, el
+                                                        valor máximo de la letra sera 50 pix, asi los cálculos digan un valor mayor.*/
+      line-height: 2em !important; /* con important lo que hacemos es decirle al navegador que esta regla debe aplicarse 
+                                      incluso si hay otras reglas, que podrian tener mayor especifidad, o con las cuales tenga 
+                                      conflicto.*/
+                                  /* "em" es el tamaño de la letra (padre) ,  
+                                      osea, si el tamaño de letra es 16 pix, la linea de altura que divide una
+                                      linea de otra sera 2*16=32 pix, esto lo que nos garantiza es que esta altura es 
+                                      responsiva o adaptable, segun el tamaño que tenga la letra */ 
+      letter-spacing: 0.12em !important;
+      word-spacing: 0.16em !important;
+    }
 
-    body /* Cuerpo */
-        {
-          width:98.7vw; /* 100% del ancho de la ventana  */
-          height: 100vh; /* 100% del alto de la ventana  */       
-          display: flex; /*el contenido interno se adapta a la caja invisible del body*/
-          flex-direction: column; /* Alineamos los elementos en una columna */
-          justify-content: flex-start; /* Alineamos los elementos en la parte superior */
+header /* encabezado */
+      {
+        width: 98.7w; /* 98.7% del ancho de la ventana  */
+        height: 13vh; /* 13% del alto de la ventana */
+        padding: 0; /* sin padding */
+        margin: 0; /* cero margenes*/
+        border:0; /*sin borde*/
+        
+        background-image: url('imagenes/texturas/textura_fondo_blanco_desvanecida.jpg');
+        background-size: cover; /* Hace que la imagen cubra todo el espacio del header */
+        background-position: center center; /* Centra la imagen dentro del header */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
 
-          background-color: gray; /* Establece el color de fondo en hexadecimal*/
-          margin: 0; /* Elimina las margenes predeterminadas del navegador */
-          padding: 0; /* Elimina el espacio interno predeterminado, entre el contenido de 
-                        un elemento (como un <div>, <p>, <button>, etc.) y su borde (que es definido por la propiedad border) */
-          font-family: Arial, sans-serif; /* Establece la fuente , primero se hará en Arial, si el navegador no 
-                                            tiene esa letra o fuente, se hará en cualquier fuente que no tenga adornos en los 
-                                            extremos, es decir cualquier fuente sans-serif*/
-          font-size: clamp(14px, calc(1vw + 1vh), 50px); /* El tamaño de la fuente sera responsivo y adaptable, y estará restringido
-                                                            o "clampeado" desde los 14 pixeles hasta los 50 pixeles, de manera que 
-                                                            el texto puede tomar entre esos valores.
-                                                            La forma dinamica como evaluara que tanto crece la letra, será:
-                                                              Si el tamaño de la ventana es 
-                                                                  ancho=1000 pix
-                                                                  alto= 800 pix
-                                                              En este caso
-                                                                  1 vw = 1 % de 1000 pixeles =10 pixeles.
-                                                                  1 vh = 1 % de 800 pixeles = 8 pixeles
-                                                                  calc(1vw+1vh) =calc(10+8) =calc(18pixeles)
-                                                            El tamaño de la letra para cuando la ventana mide 100*800 pix
-                                                            sera de 18 pixeles.
-                                                            Como ese valor esta entre 14 y 50, sale normal, pero si alguna vea 
-                                                            escalamos la ventana super pequeña, el valor minimo de la letra sera 14 
-                                                            asi los calculos digan un valor menor, y si la escalamos super gigante, el
-                                                            valor máximo de la letra sera 50 pix, asi los cálculos digan un valor mayor.*/
-          line-height: 2em !important; /* con important lo que hacemos es decirle al navegador que esta regla debe aplicarse 
-                                          incluso si hay otras reglas, que podrian tener mayor especifidad, o con las cuales tenga 
-                                          conflicto.*/
-                                      /* "em" es el tamaño de la letra (padre) ,  
-                                          osea, si el tamaño de letra es 16 pix, la linea de altura que divide una
-                                          linea de otra sera 2*16=32 pix, esto lo que nos garantiza es que esta altura es 
-                                          responsiva o adaptable, segun el tamaño que tenga la letra */ 
-          letter-spacing: 0.12em !important;
-          word-spacing: 0.16em !important;
-        }
+        display: flex; /*flex es para poder ajustar los dos iconos dentro del papá:header ya que 
+                          con el metodo de cajas no se pueden ajustar los iconos, solo el texto*/
+        justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
+        align-items: center; /*alinea los elementos dentro verticalmente en el centro.de la caja*/
+      }
 
-    header /* encabezado */
-        {
-          position: relative;
-          top: 10vh; /* Mueve el header 10px hacia abajo */
+.logoencabezado /* clase para logo del encabezado  */
+      {
+        width: 6em; /* 10% del ancho de la ventana  */
+        height: 6em; /* 10% del alto de la ventana  */       
+        cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+        transition: color 0.3s ease; /*que las transiciones que haga cuando le den clic sean en 0.3 seg*/
+      }
 
-          width: 98.7w; /* 98.7% del ancho de la ventana  */
-          height: 13vh; /* 13% del alto de la ventana */
-          padding: 0; /* sin padding */
-          margin: 0; /* cero margenes*/
-          border:0; /*sin borde*/
-          
-          background-image: url('imagenes/texturas/textura_fondo_blanco_desvanecida.jpg');
-          background-size: cover; /* Hace que la imagen cubra todo el espacio del header */
-          background-position: center center; /* Centra la imagen dentro del header */
-          background-repeat: no-repeat; /* Evita que la imagen se repita */
+.logoencabezado:hover 
+      {
+        /* Cambia el color del fondo cuando se pasa el mouse */ 
+        /*border: 25px solid red; */ /*sólido*/
+        box-shadow: 0px 0px 100px red; /* Sombra */
+      }
 
-          display: flex; /*flex es para poder ajustar los dos iconos dentro del papá:header ya que 
-                            con el metodo de cajas no se pueden ajustar los iconos, solo el texto*/
-          justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
-          align-items: center; /*alinea los elementos dentro verticalmente en el centro.de la caja*/
-        }
+.iconoiniciarsesion
+      {
+        width: 6em; /* 10% del ancho de la ventana  */
+        height: 6em; /* 10% del alto de la ventana  */        
+        cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+        transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
+      }
 
-    .logoencabezado /* clase para logo del encabezado  */
-        {
-          width: 6em; /* 10% del ancho de la ventana  */
-          height: 6em; /* 10% del alto de la ventana  */       
-          cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
-          transition: color 0.3s ease; /*que las transiciones que haga cuando le den clic sean en 0.3 seg*/
-        }
+.iconoiniciarsesion:hover 
+      {
+        /* Cambia el color del fondo cuando se pasa el mouse */
+        /*border: 25px solid red; */ /*sólido*/
+        box-shadow: 0px 0px 100px red; /* Sombra  */
+      }
 
-    .logoencabezado:hover 
-          {
-            /* Cambia el color del fondo cuando se pasa el mouse */ 
-            /*border: 25px solid red; */ /*sólido*/
-            box-shadow: 0px 0px 100px red; /* Sombra */
-          }
-
-    .iconoiniciarsesion
-          {
-            width: 6em; /* 10% del ancho de la ventana  */
-            height: 6em; /* 10% del alto de la ventana  */        
-            cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
-            transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
-          }
-
-    .iconoiniciarsesion:hover 
-          {
-            /* Cambia el color del fondo cuando se pasa el mouse */
-            /*border: 25px solid red; */ /*sólido*/
-            box-shadow: 0px 0px 100px red; /* Sombra  */
-          }
-
-    figure
-          {
-            display: flex; /*el contenido interno se adapta a la caja invisible del figure*/
-            align-items: center; /*alinea los elementos dentro verticalmente en el centro.*/
-            margin:1em;
-          }
+figure
+      {
+        display: flex; /*el contenido interno se adapta a la caja invisible del figure*/
+        align-items: center; /*alinea los elementos dentro verticalmente en el centro.*/
+        margin:1em;
+      }
 
 
 
@@ -221,5 +205,5 @@ a {
 }
 
   
-}
+
 
