@@ -68,7 +68,7 @@ header /* encabezado */
         border:0; /*sin borde*/
         
         background-color: white;
-        background-image: url('imagenes\texturas\textura fondo blanco.jpg'); /* Ruta de tu imagen */
+        background-image: url('imagenes\texturas\textura_fondo_blanco_desvanecida.jpg'); /* Ruta de tu imagen */
         background-size: cover; /* Hace que la imagen cubra todo el espacio del header */
         background-position: center center; /* Centra la imagen dentro del header */
         background-repeat: no-repeat; /* Evita que la imagen se repita */
