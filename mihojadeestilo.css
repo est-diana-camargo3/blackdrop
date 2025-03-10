@@ -61,21 +61,21 @@ body /* Cuerpo */
 
 header /* encabezado */
       {
-        width: 98.7w; /* 100% del ancho de la ventana  */
-        height: 13vh; /* 20% del alto de la ventana */
+        width: 98.7w; /* 98.7% del ancho de la ventana  */
+        height: 13vh; /* 13% del alto de la ventana */
         padding: 0; /* sin padding */
         margin: 0; /* cero margenes*/
         border:0; /*sin borde*/
         
-        background-color: white;
-        background-image: url('imagenes\texturas\textura_fondo_blanco_desvanecida.jpg'); /* Ruta de tu imagen */
+        background-image: url('imagenes/texturas/textura_fondo_blanco_desvanecida.jpg');
         background-size: cover; /* Hace que la imagen cubra todo el espacio del header */
         background-position: center center; /* Centra la imagen dentro del header */
         background-repeat: no-repeat; /* Evita que la imagen se repita */
 
-        display: flex; /*el contenido interno se adapta o se entra en la caja invisible del header*/
+        display: flex; /*flex es para poder ajustar los dos iconos dentro del papá:header ya que 
+                          con el metodo de cajas no se pueden ajustar los iconos, solo el texto*/
         justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
-        align-items: center; /*alinea los elementos dentro verticalmente en el centro.*/
+        align-items: center; /*alinea los elementos dentro verticalmente en el centro.de la caja*/
       }
 
 .logoencabezado /* clase para logo del encabezado  */
