@@ -43,21 +43,30 @@
 
         </body>  <!-- Paso 7: Creamos el body, el cual contendrá todo lo que se mostrara en el browser o navegador (ejm: en chrome)
                               al darle display a la pagina -->
-                 <h1> Titulo 1: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h1> 
-                 <!-- Paso 8: Iniciamos a poner elementos en la pagina, ejm: un título de nivel 1  -->
-                 <h2> Titulo 2: Compra tu proteina en Blackdrop- Colombia, y paga con nequi,visa,pay-u o contraentrega  </h2> 
-                  <p>" Parrafo 3: blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla
-                    blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla
-                  </p>
+                 <h1>¡Bienvenido a BlackDrop! </h1>
 
                   <form id="registro" method="get" enctype="multipart/form-data">
-                    <h2>Formulario de Registro</h2>
-                    <table border="1">
+                    <h2>Inicio de sesion</h2>
+                    <table border="0.5">
                         <tr>
-                            <td><label for="nombre">Nombre:</label></td>
-                            <td><input type="text" id="nombre" name="nombre"></td>
+                            <td><label for="usuario">Usuario:</label></td></tr>
+                        <tr><td><input type="text" id="usuario" name="usuario" required></td>
                         </tr>
+                        <tr>
+                          <td><label for="pass">Contrasena:</label></td></tr>
+                          <tr></tr><td><input type="text" id="pass" name="pass" required></td>
+                      </tr>
+                      <tr>
+                        <td><label for="tipo_cuenta">Tipo de cuenta:</label></td></tr>
+                        <td><label for="cliente">Cliente</label>
+                        <input type="radio" id="cliente" name="tipo_cliente" required></td>
+
+                        <td><label for="Admin">Administrador</label>
+                          <input type="radio" id="Admin" name="tipo_admin" required></td>
+                    </tr>
                     </table>
+
+                    <button type="submit">Iniciar Sesion</button>
                 </form>
                 
         <body>  
