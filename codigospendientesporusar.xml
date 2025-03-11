@@ -28,41 +28,9 @@
 
       
           
-    header /* encabezado */
-          {
-            /*como el header es hijo de html, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
-            /*grid-column: 1 / 13; /* 12 columnas (de la 1 a la 13) */
-            /*grid-row: 1 / 3; /* 24 filas (de la 1 a la 24) */
-            width: 98.7w; /* 98.7% del ancho de la ventana  */
-            height: 13vh; /* 13% del alto de la ventana */
-            padding: 0; /* sin padding */
-            margin: 0; /* cero margenes*/
-            border:0; /*sin borde*/
-            /*background-image: url('imagenes/texturas/textura_fondo_blanco_desvanecida.jpg');
-           /*background-size: cover; /* Hace que la imagen cubra todo el espacio del header */
-            /*background-position: center center; /* Centra la imagen dentro del header */
-            /*background-repeat: no-repeat; /* Evita que la imagen se repita */
 
-            display: flex; /*flex es para poder ajustar los dos iconos dentro del papá:header ya que 
-                            con el metodo de cajas no se pueden ajustar los iconos, solo el texto*/
-            justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
-            align-items: center; /*alinea los elementos dentro verticalmente en el centro.de la caja*/
-          }
 
-    main /* encabezado */
-          {
- 
-            background-color: yellow;
-            /*background-image: url('imagenes/texturas/textura_fondo_blanco_desvanecida.jpg');*/
-            /*    background-size: cover; /* Hace que la imagen cubra todo el espacio del header */
-            /*  background-position: center center; /* Centra la imagen dentro del header */
-            /*background-repeat: no-repeat; /* Evita que la imagen se repita */
 
-            /*display: flex; /*flex es para poder ajustar los dos iconos dentro del papá:header ya que 
-                            con el metodo de cajas no se pueden ajustar los iconos, solo el texto*/
-            /*justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
-            /*align-items: center; /*alinea los elementos dentro verticalmente en el centro.de la caja*/
-          }
 
     .logoencabezado /* clase para logo del encabezado  */
           {
@@ -130,6 +98,7 @@
 
         line-height: 2em !important;
         font-weight: bold; /* Esto pone el texto en negrita */
+         text-align: left; /* Alinea el texto del h1 a la izquierda */
       }
 
 

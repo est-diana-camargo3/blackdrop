@@ -16,7 +16,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
     html /* No tiene papá, El es el papá, aqui configuramos TODA la página( body (header+main) + footer )*/
           {
             background-image: url('imagenes/division12columnas.jpg');  /*configuramos la imagen de fondo de la grilla*/
-            background-size: contain; /*que muestre toda la imagen*/
+            background-size: 100% 100%; /* La imagen se estira para cubrir todo el contenedor */
             background-repeat: no repeat-x;
             background-position: center; /* Centra la imagen */
             background-attachment: fixed; /* Asegura que la imagen de fondo no se desplace */
@@ -39,24 +39,21 @@ section, article, nav, aside, header, footer, main {  display: block; }
                         que contenga a html*/  
           }
 
-    body /* Cuerpo , su papa es html */
+    html body /* Cuerpo , su papa es html */
           {
             /*como el body es hijo de html, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
-            grid-column: 1 / 12; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-            grid-row: 1 / 22; /* ocupara 21 filas (de la 1 a la 21, no incluye el 22 ) */
-            background-color: bisque;
-            display:grid;/*modelo que usaremos en la estructura: grid o grilla            
-            /*           /*El body EN SI MISMO también sera  desarrollado como un modelo de grid*/
-            /*              display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
-            /*               grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
-                                                                    /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-            /*                grid-template-rows: repeat(24, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
-                                                                    /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)
-            /*                gap: 0px; /* Espacio entre las columnas y entre las filas= 0 pixeles;*/
+            grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
+            grid-row: 1 / 25; /* ocupara 21 filas (de la 1 a la 24, no incluye el 25 ) */
+            background-color: rgba(255, 165, 0, 0.15); /* Naranja con 30% de transparencia */
+            /*El body EN SI MISMO también sera  desarrollado como un modelo de grid*/
+                display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
+                grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
+                                                        /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+                grid-template-rows: repeat(24, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+                                                        /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             margin:0;     /*reiniciamos las margenes a cero*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
 
             font-family: Arial, sans-serif; /* Establece la fuente , primero se hará en Arial, si el navegador no 
                                               tiene esa letra o fuente, se hará en cualquier fuente que no tenga adornos en los 
@@ -92,16 +89,69 @@ section, article, nav, aside, header, footer, main {  display: block; }
             /*justify-content: flex-start; /* Alineamos los elementos en la parte superior */
          }
 
-    footer 
+    html body header /* encabezado */
          {
-            /*como el footer es hijo de html, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
-            grid-column: 5 / 12; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-            grid-row: 22 / 25; /* ocupara 3 filas (de la 22 a la 24, NO incluye la 25 ) */
-            background-color: purple; /* Establece el color de fondo en hexadecimal*/
-            display:grid;/*modelo que usaremos en la estructura: grid o grilla    */
-            margin:5vh;     /*reiniciamos las margenes a cero*/
+           /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
+           grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
+           grid-row: 1 / 4; /* ocupara 3 filas (de la 1 a la 3, NO incluye la 4 ) */
+           display:flex;
+           margin:0;     /*reiniciamos las margenes a cero*/
+           padding:0;    /*reiniciamos el padding o relleno a cero*/
+           border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+           background-image: url('imagenes/texturas/texturafondoblanco.jpg');
+           background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
+           background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
+           background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
+           background-position: center center; /* Centra la imagen dentro del header */
+           background-repeat: no-repeat; /* Evita que la imagen se repita */
+           justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
+           align-items: center; /*alinea los elementos verticalmente en el centro del flex-header*/
+         }
+
+    html body main /* contenido principal del main */
+         {
+            /*como el body es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+            grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
+            grid-row: 4 / 22; /* ocupara 21 filas (de la 1 a la 21, no incluye el 22 ) */
+            background-color: rgba(0, 0, 255, 0.15); /* Azul con 15% de transparencia */
+            /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
+            ordenar unos elementos dentro de el*/ 
+                display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
+                grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
+                                                        /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+                grid-template-rows: repeat(24, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+                                                        /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
             margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
+         }
+
+    html body footer 
+         {
+            /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+            grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
+            grid-row: 22 / 25; /* ocupara 3 filas (de la 22 a la 24, NO incluye la 25 ) */
+            background-color: rgba(128, 0, 128, 0.15); /* Morado con 30% de transparencia */
+            display:flex;/*modelo que usaremos en la estructura: flex ya solo es alinearle los elementos dentro   */
+            margin:0;     /*reiniciamos las margenes a cero*/
+            padding:0;    /*reiniciamos el padding o relleno a cero*/
+            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+         }
+
+         .logoencabezado {
+          display: block;
+          width: 100%; /* El logo se ajustará al 100% del contenedor */
+          height: auto; /* Mantiene la relación de aspecto del logo */
+          max-width: 6em; /* Opcional, si quieres que el logo tenga un tamaño máximo */
+          max-height: 6%; /* Asegura que el logo no sea más alto que el header */
+          object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
+          transition: color 0.3s ease;
+        }
+        
+    .logoencabezado:hover 
+         {
+           /* Cambia el color del fondo cuando se pasa el mouse */ 
+           /*border: 25px solid red; /*sólido*/
+           box-shadow: 0px 0px 50px red; /* Sombra */
          }
 }
