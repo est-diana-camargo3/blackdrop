@@ -15,6 +15,19 @@ section, article, nav, aside, header, footer, main {  display: block; }
 { 
     html /* No tiene papá, El es el papá, aqui configuramos TODA la página( body (header+main) + footer )*/
           {
+            background-image: url('imagenes/division12columnas.jpg');  /*configuramos la imagen de fondo de la grilla*/
+            background-size: contain; /*que muestre toda la imagen*/
+            background-repeat: no repeat-x;
+            background-position: center; /* Centra la imagen */
+            background-attachment: fixed; /* Asegura que la imagen de fondo no se desplace */
+            box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del contenedor */ 
+
+            width:100vw;  /*que el ancho de la pagina completa sea igual al 100% de la ventana*/
+            height:100vh; /*que el alto de la pagina completa sea igual al 100% de la ventana*/          
+            padding:0;    /*reiniciamos el padding o relleno a cero*/
+            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+            margin: 1wh; /* 10% arriba, 10% a la derecha, 30% abajo, 40% a la izquierda */
+
             display:grid;/*modelo que usaremos en la estructura: grid o grilla
                             12 columnas para resolucion de 1024 a 1920 o mas
                             4 columnas para celular y tablet de 0 a 1024 pixeles de ancho*/
@@ -25,30 +38,17 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                                     /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             gap: 0px; /*espacio entre las columnas cera cero porque el fondo total siempre debe ser solido y asi yo le diera
                         aqui algun espacio, lo ignoraria porque no hay un fondo debajo de este, osea no hay otra etiqueta 
-                        que contenga a html*/
-            width:100vw;  /*que el ancho de la pagina completa sea igual al 100% de la ventana*/
-            height:100vh; /*que el alto de la pagina completa sea igual al 100% de la ventana*/          
-            padding:0;    /*reiniciamos el padding o relleno a cero*/
-            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin: 1wh; /* 10% arriba, 10% a la derecha, 30% abajo, 40% a la izquierda */
-            background-image: url('imagenes/division12columnas.jpg');  /*configuramos la imagen de fondo de la grilla*/
-            background-size: contain; /*que muestre toda la imagen*/
-            background-repeat: no repeat-x;
-            background-position: center; /* Centra la imagen */
-            background-attachment: fixed; /* Asegura que la imagen de fondo no se desplace */
-            box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del contenedor */       
-               
+                        que contenga a html*/  
           }
 
     body /* Cuerpo , su papa es html */
           {
-            display:grid;/*modelo que usaremos en la estructura: grid o grilla       
+                 
             /*como el body es hijo de html, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
-            grid-column: 1 / 3; /* ocupara 12 columnas (de la 1 a la 12, sin incluir el 13) */
-            grid-row: 1 / 23; /* ocupara 22 filas (de la 1 a la 22, sin incluir la 23 ) */
+            grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
+            grid-row: 1 / 22; /* ocupara 21 filas (de la 1 a la 21, no incluye el 22 ) */
             background-color: bisque;
-            width:100vw;
-             
+            display:grid;/*modelo que usaremos en la estructura: grid o grilla            
             /*           /*El body EN SI MISMO también sera  desarrollado como un modelo de grid*/
             /*              display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
             /*               grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
@@ -97,9 +97,10 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
     footer 
           {
-            /*como el footer es hijo de html, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
-            grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, sin incluir el 13) */
-            grid-row: 23 / 25; /* ocupara 2 filas (de la 23 a la 24, sin incluir la 25 ) */
+            display:grid;/*modelo que usaremos en la estructura: grid o grilla       
+            /*como el footer es hijo de html, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+            grid-column: 1 / 5; /* ocupara 12 columnas (de la 1 a la 12, no incluiye el 13) */
+            grid-row: 22 / 25; /* ocupara 3 filas (de la 22 a la 24, NO incluye la 25 ) */
             gap: 0px; /*espacio entre las columnas 0 pix; se va a configurar con margin */
             background-color: purple; /* Establece el color de fondo en hexadecimal*/
           }
