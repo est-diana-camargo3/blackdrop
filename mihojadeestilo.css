@@ -21,13 +21,11 @@ section, article, nav, aside, header, footer, main {  display: block; }
             background-position: center; /* Centra la imagen */
             background-attachment: fixed; /* Asegura que la imagen de fondo no se desplace */
             box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del contenedor */ 
-
             width:100vw;  /*que el ancho de la pagina completa sea igual al 100% de la ventana*/
             height:100vh; /*que el alto de la pagina completa sea igual al 100% de la ventana*/          
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin: 1wh; /* 10% arriba, 10% a la derecha, 30% abajo, 40% a la izquierda */
-
+            margin:0; /* 10% arriba, 10% a la derecha, 30% abajo, 40% a la izquierda */
             display:grid;/*modelo que usaremos en la estructura: grid o grilla
                             12 columnas para resolucion de 1024 a 1920 o mas
                             4 columnas para celular y tablet de 0 a 1024 pixeles de ancho*/
@@ -43,9 +41,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
     body /* Cuerpo , su papa es html */
           {
-                 
             /*como el body es hijo de html, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
-            grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
+            grid-column: 1 / 12; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
             grid-row: 1 / 22; /* ocupara 21 filas (de la 1 a la 21, no incluye el 22 ) */
             background-color: bisque;
             display:grid;/*modelo que usaremos en la estructura: grid o grilla            
@@ -97,19 +94,19 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
     footer 
           {
-            display:grid;/*modelo que usaremos en la estructura: grid o grilla       
             /*como el footer es hijo de html, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
-            grid-column: 1 / 5; /* ocupara 12 columnas (de la 1 a la 12, no incluiye el 13) */
-            grid-row: 22 / 25; /* ocupara 3 filas (de la 22 a la 24, NO incluye la 25 ) */
+            grid-column: 1 / 5; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
+            grid-row: 22 / 24; /* ocupara 3 filas (de la 22 a la 24, NO incluye la 25 ) */
             gap: 0px; /*espacio entre las columnas 0 pix; se va a configurar con margin */
             background-color: purple; /* Establece el color de fondo en hexadecimal*/
+            display:grid;/*modelo que usaremos en la estructura: grid o grilla    */
           }
 
     header /* encabezado */
           {
-                    /*como el body es hijo de html, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
-                   /* grid-column: 1 / 13; /* 12 columnas (de la 1 a la 13) */
-                    /*grid-row: 1 / 3; /* 24 filas (de la 1 a la 24) */
+            /*como el header es hijo de html, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
+            /*grid-column: 1 / 13; /* 12 columnas (de la 1 a la 13) */
+            /*grid-row: 1 / 3; /* 24 filas (de la 1 a la 24) */
             width: 98.7w; /* 98.7% del ancho de la ventana  */
             height: 13vh; /* 13% del alto de la ventana */
             padding: 0; /* sin padding */
