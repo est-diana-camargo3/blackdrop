@@ -11,9 +11,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
            COnfiguracion para ESCRITORIO: pantallas más grandes que 1280 px
    ================================================================================ */
 
-@media (min-width: 1280px) 
-{ 
-    html /* No tiene papá, El es el papá, aqui configuramos TODA la página( body (header+main) + footer )*/
+  html /* No tiene papá, El es el papá, aqui configuramos TODA la página( body (header+main) + footer )*/
           {
             background-image: url('imagenes/division12columnas.jpg');  /*configuramos la imagen de fondo de la grilla*/
             background-size: 100% 100%; /* La imagen se estira para cubrir todo el contenedor */
@@ -168,4 +166,3 @@ section, article, nav, aside, header, footer, main {  display: block; }
            box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
            /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
          }
-}
