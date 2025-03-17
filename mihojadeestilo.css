@@ -106,6 +106,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
            background-repeat: no-repeat; /* Evita que la imagen se repita */
            justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
            align-items: center; /*alinea los elementos verticalmente en el centro del flex-header*/
+           height: 10vw;
+          
          }
 
     html body main /* contenido principal del main */
