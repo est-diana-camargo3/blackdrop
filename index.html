@@ -1,74 +1,114 @@
+
 <!-- Página web Blackdrop -->
+ <!--Comentario en githubbbbb-->
 
-<!DOCTYPE html> <!-- Paso 1: Declaramos el tipo de documento que vamos a hacer, 
-                     esto no es una etiqueta o elemento html, sino que es un declaración o linea de codigo
-                     para que el browser o navegador entienda que el tipo de archivo es html -->
+ <!DOCTYPE html> <!-- Paso 1: Declaramos el tipo de documento que vamos a hacer, 
+ esto no es una etiqueta o elemento html, sino que es un declaración o linea de codigo
+ para que el browser o navegador entienda que el tipo de archivo es html -->
 
-    <html>      <!-- Paso 2: Indicamos el formato del contenido, denominando el root element o elemento raiz:
-                     nuestro root element es <html> lo cual indica que el formato es html
-                     osea todo lo que esta dentro de esta etiquetas es formato html.
-                     dentro de este elemento,se contiene todo,(de ahi su nombre),no puede haber otro elemento que lo contenga a él -->
-        
-        <head>  <!-- Paso 3: Creamos el head o encabezado, el cual contiene los elementos que 
-                            NO son renderizados ó mostrados al darle display a la pagina
-                            osea no se ven en la pagina real, sino que es codigo que hay "por debajo"
-                            Aqui van los metadatos, por ejemplo: el idioma, el titulo de la pagina, 
-                            los nombre de los autores, la descripcion del contenido de la pagina 
-                            las hojas de estilo CSS (opcional, buena practica manejarlas en una pagina aparte).
-                            ...etc. -->
-            <link rel="stylesheet" href="mihojadeestilo.css"> </link > 
-                  <!-- Paso 4: Opcional- Linkeamos o enlazamos la CSS o cascade style sheet ó "hoja de estilos", que tendra este documento
-                               La cual es un archivo codificado EXTERNO  que esta dentro de la misma carpeta del 
-                               proyecto (Buena practica hacerlo asi) 
-                               donde dice el color, tamaño y estilo visual de toda la página 
-                               ese archivo codificado se llama se llama "mihojadeestilo.css" y su "rel" ó relacion es que es 
-                               una "stylesheet" o hoja de estilo
-                               Como ese archivo codificado esta en una pagina externa dentro de la misma carpeta del proyecto 
-                               se enlaza con "link" y no con <a> que es para enlaces en el mismo documento o pagina o para urls --> 
-                                    
+<html>      <!-- Paso 2: Indicamos el formato del contenido, denominando el root element o elemento raiz:
+ nuestro root element es <html> lo cual indica que el formato es html
+ osea todo lo que esta dentro de esta etiquetas es formato html.
+ dentro de este elemento,se contiene todo,(de ahi su nombre),no puede haber otro elemento que lo contenga a él -->
+<head> <!-- Head ó Metadatos-->        
+    <!-- Paso 3: Creamos el head o encabezado, el cual contiene los elementos que 
+          NO son renderizados ó mostrados al darle display a la pagina
+          osea no se ven en la pagina real, sino que es codigo que hay "por debajo"
+          Aqui van los metadatos, por ejemplo: el idioma, el titulo de la pagina, 
+          los nombre de los autores, la descripcion del contenido de la pagina 
+          las hojas de estilo CSS (opcional, buena practica manejarlas en una pagina aparte).
+          ...etc. -->
+    <!--esta linea de codigo es para las versiones anteriores de internet explorer,
+    if intenet explorer es less than o menor que la version 9 
+    que es cargar html_shiv, es la que esta en el libro 
+    esta linea de codigo debe quedar en comentario y solo se ejectua si la version es menor.-->
+          <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->  
 
-            <meta charset="utf-8"> </meta>  <!-- Paso 5: Definimos la codificacion de caracteres o "idioma", el de nosotros es:
-                                                         Unicode Transformation Format 8 bits, que es un formato de codificacion
-                                                         que acepta: tildes, eñes, simbolos y caracteres del idioma español
-                                                         esto para que cuando se visualice la pagina en chrome aparezcan todas 
-                                                         las letras y caracteres del idioma español, sin error-->
+    <link rel="stylesheet" href="mihojadeestilo.css"> </link > 
+          <!-- Paso 4: Opcional- Linkeamos o enlazamos la CSS o cascade style sheet ó "hoja de estilos", que tendra este documento
+                      La cual es un archivo codificado EXTERNO  que esta dentro de la misma carpeta del 
+                      proyecto (Buena practica hacerlo asi) 
+                      donde dice el color, tamaño y estilo visual de toda la página 
+                      ese archivo codificado se llama se llama "mihojadeestilo.css" y su "rel" ó relacion es que es 
+                      una "stylesheet" o hoja de estilo
+                      Como ese archivo codificado esta en una pagina externa dentro de la misma carpeta del proyecto 
+                      se enlaza con "link" y no con <a> que es para enlaces en el mismo documento o pagina o para urls --> 
+
+    <meta charset="utf-8"> </meta>  <!-- Paso 5: Definimos la codificacion de caracteres o "idioma", el de nosotros es:
+                                              Unicode Transformation Format 8 bits, que es un formato de codificacion
+                                              que acepta: tildes, eñes, simbolos y caracteres del idioma español
+                                              esto para que cuando se visualice la pagina en chrome aparezcan todas 
+                                              las letras y caracteres del idioma español, sin error-->
+    
+    <title> Venta de proteinas para deportistas en Colombia, empresa BlackDrop </title>  
+          <!-- Paso 6: Definimos el titulo que llevara la pagina, en el navegador, el cual, 
+                      aparecerá en la pestaña de navegación , y servira para que nos encuentren 
+                      debe ser corto conciso y claro -->                  
+    <meta name="Pagina de venta de proteinas para deportistas en Colombia, empresa BlackDrop" content="width=device-width, initial-scale=1.0"> 
+          <!--Hace que la página se ajuste correctamente en dispositivos móviles, asegurando que el ancho se ajuste al dispositivo y la escala inicial sea 1.-->
+</head>
+
+<body>  <!-- Body-->
+    <!-- Paso 7: Creamos el body, el cual contendrá todo lo que se mostrara en el browser o navegador (ejm: en chrome)
+                al darle display a la pagina -->
+<header> <!-- headER ó encabezado-->                              
+    <figure> <!--Imagen logo-->               
+    <img src="imagenes/logos/logo_negro_letras_blancas_rojas.png" alt="Logo de la empresa Blackdrop" class="logoencabezado" id="logoencabezado">
+    </figure>
+
+    <figure> <!--Imagen iniciar sesion-->               
+    <img src="imagenes/iconos/iniciar_sesion.png" alt="Icono para iniciar sesion" class="iconoiniciarsesion" id="iconoiniciarsesion">                        
+    </figure> 
+    
+</header>
+
+<main> <!-- Main, contenido principal del body-->
+    <!-- Paso 8: Iniciamos a poner elementos en la pagina, ejm: un título de nivel 1  --> 
+    <h1>main</h1>
+    <!-- Ventana del carrito -->
+    <div class="carrito">
+      <h2>Carrito de Compras</h2>
+      <div class="producto">
             
-            <title> Venta de proteinas para deportistas en Colombia, empresa BlackDrop </title>  
-                    <!-- Paso 6: Definimos el titulo que llevara la pagina, en el navegador, el cual, 
-                                 aparecerá en la pestaña de navegación , y servira para que nos encuentren 
-                                 debe ser corto conciso y claro -->
+          <img src="imagenes/proteinas/bi-pro-classic.jpg" alt="Bi Pro Classic">
+          <div class="info">
+              <p>Bi Pro Classic</p>
+              <div class="contador">
+                  <button>-</button>
+                  <span>1</span>
+                  <button>+</button>
+              </div>
+          </div>
+          <!-- Botón de eliminar -->
+          <button class="eliminar">X</button>
+      </div>
+      <div class="producto">
+          <img src="imagenes/proteinas/bi-pro-lite.jpg" alt="Bi Pro Lite">
+          <div class="info">
+              <p>Bi Pro Lite</p>
+              <div class="contador">
+                  <button>-</button>
+                  <span>1</span>
+                  <button>+</button>
+              </div>
+          </div>
+           <!-- Botón de eliminar -->
+           <button class="eliminar">X</button>
+      </div>
+      <!-- Botón de Ir a pagar -->
+      <div class="boton-pago">
+          <button>Ir a Pagar</button>
+      </div>
+  </div>
+</main>   
 
-        </head>
+<footer> <!-- Footer, pie de pagina-->
+       <!--   <a href="https://www.instagram.com/diana.camargo3/"> Mayerly Camargo</a>, -->
+       <h1>footer</h1>                             
+</footer>              
+</body> 
 
 
-        </body>  <!-- Paso 7: Creamos el body, el cual contendrá todo lo que se mostrara en el browser o navegador (ejm: en chrome)
-                              al darle display a la pagina -->
-                 <h1>¡Bienvenido a BlackDrop! </h1>
-
-                  <form id="registro" method="get" enctype="multipart/form-data">
-                    <h2>Inicio de sesion</h2>
-                    <table border="0.5">
-                        <tr>
-                            <td><label for="usuario">Usuario:</label></td></tr>
-                        <tr><td><input type="text" id="usuario" name="usuario" required></td>
-                        </tr>
-                        <tr>
-                          <td><label for="pass">Contrasena:</label></td></tr>
-                          <tr></tr><td><input type="text" id="pass" name="pass" required></td>
-                      </tr>
-                      <tr>
-                        <td><label for="tipo_cuenta">Tipo de cuenta:</label></td></tr>
-                        <td><label for="cliente">Cliente</label>
-                        <input type="radio" id="cliente" name="tipo_cliente" required></td>
-
-                        <td><label for="Admin">Administrador</label>
-                          <input type="radio" id="Admin" name="tipo_admin" required></td>
-                    </tr>
-                    </table>
-
-                    <button type="submit">Iniciar Sesion</button>
-                </form>
-                
-        <body>  
-
-    </html> 
+</html>
