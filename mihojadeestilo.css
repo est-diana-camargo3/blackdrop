@@ -37,6 +37,12 @@ section, article, nav, aside, header, footer, main {  display: block; }
                         que contenga a html*/  
           }
 
+
+   /* ================================================================================
+                                 B O D Y
+   ================================================================================ */
+
+
     html body /* Cuerpo , su papa es html */
           {
             /*como el body es hijo de html, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
@@ -87,6 +93,11 @@ section, article, nav, aside, header, footer, main {  display: block; }
             /*justify-content: flex-start; /* Alineamos los elementos en la parte superior */
          }
 
+   /* ================================================================================
+                                 body- H E A D E R 
+   ================================================================================ */
+
+
     html body header /* encabezado */
          {
            /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
@@ -104,9 +115,43 @@ section, article, nav, aside, header, footer, main {  display: block; }
            background-repeat: no-repeat; /* Evita que la imagen se repita */
            justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
            align-items: center; /*alinea los elementos verticalmente en el centro del flex-header*/
-           height: 10vw;
-          
+                    
          }
+         .logoencabezado 
+                        {
+                              display: block;
+                              width: 100%; /* El logo se ajustará al 100% del contenedor */
+                              height: auto; /* Mantiene la relación de aspecto del logo */
+                              max-width: 5.5em; /* 5% del contenedor donde esta:osea del header   */
+                              max-height: 5.5em; /* 5% del contenedor donde esta:osea del header   */
+                              object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
+                              transition: color 0.3s ease;
+                        }
+             
+         .logoencabezado:hover 
+                        {
+                        box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
+                        /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
+                        }
+
+          .iconoiniciarsesion
+                        {
+                          width: 5.5em; /* 5% del contenedor donde esta:osea del header   */
+                          height: 5.5em; /* 5% del contenedor donde esta:osea del header   */       
+                          cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+                          transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
+                        }
+ 
+         .iconoiniciarsesion:hover 
+                        {
+                          box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
+                          /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
+                        }
+
+   /* ================================================================================
+                                 body- M A I N  
+   ================================================================================ */
+
 
     html body main /* contenido principal del main */
          {
@@ -126,6 +171,11 @@ section, article, nav, aside, header, footer, main {  display: block; }
             margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
          }
 
+
+   /* ================================================================================
+                                  body- F O O T E R   
+   ================================================================================ */
+
     html body footer 
          {
             /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
@@ -138,31 +188,4 @@ section, article, nav, aside, header, footer, main {  display: block; }
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
          }
 
-         .logoencabezado {
-          display: block;
-          width: 100%; /* El logo se ajustará al 100% del contenedor */
-          height: auto; /* Mantiene la relación de aspecto del logo */
-          max-width: 6em; /* Opcional, si quieres que el logo tenga un tamaño máximo */
-          max-height: 6%; /* Asegura que el logo no sea más alto que el header */
-          object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
-          transition: color 0.3s ease;
-        }
-        
-    .logoencabezado:hover 
-         {
-          box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
-          /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
-         }
-         .iconoiniciarsesion
-         {
-           width: 6em; /* 10% del ancho de la ventana  */
-           height: 6em; /* 10% del alto de la ventana  */        
-           cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
-           transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
-         }
 
-   .iconoiniciarsesion:hover 
-         {
-           box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
-           /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
-         }
