@@ -7,9 +7,9 @@ section, article, nav, aside, header, footer, main {  display: block; }
         y para aquellos que depronto por lo antiguos no lo hacen, posteriores a internet explorer
         version 8 o anteriores, formateamos estas etiquetas y buscamos la version que las puedan mostrar*/
 
-/* ================================================================================
-           COnfiguracion para ESCRITORIO: pantallas más grandes que 1280 px
-   ================================================================================ */
+  /* ================================================================================
+                                       H T M L 
+  =================================================================================== */
 
   html /* No tiene papá, El es el papá, aqui configuramos TODA la página( body (header+main) + footer )*/
           {
@@ -38,12 +38,11 @@ section, article, nav, aside, header, footer, main {  display: block; }
           }
 
 
-   /* ================================================================================
-                                 B O D Y
-   ================================================================================ */
+    /* ================================================================================
+                                        B O D Y
+    =================================================================================== */
 
-
-    html body /* Cuerpo , su papa es html */
+    body /* Cuerpo , su papa es html */
           {
             /*como el body es hijo de html, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
             grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
@@ -91,101 +90,100 @@ section, article, nav, aside, header, footer, main {  display: block; }
             /*display: flex; /*el contenido interno se adapta a la caja invisible del body*/
             /*flex-direction: column; /* Alineamos los elementos en una columna */
             /*justify-content: flex-start; /* Alineamos los elementos en la parte superior */
-         }
+          }
 
-   /* ================================================================================
-                                 body- H E A D E R 
-   ================================================================================ */
+      /* ================================================================================
+                                        H E A D E R 
+      =================================================================================== */
 
-
-    html body header /* encabezado */
-         {
-           /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
-           grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-           grid-row: 1 / 4; /* ocupara 3 filas (de la 1 a la 3, NO incluye la 4 ) */
-           display:flex;
-           margin:0;     /*reiniciamos las margenes a cero*/
-           padding:0;    /*reiniciamos el padding o relleno a cero*/
-           border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-           background-image: url('imagenes/texturas/texturafondoblanco.jpg');
-           background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
-           background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
-           background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
-           background-position: center center; /* Centra la imagen dentro del header */
-           background-repeat: no-repeat; /* Evita que la imagen se repita */
-           justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
-           align-items: center; /*alinea los elementos verticalmente en el centro del flex-header*/
-                    
-         }
-         .logoencabezado 
-                        {
-                              display: block;
-                              width: 100%; /* El logo se ajustará al 100% del contenedor */
-                              height: auto; /* Mantiene la relación de aspecto del logo */
-                              max-width: 5.5em; /* 5% del contenedor donde esta:osea del header   */
-                              max-height: 5.5em; /* 5% del contenedor donde esta:osea del header   */
-                              object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
-                              transition: color 0.3s ease;
-                        }
-             
-         .logoencabezado:hover 
-                        {
-                        box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
-                        /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
-                        }
-
-          .iconoiniciarsesion
-                        {
-                          width: 5.5em; /* 5% del contenedor donde esta:osea del header   */
-                          height: 5.5em; /* 5% del contenedor donde esta:osea del header   */       
-                          cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
-                          transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
-                        }
- 
-         .iconoiniciarsesion:hover 
-                        {
-                          box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
-                          /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
-                        }
-
-   /* ================================================================================
-                                 body- M A I N  
-   ================================================================================ */
-
-
-    html body main /* contenido principal del main */
-         {
-            /*como el body es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+      header /* encabezado */
+          {
+            /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
             grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-            grid-row: 4 / 22; /* ocupara 21 filas (de la 1 a la 21, no incluye el 22 ) */
-            background-color: rgba(0, 0, 255, 0.15); /* Azul con 15% de transparencia */
-            /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
-            ordenar unos elementos dentro de el*/ 
-                display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
-                grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
-                                                        /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-                grid-template-rows: repeat(24, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
-                                                        /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)
-            padding:0;    /*reiniciamos el padding o relleno a cero*/
-            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
-         }
-
-
-   /* ================================================================================
-                                  body- F O O T E R   
-   ================================================================================ */
-
-    html body footer 
-         {
-            /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
-            grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-            grid-row: 22 / 25; /* ocupara 3 filas (de la 22 a la 24, NO incluye la 25 ) */
-            background-color: rgba(128, 0, 128, 0.15); /* Morado con 30% de transparencia */
-            display:flex;/*modelo que usaremos en la estructura: flex ya solo es alinearle los elementos dentro   */
+            grid-row: 1 / 4; /* ocupara 3 filas (de la 1 a la 3, NO incluye la 4 ) */
+            display:flex;
             margin:0;     /*reiniciamos las margenes a cero*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-         }
+            background-image: url('imagenes/texturas/texturafondoblanco.jpg');
+            background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
+            background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
+            background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
+            background-position: center center; /* Centra la imagen dentro del header */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
+            align-items: center; /*alinea los elementos verticalmente en el centro del flex-header*/
+                      
+          }
+
+          .logoencabezado 
+                          {
+                                display: block;
+                                width: 100%; /* El logo se ajustará al 100% del contenedor */
+                                height: auto; /* Mantiene la relación de aspecto del logo */
+                                max-width: 5.5em; /* 5% del contenedor donde esta:osea del header   */
+                                max-height: 5.5em; /* 5% del contenedor donde esta:osea del header   */
+                                object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
+                                transition: color 0.3s ease;
+                          }
+              
+          .logoencabezado:hover 
+                          {
+                          box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
+                          /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
+                          }
+
+          .iconoiniciarsesion
+                          {
+                            width: 5.5em; /* 5% del contenedor donde esta:osea del header   */
+                            height: 5.5em; /* 5% del contenedor donde esta:osea del header   */       
+                            cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+                            transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
+                          }
+  
+          .iconoiniciarsesion:hover 
+                          {
+                            box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
+                            /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
+                          }
+
+      /* ================================================================================
+                                          M A I N  
+      =================================================================================== */
+
+      main /* contenido principal del body */
+          {
+              /*como el body es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+              grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
+              grid-row: 4 / 22; /* ocupara 21 filas (de la 1 a la 21, no incluye el 22 ) */
+              background-color: rgba(0, 0, 255, 0.15); /* Azul con 15% de transparencia */
+              /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
+              ordenar unos elementos dentro de el*/ 
+                  display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
+                  grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
+                                                          /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+                  grid-template-rows: repeat(24, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+                                                          /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)
+              padding:0;    /*reiniciamos el padding o relleno a cero*/
+              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+              margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
+          }
+
+
+      /* ================================================================================
+                                         F O O T E R   
+      =================================================================================== */
+
+      footer 
+          {
+              /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+              grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
+              grid-row: 22 / 25; /* ocupara 3 filas (de la 22 a la 24, NO incluye la 25 ) */
+              background-color: rgba(128, 0, 128, 0.15); /* Morado con 30% de transparencia */
+              display:flex;/*modelo que usaremos en la estructura: flex ya solo es alinearle los elementos dentro   */
+              margin:0;     /*reiniciamos las margenes a cero*/
+              padding:0;    /*reiniciamos el padding o relleno a cero*/
+              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+          }
 
 
