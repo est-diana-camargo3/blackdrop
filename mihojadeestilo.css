@@ -209,11 +209,12 @@ section, article, nav, aside, header, footer, main {  display: block; }
               border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
           }
           a {
-            display: inline; /*situarlos horizontalmente, en lugar de verticalmente*/
+            /*display: inline; /*situarlos horizontalmente, en lugar de verticalmente*/            
+            display:block; /*situar los elementos en columna*/
             margin-left: 20px; /* Márgenes izquierdo y derecho funcionan */
             margin-right: 20px;
             padding: 5px;
-            text-decoration: none;
+            text-decoration: underline;
             background-color: lightcoral;
           }
           .a:hover 
