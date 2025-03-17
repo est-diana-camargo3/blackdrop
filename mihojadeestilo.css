@@ -109,8 +109,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
             background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
             background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
             background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
-            background-position: center center; /* Centra la imagen dentro del header */
-            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-position: center center; /* Centra la imagen de fondo dentro del header */
+            background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
             justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
             align-items: center; /*alinea los elementos verticalmente en el centro del flex-header*/
                       
@@ -118,7 +118,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
           .logoencabezado 
                           {
-                                display: block;
+                                margin-left: 20px; /*margen 20 pixeles*/
                                 width: 100%; /* El logo se ajustará al 100% del contenedor */
                                 height: auto; /* Mantiene la relación de aspecto del logo */
                                 max-width: 5.5em; /* 5% del contenedor donde esta:osea del header   */
@@ -135,6 +135,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
           .iconoiniciarsesion
                           {
+                            margin-right: 20px; /*margen 20 pixeles*/
                             width: 5.5em; /* 5% del contenedor donde esta:osea del header   */
                             height: 5.5em; /* 5% del contenedor donde esta:osea del header   */       
                             cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
@@ -168,6 +169,28 @@ section, article, nav, aside, header, footer, main {  display: block; }
               border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
               margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
           }
+
+          /* Estilos para el banner */
+          .banner 
+            {
+              grid-column: 1 / 13; /* El banner ocupará todo el ancho del main */
+              grid-row: 1 / 8; /* El banner ocupará las primeras 2 filas */
+              background-color: rgb(184, 0, 5); /* Fondo rojo */
+              display: flex;
+              justify-content: center; /* Centra el contenido horizontalmente */
+              align-items: center; /* Centra el contenido verticalmente */
+            }
+
+          /* Estilos para el texto dentro del banner */
+          .banner-text 
+            {
+              color: white; /* Texto blanco */
+              font-size: 2em; /* El texto ocupara el 10% del alto de la ventana */
+              text-transform: uppercase; /* Convertir el texto a mayúsculas */
+              text-align: center; /* Centrar el texto */
+              margin: 0;
+              width: 100%; /* El texto ocupará el 60% del ancho del banner */
+            }
 
 
       /* ================================================================================
