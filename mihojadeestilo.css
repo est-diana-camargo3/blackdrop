@@ -90,10 +90,9 @@ section, article, nav, aside, header, footer, main {  display: block; }
             /*     letter-spacing: 0.12em !important;
             *      word-spacing: 0.16em !important;
             /*display: flex; /*el contenido interno se adapta a la caja invisible del body*/
-            /*flex-direction: column; /* Alineamos los elementos en una columna */
-            /*justify-content: flex-start; /* Alineamos los elementos en la parte superior */
             overflow-x: hidden; /* Esto desactiva el deslizador vertical */
             overflow-y: auto; /* Esto permite el deslizador lateral */
+            flex-direction: column;
           }
 
       /* ================================================================================
@@ -105,7 +104,6 @@ section, article, nav, aside, header, footer, main {  display: block; }
             /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
             grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
             grid-row: 1 / 2; /* ocupara 2 filas (de la 1 a la 2, NO incluye la 3 ) */
-            display:flex;
             margin:0;     /*reiniciamos las margenes a cero*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -115,22 +113,23 @@ section, article, nav, aside, header, footer, main {  display: block; }
             background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
             background-position: center center; /* Centra la imagen de fondo dentro del header */
             background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-            align-items: stretch; /*que los elementos llenen el contenedor*/
+            display:flex;
+            align-items: center; /*que los elementos llenen el contenedor*/
             flex-direction:row; /*que los items sean en una fila*/
             justify-content: space-between; /* Distribuye el espacio HORIZONTAL entre los elementos para que queden en una linea  */
-            align-content: center; /*alinea los elementos VERTICAL en el centro del flex-header*/
-                      
-          }
+         }
 
           .logoencabezado 
                           {
                                 margin: 0px; /*margen 20 pixeles*/
                                 padding:0; /*relleno*/
-                                max-width: 5.5em; /* 5% del contenedor donde esta:osea del header   */
-                                max-height: 5.5em; /* 5% del contenedor donde esta:osea del header   */
+                                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                                width: 5em; /* 5% del contenedor donde esta:osea del header   */
+                                height: 5em; /* 5% del contenedor donde esta:osea del header   */
                                 object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
                                 cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
                                 transition: color 0.3s ease;
+                                align-content: center; /*alinea los elementos VERTICAL en el centro del flex-header*/
                           }
               
           .logoencabezado:hover 
@@ -143,11 +142,15 @@ section, article, nav, aside, header, footer, main {  display: block; }
                           {
                             margin: 0px; /*margen 20 pixeles*/
                             padding:0; /*relleno*/
-                            max-width: 5.5em; /* 5% del contenedor donde esta:osea del header   */
-                            max-height: 5.5em; /* 5% del contenedor donde esta:osea del header   */   
+                            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                            width: 5em; /* 5% del contenedor donde esta:osea del header   */
+                            min-width: 6em; /* 5% del contenedor donde esta:osea del header   */
+                            height: 5em; /* 5% del contenedor donde esta:osea del header   */
+                            min-width: 6em; /* 5% del contenedor donde esta:osea del header   */
                             object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
                             cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
                             transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
+                            align-content: center; /*alinea los elementos VERTICAL en el centro del flex-header*/
                           }
   
           .iconoiniciarsesion:hover 
@@ -243,7 +246,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
             background-color: rgb(0, 0, 0); /* Fondo negro */
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin:  0.1em 0.5em 0em 0.5em; /*margin: top right bottom left;*/
+            margin:  10px 10px 10px 10px; /*margin: top right bottom left;*/
             display: flex;
             flex-direction: row; /* contenido en una fila  */
             justify-content: center; /* Centra el contenido horizontalmente */
@@ -254,7 +257,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           {
             width: 31em; /*ocupa 31% de la caja que lo contiene*/
             height: 93em; /*ocupa 93% de la caja que lo contiene*/
-            margin:  0.5em 0.5em 0.5em 0.5em; /*margin: top right bottom left;*/
+            margin:  10px 10px 10px 10px; /*margin: top right bottom left;*/
             background-color: rgb(255, 249, 249); /* Fondo negro */
             /*display: flex;
             justify-content: center; /* Centra el contenido horizontalmente */
