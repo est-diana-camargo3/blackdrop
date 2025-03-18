@@ -200,7 +200,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .bannersuperior-text 
             {
               color: white; /* Texto blanco */
-              font-size: 2em; /* El texto ocupara el 10% del alto de la ventana */
+              font-size: 145%; /* El texto ocupara el 10% del alto de la ventana */
               text-transform: uppercase; /* Convertir el texto a mayúsculas */
               text-align: center; /* Centrar el texto */
               margin: 0;
