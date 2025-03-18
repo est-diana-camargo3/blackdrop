@@ -204,7 +204,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
               margin: 0;
               width: 100%; /* El texto ocupará el 60% del ancho del banner */
             }            
-          /* Estilos para el banner */
+
           .grillade6productos 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
@@ -221,56 +221,40 @@ section, article, nav, aside, header, footer, main {  display: block; }
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
             margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
           }
+
           .proteinasunodosytres 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
             grid-row: 1 / 16; /* la grilla ocupará 14 filas */
-            background-color: rgb(255, 255, 255); /* Fondo negro */
-            /*La div de proteina 1 2 y 3 es EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
-              ordenar unos elementos dentro de el*/ 
-            /*display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
-            /*grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
-                                                    /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-            /*grid-template-rows: repeat(23, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
-                                                    /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+            background-color: rgb(0, 0, 0); /* Fondo negro */
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin:1em;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/
+            margin:  0em 0.5em 0em 0.5em; /*margin: top right bottom left;*/
             display:flex;
             flex-direction: row; /* contenido en una fila  */
             justify-content: center; /* Centra el contenido horizontalmente */
             align-items: center; /* Centra el contenido horizontalmente */
-            /*height: 300px;*/
           }
+
           .proteinascuatrocincoyseis 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
             grid-row: 16 / 31; /* la grilla ocupará 14 filas */
-            /*height: 600px;
-            width:auto; */
-            background-color: rgb(255, 255, 255); /* Fondo negro */
-            /*La div de proteina 1 2 y 3 es EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
-              ordenar unos elementos dentro de el*/ 
-            /*display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
-            /*grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
-                                                    /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-            /*grid-template-rows: repeat(23, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
-                                                    /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+            background-color: rgb(0, 0, 0); /* Fondo negro */
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin:1em;      /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/
+            margin:  0em 0.5em 0em 0.5em; /*margin: top right bottom left;*/
             display: flex;
             flex-direction: row; /* contenido en una fila  */
             justify-content: center; /* Centra el contenido horizontalmente */
             align-content: center; /* Centra el contenido verticalmente */
           }
+
           .producto
           {
-            width: 30em;
-            height: 90em;
-            /*grid-column: 1 / 8; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            /*grid-row: 1 / 22; /* la grilla ocupará 14 filas */
-            margin:  1em 0.5em 1em 0.5em; /*margin: top right bottom left;*/
+            width: 31em;
+            height: 92em;
+            margin:  0.5em 0.5em 0.5em 0.5em; /*margin: top right bottom left;*/
             background-color: rgb(255, 249, 249); /* Fondo negro */
             /*display: flex;
             justify-content: center; /* Centra el contenido horizontalmente */
