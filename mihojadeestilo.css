@@ -124,8 +124,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                 margin: 0px; /*margen 20 pixeles*/
                                 padding:0; /*relleno*/
                                 border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                                width: 5em; /* 5% del contenedor donde esta:osea del header   */
-                                height: 5em; /* 5% del contenedor donde esta:osea del header   */
+                                width: 6em; /* 5% del contenedor donde esta:osea del header   */
+                                height: 6em; /* 5% del contenedor donde esta:osea del header   */
                                 object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
                                 cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
                                 transition: color 0.3s ease;
@@ -143,9 +143,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
                             margin: 0px; /*margen 20 pixeles*/
                             padding:0; /*relleno*/
                             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                            width: 5em; /* 5% del contenedor donde esta:osea del header   */
-                            min-width: 6em; /* 5% del contenedor donde esta:osea del header   */
-                            height: 5em; /* 5% del contenedor donde esta:osea del header   */
+                            width: 6em; /* 5% del contenedor donde esta:osea del header   */
+                            height: 6em; /* 5% del contenedor donde esta:osea del header   */
                             min-width: 6em; /* 5% del contenedor donde esta:osea del header   */
                             object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
                             cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
@@ -232,7 +231,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
             background-color: rgb(0, 0, 0); /* Fondo negro */
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin:  0em 0.5em 0em 0.5em; /*margin: top right bottom left;*/
+            margin:  0px 0px 0px 0px; /*margin: top right bottom left;*/
             display:flex;
             flex-direction: row; /* contenido en una fila  */
             justify-content: center; /* Centra el contenido horizontalmente */
@@ -246,7 +245,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
             background-color: rgb(0, 0, 0); /* Fondo negro */
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin:  10px 10px 10px 10px; /*margin: top right bottom left;*/
+            margin:  10px 10px 10px 0px; /*margin: top right bottom left;*/
             display: flex;
             flex-direction: row; /* contenido en una fila  */
             justify-content: center; /* Centra el contenido horizontalmente */
@@ -255,9 +254,9 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
           .producto
           {
-            width: 31em; /*ocupa 31% de la caja que lo contiene*/
-            height: 93em; /*ocupa 93% de la caja que lo contiene*/
-            margin:  10px 10px 10px 10px; /*margin: top right bottom left;*/
+            width: 31%; /*ocupa 31% de la caja que lo contiene*/
+            height: 98%; /*ocupa 93% de la caja que lo contiene*/
+            margin:  10px 15px 10px 10px; /*margin: top right bottom left;*/
             background-color: rgb(255, 249, 249); /* Fondo negro */
             /*display: flex;
             justify-content: center; /* Centra el contenido horizontalmente */
