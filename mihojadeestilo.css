@@ -225,7 +225,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
             grid-row: 1 / 16; /* la grilla ocupará 14 filas */
-            background-color: rgb(255, 246, 124); /* Fondo negro */
+            background-color: rgb(255, 255, 255); /* Fondo negro */
             /*La div de proteina 1 2 y 3 es EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
               ordenar unos elementos dentro de el*/ 
             /*display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
@@ -235,7 +235,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                                     /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/
+            margin:1em;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/
             display:flex;
             flex-direction: row; /* contenido en una fila  */
             justify-content: center; /* Centra el contenido horizontalmente */
@@ -245,10 +245,10 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .proteinascuatrocincoyseis 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            grid-row: 15 / 31; /* la grilla ocupará 14 filas */
+            grid-row: 16 / 31; /* la grilla ocupará 14 filas */
             /*height: 600px;
             width:auto; */
-            background-color: rgb(158, 136, 255); /* Fondo negro */
+            background-color: rgb(255, 255, 255); /* Fondo negro */
             /*La div de proteina 1 2 y 3 es EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
               ordenar unos elementos dentro de el*/ 
             /*display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
@@ -258,7 +258,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                                     /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/
+            margin:1em;      /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/
             display: flex;
             flex-direction: row; /* contenido en una fila  */
             justify-content: center; /* Centra el contenido horizontalmente */
