@@ -30,7 +30,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                             /*decidimos manejar celular y tablet en una sola*/
             grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
                                                   /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-            grid-template-rows: repeat(50, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+            grid-template-rows: repeat(30, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
                                                     /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             gap: 0px; /*espacio entre las columnas cera cero porque el fondo total siempre debe ser solido y asi yo le diera
                         aqui algun espacio, lo ignoraria porque no hay un fondo debajo de este, osea no hay otra etiqueta 
@@ -46,13 +46,15 @@ section, article, nav, aside, header, footer, main {  display: block; }
           {
             /*como el body es hijo de html, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
             grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-            grid-row: 1 / 51; /* ocupara 21 filas (de la 1 a la 24, no incluye el 25 ) */
-            background-color: rgba(255, 165, 0, 0.15); /* Naranja con 30% de transparencia */
+            grid-row: 1 / 31; /* ocupara 21 filas (de la 1 a la 24, no incluye el 25 ) */
+            background-color: rgba(255, 166, 0); /* Naranja con 30% de transparencia */ 
+            background-size: 100% 100%; /* La imagen se estira para cubrir todo el contenedor */
+            /*background-color: rgba(255, 166, 0,c0.15); /* Naranja con 30% de transparencia */ 
             /*El body EN SI MISMO también sera  desarrollado como un modelo de grid*/
                 display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
                 grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
                                                         /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-                grid-template-rows: repeat(38, 1fr);    /* Definir las 50 filas, cada una ocupará 1/24 del alto de la ventana */
+                grid-template-rows: repeat(30, 1fr);    /* Definir las 50 filas, cada una ocupará 1/24 del alto de la ventana */
                                                         /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             margin:0;     /*reiniciamos las margenes a cero*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
@@ -162,14 +164,14 @@ section, article, nav, aside, header, footer, main {  display: block; }
           {
               /*como el body es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
               grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-              grid-row: 2 / 36; /* ocupara 21 filas (de la 3 a la 22, no incluye el 23 ) */
-              background-color: rgba(0, 0, 255, 0.15); /* Azul con 15% de transparencia */
+              grid-row: 2 / 30; /* ocupara 21 filas (de la 3 a la 22, no incluye el 23 ) */
+              background-color: rgba(0, 0, 255); /* Azul con 15% de transparencia */
               /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
               ordenar unos elementos dentro de el*/ 
                   display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
                   grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
                                                           /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-                  grid-template-rows: repeat(38, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+                  grid-template-rows: repeat(31, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
                                                           /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
               padding:0;    /*reiniciamos el padding o relleno a cero*/
               border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -206,7 +208,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .grillade6productos 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            grid-row: 2 / 33; /* la grilla ocupará 14 filas */
+            grid-row: 2 / 30; /* la grilla ocupará 14 filas */
             background-color: rgb(0, 0, 0); /* Fondo negro */
             /*La grilla de productos EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
               ordenar unos elementos dentro de el*/ 
@@ -223,7 +225,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
             grid-row: 1 / 16; /* la grilla ocupará 14 filas */
-            background-color: rgb(49, 252, 137); /* Fondo negro */
+            background-color: rgb(255, 246, 124); /* Fondo negro */
             /*La div de proteina 1 2 y 3 es EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
               ordenar unos elementos dentro de el*/ 
             /*display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
@@ -246,7 +248,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
             grid-row: 15 / 31; /* la grilla ocupará 14 filas */
             /*height: 600px;
             width:auto; */
-            background-color: rgb(32, 12, 120); /* Fondo negro */
+            background-color: rgb(158, 136, 255); /* Fondo negro */
             /*La div de proteina 1 2 y 3 es EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
               ordenar unos elementos dentro de el*/ 
             /*display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
@@ -265,7 +267,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .producto
           {
             width: 30em;
-            height: 100em;
+            height: 90em;
             /*grid-column: 1 / 8; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
             /*grid-row: 1 / 22; /* la grilla ocupará 14 filas */
             margin:  1em 0.5em 1em 0.5em; /*margin: top right bottom left;*/
@@ -292,8 +294,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .bannerinferior
           {
             grid-column: 1 / 13; /* El banner ocupará todo el ancho del main */
-            grid-row: 32 / 35; /* El banner ocupará las primeras 3 filas */
-            background-color: rgb(185, 31, 147); /* Fondo rojo */
+            grid-row: 30 / 32; /* El banner ocupará las primeras 3 filas */
+            background-color: rgb(31, 255, 132); /* Fondo rojo */
             display: flex;
             justify-content: center; /* Centra el contenido horizontalmente */
             align-items: center; /* Centra el contenido verticalmente */
@@ -307,8 +309,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
           {
               /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
               grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-              grid-row: 35 / 38; /* ocupara 2 filas (de la 23 a la 25, NO incluye la 26 ) */
-              background-color: rgba(128, 0, 128, 0.15); /* Morado con 30% de transparencia */
+              grid-row: 30/ 31; /* ocupara 2 filas (de la 23 a la 25, NO incluye la 26 ) */
+              background-color: rgba(128, 0, 128); /* Morado con 30% de transparencia */
               display:flex;/*modelo que usaremos en la estructura: flex ya solo es alinearle los elementos dentro   */
               margin:0;     /*reiniciamos las margenes a cero*/
               padding:0;    /*reiniciamos el padding o relleno a cero*/
