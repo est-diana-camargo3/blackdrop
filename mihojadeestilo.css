@@ -7,9 +7,9 @@ section, article, nav, aside, header, footer, main {  display: block; }
         y para aquellos que depronto por lo antiguos no lo hacen, posteriores a internet explorer
         version 8 o anteriores, formateamos estas etiquetas y buscamos la version que las puedan mostrar*/
 
-/* ================================================================================
-           COnfiguracion para ESCRITORIO: pantallas más grandes que 1280 px
-   ================================================================================ */
+  /* ================================================================================
+                                       H T M L 
+  =================================================================================== */
 
   html /* No tiene papá, El es el papá, aqui configuramos TODA la página( body (header+main) + footer )*/
           {
@@ -19,8 +19,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
             background-position: center; /* Centra la imagen */
             background-attachment: fixed; /* Asegura que la imagen de fondo no se desplace */
             box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del contenedor */ 
-            width:100vw;  /*que el ancho de la pagina completa sea igual al 100% de la ventana*/
-            height:100vh; /*que el alto de la pagina completa sea igual al 100% de la ventana*/          
+            width:auto;  /*que el ancho de la pagina completa sea igual al 100% de la ventana*/
+            height:5000px; /*que el alto de la pagina completa sea igual al 100% de la ventana*/          
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
             margin:0; /* 10% arriba, 10% a la derecha, 30% abajo, 40% a la izquierda */
@@ -30,24 +30,31 @@ section, article, nav, aside, header, footer, main {  display: block; }
                             /*decidimos manejar celular y tablet en una sola*/
             grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
                                                   /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-            grid-template-rows: repeat(24, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+            grid-template-rows: repeat(30, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
                                                     /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             gap: 0px; /*espacio entre las columnas cera cero porque el fondo total siempre debe ser solido y asi yo le diera
                         aqui algun espacio, lo ignoraria porque no hay un fondo debajo de este, osea no hay otra etiqueta 
                         que contenga a html*/  
           }
 
-    html body /* Cuerpo , su papa es html */
+
+    /* ================================================================================
+                                        B O D Y
+    =================================================================================== */
+
+    body /* Cuerpo , su papa es html */
           {
             /*como el body es hijo de html, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
             grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-            grid-row: 1 / 25; /* ocupara 21 filas (de la 1 a la 24, no incluye el 25 ) */
-            background-color: rgba(255, 165, 0, 0.15); /* Naranja con 30% de transparencia */
+            grid-row: 1 / 31; /* ocupara 21 filas (de la 1 a la 24, no incluye el 25 ) */
+            background-color: rgba(255, 166, 0); /* Naranja con 30% de transparencia */ 
+            background-size: 100% 100%; /* La imagen se estira para cubrir todo el contenedor */
+            /*background-color: rgba(255, 166, 0,c0.15); /* Naranja con 30% de transparencia */ 
             /*El body EN SI MISMO también sera  desarrollado como un modelo de grid*/
                 display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
                 grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
                                                         /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-                grid-template-rows: repeat(24, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+                grid-template-rows: repeat(30, 1fr);    /* Definir las 50 filas, cada una ocupará 1/24 del alto de la ventana */
                                                         /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             margin:0;     /*reiniciamos las margenes a cero*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
@@ -83,86 +90,304 @@ section, article, nav, aside, header, footer, main {  display: block; }
             /*     letter-spacing: 0.12em !important;
             *      word-spacing: 0.16em !important;
             /*display: flex; /*el contenido interno se adapta a la caja invisible del body*/
-            /*flex-direction: column; /* Alineamos los elementos en una columna */
-            /*justify-content: flex-start; /* Alineamos los elementos en la parte superior */
-         }
+            overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+            overflow-y: auto; /* Esto permite el deslizador lateral */
+            flex-direction: column;
+          }
 
-    html body header /* encabezado */
-         {
-           /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
-           grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-           grid-row: 1 / 4; /* ocupara 3 filas (de la 1 a la 3, NO incluye la 4 ) */
-           display:flex;
-           margin:0;     /*reiniciamos las margenes a cero*/
-           padding:0;    /*reiniciamos el padding o relleno a cero*/
-           border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-           background-image: url('imagenes/texturas/texturafondoblanco.jpg');
-           background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
-           background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
-           background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
-           background-position: center center; /* Centra la imagen dentro del header */
-           background-repeat: no-repeat; /* Evita que la imagen se repita */
-           justify-content: space-between; /* Distribuye el espacio entre los elementos para que queden en una linea  */
-           align-items: center; /*alinea los elementos verticalmente en el centro del flex-header*/
-           height: 10vw;
-          
-         }
+      /* ================================================================================
+                                        H E A D E R 
+      =================================================================================== */
 
-    html body main /* contenido principal del main */
-         {
-            /*como el body es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+      header /* encabezado */
+          {
+            /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
             grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-            grid-row: 4 / 22; /* ocupara 21 filas (de la 1 a la 21, no incluye el 22 ) */
-            background-color: rgba(0, 0, 255, 0.15); /* Azul con 15% de transparencia */
-            /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
-            ordenar unos elementos dentro de el*/ 
-                display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
-                grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
-                                                        /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-                grid-template-rows: repeat(24, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
-                                                        /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)
-            padding:0;    /*reiniciamos el padding o relleno a cero*/
-            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
-         }
-
-    html body footer 
-         {
-            /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
-            grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-            grid-row: 22 / 25; /* ocupara 3 filas (de la 22 a la 24, NO incluye la 25 ) */
-            background-color: rgba(128, 0, 128, 0.15); /* Morado con 30% de transparencia */
-            display:flex;/*modelo que usaremos en la estructura: flex ya solo es alinearle los elementos dentro   */
+            grid-row: 1 / 2; /* ocupara 2 filas (de la 1 a la 2, NO incluye la 3 ) */
             margin:0;     /*reiniciamos las margenes a cero*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+            background-image: url('imagenes/texturas/texturafondoblanco.jpg');
+            background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
+            background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
+            background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
+            background-position: center center; /* Centra la imagen de fondo dentro del header */
+            background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+            display:flex;
+            align-items: center; /*que los elementos llenen el contenedor*/
+            flex-direction:row; /*que los items sean en una fila*/
+            justify-content: space-between; /* Distribuye el espacio HORIZONTAL entre los elementos para que queden en una linea  */
          }
 
-         .logoencabezado {
-          display: block;
-          width: 100%; /* El logo se ajustará al 100% del contenedor */
-          height: auto; /* Mantiene la relación de aspecto del logo */
-          max-width: 6em; /* Opcional, si quieres que el logo tenga un tamaño máximo */
-          max-height: 6%; /* Asegura que el logo no sea más alto que el header */
-          object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
-          transition: color 0.3s ease;
-        }
-        
-    .logoencabezado:hover 
-         {
+          .logoencabezado 
+                          {
+                                margin: 1%; /*margen 20 pixeles*/
+                                padding:0; /*relleno*/
+                                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                                width: 6em; /* 5% del contenedor donde esta:osea del header   */
+                                height: 6em; /* 5% del contenedor donde esta:osea del header   */
+                                object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
+                                cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+                                transition: color 0.3s ease;
+                                align-content: center; /*alinea los elementos VERTICAL en el centro del flex-header*/
+                          }
+
+          .logoencabezado img 
+                          {
+                            width: 100%;
+                            height: auto;
+                         }
+              
+          .logoencabezado:hover 
+                          {
+                          box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
+                          /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
+                          }
+
+          .iconoiniciarsesion
+                          {
+                            margin: 1%; /*margen 20 pixeles*/
+                            padding:0; /*relleno*/
+                            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                            width: 6em; /* 5% del contenedor donde esta:osea del header   */
+                            height: 6em; /* 5% del contenedor donde esta:osea del header   */
+                            min-width: 6em; /* 5% del contenedor donde esta:osea del header   */
+                            object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
+                            cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+                            transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
+                            align-content: center; /*alinea los elementos VERTICAL en el centro del flex-header*/
+                          }
+  
+          .iconoiniciarsesion img 
+                          {
+                            width: 100%;
+                            height: auto;
+                          }
+          .iconoiniciarsesion:hover 
+                          {
+                            box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
+                            /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
+                          }
+
+      /* ================================================================================
+                                          M A I N  
+      =================================================================================== */
+
+      main /* contenido principal del body */
+          {
+              /*como el body es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+              grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
+              grid-row: 2 / 30; /* ocupara 21 filas (de la 3 a la 22, no incluye el 23 ) */
+              background-color: rgba(0, 0, 255); /* Azul con 15% de transparencia */
+              /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
+              ordenar unos elementos dentro de el*/ 
+                  display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
+                  grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
+                                                          /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+                  grid-template-rows: repeat(31, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+                                                          /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+              padding:0;    /*reiniciamos el padding o relleno a cero*/
+              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+              margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
+          }
+
+          h1
+            {
+              color:rgb(0, 34, 65);
+            }
+
+          /* Estilos para el banner */
+          .bannersuperior 
+            {
+              grid-column: 1 / 13; /* El banner ocupará todo el ancho del main */
+              grid-row: 1 / 2; /* El banner ocupará las primeras 3 filas */
+              background-color: rgb(168, 24, 28); /* Fondo rojo */
+              display: flex;
+              justify-content: center; /* Centra el contenido horizontalmente */
+              align-items: center; /* Centra el contenido verticalmente */
+            }
+
+          /* Estilos para el texto dentro del banner */
+          .bannersuperior-text 
+            {
+              color: white; /* Texto blanco */
+              font-size: 145%; /* El texto ocupara el 10% del alto de la ventana */
+              text-transform: uppercase; /* Convertir el texto a mayúsculas */
+              text-align: center; /* Centrar el texto */
+              margin: 0;
+              width: 100%; /* El texto ocupará el 60% del ancho del banner */
+            }            
+
+          .grillade6productos 
+          {
+            grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
+            grid-row: 2 / 30; /* la grilla ocupará 14 filas */
+            background-color: rgb(0, 0, 0); /* Fondo negro */
+            /*La grilla de productos EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
+              ordenar unos elementos dentro de el*/ 
+              display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
+              grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
+                                                      /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+              grid-template-rows: repeat(10, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+                                                      /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
+            padding:0;    /*reiniciamos el padding o relleno a cero*/
+            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+            margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
+          }
+
+          .proteinasunodosytres 
+          {
+            grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
+            grid-row: 1 / 6; /* la grilla ocupará 14 filas */
+            background-color: rgb(0, 0, 0); /* Fondo negro */
+            padding:0;    /*reiniciamos el padding o relleno a cero*/
+            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+            margin:  0px 0px 0px 0px; /*margin: top right bottom left;*/
+            display:flex;
+            flex-direction: row; /* contenido en una fila  */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido horizontalmente */
+            gap:2%; /*espacioentre productos */
+            flex-wrap: wrap; /* Permite que los productos se ajusten a la pantalla */
+          }
+
+          .proteinascuatrocincoyseis 
+          {
+            grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
+            grid-row: 6 / 11; /* la grilla ocupará 14 filas */
+            background-color: rgb(0, 0, 0); /* Fondo negro */
+            padding:0;    /*reiniciamos el padding o relleno a cero*/
+            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+            margin:  10px 10px 10px 0px; /*margin: top right bottom left;*/
+            display: flex;
+            flex-direction: row; /* contenido en una fila  */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-content: center; /* Centra el contenido verticalmente */
+          }
+
+          /* Estilo para cada producto */
+          .producto {
+            width: 30%; /* El ancho de cada producto será el 30% del contenedor */
+            height: 97%;
+            background-color: #ffffff;
+            padding: 0px;
+            text-align: center;
+            border-radius: 8px; /* Bordes redondeados */  
+            transition: transform 0.3s ease; /* Animación al pasar el mouse */
+          }
+
+          /* Efecto al pasar el mouse por el producto */
+          .producto:hover {
+            box-shadow: 0px 0px 30px red; /* Sombra cuando se pasa el mouse*/
+            transform: translateY(-15px); /* Levanta ligeramente el producto */
+          }
+
+          /* Estilo de la imagen del producto */
+          .producto img {
+            width: 100%;
+            height: auto;
+            border-radius: 8%; /* Bordes redondeados para la imagen */
+          }
+
+          /* Estilo para el nombre del producto */
+          .producto h3 {
+            font-size: 180%;
+            color: #000000;
+            margin-top: 10px;
+          }
+
+          /* Estilo para el precio */
+          .producto .precio {
+            font-size: 220%;
+            color: #e63946; /* Rojo oscuro */
+            font-weight: bold;
+            margin: 10% 0 10% 0 ; /*margin: top right bottom left;*/
+          }
+
+          /* Estilo para la descripción en lista */
+          .producto .descripcion {
+            list-style-type: disc; /* Usa viñetas (bullets) */
+            padding-left: 20%;
+            text-align: left;
+          }
+
+          /* Estilo para el botón de comprar */
+          .producto .btn-comprar {
+            background-color: red; /* Color de fondo del botón */
+            height: 3%;  /* Ajustamos la altura */
+            width: 80%;   /* Ancho en porcentaje */
+            color: white;  /* Color del texto */
+            border: none;  /* Sin borde */
+            padding: 3%; /* Espaciado interno */
+            font-size: 130%;  /* Tamaño del texto */
+            border-radius: 25px;  /* Bordes más redondeados */
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
+            margin: 4% 0 0 0 ;  /*margin: top right bottom left;*/
+            text-align: center;  /* Asegura que el texto esté centrado */
+            display: inline-block; /* Ajusta el comportamiento del botón */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efecto suave de transición */
+          }
+
+          /* Efecto cuando se pasa el mouse sobre el botón */
+          .producto .btn-comprar:hover {
+            background-color: green; /* Cambia a verde */
+            box-shadow: 0px 0px 30px red; /* Sombra cuando se pasa el mouse*/
+          }
+
+          li
+          {
+            margin:5% 2% 0% 2%; /*margin: top right bottom left;*/
+          }
+
+          /* Estilos para el banner */
+          .bannerinferior
+          {
+            grid-column: 1 / 13; /* El banner ocupará todo el ancho del main */
+            grid-row: 30 / 32; /* El banner ocupará las primeras 3 filas */
+            background-color: rgb(255, 255, 255); /* Fondo rojo */
+            margin:0;     /*reiniciamos las margenes a cero*/
+            padding:0;    /*reiniciamos el padding o relleno a cero*/
+            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+            background-image: url('imagenes/logos/logo_blanco_letras_negras_rojas.png');
+            /*background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
+            /*background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
+            background-size: 55% 200%; /* La imagen se estira para cubrir todo el contenedor ancho-alto*/
+            background-position: center center; /* Centra la imagen de fondo dentro del header */
+            background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+            /*display:flex;
+            align-items: center; /*que los elementos llenen el contenedor*/
+            /*flex-direction:row; /*que los items sean en una fila*/
+            /*justify-content: space-between; /* Distribuye el espacio HORIZONTAL entre los elementos para que queden en una linea  */
+          }
+
+      /* ================================================================================
+                                         F O O T E R   
+      =================================================================================== */
+
+      footer 
+          {
+              /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+              grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
+              grid-row: 30/ 31; /* ocupara 2 filas (de la 23 a la 25, NO incluye la 26 ) */
+              background-color: rgba(128, 0, 128); /* Morado con 30% de transparencia */
+              display:flex;/*modelo que usaremos en la estructura: flex ya solo es alinearle los elementos dentro   */
+              margin:0;     /*reiniciamos las margenes a cero*/
+              padding:0;    /*reiniciamos el padding o relleno a cero*/
+              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+          }
+          a {
+            /*display: inline; /*situarlos horizontalmente, en lugar de verticalmente*/            
+            display:block; /*situar los elementos en columna*/
+            margin-left: 20px; /* Márgenes izquierdo y derecho funcionan */
+            margin-right: 20px;
+            padding: 5px;
+            text-decoration: underline;
+            background-color: lightcoral;
+          }
+          .a:hover 
+          {
           box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
           /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
-         }
-         .iconoiniciarsesion
-         {
-           width: 6em; /* 10% del ancho de la ventana  */
-           height: 6em; /* 10% del alto de la ventana  */        
-           cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
-           transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
-         }
+          }
 
-   .iconoiniciarsesion:hover 
-         {
-           box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
-           /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
-         }
+
