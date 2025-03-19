@@ -281,10 +281,20 @@ section, article, nav, aside, header, footer, main {  display: block; }
           {
             grid-column: 1 / 13; /* El banner ocupará todo el ancho del main */
             grid-row: 30 / 32; /* El banner ocupará las primeras 3 filas */
-            background-color: rgb(31, 255, 132); /* Fondo rojo */
-            display: flex;
-            justify-content: center; /* Centra el contenido horizontalmente */
-            align-items: center; /* Centra el contenido verticalmente */
+            background-color: rgb(255, 255, 255); /* Fondo rojo */
+            margin:0;     /*reiniciamos las margenes a cero*/
+            padding:0;    /*reiniciamos el padding o relleno a cero*/
+            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+            background-image: url('imagenes/logos/logo_blanco_letras_negras_rojas.png');
+            /*background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
+            /*background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
+            background-size: 55% 200%; /* La imagen se estira para cubrir todo el contenedor ancho-alto*/
+            background-position: center center; /* Centra la imagen de fondo dentro del header */
+            background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+            /*display:flex;
+            align-items: center; /*que los elementos llenen el contenedor*/
+            /*flex-direction:row; /*que los items sean en una fila*/
+            /*justify-content: space-between; /* Distribuye el espacio HORIZONTAL entre los elementos para que queden en una linea  */
           }
 
       /* ================================================================================
