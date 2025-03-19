@@ -121,7 +121,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
           .logoencabezado 
                           {
-                                margin: 0px; /*margen 20 pixeles*/
+                                margin: 1%; /*margen 20 pixeles*/
                                 padding:0; /*relleno*/
                                 border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
                                 width: 6em; /* 5% del contenedor donde esta:osea del header   */
@@ -131,6 +131,12 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                 transition: color 0.3s ease;
                                 align-content: center; /*alinea los elementos VERTICAL en el centro del flex-header*/
                           }
+
+          .logoencabezado img 
+                          {
+                            width: 100%;
+                            height: auto;
+                         }
               
           .logoencabezado:hover 
                           {
@@ -140,7 +146,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
           .iconoiniciarsesion
                           {
-                            margin: 0px; /*margen 20 pixeles*/
+                            margin: 1%; /*margen 20 pixeles*/
                             padding:0; /*relleno*/
                             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
                             width: 6em; /* 5% del contenedor donde esta:osea del header   */
@@ -152,6 +158,11 @@ section, article, nav, aside, header, footer, main {  display: block; }
                             align-content: center; /*alinea los elementos VERTICAL en el centro del flex-header*/
                           }
   
+          .iconoiniciarsesion img 
+                          {
+                            width: 100%;
+                            height: auto;
+                          }
           .iconoiniciarsesion:hover 
                           {
                             box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
@@ -217,7 +228,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
               display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
               grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
                                                       /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-              grid-template-rows: repeat(30, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+              grid-template-rows: repeat(10, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
                                                       /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -227,7 +238,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .proteinasunodosytres 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            grid-row: 1 / 16; /* la grilla ocupará 14 filas */
+            grid-row: 1 / 6; /* la grilla ocupará 14 filas */
             background-color: rgb(0, 0, 0); /* Fondo negro */
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -236,12 +247,14 @@ section, article, nav, aside, header, footer, main {  display: block; }
             flex-direction: row; /* contenido en una fila  */
             justify-content: center; /* Centra el contenido horizontalmente */
             align-items: center; /* Centra el contenido horizontalmente */
+            gap:2%; /*espacioentre productos */
+            flex-wrap: wrap; /* Permite que los productos se ajusten a la pantalla */
           }
 
           .proteinascuatrocincoyseis 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            grid-row: 16 / 31; /* la grilla ocupará 14 filas */
+            grid-row: 6 / 11; /* la grilla ocupará 14 filas */
             background-color: rgb(0, 0, 0); /* Fondo negro */
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -252,30 +265,80 @@ section, article, nav, aside, header, footer, main {  display: block; }
             align-content: center; /* Centra el contenido verticalmente */
           }
 
-          .producto
-          {
-            width: 31%; /*ocupa 31% de la caja que lo contiene*/
-            height: 98%; /*ocupa 93% de la caja que lo contiene*/
-            margin:  10px 15px 10px 10px; /*margin: top right bottom left;*/
-            background-color: rgb(255, 249, 249); /* Fondo negro */
-            /*display: flex;
-            justify-content: center; /* Centra el contenido horizontalmente */
-            /*align-items: center; /* Centra el contenido verticalmente */
+          /* Estilo para cada producto */
+          .producto {
+            width: 30%; /* El ancho de cada producto será el 30% del contenedor */
+            height: 97%;
+            background-color: #ffffff;
+            padding: 0px;
+            text-align: center;
+            border-radius: 8px; /* Bordes redondeados */  
+            transition: transform 0.3s ease; /* Animación al pasar el mouse */
           }
-          .producto-texto
-          {
-            grid-column: 1 / 4.5; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            grid-row: 1 / 22; /* la grilla ocupará 14 filas */
-            display: flex;
-            justify-content: center; /* Centra el contenido horizontalmente */
-            align-items: center; /* Centra el contenido verticalmente */
-            color: white; /* Texto blanco */
-            font-size: 2em; /* El texto ocupara el 10% del alto de la ventana */
-            text-transform: uppercase; /* Convertir el texto a mayúsculas */
-            text-align: center; /* Centrar el texto */
-            margin: 0;
-            width: 100%; /* El texto ocupará el 60% del ancho del banner */
+
+          /* Efecto al pasar el mouse por el producto */
+          .producto:hover {
+            box-shadow: 0px 0px 30px red; /* Sombra cuando se pasa el mouse*/
+            transform: translateY(-15px); /* Levanta ligeramente el producto */
           }
+
+          /* Estilo de la imagen del producto */
+          .producto img {
+            width: 100%;
+            height: auto;
+            border-radius: 8%; /* Bordes redondeados para la imagen */
+          }
+
+          /* Estilo para el nombre del producto */
+          .producto h3 {
+            font-size: 180%;
+            color: #000000;
+            margin-top: 10px;
+          }
+
+          /* Estilo para el precio */
+          .producto .precio {
+            font-size: 220%;
+            color: #e63946; /* Rojo oscuro */
+            font-weight: bold;
+            margin: 10% 0 10% 0 ; /*margin: top right bottom left;*/
+          }
+
+          /* Estilo para la descripción en lista */
+          .producto .descripcion {
+            list-style-type: disc; /* Usa viñetas (bullets) */
+            padding-left: 20%;
+            text-align: left;
+          }
+
+          /* Estilo para el botón de comprar */
+          .producto .btn-comprar {
+            background-color: red; /* Color de fondo del botón */
+            height: 3%;  /* Ajustamos la altura */
+            width: 80%;   /* Ancho en porcentaje */
+            color: white;  /* Color del texto */
+            border: none;  /* Sin borde */
+            padding: 3%; /* Espaciado interno */
+            font-size: 130%;  /* Tamaño del texto */
+            border-radius: 25px;  /* Bordes más redondeados */
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
+            margin: 4% 0 0 0 ;  /*margin: top right bottom left;*/
+            text-align: center;  /* Asegura que el texto esté centrado */
+            display: inline-block; /* Ajusta el comportamiento del botón */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efecto suave de transición */
+          }
+
+          /* Efecto cuando se pasa el mouse sobre el botón */
+          .producto .btn-comprar:hover {
+            background-color: green; /* Cambia a verde */
+            box-shadow: 0px 0px 30px red; /* Sombra cuando se pasa el mouse*/
+          }
+
+          li
+          {
+            margin:5% 2% 0% 2%; /*margin: top right bottom left;*/
+          }
+
           /* Estilos para el banner */
           .bannerinferior
           {
