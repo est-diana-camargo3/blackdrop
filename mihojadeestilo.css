@@ -493,29 +493,126 @@ section, article, nav, aside, header, footer, main {  display: block; }
       =================================================================================== */
 
       footer 
-          {
+            {
               /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
               grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
               grid-row: 15/ 16; /* ocupara 2 filas (de la 23 a la 25, NO incluye la 26 ) */
-              background-color: rgba(128, 0, 128); /* Morado con 30% de transparencia */
+              background-color: rgb(0, 0, 0); /* Morado con 30% de transparencia */
               display:flex;/*modelo que usaremos en la estructura: flex ya solo es alinearle los elementos dentro   */
               margin:0;     /*reiniciamos las margenes a cero*/
               padding:0;    /*reiniciamos el padding o relleno a cero*/
               border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-          }
-          a {
-            /*display: inline; /*situarlos horizontalmente, en lugar de verticalmente*/            
-            display:block; /*situar los elementos en columna*/
-            margin-left: 20px; /* Márgenes izquierdo y derecho funcionan */
-            margin-right: 20px;
-            padding: 5px;
-            text-decoration: underline;
-            background-color: lightcoral;
-          }
+              flex-direction: column;
+            }
+          a 
+            {
+              /*display: inline; /*situarlos horizontalmente, en lugar de verticalmente*/            
+              flex-direction: row; /*situar los elementos en columna*/
+              background-color: #ffffff;   
+              text-decoration: underline;
+              font-family: Arial, sans-serif;
+              color: #000000;
+              margin-top: 30% 20% 0% 20%; /*margin: top right bottom left;*/   
+              font-size: 110%;            
+              transition: color 0.3s ease;
+              justify-content: center;  /* Centra el contenido horizontalmente */
+              text-align: center;  /* Centra el texto dentro del párrafo */
+            }
+
           .a:hover 
-          {
-          box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
-          /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
-          }
+            {
+              box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
+              /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
+              color: #005bb5;
+              text-decoration: underline;
+            }
+
+          .parrafoquienesblackdrop 
+            {
+              flex-direction: column;
+              display: flex;
+              justify-content: center;  /* Centra el contenido horizontalmente */
+              color: #ffffff;
+            }
+
+          p
+            {
+              text-align: center;  /* Centra el texto dentro del párrafo */
+              color: #ffffff;
+              margin: 0; /* Elimina el margen por defecto */
+              padding: 0; /* Elimina el relleno por defecto */
+
+            }
+
+          .linkinstagramblackdrop 
+            {
+              background-color: #ffffff;
+              color: black;
+              text-decoration: underline;
+              padding: 8px;            
+              font-size: 80%;
+              border-radius: 10%;
+              display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */
+              margin:1% 0% 0% 0%; /*margin: top right bottom left;*/   
+              height: 6;
+              width: 17%;
+              transition: color 0.3s ease;
+            }
+
+          .linkinstagramblackdrop:hover 
+            {
+              background-color:#a00000;
+              color: rgb(255, 255, 255);
+              box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
+              /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
+              text-decoration: underline;
+            }
+
+          .parrafocontactoblackdrop 
+            {
+              flex-direction: row;
+              display: flex;
+              justify-content: center;  /* Centra el contenido horizontalmente */
+              color: #ffffff;
+
+            }
+
+          .parrafocontactoautoras 
+            {
+              flex-direction: row;
+              display: flex;
+              justify-content: center;  /* Centra el contenido horizontalmente */
+              color: #ffffff;
+            }
+         
+          .linkinstagramautoras 
+            {
+              /*display: inline; /*situarlos horizontalmente, en lugar de verticalmente*/            
+              background-color: #ffffff;
+              color: black;
+              text-decoration: underline;
+              padding: 8px;
+              margin:1%;
+              font-size: 50%;
+              border-radius: 10%;
+              display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */
+              transition: color 0.3s ease;
+              flex-direction: row;
+              justify-content: center;  /* Centra el contenido horizontalmente */
+            }
+
+          .linkinstagramautoras:hover 
+            {
+              background-color:   #a00000;
+              color: rgb(255, 255, 255);
+              box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
+              /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
+              text-decoration: underline;
+            }
+          
+
+
+
+        
 
 
