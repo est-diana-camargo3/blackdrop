@@ -3,6 +3,8 @@ const modal = document.getElementById("modal");
 const iconoLogin = document.getElementById("iconoLogin");
 const btnCerrar = document.querySelector(".cerrar");
 
+modal.style.display = "none";
+
 // Evento para abrir el modal
 iconoLogin.addEventListener("click", () => {
     modal.style.display = "flex";
