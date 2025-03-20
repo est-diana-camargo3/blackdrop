@@ -550,7 +550,6 @@ section, article, nav, aside, header, footer, main {  display: block; }
               display: flex;
               justify-content: center;  /* Centra el contenido horizontalmente */
               color: #ffffff;
-
             }
 
           .linkinstagramblackdrop 
@@ -561,7 +560,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
               text-decoration: underline;
               padding: 8px; 
               margin:1%;           
-              font-size: 80%;
+              font-size: 50%;
               border-radius: 10%;              
               flex-direction: row;
               justify-content: center;  /* Centra el contenido horizontalmente */
