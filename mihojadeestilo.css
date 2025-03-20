@@ -30,7 +30,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                             /*decidimos manejar celular y tablet en una sola*/
             grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
                                                   /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-            grid-template-rows: repeat(15, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+            grid-template-rows: repeat(26, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
                                                     /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             gap: 0px; /*espacio entre las columnas cera cero porque el fondo total siempre debe ser solido y asi yo le diera
                         aqui algun espacio, lo ignoraria porque no hay un fondo debajo de este, osea no hay otra etiqueta 
@@ -46,7 +46,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           {
             /*como el body es hijo de html, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
             grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-            grid-row: 1 / 16; /* ocupara 21 filas (de la 1 a la 24, no incluye el 25 ) */
+            grid-row: 1 / 27; /* ocupara 21 filas (de la 1 a la 24, no incluye el 25 ) */
             background-color: rgba(255, 166, 0); /* Naranja con 30% de transparencia */ 
             background-size: 100% 100%; /* La imagen se estira para cubrir todo el contenedor */
             /*background-color: rgba(255, 166, 0,c0.15); /* Naranja con 30% de transparencia */ 
@@ -54,7 +54,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                 display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
                 grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
                                                         /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-                grid-template-rows: repeat(15, 1fr);    /* Definir las 50 filas, cada una ocupará 1/24 del alto de la ventana */
+                grid-template-rows: repeat(26, 1fr);    /* Definir las 50 filas, cada una ocupará 1/24 del alto de la ventana */
                                                         /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             margin:0;     /*reiniciamos las margenes a cero*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
@@ -250,14 +250,14 @@ section, article, nav, aside, header, footer, main {  display: block; }
           {
               /*como el body es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
               grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-              grid-row: 2 / 16; /* ocupara 21 filas (de la 3 a la 22, no incluye el 23 ) */
+              grid-row: 2 / 26; /* ocupara 21 filas (de la 3 a la 22, no incluye el 23 ) */
               background-color: rgba(0, 0, 255); /* Azul con 15% de transparencia */
               /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
               ordenar unos elementos dentro de el*/ 
                   display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
                   grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
                                                           /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-                  grid-template-rows: repeat(13, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+                  grid-template-rows: repeat(24, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
                                                           /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
               padding:0;    /*reiniciamos el padding o relleno a cero*/
               border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -346,14 +346,14 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .grillade6productos 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            grid-row: 2 / 14; /* la grilla ocupará 14 filas */
+            grid-row: 2 / 24; /* la grilla ocupará 14 filas */
             background-color: rgb(0, 0, 0); /* Fondo negro */
             /*La grilla de productos EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
               ordenar unos elementos dentro de el*/ 
               display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
               grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
                                                       /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-              grid-template-rows: repeat(12, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+              grid-template-rows: repeat(22, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
                                                       /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -363,7 +363,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .proteinasunodosytres 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            grid-row: 1 / 7; /* la grilla ocupará 14 filas */
+            grid-row: 1 / 12; /* la grilla ocupará 14 filas */
             background-color: rgb(0, 0, 0); /* Fondo negro */
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -379,7 +379,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .proteinascuatrocincoyseis 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            grid-row: 7 / 13; /* la grilla ocupará 14 filas */
+            grid-row: 12 / 23; /* la grilla ocupará 14 filas */
             background-color: rgb(0, 0, 0); /* Fondo negro */
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -472,7 +472,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .bannerinferior
           {
             grid-column: 1 / 13; /* El banner ocupará todo el ancho del main */
-            grid-row: 14 / 15; /* El banner ocupará las primeras 3 filas */
+            grid-row: 24 / 25; /* El banner ocupará las primeras 3 filas */
             background-color: rgb(255, 255, 255); /* Fondo rojo */
             margin:0;     /*reiniciamos las margenes a cero*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
@@ -480,7 +480,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
             background-image: url('imagenes/logos/logo_blanco_letras_negras_rojas.png');
             /*background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
             /*background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
-            background-size: 95% 230%; /* La imagen se estira para cubrir todo el contenedor ancho-alto*/
+            background-size: 65% 210%; /* La imagen se estira para cubrir todo el contenedor ancho-alto*/
             background-position: center center; /* Centra la imagen de fondo dentro del header */
             background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
             /*display:flex;
@@ -497,7 +497,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
             {
               /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
               grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-              grid-row: 16/ 17; /* ocupara 2 filas (de la 23 a la 25, NO incluye la 26 ) */
+              grid-row: 26/ 27; /* ocupara 2 filas (de la 23 a la 25, NO incluye la 26 ) */
               background-color: rgb(0, 0, 0); /* Morado con 30% de transparencia */
               display:flex;/*modelo que usaremos en la estructura: flex ya solo es alinearle los elementos dentro   */
               margin:0;     /*reiniciamos las margenes a cero*/
@@ -514,7 +514,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
               font-family: Arial, sans-serif;
               color: #000000;
               margin-top: 30% 20% 0% 20%; /*margin: top right bottom left;*/   
-              font-size: 110%;            
+              font-size: 130%;            
               transition: color 0.3s ease;
               justify-content: center;  /* Centra el contenido horizontalmente */
               text-align: center;  /* Centra el texto dentro del párrafo */
@@ -534,6 +534,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
               display: flex;
               justify-content: center;  /* Centra el contenido horizontalmente */
               color: #ffffff;
+              font-size: 80%;
             }
 
           p
@@ -545,7 +546,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
             }
 
-            .parrafocontactoblackdrop 
+            .parrafoinstagramblackdrop 
             {
               flex-direction: row;
               display: flex;
@@ -594,7 +595,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
               text-decoration: underline;
               padding: 8px;
               margin:1%;
-              font-size: 50%;
+              font-size: 40%;
               border-radius: 10%;                        
               flex-direction: row;
               justify-content: center;  /* Centra el contenido horizontalmente */
