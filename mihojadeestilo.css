@@ -325,9 +325,10 @@ section, article, nav, aside, header, footer, main {  display: block; }
             font-size: 130%;  /* Tamaño del texto */
             border-radius: 25px;  /* Bordes más redondeados */
             cursor: pointer; /* Cambia el cursor al pasar por encima */
-            margin: 4% 0 0 0 ;  /*margin: top right bottom left;*/
-            text-align: center;  /* Asegura que el texto esté centrado */
-            display: inline-block; /* Ajusta el comportamiento del botón */
+            margin: 15% 0 0 10% ;  /*margin: top right bottom left;*/           
+            display: flex; /* Ajusta el comportamiento del botón */
+            justify-content: center; /* Centra el texto horizontalmente */
+            align-items: center; /* Centra el texto verticalmente */
             transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efecto suave de transición */
           }
 
@@ -354,7 +355,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
             background-image: url('imagenes/logos/logo_blanco_letras_negras_rojas.png');
             /*background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
             /*background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
-            background-size: 85% 230%; /* La imagen se estira para cubrir todo el contenedor ancho-alto*/
+            background-size: 95% 230%; /* La imagen se estira para cubrir todo el contenedor ancho-alto*/
             background-position: center center; /* Centra la imagen de fondo dentro del header */
             background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
             /*display:flex;
