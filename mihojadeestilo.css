@@ -465,6 +465,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           li
           {
             margin:5% 2% 0% 2%; /*margin: top right bottom left;*/
+            font-size: 90%;  /* Tamaño del texto */
           }
 
           /* Estilos para el banner */
