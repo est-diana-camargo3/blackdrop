@@ -271,23 +271,53 @@ section, article, nav, aside, header, footer, main {  display: block; }
             
           h2 
               {
-                color: rgb(93, 0, 0);
-                font-size: 50px;
+                color: rgb(255, 255, 255);
                 margin-bottom: 2em !important;
-                font-size: clamp(20px, calc(0.5vw + 0.5vh), 50px);  /* de manera personalizada para que no dependa del tamaño de letra del cuerpo.*/
+                font-size: clamp(30px, calc(0.5vw + 0.5vh), 50px);  /* de manera personalizada para que no dependa del tamaño de letra del cuerpo.*/
+                text-shadow: 
+                -2px -2px 0 rgb(124, 0, 0),  
+                2px -2px 0 rgb(124, 0, 0),
+                -2px  2px 0 rgb(124, 0, 0),
+                2px  2px 0 rgb(124, 0, 0); /* Bordes en cada dirección */
+
                 font-weight: bold; 
                 grid-column: span 2; /* Ocupa todas las columnas del grid */
                 grid-row: 1;
-                text-align: center; /* Centra el texto */   
+                text-align: flex-start; /* Centra el texto */   
               }
 
-          label,input {
-    
+          form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra los elementos */
+            margin-bottom: 50px;
+          }
+
+          label {
+                text-align: left;
                 color: white;
-                text-align: center; /* Alinea el texto a la derecha */
-                grid-row: 2;
-                padding-right: 10px; /* Espacio entre la etiqueta y el campo */
-            }
+          }
+            
+          .radio-group {
+                display: flex;
+                gap: 15px; /* Espaciado entre Cliente y Administrador */
+                align-items: center;
+          }
+
+          button {
+            grid-column: span 2; /* Hace que el botón ocupe las dos columnas */
+            width: 100%; /* Asegura que se mantenga centrado */
+            margin-top: 15px; /* Añade espacio arriba */
+            padding: 10px; /* Ajusta el tamaño */
+            background-color: #8b0000;
+            color: white;
+            border: none;
+            cursor: pointer;
+          }
+          
+          button:hover {
+              background-color: #a00000;
+          }
             
 
           /* Estilos para el banner */

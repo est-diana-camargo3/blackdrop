@@ -189,31 +189,41 @@
                         <h2>Inicio de sesión</h2>
                         <table border="0.5">
                               <tr>
-                              <td><label for="usuario">Usuario:</label></td>
+                                    <td><label for="usuario">Usuario:</label></td>
                               </tr>
+                        
                               <tr>
-                              <td><input type="text" id="usuario" name="usuario" required></td>
+                                    <td><input type="text" id="usuario" name="usuario" required></td>
                               </tr>
+
                               <tr>
-                              <td><label for="pass">Contraseña:</label></td>
+                                    <td><label for="pass">Contraseña:</label></td>
                               </tr>
+
                               <tr>
-                              <td><input type="password" id="pass" name="pass" required></td>
+                                    <td><input type="password" id="pass" name="pass" required></td>
                               </tr>
+
                               <tr>
-                              <td><label for="tipo_cuenta">Tipo de cuenta:</label></td>
-                              </tr>
-                              <tr>
-                              <td>
-                                    <label for="cliente">Cliente</label>
-                                    <input type="radio" id="cliente" name="tipo_cliente" required>
-                              </td>
-                              <td>
-                                    <label for="Admin">Administrador</label>
-                                    <input type="radio" id="Admin" name="tipo_admin" required>
-                              </td>
-                              </tr>
+                                    <td><label for="tipo_cuenta">Tipo de cuenta:</label></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <div class="radio-group">
+                                            <label for="cliente">Cliente</label>
+                                            <input type="radio" id="cliente" name="tipo_cuenta" required>
+                                
+                                            <label for="Admin">Administrador</label>
+                                            <input type="radio" id="Admin" name="tipo_cuenta" required>
+                                        </div>
+                                    </td>
+                                </tr>
+                               
+                                
                         </table>
+                        <tr>
+                                    
+                        </tr>
                         <button type="submit">Iniciar Sesión</button>
                   </form>
                   </div>
