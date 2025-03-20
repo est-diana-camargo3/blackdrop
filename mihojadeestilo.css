@@ -250,7 +250,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           {
               /*como el body es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
               grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-              grid-row: 2 / 15; /* ocupara 21 filas (de la 3 a la 22, no incluye el 23 ) */
+              grid-row: 2 / 16; /* ocupara 21 filas (de la 3 a la 22, no incluye el 23 ) */
               background-color: rgba(0, 0, 255); /* Azul con 15% de transparencia */
               /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
               ordenar unos elementos dentro de el*/ 
@@ -346,14 +346,14 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .grillade6productos 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            grid-row: 2 / 12; /* la grilla ocupará 14 filas */
+            grid-row: 2 / 14; /* la grilla ocupará 14 filas */
             background-color: rgb(0, 0, 0); /* Fondo negro */
             /*La grilla de productos EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
               ordenar unos elementos dentro de el*/ 
               display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
               grid-template-columns: repeat(12, 1fr); /* Definir las 12 columnas, cada una ocupará 1/12 del ancho de la ventana */
                                                       /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
-              grid-template-rows: repeat(10, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
+              grid-template-rows: repeat(12, 1fr);    /* Definir las 24 filas, cada una ocupará 1/24 del alto de la ventana */
                                                       /* 1fr quiere decir que cada columna ocupara una fraccion de 1/12 de manera equitativa)*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -363,7 +363,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .proteinasunodosytres 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            grid-row: 1 / 6; /* la grilla ocupará 14 filas */
+            grid-row: 1 / 7; /* la grilla ocupará 14 filas */
             background-color: rgb(0, 0, 0); /* Fondo negro */
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -379,7 +379,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .proteinascuatrocincoyseis 
           {
             grid-column: 1 / 13; /* la grilla ocupará todo el ancho del main :12 columnas sin incluir la 13*/
-            grid-row: 6 / 11; /* la grilla ocupará 14 filas */
+            grid-row: 7 / 13; /* la grilla ocupará 14 filas */
             background-color: rgb(0, 0, 0); /* Fondo negro */
             padding:0;    /*reiniciamos el padding o relleno a cero*/
             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -434,7 +434,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           /* Estilo para la descripción en lista */
           .producto .descripcion {
             list-style-type: disc; /* Usa viñetas (bullets) */
-            padding-left: 20%;
+            padding-left: 15%;
             text-align: left;
           }
 
@@ -472,7 +472,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
           .bannerinferior
           {
             grid-column: 1 / 13; /* El banner ocupará todo el ancho del main */
-            grid-row: 12 / 14; /* El banner ocupará las primeras 3 filas */
+            grid-row: 14 / 15; /* El banner ocupará las primeras 3 filas */
             background-color: rgb(255, 255, 255); /* Fondo rojo */
             margin:0;     /*reiniciamos las margenes a cero*/
             padding:0;    /*reiniciamos el padding o relleno a cero*/
@@ -497,7 +497,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
             {
               /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
               grid-column: 1 / 13; /* ocupara 12 columnas (de la 1 a la 12, no incluye el 13) */
-              grid-row: 15/ 16; /* ocupara 2 filas (de la 23 a la 25, NO incluye la 26 ) */
+              grid-row: 16/ 17; /* ocupara 2 filas (de la 23 a la 25, NO incluye la 26 ) */
               background-color: rgb(0, 0, 0); /* Morado con 30% de transparencia */
               display:flex;/*modelo que usaremos en la estructura: flex ya solo es alinearle los elementos dentro   */
               margin:0;     /*reiniciamos las margenes a cero*/
