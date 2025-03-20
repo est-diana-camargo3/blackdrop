@@ -563,8 +563,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
               border-radius: 10%;
               display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */
               margin:1% 0% 0% 0%; /*margin: top right bottom left;*/   
-              height: 6;
-              width: 17%;
+              height: 7;
+              width: 20%;
               transition: color 0.3s ease;              
             }
 
