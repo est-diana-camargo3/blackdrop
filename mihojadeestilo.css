@@ -94,6 +94,78 @@ section, article, nav, aside, header, footer, main {  display: block; }
             overflow-y: auto; /* Esto permite el deslizador lateral */
             flex-direction: column;
           }
+          
+      /* ================================================================================
+                                       Inicio de sesion
+      =================================================================================== */
+        /* Estilos para el fondo oscuro del modal */
+          .modal {
+            display: none; /* Ocultar por defecto */
+            position: fixed; /* Se mantiene fijo en la pantalla */
+            z-index: 1000; /* Asegura que está por encima de otros elementos */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(41, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          /* Estilos para el contenido del modal */
+          .modal-contenido {
+            background-color: black;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 0 10px rgb(5, 0, 0);
+          }
+
+          /* Botón de cerrar (la 'X') */
+          .cerrar {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            cursor: pointer;
+          }
+
+          /* Cambio de color al pasar el mouse por la 'X' */
+          .cerrar:hover {
+            color: red;
+          }
+
+          /* Estilos para los campos del formulario */
+          .modal-contenido input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+          }
+
+          /* Estilos para el botón de inicio de sesión */
+          .modal-contenido button {
+            background-color: rgb(112, 0, 0);
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+          }
+
+          /* Efecto al pasar el mouse por el botón */
+          .modal-contenido button:hover {
+            background-color: rgb(216, 0, 0);
+          }
+
 
       /* ================================================================================
                                         H E A D E R 
@@ -146,6 +218,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
           .iconoiniciarsesion
                           {
+                            
                             margin: 1%; /*margen 20 pixeles*/
                             padding:0; /*relleno*/
                             border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
@@ -195,6 +268,27 @@ section, article, nav, aside, header, footer, main {  display: block; }
             {
               color:rgb(0, 34, 65);
             }
+            
+          h2 
+              {
+                color: rgb(93, 0, 0);
+                font-size: 50px;
+                margin-bottom: 2em !important;
+                font-size: clamp(20px, calc(0.5vw + 0.5vh), 50px);  /* de manera personalizada para que no dependa del tamaño de letra del cuerpo.*/
+                font-weight: bold; 
+                grid-column: span 2; /* Ocupa todas las columnas del grid */
+                grid-row: 1;
+                text-align: center; /* Centra el texto */   
+              }
+
+          label,input {
+    
+                color: white;
+                text-align: center; /* Alinea el texto a la derecha */
+                grid-row: 2;
+                padding-right: 10px; /* Espacio entre la etiqueta y el campo */
+            }
+            
 
           /* Estilos para el banner */
           .bannersuperior 

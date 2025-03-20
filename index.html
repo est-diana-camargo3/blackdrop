@@ -53,6 +53,8 @@
                                           debe ser corto conciso y claro -->                  
                         <meta name="Pagina de venta de proteinas para deportistas en Colombia, empresa BlackDrop" content="width=device-width, initial-scale=1.0"> 
                               <!--Hace que la página se ajuste correctamente en dispositivos móviles, asegurando que el ancho se ajuste al dispositivo y la escala inicial sea 1.-->
+                           
+
             </head>
 
             <!-- ================================================================================
@@ -80,7 +82,7 @@
                               <img src="imagenes/logos/logo_negro_letras_blancas_rojas.png" alt="Logo de la empresa Blackdrop">
                        </div>
                         <div class="iconoiniciarsesion">          
-                              <img src="imagenes/iconos/iniciar_sesion.png" alt="Icono para iniciar sesion" >                        
+                              <img id="iconoLogin" src="imagenes/iconos/iniciar_sesion.png" alt="Icono para iniciar sesion" >                        
                         </div>
                   </header>
 
@@ -177,9 +179,53 @@
                         </address> 
                               
                         
-                  </footer>   
+                  </footer>
+
+                  <!-- Ventana modal -->
+            <div id="modal" class="modal">
+                  <div class="modal-contenido">
+                  <span class="cerrar">&times;</span> <!-- Botón para cerrar -->
+                  <form id="registro" method="get" enctype="multipart/form-data">
+                        <h2>Inicio de sesión</h2>
+                        <table border="0.5">
+                              <tr>
+                              <td><label for="usuario">Usuario:</label></td>
+                              </tr>
+                              <tr>
+                              <td><input type="text" id="usuario" name="usuario" required></td>
+                              </tr>
+                              <tr>
+                              <td><label for="pass">Contraseña:</label></td>
+                              </tr>
+                              <tr>
+                              <td><input type="password" id="pass" name="pass" required></td>
+                              </tr>
+                              <tr>
+                              <td><label for="tipo_cuenta">Tipo de cuenta:</label></td>
+                              </tr>
+                              <tr>
+                              <td>
+                                    <label for="cliente">Cliente</label>
+                                    <input type="radio" id="cliente" name="tipo_cliente" required>
+                              </td>
+                              <td>
+                                    <label for="Admin">Administrador</label>
+                                    <input type="radio" id="Admin" name="tipo_admin" required>
+                              </td>
+                              </tr>
+                        </table>
+                        <button type="submit">Iniciar Sesión</button>
+                  </form>
+                  </div>
+            </div>
+            
+            <!-- Vincular el JavaScript -->
+            <script src="modal.js"></script>
+       </body>
+</html>
+  
+
                               
-            </body> 
+             
 
 
-      </html>
