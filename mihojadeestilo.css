@@ -612,7 +612,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
               text-decoration: underline;
             }
             .cuadrodeprueba {
-              width: 200px;
+              width: 320px;
               height: 200px;
               background-color: #3498db; /* Color de fondo */
               display: flex; /* Usamos Flexbox para centrar el texto */
@@ -622,6 +622,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
               font-family: Arial, sans-serif; /* Fuente del texto */
               font-size: 140%; /* Tamaño del texto */
               text-align: center; /* Centra el texto dentro del div */
+              margin-left: 30px;
           }
 
 
