@@ -611,7 +611,18 @@ section, article, nav, aside, header, footer, main {  display: block; }
               /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
               text-decoration: underline;
             }
-          
+            .cuadrodeprueba {
+              width: 200px;
+              height: 200px;
+              background-color: #3498db; /* Color de fondo */
+              display: flex; /* Usamos Flexbox para centrar el texto */
+              justify-content: center; /* Centra el texto horizontalmente */
+              align-items: center; /* Centra el texto verticalmente */
+              color: white; /* Color del texto */
+              font-family: Arial, sans-serif; /* Fuente del texto */
+              font-size: 140%; /* Tamaño del texto */
+              text-align: center; /* Centra el texto dentro del div */
+          }
 
 
 
