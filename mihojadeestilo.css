@@ -1,4 +1,6 @@
 
+
+
 /* HOJA DE ESTILO CSS- DE LA PAGINA BLACKDROP */
 
 section, article, nav, aside, header, footer, main {  display: block; } 
@@ -7,6 +9,9 @@ section, article, nav, aside, header, footer, main {  display: block; }
         y para aquellos que depronto por lo antiguos no lo hacen, posteriores a internet explorer
         version 8 o anteriores, formateamos estas etiquetas y buscamos la version que las puedan mostrar*/
 
+
+
+
   /* =================================================================================================
                                                   H T M L 
   ==================================================================================================== */
@@ -14,6 +19,9 @@ section, article, nav, aside, header, footer, main {  display: block; }
         margin:0;
         padding:0;
    }
+
+
+
 
     /* =================================================================================================
                                                   B O D Y
@@ -29,11 +37,12 @@ section, article, nav, aside, header, footer, main {  display: block; }
                 border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
                 width:100%; /*que ocupe el 95% de ancho de la ventana*/
                 max-width: 1400px; /*maximo ocupa 1400 pixeles*/
+                min-width: 300px; /*maximo ocupa 1400 pixeles*/
                 display:grid;
-                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
                 /*se dividira en 3 filas, 3 columnas*/
                 grid-template-columns: repeat(1, 1fr);
                 grid-template-rows: repeat (3,auto); /*tamaño automatico osea que se ajusten al contenido*/
+                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
                 overflow-x: hidden; /* Esto desactiva el deslizador vertical */
                 overflow-y: auto; /* Esto permite el deslizador lateral */
           }
@@ -133,112 +142,87 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
       main /* contenido principal del body */
             {
-                /*como el body es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
                 grid-column: 1 / 2; /* ocupara 1 columnas*/
                 grid-row: 2 / 3; /* ocupara 1 filas */
-                background-color: rgba(0, 0, 255); /* Azul con 15% de transparencia */
+                background-color: rgb(255, 255, 255); /* Azul con 15% de transparencia */
                 padding:0;    /*reiniciamos el padding o relleno a cero*/
                 border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
                 margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
                 /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
                 ordenar unos elementos dentro de el*/ 
-                display:grid;                       
+                display:grid;                                   
                 grid-template-columns: repeat(1, 1fr);  /*1 columna*/
                 grid-template-rows: repeat(3, auto);    /*3 filas*/
+                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
             }
 
-              /* Estilos para el banner */
             main .bannersuperior 
-                  {
-                      grid-column: 1 / 2; /* ocupara 1 columna */
-                      grid-row: 1 / 2; /* ocupara 1 fila */
-                      background-color: rgb(168, 24, 28); /* Fondo rojo */
-                      height: auto; /* 5% del contenedor donde esta:osea del header   */
-                      display: flex;
-                      justify-content: center; /* Centra el contenido horizontalmente */
-                      align-items: center; /* Centra el contenido verticalmente */
-                      padding:3%;
-                  }
-
-          /* Estilos para el texto dentro del banner */
-          main .bannersuperior-text 
                       {
-                            color: white; /* Texto blanco */
-                            font-size: 270%; /* El texto ocupara el 10% del alto de la ventana */
-                            /*text-transform: uppercase; /* Convertir el texto a mayúsculas */
-                            text-align: center; /* Centrar el texto */
-                            margin: 0;
-                            font-weight: bold;  /*texto en negrilla*/
+                          grid-column: 1 / 2; /* ocupara 1 columna */
+                          grid-row: 1 / 2; /* ocupara 1 fila */
+                          background-color: rgb(168, 24, 28); /* Fondo rojo */
+                          height: auto; /* 5% del contenedor donde esta:osea del header   */
+                          display: flex;
+                          justify-content: center; /* Centra el contenido horizontalmente */
+                          align-items: center; /* Centra el contenido verticalmente */
+                          padding:3%;
+                      }
+
+            main .bannersuperior-text 
+                      {
+                          color: white; /* Texto blanco */
+                          font-size: 270%; /* El texto ocupara el 10% del alto de la ventana */
+                          /*text-transform: uppercase; /* Convertir el texto a mayúsculas */
+                          text-align: center; /* Centrar el texto */
+                          margin: 0;
+                          font-weight: bold;  /*texto en negrilla*/
                       }            
 
-          .grillade6productos 
+            main .grillade6productos 
                       {
-                            grid-column: 1 / 2; /* ocupará 1 columna */
-                            grid-row: 2 / 3; /* ocuapara 1 fila  */
-                            background-color: rgb(0, 0, 0); /* Fondo negro */
-                            padding:0;    /*reiniciamos el padding o relleno a cero*/
-                            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                            margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
-                            /*La grilla de productos EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
-                              ordenar unos elementos dentro de el*/ 
-                            display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
-                            grid-template-columns: repeat(3, 1fr);  /*3 columnas*/
-                            grid-template-rows: repeat(2, auto);    /*2 filas*/
-
+                          grid-column: 1 / 2; /* ocupará 1 columna */
+                          grid-row: 2 / 3; /* ocuapara 1 fila  */
+                          background-color: rgb(0, 0, 0); /* Fondo negro */
+                          padding:0;    /*reiniciamos el padding o relleno a cero*/
+                          border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                          margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
+                          /*La grilla de productos EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
+                            ordenar unos elementos dentro de el*/ 
+                          display:grid;                        
+                          grid-template-columns: repeat(3, 1fr);  /*3 columnas*/
+                          grid-template-rows: repeat(2, auto);    /*2 filas*/
+                          grid-gap:15px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                          padding:15px;
                       }
 
-          .proteinasunodosytres 
+            main .grillade6productos .productogeneral
                       {
-                            grid-column: 1 / 4; /* ocupará 3 columnas*/
-                            grid-row: 1 / 2; /* ocupara 1 fila */
-                            background-color: rgb(0, 0, 0); /* Fondo negro */
-                            padding:0;    /*reiniciamos el padding o relleno a cero*/
-                            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                            margin:  0px 0px 0px 0px; /*margin: top right bottom left;*/
-                            display:flex;
-                            flex-direction: row; /* contenido en una fila  */
-                            justify-content: center; /* Centra el contenido horizontalmente */
-                            align-items: center; /* Centra el contenido horizontalmente */
-                            gap:2%; /*espacioentre productos */
-                            flex-wrap: wrap; /* Permite que los productos se ajusten a la pantalla */
-                            display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
+                        width: 100%; /* El ancho de cada producto será el 30% del contenedor */
+                        height: auto;
+                        padding: 0px;
+                        display:grid;
+                        grid-template-columns: repeat(1, 1fr);  /*1 columnas*/
+                        grid-template-rows: repeat(5, auto);    /*5 filas*/
+                        grid-gap:5px; /*espacio entre una columna y otra o entre una fila y otra*/                      
+                        background-color: #ffffff;                        
+                        text-align: center;
+                        border-radius: 8px; /* Bordes redondeados */  
+                        transition: transform 0.3s ease; /* Animación al pasar el mouse */                        
                       }
 
-          .proteinascuatrocincoyseis 
+            /* Efecto al pasar el mouse por el producto */
+            main .grillade6productos .productogeneral:hover 
                       {
-                            grid-column: 1 / 4; /* ocupará 3 columnas*/
-                            grid-row: 2 / 3; /* ocupará 1 fila */
-                            background-color: rgb(0, 0, 0); /* Fondo negro */
-                            padding:0;    /*reiniciamos el padding o relleno a cero*/
-                            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                            margin:  0px 0px 0px 0px; /*margin: top right bottom left;*/
-                            display:flex;
-                            flex-direction: row; /* contenido en una fila  */
-                            justify-content: center; /* Centra el contenido horizontalmente */
-                            align-items: center; /* Centra el contenido horizontalmente */
-                            gap:2%; /*espacioentre productos */
-                            flex-wrap: wrap; /* Permite que los productos se ajusten a la pantalla */
+                        box-shadow: 0px 0px 30px red; /* Sombra cuando se pasa el mouse*/
+                        transform: translateY(-15px); /* Levanta ligeramente el producto */
                       }
 
-          /* Estilo para cada producto */
-          .producto {
-            width: 30%; /* El ancho de cada producto será el 30% del contenedor */
-            height: 97%;
-            background-color: #ffffff;
-            padding: 0px;
-            text-align: center;
-            border-radius: 8px; /* Bordes redondeados */  
-            transition: transform 0.3s ease; /* Animación al pasar el mouse */
-            display:grid;/*modelo que usaremos en la estructura: grid o grilla  12 columnas, 23 filas */                        
-            grid-template-columns: repeat(1, 1fr);  /*1 columna*/
-            grid-template-rows: repeat(5, auto);    /*3 filas*/
-          }
-
-          /* Efecto al pasar el mouse por el producto */
-          .producto:hover {
-            box-shadow: 0px 0px 30px red; /* Sombra cuando se pasa el mouse*/
-            transform: translateY(-15px); /* Levanta ligeramente el producto */
-          }
+            main .grillade6productos.productogeneral .producto1   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            main .grillade6productos.productogeneral .producto2   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            main .grillade6productos.productogeneral .producto3   {  grid-column: 3 / 4; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            main .grillade6productos.productogeneral .producto4   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            main .grillade6productos.productogeneral .producto5   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            main .grillade6productos.productogeneral .producto6   {  grid-column: 3 / 4; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
 
           /* Estilo de la imagen del producto */
           .producto img {
@@ -638,21 +622,42 @@ section, article, nav, aside, header, footer, main {  display: block; }
                     {
                       /*SE DEJA AQUI COMO PRUEBA, AL FINAL SE QUITA  */
                       /*background-color: rgb(173, 173, 173); */
-                    }    
+                    }
+
           header .contenedorlogoencabezado 
                     {
                           margin: 2% 63% 2% 2%;  /*arriba derecha abajo izquierda;*/  
                           width: 35%; /* 5% del contenedor donde esta:osea del header   */
                           height: auto; /* 5% del contenedor donde esta:osea del header   */                               
                     }
+
           header .contenedoriconoiniciarsesion
                     {
                           width: 35%; /* 5% del contenedor donde esta:osea del header   */
                           height: auto; /* 5% del contenedor donde esta:osea del header   */    
                           margin: 2% 2% 2% 63%;  /*arriba derecha abajo izquierda;*/                                                
                     }
+
             main .bannersuperior-text 
-                        {
-                              font-size: 160%; /* El texto ocupara el 10% del alto de la ventana */
-                        }  
-        }
+                    {
+                          font-size: 160%; /* El texto ocupara el 10% del alto de la ventana */
+                    }
+
+            main .grillade6productos 
+                    {
+                        display:grid;                        
+                        grid-template-columns: repeat(2, 1fr);  /*2 columnas*/
+                        grid-template-rows: repeat(3, auto);    /*3 filas*/
+                        grid-gap:12px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                        padding:12px;
+                    }
+                    
+            .productogeneral .producto1   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            .productogeneral .producto2   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 2 / 3; /* ocupará 1 fila */   }
+            .productogeneral .producto3   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 3 / 4; /* ocupará 1 fila */   }
+            .productogeneral .producto4   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            .productogeneral .producto5   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 2 / 3; /* ocupará 1 fila */   }
+            .productogeneral .producto6   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 3 / 4; /* ocupará 1 fila */   }
+
+
+       }
