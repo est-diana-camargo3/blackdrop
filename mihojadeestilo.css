@@ -7,17 +7,17 @@ section, article, nav, aside, header, footer, main {  display: block; }
         y para aquellos que depronto por lo antiguos no lo hacen, posteriores a internet explorer
         version 8 o anteriores, formateamos estas etiquetas y buscamos la version que las puedan mostrar*/
 
-  /* ================================================================================
-                                       H T M L 
-  =================================================================================== */
+  /* =================================================================================================
+                                                  H T M L 
+  ==================================================================================================== */
   *{
         margin:0;
         padding:0;
    }
 
-    /* ================================================================================
-                                        B O D Y
-    =================================================================================== */
+    /* =================================================================================================
+                                                  B O D Y
+    ==================================================================================================== */
 
     body /* Cuerpo , su papa es html */
           {
@@ -39,9 +39,12 @@ section, article, nav, aside, header, footer, main {  display: block; }
           }
           
 
-    /* ================================================================================
-                                      H E A D E R 
-    =================================================================================== */
+
+
+
+    /* =================================================================================================
+                                                H E A D E R 
+    ==================================================================================================== */
 
     header /* encabezado */
           {
@@ -64,10 +67,10 @@ section, article, nav, aside, header, footer, main {  display: block; }
                 overflow-x: hidden; /* Esto desactiva el deslizador vertical */
                 overflow-y: auto; /* Esto permite el deslizador lateral */
                 
-        }
+          }
 
-        header .contenedorlogoencabezado 
-                        {
+          header .contenedorlogoencabezado 
+                          {
                               grid-column: 1 / 2; /* ocupara 1 columnas*/
                               grid-row: 1 / 2; /* ocupara 1 fila*/    
                               margin: 2% 2% 2% 2%;  /*arriba derecha abajo izquierda;*/
@@ -78,27 +81,24 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
                               cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
                               transition: color 0.3s ease;
-                              /*display:flex;
-                              /*align-content: flex-start; /*alinea los elementos VERTICAL en el centro del flex-header*/
-                              background-color: rgba(255, 37, 37); 
-                              
-                        }
+                              /*background-color: rgba(255, 37, 37); */                        
+                          }
 
-           
-        header .contenedorlogoencabezado:hover 
-                        {
-                            box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
-                            /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
-                        }
+            
+          header .contenedorlogoencabezado:hover 
+                          {
+                              box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
+                              /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
+                          }
 
-        header .contenedorlogoencabezado img
-        {
-          width: 100%; 
-          height: auto;
-        }
+          header .contenedorlogoencabezado img
+                          {
+                              width: 100%; 
+                              height: auto;
+                          }
 
-        header .contenedoriconoiniciarsesion
-                        {
+          header .contenedoriconoiniciarsesion
+                          {
                               grid-column: 2 / 3; /* ocupara 1 columnas*/
                               grid-row: 1 / 2; /* ocupara 1 fila*/    
                               margin: 2% 2% 2% 83%;  /*arriba derecha abajo izquierda;*/
@@ -109,124 +109,65 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
                               cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
                               transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
-                              /*display:flex;*/
-                              /*align-content: flex-end; /*alinea los elementos VERTICAL en el centro del flex-header*/
-                              background-color: rgb(142, 56, 247);                              
-                        }
-                        
-        header .contenedoriconoiniciarsesion:hover 
-                        {
+                              /*background-color: rgb(142, 56, 247);     */                         
+                          }
+                          
+          header .contenedoriconoiniciarsesion:hover 
+                          {
                               box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
                               /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
-                        }
+                          }
 
-        header .contenedoriconoiniciarsesion img
-        {
-          width: 100%; 
-          height: auto;
-        }
+          header .contenedoriconoiniciarsesion img
+                          {
+                              width: 100%; 
+                              height: auto;
+                          }
 
-      /* ================================================================================
-                                          M A I N  
-      =================================================================================== */
+
+
+
+      /* =================================================================================================
+                                                   M A I N  
+      ==================================================================================================== */
 
       main /* contenido principal del body */
-          {
-              /*como el body es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
-              grid-column: 1 / 2; /* ocupara 1 columnas*/
-              grid-row: 2 / 3; /* ocupara 1 filas */
-              background-color: rgba(0, 0, 255); /* Azul con 15% de transparencia */
-              padding:0;    /*reiniciamos el padding o relleno a cero*/
-              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-              margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
-              /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
-              ordenar unos elementos dentro de el*/ 
-              display:grid;                       
-              grid-template-columns: repeat(1, 1fr);  /*1 columna*/
-              grid-template-rows: repeat(3, auto);    /*3 filas*/
-          }
-
-          h1
-              {
-                   color:rgb(0, 34, 65);
-              }
-            
-          h2 
-              {
-                    color: rgb(255, 255, 255);
-                    margin-bottom: 2em !important;
-                    font-size: clamp(30px, calc(0.5vw + 0.5vh), 50px);  /* de manera personalizada para que no dependa del tamaño de letra del cuerpo.*/
-                    text-shadow: 
-                    -2px -2px 0 rgb(124, 0, 0),  
-                    2px -2px 0 rgb(124, 0, 0),
-                    -2px  2px 0 rgb(124, 0, 0),
-                    2px  2px 0 rgb(124, 0, 0); /* Bordes en cada dirección */
-
-                    font-weight: bold; 
-                    grid-column: span 2; /* Ocupa todas las columnas del grid */
-                    grid-row: 1;
-                    text-align: flex-start; /* Centra el texto */   
-              }
-
-          form 
-              {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center; /* Centra los elementos */
-                    margin-bottom: 50px;
-              }
-
-          label 
-              {
-                    text-align: left;
-                    color: white;
-              }
-            
-          .radio-group 
-              {
-                    display: flex;
-                    gap: 15px; /* Espaciado entre Cliente y Administrador */
-                    align-items: center;
-              }
-
-          button 
-              {
-                grid-column: span 2; /* Hace que el botón ocupe las dos columnas */
-                width: 100%; /* Asegura que se mantenga centrado */
-                margin-top: 15px; /* Añade espacio arriba */
-                padding: 10px; /* Ajusta el tamaño */
-                background-color: #8b0000;
-                color: white;
-                border: none;
-                cursor: pointer;
-              }
-          
-          button:hover 
-              {
-                  background-color: #a00000;
-              }
-            
-
-          /* Estilos para el banner */
-          main .bannersuperior 
             {
-              grid-column: 1 / 2; /* ocupara 1 columna */
-              grid-row: 1 / 2; /* ocupara 1 fila */
-              background-color: rgb(168, 24, 28); /* Fondo rojo */
-              display: flex;
-              justify-content: center; /* Centra el contenido horizontalmente */
-              align-items: center; /* Centra el contenido verticalmente */
+                /*como el body es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+                grid-column: 1 / 2; /* ocupara 1 columnas*/
+                grid-row: 2 / 3; /* ocupara 1 filas */
+                background-color: rgba(0, 0, 255); /* Azul con 15% de transparencia */
+                padding:0;    /*reiniciamos el padding o relleno a cero*/
+                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
+                /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
+                ordenar unos elementos dentro de el*/ 
+                display:grid;                       
+                grid-template-columns: repeat(1, 1fr);  /*1 columna*/
+                grid-template-rows: repeat(3, auto);    /*3 filas*/
             }
+
+              /* Estilos para el banner */
+            main .bannersuperior 
+                  {
+                      grid-column: 1 / 2; /* ocupara 1 columna */
+                      grid-row: 1 / 2; /* ocupara 1 fila */
+                      background-color: rgb(168, 24, 28); /* Fondo rojo */
+                      height: auto; /* 5% del contenedor donde esta:osea del header   */
+                      display: flex;
+                      justify-content: center; /* Centra el contenido horizontalmente */
+                      align-items: center; /* Centra el contenido verticalmente */
+                      padding:3%;
+                  }
 
           /* Estilos para el texto dentro del banner */
           main .bannersuperior-text 
                       {
                             color: white; /* Texto blanco */
-                            font-size: 230%; /* El texto ocupara el 10% del alto de la ventana */
-                            text-transform: uppercase; /* Convertir el texto a mayúsculas */
+                            font-size: 270%; /* El texto ocupara el 10% del alto de la ventana */
+                            /*text-transform: uppercase; /* Convertir el texto a mayúsculas */
                             text-align: center; /* Centrar el texto */
                             margin: 0;
-                            width: 100%; /* El texto ocupará el 60% del ancho del banner */
                             font-weight: bold;  /*texto en negrilla*/
                       }            
 
@@ -390,9 +331,79 @@ section, article, nav, aside, header, footer, main {  display: block; }
             /*justify-content: space-between; /* Distribuye el espacio HORIZONTAL entre los elementos para que queden en una linea  */
           }
 
-      /* ================================================================================
+
+
+
+
+
+
+
+          h1
+              {
+                   color:rgb(0, 34, 65);
+              }
+            
+          h2 
+              {
+                    color: rgb(255, 255, 255);
+                    margin-bottom: 2em !important;
+                    font-size: clamp(30px, calc(0.5vw + 0.5vh), 50px);  /* de manera personalizada para que no dependa del tamaño de letra del cuerpo.*/
+                    text-shadow: 
+                    -2px -2px 0 rgb(124, 0, 0),  
+                    2px -2px 0 rgb(124, 0, 0),
+                    -2px  2px 0 rgb(124, 0, 0),
+                    2px  2px 0 rgb(124, 0, 0); /* Bordes en cada dirección */
+
+                    font-weight: bold; 
+                    grid-column: span 2; /* Ocupa todas las columnas del grid */
+                    grid-row: 1;
+                    text-align: flex-start; /* Centra el texto */   
+              }
+
+          form 
+              {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center; /* Centra los elementos */
+                    margin-bottom: 50px;
+              }
+
+          label 
+              {
+                    text-align: left;
+                    color: white;
+              }
+            
+          .radio-group 
+              {
+                    display: flex;
+                    gap: 15px; /* Espaciado entre Cliente y Administrador */
+                    align-items: center;
+              }
+
+          button 
+              {
+                grid-column: span 2; /* Hace que el botón ocupe las dos columnas */
+                width: 100%; /* Asegura que se mantenga centrado */
+                margin-top: 15px; /* Añade espacio arriba */
+                padding: 10px; /* Ajusta el tamaño */
+                background-color: #8b0000;
+                color: white;
+                border: none;
+                cursor: pointer;
+              }
+          
+          button:hover 
+              {
+                  background-color: #a00000;
+              }
+            
+
+          
+
+      /* =================================================================================================
                                          F O O T E R   
-      =================================================================================== */
+      ==================================================================================================== */
 
       footer 
             {
@@ -540,9 +551,9 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
 
           
-      /* ================================================================================
+      /* =================================================================================================
                                        Inicio de sesion
-      =================================================================================== */
+      ==================================================================================================== */
         /* Estilos para el fondo oscuro del modal */
         .modal {
           display: none; /* Ocultar por defecto */
@@ -612,9 +623,12 @@ section, article, nav, aside, header, footer, main {  display: block; }
         }
 
 
-      /* ================================================================================
+
+
+
+      /* =================================================================================================
                      configuracion para celulares  de 320 a 750 pixeles
-      =================================================================================== */
+      ==================================================================================================== */
 
         
         @media (max-width: 750px) 
@@ -622,8 +636,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
         {
           body
                     {
-                      /*SE DEJA AQUI COMO PRUEBA, AL FINAL SE QUITA  
-                      background-color: rgb(173, 173, 173); */
+                      /*SE DEJA AQUI COMO PRUEBA, AL FINAL SE QUITA  */
+                      /*background-color: rgb(173, 173, 173); */
                     }    
           header .contenedorlogoencabezado 
                     {
@@ -637,4 +651,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
                           height: auto; /* 5% del contenedor donde esta:osea del header   */    
                           margin: 2% 2% 2% 63%;  /*arriba derecha abajo izquierda;*/                                                
                     }
+            main .bannersuperior-text 
+                        {
+                              font-size: 160%; /* El texto ocupara el 10% del alto de la ventana */
+                        }  
         }
