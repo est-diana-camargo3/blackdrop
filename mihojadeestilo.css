@@ -73,7 +73,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               margin: 2% 2% 2% 2%;  /*arriba derecha abajo izquierda;*/
                               padding:0; /*relleno*/
                               border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                              width: 25%; /* 5% del contenedor donde esta:osea del header   */
+                              width: 15%; /* 5% del contenedor donde esta:osea del header   */
                               height: auto; /* 5% del contenedor donde esta:osea del header   */
                               object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
                               cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
@@ -83,6 +83,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               background-color: rgba(255, 37, 37); 
                               
                         }
+
            
         header .contenedorlogoencabezado:hover 
                         {
@@ -100,10 +101,10 @@ section, article, nav, aside, header, footer, main {  display: block; }
                         {
                               grid-column: 2 / 3; /* ocupara 1 columnas*/
                               grid-row: 1 / 2; /* ocupara 1 fila*/    
-                              margin: 2% 2% 2% 73%;  /*arriba derecha abajo izquierda;*/
+                              margin: 2% 2% 2% 83%;  /*arriba derecha abajo izquierda;*/
                               padding:0; /*relleno*/
                               border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                              width: 25%; /* 5% del contenedor donde esta:osea del header   */
+                              width: 15%; /* 5% del contenedor donde esta:osea del header   */
                               height: auto; /* 5% del contenedor donde esta:osea del header   */
                               object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
                               cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
@@ -610,3 +611,30 @@ section, article, nav, aside, header, footer, main {  display: block; }
           background-color: rgb(216, 0, 0);
         }
 
+
+      /* ================================================================================
+                     configuracion para celulares  de 320 a 750 pixeles
+      =================================================================================== */
+
+        
+        @media (max-width: 750px) 
+
+        {
+          body
+                {
+                  /*SE DEJA AQUI COMO PRUEBA, AL FINAL SE QUITA  
+                  background-color: rgb(173, 173, 173); */
+                }    
+          header .contenedorlogoencabezado 
+                        {
+                              margin: 2% 63% 2% 2%;  /*arriba derecha abajo izquierda;*/  
+                              width: 35%; /* 5% del contenedor donde esta:osea del header   */
+                              height: auto; /* 5% del contenedor donde esta:osea del header   */                               
+                        }
+          header .contenedoriconoiniciarsesion
+                    {
+                          width: 35%; /* 5% del contenedor donde esta:osea del header   */
+                          height: auto; /* 5% del contenedor donde esta:osea del header   */    
+                          margin: 2% 2% 2% 63%;  /*arriba derecha abajo izquierda;*/                                                
+                    }
+        }
