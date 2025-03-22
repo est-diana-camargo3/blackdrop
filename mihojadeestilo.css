@@ -621,16 +621,16 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
         {
           body
-                {
-                  /*SE DEJA AQUI COMO PRUEBA, AL FINAL SE QUITA  
-                  background-color: rgb(173, 173, 173); */
-                }    
+                    {
+                      /*SE DEJA AQUI COMO PRUEBA, AL FINAL SE QUITA  
+                      background-color: rgb(173, 173, 173); */
+                    }    
           header .contenedorlogoencabezado 
-                        {
-                              margin: 2% 63% 2% 2%;  /*arriba derecha abajo izquierda;*/  
-                              width: 35%; /* 5% del contenedor donde esta:osea del header   */
-                              height: auto; /* 5% del contenedor donde esta:osea del header   */                               
-                        }
+                    {
+                          margin: 2% 63% 2% 2%;  /*arriba derecha abajo izquierda;*/  
+                          width: 35%; /* 5% del contenedor donde esta:osea del header   */
+                          height: auto; /* 5% del contenedor donde esta:osea del header   */                               
+                    }
           header .contenedoriconoiniciarsesion
                     {
                           width: 35%; /* 5% del contenedor donde esta:osea del header   */
