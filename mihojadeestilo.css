@@ -200,20 +200,21 @@ section, article, nav, aside, header, footer, main {  display: block; }
                         width: 100%; /* El ancho de cada producto será el 30% del contenedor */
                         height: auto;
                         padding: 0px;
+                        text-align: center;
                         display:grid;
                         grid-template-columns: repeat(1, 1fr);  /*1 columnas*/
                         grid-template-rows: repeat(5, auto);    /*5 filas*/
                         grid-gap:5px; /*espacio entre una columna y otra o entre una fila y otra*/                      
                         background-color: #ffffff;                        
-                        text-align: center;
                         border-radius: 8px; /* Bordes redondeados */  
-                        transition: transform 0.3s ease; /* Animación al pasar el mouse */                        
+                        transition: transform 0.3s ease; /* Animación al pasar el mouse */
+                        margin: 0;                                           
                       }
 
             /* Efecto al pasar el mouse por el producto */
             main .grillade6productos .productogeneral:hover 
                       {
-                        box-shadow: 0px 0px 30px red; /* Sombra cuando se pasa el mouse*/
+                        box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
                         transform: translateY(-15px); /* Levanta ligeramente el producto */
                       }
 
@@ -224,75 +225,85 @@ section, article, nav, aside, header, footer, main {  display: block; }
             main .grillade6productos.productogeneral .producto5   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
             main .grillade6productos.productogeneral .producto6   {  grid-column: 3 / 4; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
 
-          /* Estilo de la imagen del producto */
-          .producto img {
-            grid-column: 1 / 2; /* ocupará 1 columnas*/
-            grid-row: 1 / 2; /* ocupará 1 fila */
-            width: 100%;
-            height: auto;
-            border-radius: 8%; /* Bordes redondeados para la imagen */
-            
-          }
+          main .grillade6productos .productogeneral img 
+                    {
+                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                        grid-row: 1 / 2; /* ocupará 1 fila */
+                        width: 80%;
+                        height: auto;
+                        border-radius: 8%; /* Bordes redondeados para la imagen */    
+                        text-align: center;        
+                        margin:10px 0 0 9% /*margin: top right bottom left;*/
+                    }
 
-          /* Estilo para el nombre del producto */
-          .producto h3 {
-            grid-column: 1 / 2; /* ocupará 1 columnas*/
-            grid-row: 2 / 3; /* ocupará 1 fila */
-            font-size: 180%;
-            color: #000000;
-            margin-top: 10px;
-          }
+          main .grillade6productos .productogeneral .nombreproducto 
+                    {
+                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                        grid-row: 2 / 3; /* ocupará 1 fila */
+                        font-size: 230%;
+                        color: #000000;
+                        font-weight: bold;
+                        margin:0 25px 0 25px; /*margin: top right bottom left;*/
+                    }
 
-          /* Estilo para el precio */
-          .producto .precio {
-            grid-column: 1 / 2; /* ocupará 1 columnas*/
-            grid-row: 3 / 4; /* ocupará 1 fila */
-            font-size: 220%;
-            color: #e63946; /* Rojo oscuro */
-            font-weight: bold;
-            margin: 10% 0 10% 0 ; /*margin: top right bottom left;*/
-          }
+          main .grillade6productos .productogeneral .precioproducto 
+                    {
+                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                        grid-row: 3 / 4; /* ocupará 1 fila */
+                        font-size: 280%;
+                        color: rgb(168, 24, 28); /* Rojo oscuro */
+                        font-weight: bold;
+                        margin: 10px 0 10px 0 ; /*margin: top right bottom left;*/
+                    }
 
-          /* Estilo para la descripción en lista */
-          .producto .descripcion {
-            grid-column: 1 / 2; /* ocupará 1 columnas*/
-            grid-row: 4 / 5; /* ocupará 1 fila */
-            list-style-type: disc; /* Usa viñetas (bullets) */
-            padding-left: 15%;
-            text-align: left;
-          }
+          main .grillade6productos .productogeneral .descripcionproducto 
+                    {
+                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                        grid-row: 4 / 5; /* ocupará 1 fila */
+                        list-style-type: disc; /* Usa viñetas (bullets) */
+                        padding: 0px 25px 0px 35px; /* top right bottom left;*/
+                        text-align: left;
+                        margin:0px; /*margin: top right bottom left;*/
+                        font-size: 150%;  /* Tamaño del texto */
+                        text-align: justify; /* Hace que el texto ocupe todo el renglón */
+                        font-family: 'Courier New', Courier, monospace;
+                    }
 
-          /* Estilo para el botón de comprar */
-          .producto .btn-comprar {
-            grid-column: 1 / 2; /* ocupará 1 columnas*/
-            grid-row: 5 / 6; /* ocupará 1 fila */
-            background-color: red; /* Color de fondo del botón */
-            height: 3%;  /* Ajustamos la altura */
-            width: 80%;   /* Ancho en porcentaje */
-            color: white;  /* Color del texto */
-            border: none;  /* Sin borde */
-            padding: 3%; /* Espaciado interno */
-            font-size: 130%;  /* Tamaño del texto */
-            border-radius: 25px;  /* Bordes más redondeados */
-            cursor: pointer; /* Cambia el cursor al pasar por encima */
-            margin: 15% 0 0 10% ;  /*margin: top right bottom left;*/           
-            display: flex; /* Ajusta el comportamiento del botón */
-            justify-content: center; /* Centra el texto horizontalmente */
-            align-items: center; /* Centra el texto verticalmente */
-            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efecto suave de transición */
-          }
+          .enterpersonalizado  
+                    {
+                        display: block;
+                        height: 15px; /* Ajusta el tamaño del salto de línea */
+                    }
+
+          main .grillade6productos .productogeneral .btn-comprarproducto 
+                    {
+                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                        grid-row: 5 / 6; /* ocupará 1 fila */
+                        background-color: rgb(168, 24, 28); /* Color de fondo del botón */
+                        height: 50%;  /* Ajustamos la altura */
+                        width: 80%;   /* Ancho en porcentaje */
+                        color: white;  /* Color del texto */
+                        border: none;  /* Sin borde */
+                        padding: 3%; /* Espaciado interno */
+                        font-size: 240%;  /* Tamaño del texto */
+                        border-radius: 25px;  /* Bordes más redondeados */
+                        cursor: pointer; /* Cambia el cursor al pasar por encima */
+                        margin: 5% 0 8% 10% ;  /*margin: top right bottom left;*/   
+                        text-align: center;        
+                        display: flex; /* Ajusta el comportamiento del botón */
+                        justify-content: center; /* Centra el texto horizontalmente */
+                        align-items: center; /* Centra el texto verticalmente */
+                        transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efecto suave de transición */
+                    }
 
           /* Efecto cuando se pasa el mouse sobre el botón */
-          .producto .btn-comprar:hover {
-            background-color: green; /* Cambia a verde */
-            box-shadow: 0px 0px 30px red; /* Sombra cuando se pasa el mouse*/
-          }
+          main .grillade6productos .productogeneral .btn-comprarproducto:hover 
+                    {
+                        background-color: green; /* Cambia a verde */
+                        box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                    }
 
-          li
-          {
-            margin:5% 2% 0% 2%; /*margin: top right bottom left;*/
-            font-size: 90%;  /* Tamaño del texto */
-          }
+
 
           /* Estilos para el banner */
           .bannerinferior
@@ -658,6 +669,40 @@ section, article, nav, aside, header, footer, main {  display: block; }
             .productogeneral .producto4   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
             .productogeneral .producto5   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 2 / 3; /* ocupará 1 fila */   }
             .productogeneral .producto6   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 3 / 4; /* ocupará 1 fila */   }
+            
+            main .grillade6productos .productogeneral img 
+                    {
+                        width: 100%;
+                        height: auto;
+                        margin:6px 0 0 0; /*margin: top right bottom left;*/           
+                    }
 
+            main .grillade6productos .productogeneral .nombreproducto 
+                    {
+                        font-size: 180%;
+                    }
 
+            main .grillade6productos .productogeneral .precioproducto 
+                    {
+                        font-size: 200%;
+                    }
+
+            main .grillade6productos .productogeneral .descripcionproducto 
+                      {
+                        padding: 0px 15px 0px 25px; /* top right bottom left;*/  
+                        font-size: 90%;  /* Tamaño del texto */
+                      }
+            .enterpersonalizado  
+                      {
+                          display: block;
+                          height: 8px; /* Ajusta el tamaño del salto de línea */
+                      }
+
+            main .grillade6productos .productogeneral .btn-comprarproducto 
+                      {
+                          height: 50%;  /* Ajustamos la altura */
+                          width: 80%;   /* Ancho en porcentaje */
+                          font-size: 150%;  /* Tamaño del texto */
+                          margin: 5% 0 8% 10% ;  /*margin: top right bottom left;*/   
+                      }
        }
