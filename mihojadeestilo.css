@@ -303,29 +303,27 @@ section, article, nav, aside, header, footer, main {  display: block; }
                         box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
                     }
 
-
-
-          /* Estilos para el banner */
-          .bannerinferior
-          {
-            grid-column: 1 / 2; /* ocupará 1 columna */
-            grid-row: 3 / 4; /* ocupará 2 fila */
-            background-color: rgb(255, 255, 255); /* Fondo rojo */
-            margin:0;     /*reiniciamos las margenes a cero*/
-            padding:0;    /*reiniciamos el padding o relleno a cero*/
-            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-            background-image: url('imagenes/logos/logo_blanco_letras_negras_rojas.png');
-            /*background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
-            /*background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
-            background-size: 95% 230%; /* La imagen se estira para cubrir todo el contenedor ancho-alto*/
-            background-position: center center; /* Centra la imagen de fondo dentro del header */
-            background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-            /*display:flex;
-            align-items: center; /*que los elementos llenen el contenedor*/
-            /*flex-direction:row; /*que los items sean en una fila*/
-            /*justify-content: space-between; /* Distribuye el espacio HORIZONTAL entre los elementos para que queden en una linea  */
-          }
-
+          main .bannerinferior 
+                    {
+                        background-color: #ffffff;  
+                        grid-column: 1 / 2; /* ocupará 1 columna */
+                        grid-row: 3 / 4; /* ocupará 2 fila */
+                        width: 100%;
+                        height: auto;
+                        margin:0;     /*reiniciamos las margenes a cero*/
+                        padding:0;    /*reiniciamos el padding o relleno a cero*/
+                        border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                        display:flex;
+                        align-items: center; /*que los elementos llenen el contenedor*/
+                        justify-content: center; /* Distribuye el espacio HORIZONTAL entre los elementos para que queden en una linea  */
+                    }
+          main .bannerinferior img 
+                    {
+                        width: 40%;
+                        height: auto;
+                        border-radius: 8%; /* Bordes redondeados para la imagen */  
+                        padding:10px;  
+                    }
 
 
 
