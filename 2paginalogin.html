@@ -558,13 +558,20 @@
       </body>
 
 
+
+            <!-- ===========================================================================================
+                                                    S C R I P T S  
+            ================================================================================================ --> 
+
+
       <script>
-        // Base de datos simulada con tus usuarios
+        // Base de datos simulada
         const usuarios = [
-          { correo: "cliente@correo.com", contraseña: "1234", tipo: "cliente" },
-          { correo: "admin@correo.com", contraseña: "1234", tipo: "administrador" },
-          { correo: "mayerly@correo.com", contraseña: "1234", tipo: "administrador" },
-          { correo: "juanita@correo.com", contraseña: "1234", tipo: "administrador" }
+          { correo: "clientemujer@correo.com", contraseña: "1234", tipo: "cliente" , foto: "imagenes/fotosdeperfil/fotodeclientemujer.jpg"},
+          { correo: "clientehombre@correo.com", contraseña: "1234", tipo: "cliente" , foto: "imagenes/fotosdeperfil/fotodeclientehombre.jpg"},
+          { correo: "admin@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotodeadministrador.jpg"},
+          { correo: "mayerly@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotodemayerly.jpg"},
+          { correo: "juanita@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotosdejuanita.jpg"}
         ];
       
         // Evento al hacer clic en Iniciar Sesión
@@ -589,15 +596,32 @@
           );
       
           if (usuarioEncontrado) {
-            // Si es correcto, redirige a 1index.html
-            /*alert(`✅ Bienvenido, ${tipoCuenta}`);*/
-            window.location.href = '1index.html';  // Aquí rediriges
-          } else {
-            // Si no encuentra el usuario
-            alert("❌ Correo, contraseña o tipo de cuenta incorrectos, \n \n ✅ si deja correo: cliente@correo.com , contraseña:1234 y tipo:cliente, lo deja ingresar a cliente, \n \n ✅ si deja correo: admin@correo.com , contraseña:1234 y tipo:administador, lo deja ingresar a administrador");
+          // ✅ Guarda el usuario en el LocalStorage siempre que sea encontrado
+          localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioEncontrado));
+
+          // ✅ Redirige según el tipo de cuenta
+          alert(`✅ Login correcto \n\n ✅ Bienvenido: ${usuarioEncontrado.correo}`);
+
+          if (tipoCuenta === "cliente") {
+              // Redirige a la página cliente
+              window.location.href = '4paginacliente.html';
+          } else if (tipoCuenta === "administrador") {
+              // Redirige a la página administrador
+              window.location.href = '3paginaadministrador.html';
           }
+      } else {
+          // Si no encuentra el usuario, muestra ejemplos
+          alert("❌ Correo, contraseña o tipo de cuenta incorrectos.\n\n✅ Ejemplo válido:\nCorreo: clientemujer@correo.com\nContraseña: 1234\nTipo: cliente\n\n✅ Otro válido:\nCorreo: clientehombre@correo.com\nContraseña: 1234\nTipo:cliente\n\n✅ Otro válido:\nCorreo: admin@correo.com\nContraseña: 1234\nTipo: administrador");
+      }
+
         });
+
+
+        /*   con esto se puede sacar la info del usuario desde otra pagina          */
+        /*   const usuario = JSON.parse(localStorage.getItem('usuarioLogueado'));   */
+
       </script>
+      
       
 
 
