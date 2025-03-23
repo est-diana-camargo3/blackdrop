@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina login</title>
+    <style>
+
+
+
+    /* =================================================================================================
+                                                  B O D Y
+    ==================================================================================================== */
+
+    body /* Cuerpo , su papa es html */
+          {
+                background-color: rgb(255, 255, 255); /* Naranja con 30% de transparencia */ 
+                color:rgb(0, 0, 0); /*color de texto*/
+                font-family: Arial, sans-serif; /* Fuente: Arial, sino que no tenga adornos es decir cualquier fuente sans-serif*/
+                margin:10px auto;     /*margenes automaticas, menos la superior*/
+                padding:0;    /*reiniciamos el padding o relleno a cero*/
+                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                width:100%; /*que ocupe el 95% de ancho de la ventana*/
+                max-width: 1400px; /*maximo ocupa 1400 pixeles*/
+                min-width: 300px; /*maximo ocupa 1400 pixeles*/
+                display:grid;
+                /*se dividira en 3 filas, 3 columnas*/
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat (3,auto); /*tamaño automatico osea que se ajusten al contenido*/
+                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                overflow-y: auto; /* Esto permite el deslizador lateral */
+          }
+          
+
+
+
+
+
+
+    /* =================================================================================================
+                                                H E A D E R 
+    ==================================================================================================== */
+
+    header /* encabezado */
+          {
+                /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
+                grid-column: 1 / 2; /* ocupara 1 columnas*/
+                grid-row: 1 / 2; /* ocupara 1 fila*/
+                margin:0;     /*reiniciamos las margenes a cero*/
+                padding:0;    /*reiniciamos el padding o relleno a cero*/
+                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                background-image: url('imagenes/texturas/texturafondoblanco.jpg');
+                background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
+                background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
+                background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
+                background-position: center center; /* Centra la imagen de fondo dentro del header */
+                background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+                display:grid;
+                /*se dividira en 2 columnas, 1 fila*/
+                grid-template-columns: repeat(3, auto); /*dividido 3 columnas*/
+                grid-template-rows: repeat (1,auto); /*tamaño automatico osea que se ajusten al contenido*/
+                overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                overflow-y: auto; /* Esto permite el deslizador lateral */
+                
+          }
+
+          header .contenedoriconoatras
+                          {
+                              grid-column: 1 / 2; /* ocupara 1 columnas*/
+                              grid-row: 1 / 2; /* ocupara 1 fila*/    
+                              margin: 10% 10% 10% 10%;  /*arriba derecha abajo izquierda;*/
+                              padding:0; /*relleno*/
+                              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                              width: 120%; /* 5% del contenedor donde esta:osea del header   */
+                              height: auto; /* 5% del contenedor donde esta:osea del header   */
+                              object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
+                              cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+                              transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
+                              /*background-color: rgb(142, 56, 247);     */                         
+                          }
+                          
+          header .contenedoriconoatras:hover 
+                          {
+                              box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
+                              /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
+                          }
+
+          header .contenedoriconoatras img
+                          {
+                              width: 100%; 
+                              height: auto;
+                          }
+
+                          
+            header .contenedortituloiniciarsesion
+                          {
+                              grid-column: 2 / 3; /* ocupara 1 columnas*/
+                              grid-row: 1 / 2; /* ocupara 1 fila*/ 
+                              margin: 10px 35% 10px 70%;  /*arriba derecha abajo izquierda;*/
+                              text-align: center;
+                              width: 170%; 
+                              height: auto;
+                              font-weight: bold;;
+                              padding: 0;
+                          }
+
+            
+            header .contenedortituloiniciarsesion .tituloiniciarsesion
+                          {
+                              font-size: 300%;
+                          }
+
+          header .contenedorlogoencabezado 
+                          {
+                              grid-column: 3 / 4; /* ocupara 1 columnas*/
+                              grid-row: 1 / 2; /* ocupara 1 fila*/    
+                              margin: 2% 10px 2% 84%;  /*arriba derecha abajo izquierda;*/
+                              padding:0; /*relleno*/
+                              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                              width: 15%; /* 5% del contenedor donde esta:osea del header   */
+                              height: auto; /* 5% del contenedor donde esta:osea del header   */
+                              object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
+                              cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+                              transition: color 0.3s ease;                    
+                          }
+
+            
+          header .contenedorlogoencabezado:hover 
+                          {
+                              box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
+                              /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
+                          }
+
+          header .contenedorlogoencabezado img
+                          {
+                              width: 100%; 
+                              height: auto;
+                          }
+
+
+ /* =================================================================================================
+                                                   M A I N  
+      ==================================================================================================== */
+
+      main /* contenido principal del body */
+            {
+                grid-column: 1 / 2; /* ocupara 1 columnas*/
+                grid-row: 2 / 3; /* ocupara 1 filas */
+                background-color: rgb(0, 0, 0); /* Azul con 15% de transparencia */
+                padding:0;    /*reiniciamos el padding o relleno a cero*/
+                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                margin:0;     /*arriba derecha abajo izquierda;*/
+                /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
+                ordenar unos elementos dentro de el*/ 
+                display:grid;                                   
+                grid-template-columns: repeat(1, auto);  /*1 columna*/
+                grid-template-rows: repeat(5, auto);    /*5 filas*/
+                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+            }
+            main .contenedortitulomasinputcorreo
+                      {
+                          grid-column: 1 / 2; /* ocupara 1 columna */
+                          grid-row: 1 / 2; /* ocupara 1 fila */
+                          height: auto; /* 5% del contenedor donde esta:osea del header   */
+                          padding:3%;
+                          display:grid;                                   
+                          grid-template-columns: repeat(2, auto);  /*2 columna*/
+                          grid-template-rows: repeat(1, auto);    /*2 filas*/
+                          grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                      }
+
+                      main .contenedortitulomasinputcorreo .titulocorreo 
+                            {
+                                grid-column: 1 / 2; /* ocupara 1 columna */
+                                grid-row: 1 / 2; /* ocupara 1 fila */  
+                                color: rgb(255, 255, 255); /* Texto blanco */
+                                font-size: 200%; /* El texto ocupara el 10% del alto de la ventana */
+                                font-weight: bold;  /*texto en negrilla*/
+                                margin: 20px 10% 0 70%; /*arriba derecha abajo izquierda;*/
+                                width:140px;
+                            } 
+
+                      main .contenedortitulomasinputcorreo .inputcorreo 
+                            {
+                                grid-column: 2 / 3; /* ocupara 1 columna */
+                                grid-row: 1 / 2; /* ocupara 1 fila */    
+                                background-color: rgb(255, 255, 255); /* Texto blanco */
+                                color: rgb(91, 90, 90);
+                                font-size: 130%; /* El texto ocupara el 10% del alto de la ventana */
+                                /*text-transform: uppercase; /* Convertir el texto a mayúsculas */
+                                width: 80%;
+                                margin: 20px 30% 0 0; /*arriba derecha abajo izquierda;*/
+                            }  
+            main .contenedortitulomasinputcontraseña
+                      {
+                          grid-column: 1 / 2; /* ocupara 1 columna */
+                          grid-row: 2 / 3; /* ocupara 1 fila */
+                          height: auto; /* 5% del contenedor donde esta:osea del header   */
+                          padding:3%;
+                          display:grid;                                   
+                          grid-template-columns: repeat(2, auto);  /*2 columna*/
+                          grid-template-rows: repeat(1, auto);    /*2 filas*/
+                          grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                      }
+
+                      main .contenedortitulomasinputcontraseña .titulocontraseña 
+                      {
+                          grid-column: 1 / 2; /* ocupara 1 columna */
+                          grid-row: 1 / 2; /* ocupara 1 fila */  
+                          color: rgb(255, 255, 255); /* Texto blanco */
+                          font-size: 200%; /* El texto ocupara el 10% del alto de la ventana */
+                          font-weight: bold;  /*texto en negrilla*/
+                          margin: 0px 10% 0 46%; /*arriba derecha abajo izquierda;*/
+                          width:140px;
+                      } 
+
+                      main .contenedortitulomasinputcontraseña .inputcontraseña 
+                      {
+                          grid-column: 2 / 3; /* ocupara 1 columna */
+                          grid-row: 1 / 2; /* ocupara 1 fila */    
+                          background-color: rgb(255, 255, 255); /* Texto blanco */
+                          color: rgb(91, 90, 90);
+                          font-size: 30%; /* El texto ocupara el 10% del alto de la ventana */
+                          /*text-transform: uppercase; /* Convertir el texto a mayúsculas */
+                          width: 80%;
+                          margin: 0px 30% 0 0; /*arriba derecha abajo izquierda;*/
+                      }  
+                      
+            main.contenedortitulotipodecuentamasradiogroup  
+                      {
+                          grid-column: 1 / 2; /* ocupara 1 columna */
+                          grid-row: 3 / 4; /* ocupara 1 fila */
+                          margin: 0 20% 0 50%; /*arriba derecha abajo izquierda;*/
+                          display:grid;                                   
+                          grid-template-columns: repeat(2, auto);  /*2 columna*/
+                          grid-template-rows: repeat(1, auto);    /*2 filas*/
+                          grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                          background-color: rgb(54, 30, 0);
+                      }      
+
+                      main.contenedortitulotipodecuentamasradiogroup .titulotipodecuenta
+                                {
+                                    grid-column: 1 / 2; /* ocupara 1 columna */
+                                    grid-row: 1 / 2; /* ocupara 1 fila */
+                                }
+
+                      main.contenedortitulotipodecuentamasradiogroup .radiogroupdeltipodecuenta
+                                {
+                                    grid-column: 2 / 3; /* ocupara 1 columna */
+                                    grid-row: 1 / 2; /* ocupara 1 fila */
+                                    display: flex;
+                                    gap: 15px; /* Espaciado entre Cliente y Administrador */
+                                    align-items: center;
+                                }
+
+
+        main .contenedorbotoniniciarsesion  .botoniniciarsesion
+        {
+          grid-column: 2 / 3; /* ocupara 1 columna */
+          grid-row: 1 / 2; /* ocupara 1 fila */
+          /*grid-column: span 2; /* Hace que el botón ocupe las dos columnas */
+          width: 100%; /* Asegura que se mantenga centrado */
+          margin-top: 15px; /* Añade espacio arriba */
+          padding: 10px; /* Ajusta el tamaño */
+          background-color: #8b0000;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+    
+    .botoniniciarsesion:hover 
+        {
+            background-color: #a00000;
+        }
+
+
+        
+
+        /* Estilos para el fondo oscuro del modal */
+        .modal {
+          display: none; /* Ocultar por defecto */
+          position: fixed; /* Se mantiene fijo en la pantalla */
+          z-index: 1000; /* Asegura que está por encima de otros elementos */
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(41, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        /* Estilos para el contenido del modal */
+        .modal-contenido {
+          background-color: black;
+          padding: 30px;
+          border-radius: 10px;
+          width: 350px;
+          text-align: center;
+          box-shadow: 0 0 10px rgb(5, 0, 0);
+        }
+
+        /* Botón de cerrar (la 'X') */
+        .cerrar {
+          color: white;
+          font-size: 30px;
+          font-weight: bold;
+          position: absolute;
+          right: 15px;
+          top: 10px;
+          cursor: pointer;
+        }
+
+        /* Cambio de color al pasar el mouse por la 'X' */
+        .cerrar:hover {
+          color: red;
+        }
+
+        /* Estilos para los campos del formulario */
+        .modal-contenido input {
+          width: 90%;
+          padding: 8px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 5px;
+          text-align: center;
+        }
+
+        /* Estilos para el botón de inicio de sesión */
+        .modal-contenido button {
+          background-color: rgb(112, 0, 0);
+          color: white;
+          font-size: 20px;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 100%;
+        }
+
+        /* Efecto al pasar el mouse por el botón */
+        .modal-contenido button:hover {
+          background-color: rgb(216, 0, 0);
+        }
+
+        h1
+        {
+             color:rgb(0, 34, 65);
+        }
+      
+    h2 
+        {
+              color: rgb(255, 255, 255);
+              margin-bottom: 2em !important;
+              font-size: clamp(30px, calc(0.5vw + 0.5vh), 50px);  /* de manera personalizada para que no dependa del tamaño de letra del cuerpo.*/
+              text-shadow: 
+              -2px -2px 0 rgb(124, 0, 0),  
+              2px -2px 0 rgb(124, 0, 0),
+              -2px  2px 0 rgb(124, 0, 0),
+              2px  2px 0 rgb(124, 0, 0); /* Bordes en cada dirección */
+
+              font-weight: bold; 
+              grid-column: span 2; /* Ocupa todas las columnas del grid */
+              grid-row: 1;
+              text-align: flex-start; /* Centra el texto */   
+        }
+
+    form 
+        {
+              display: flex;
+              flex-direction: column;
+              align-items: center; /* Centra los elementos */
+              margin-bottom: 50px;
+        }
+
+    label 
+        {
+              text-align: left;
+              color: white;
+        }
+      
+
+    </style>
+</head>
+
+
+<body>
+          <!-- ===========================================================================================
+                                            H E A D E R encabezado
+          ================================================================================================ --> 
+          
+          <header> <!-- headER ó encabezado-->                         
+            <div class="contenedoriconoatras">          
+              <img src="imagenes/iconos/atras.png" alt="Icono para volver atras" onclick="location.href='2paginalogin.html'" >
+            </div>
+            <div class="contenedortituloiniciarsesion">          
+              <p class="tituloiniciarsesion"> Iniciar Sesión </p>
+            </div>
+            <div class="contenedorlogoencabezado">  
+                  <img src="imagenes/logos/logo_negro_letras_blancas_rojas.png" alt="Logo de la empresa Blackdrop" onclick="location.href='1index.html'">
+                </div>            
+          </header>
+          
+          <main>
+              <div class="contenedortitulomasinputcorreo ">
+                    <p class="titulocorreo"> Correo: </p>
+                    <input class="inputcorreo" required> Digite aqui su correo </input>
+              </div>
+              <div class="contenedortitulomasinputcontraseña ">
+                    <p class="titulocontraseña"> Contraseña: </p>
+                    <input class="inputcontraseña"required> Digite aqui su contraseña </input>
+              </div>
+              <div class="contenedortitulotipodecuentamasradiogroup">
+                <h1>hola</h1>
+                    <label for="titulotipodecuenta" class="titulotipodecuenta">Tipo de cuenta:</label>
+                    <div class="radiogroupdeltipodecuenta">
+                          <label for="cliente">Cliente</label>
+                          <input type="radio" id="cliente" name="tipo_cuenta" required>
+              
+                          <label for="Admin">Administrador</label>
+                          <input type="radio" id="Admin" name="tipo_cuenta" required>
+                    </div>
+              </div> 
+            </div class="contenedorbotoniniciarsesion"> 
+                  <button class="botoniniciarsesion" >Iniciar Sesión</button>
+            </div>
+
+<!--
+    <div id="modal" class="modal">
+        <div class="modal-contenido">
+        <span class="cerrar">&times;</span> -->
+         <!-- Botón para cerrar -->
+         <!--<form id="registro" method="get" enctype="multipart/form-data">
+              <h2>Inicio de sesión</h2>
+              <table border="0.5">
+                    <tr>
+                          <td><label for="usuario">Usuario:</label></td>
+                    </tr>
+              
+                    <tr>
+                          <td><input type="text" id="usuario" name="usuario" required></td>
+                    </tr>
+
+                    <tr>
+                          <td><label for="pass">Contraseña:</label></td>
+                    </tr>
+
+                    <tr>
+                          <td><input type="password" id="pass" name="pass" required></td>
+                    </tr>
+
+                    <tr>
+                          <td><label for="tipo_cuenta">Tipo de cuenta:</label></td>
+                      </tr>
+                      <tr>
+                          <td colspan="5">
+                              <div class="radio-group">
+                                  <label for="cliente">Cliente</label>
+                                  <input type="radio" id="cliente" name="tipo_cuenta" required>
+                      
+                                  <label for="Admin">Administrador</label>
+                                  <input type="radio" id="Admin" name="tipo_cuenta" required>
+                              </div>
+                          </td>
+                      </tr>
+                     
+                      
+              </table>
+              <tr>
+                          
+              </tr>
+              <button type="submit">Iniciar Sesión</button>
+        </form>
+        </div>
+  </div>-->
+</main>
+  
+  <!-- Vincular el JavaScript -->
+   <!--<script src="modal.js"></script>-->
+
+</body>
+</html>
