@@ -124,44 +124,15 @@ section, article, nav, aside, header, footer, main {  display: block; }
                 background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
                 display:grid;
                 /*se dividira en 2 columnas, 1 fila*/
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: repeat (1,auto); /*tamaño automatico osea que se ajusten al contenido*/
                 overflow-x: hidden; /* Esto desactiva el deslizador vertical */
                 overflow-y: auto; /* Esto permite el deslizador lateral */
                 
           }
-
-          header .contenedorlogoencabezado 
-                          {
-                              grid-column: 1 / 2; /* ocupara 1 columnas*/
-                              grid-row: 1 / 2; /* ocupara 1 fila*/    
-                              margin: 2% 2% 2% 2%;  /*arriba derecha abajo izquierda;*/
-                              padding:0; /*relleno*/
-                              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                              width: 26%; /* 5% del contenedor donde esta:osea del header   */
-                              height: auto; /* 5% del contenedor donde esta:osea del header   */
-                              object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
-                              cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
-                              transition: color 0.3s ease;
-                              /*background-color: rgba(255, 37, 37); */                        
-                          }
-
-            
-          header .contenedorlogoencabezado:hover 
-                          {
-                              box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
-                              /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
-                          }
-
-          header .contenedorlogoencabezado img
-                          {
-                              width: 100%; 
-                              height: auto;
-                          }
-
            .contenedorBienvenida p 
                         {
-                              grid-column: 2 / 3; /* ocupara 1 columnas*/
+                              grid-column: 1 / 2; /* ocupara 1 columnas*/
                               grid-row: 1 / 2; /* ocupara 1 fila*/  
                               font-size: 40px;
                               font-weight: bold;
@@ -170,14 +141,15 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               display: flex;
                               align-items: center;
                               justify-content: center;
-                              height: 100px;
+                              height: 120px;
+                              margin: 0 0 0 40px/*margin: top right bottom left;*/
                          }
 
           header .contenedorfotodecliente
                           {
-                              grid-column: 3 / 4; /* ocupara 1 columnas*/
+                              grid-column: 2 / 3; /* ocupara 1 columnas*/
                               grid-row: 1 / 2; /* ocupara 1 fila*/    
-                              margin: 2% 2% 2% 65%;  /*arriba derecha abajo izquierda;*/
+                              margin: 2% 10px 2% 78%;  /*arriba derecha abajo izquierda;*/
                               padding:0; /*relleno*/
                               border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
                               width: 100px; /* 5% del contenedor donde esta:osea del header   */
@@ -218,7 +190,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                 background-color: rgb(255, 255, 255); /* Azul con 15% de transparencia */
                 padding:0;    /*reiniciamos el padding o relleno a cero*/
                 border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
+                margin:0;     /*margin: top right bottom left;*/
                 /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
                 ordenar unos elementos dentro de el*/ 
                 display:grid;                                   
@@ -245,7 +217,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                           font-size: 270%; /* El texto ocupara el 10% del alto de la ventana */
                           /*text-transform: uppercase; /* Convertir el texto a mayúsculas */
                           text-align: center; /* Centrar el texto */
-                          margin: 0;
+                          margin: 0;/*margin: top right bottom left;*/
                           font-weight: bold;  /*texto en negrilla*/
                       }            
 
@@ -256,7 +228,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                           background-color: rgb(0, 0, 0); /* Fondo negro */
                           padding:0;    /*reiniciamos el padding o relleno a cero*/
                           border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                          margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
+                          margin:0;     /*margin: top right bottom left;*/
                           /*La grilla de productos EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
                             ordenar unos elementos dentro de el*/ 
                           display:grid;                        
@@ -279,7 +251,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                         background-color: #ffffff;                        
                         border-radius: 8px; /* Bordes redondeados */  
                         transition: transform 0.3s ease; /* Animación al pasar el mouse */
-                        margin: 0;                                           
+                        margin: 0;  /*margin: top right bottom left;*/                                         
                       }
 
             /* Efecto al pasar el mouse por el producto */
@@ -536,19 +508,25 @@ section, article, nav, aside, header, footer, main {  display: block; }
                       /*SE DEJA AQUI COMO PRUEBA, AL FINAL SE QUITA  */
                       /*background-color: rgb(173, 173, 173); */
                     }
+          .contenedorBienvenida p 
+                        {
+                              font-size: 16px;
+                              height: 70px;
+                              margin: 0 0 0 20px/*margin: top right bottom left;*/
+                         }
 
-          header .contenedorlogoencabezado 
-                    {
-                          width: 45%; /* 5% del contenedor donde esta:osea del header   */
-                          height: auto; /* 5% del contenedor donde esta:osea del header   */                               
-                    }
-
-          header .contenedoriconoiniciarsesion
-                    {
-                          width: 45%; /* 5% del contenedor donde esta:osea del header   */
-                          height: auto; /* 5% del contenedor donde esta:osea del header   */    
-                          margin: 2% 2% 2% 53%;  /*arriba derecha abajo izquierda;*/                                                
-                    }
+          header .contenedorfotodecliente
+                          {
+                              margin: 2% 10px 2% 87px;  /*arriba derecha abajo izquierda;*/
+                              width: 60px; /* 5% del contenedor donde esta:osea del header   */
+                              height: 60px; /* 5% del contenedor donde esta:osea del header   */                        
+                          }
+                          
+            header .contenedorfotodecliente img
+                          {
+                              width: 60px;   /* Aumenta el tamaño de la foto */
+                              height: 60px;
+                          }
 
             main .bannersuperior-text 
                     {
@@ -665,11 +643,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
                   ================================================================================================ --> 
                   
                   <header> <!-- headER ó encabezado-->                         
-                        <div class="contenedorlogoencabezado">          
-                             <img src="imagenes/logos/logo_negro_letras_blancas_rojas.png" alt="Logo de la empresa Blackdrop">
-                        </div>
 
-                            <!-- Bienvenida con correo -->
+                        <!-- Bienvenida con correo -->
                         <div class="contenedorBienvenida">  
                               <p>Bienvenido:...<span id="correoUsuario"></span></p>
                         </div>
@@ -711,7 +686,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                                 con intolerancia a la lactosa ó en estado de embarazo
                                                 (consulte con su médico) <span class="enterpersonalizado"></span></li>                                                
                                     </ul>
-                                    <button class="btn-comprarproducto" onclick="location.href='2paginalogin.html'">Comprar</button>
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
                               </div>
                                     
                               <!-- Producto 2 -->
@@ -728,7 +703,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                           <li><b>Edad de consumo: </b> A partir de los 18 años<span class="enterpersonalizado"></span></li>
                                           <li><b>Contraindicación:</b> Puede no ser adecuado para personas con intolerancia a la lactosa o en estado de embarazo (consultar con su médico)<span class="enterpersonalizado"></span></li>
                                     </ul>                                            
-                                    <button class="btn-comprarproducto" onclick="location.href='2paginalogin.html'">Comprar</button>
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
                               </div>
                                     
                               <!-- Producto 3 -->
@@ -746,7 +721,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                           <li><b>Edad de consumo: </b> Más de 18 años<span class="enterpersonalizado"></span></li>
                                           <li><b>Contraindicación:</b> Puede no ser bueno en personas intolerantes a la lactosa o en embarazo (consulte al médico)<span class="enterpersonalizado"></span></li>
                                     </ul>                                            
-                                    <button class="btn-comprarproducto" onclick="location.href='2paginalogin.html'">Comprar</button>
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
                               </div>
                                                                     
                               <!-- Producto 4 -->
@@ -763,7 +738,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                           <li><b>Edad de consumo: </b>Después de 18 años <span class="enterpersonalizado"></span></li>
                                           <li><b>Contraindicación:</b> Alergía a la leche, problemas renales (consulte con su médico) <span class="enterpersonalizado"></span></li>
                                     </ul>                                          
-                                    <button class="btn-comprarproducto" onclick="location.href='2paginalogin.html'">Comprar</button>
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
                               </div>
 
                               <!-- Producto 5 -->
@@ -780,7 +755,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                           <li><b>Edad de consumo: </b> Después de 12 años <span class="enterpersonalizado"></span></li>
                                           <li><b>Contraindicación:</b> Hipertensión, problemas renales (consulte con su médico) <span class="enterpersonalizado"></span> </li>
                                     </ul>                                          
-                                    <button class="btn-comprarproducto" onclick="location.href='2paginalogin.html'">Comprar</button>
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
                               </div>
                                           
                               <!-- Producto 6 -->
@@ -798,7 +773,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                           <li><b>Edad de consumo: </b> Después de 18 años <span class="enterpersonalizado"></span></li>
                                           <li><b>Contraindicación:</b> Ninguna  <span class="enterpersonalizado"></span></li>
                                     </ul>                                          
-                                    <button class="btn-comprarproducto" onclick="location.href='2paginalogin.html'">Comprar</button>
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
                               </div>                      
                         </section>
 
