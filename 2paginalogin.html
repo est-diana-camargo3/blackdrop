@@ -210,7 +210,7 @@
                                 grid-column: 2 / 3; /* ocupara 1 columna */
                                 grid-row: 1 / 2; /* ocupara 1 fila */    
                                 background-color: rgb(255, 255, 255); /* Texto blanco */
-                                color: rgb(91, 90, 90);
+                                color: rgb(0, 0, 0);
                                 font-size: 80%; /* El texto ocupara el 10% del alto de la ventana */
                                 width: 90%;
                                 margin: 20px 30px 0 8px; /*arriba derecha abajo izquierda;*/
@@ -245,7 +245,7 @@
                           grid-column: 2 / 3; /* ocupara 1 columna */
                           grid-row: 1 / 2; /* ocupara 1 fila */    
                           background-color: rgb(255, 255, 255); /* Texto blanco */
-                          color: rgb(91, 90, 90);
+                          color: rgb(0, 0, 0);
                           font-size: 80%; /* El texto ocupara el 10% del alto de la ventana */
                           width: 90%;
                           margin: 20px 30px 0 0; /*arriba derecha abajo izquierda;*/
@@ -489,6 +489,7 @@
       ================================================================================================ --> 
           
       <body>
+        
             <!-- ===========================================================================================
                                                     H T M L -H E A D E R 
             ================================================================================================ --> 
@@ -513,22 +514,22 @@
               <main>
                       <div class="contenedortitulomasinputcorreo ">
                             <p class="titulocorreo"> Correo: </p>
-                            <input class="inputcorreo" required placeholder="Digite aqui su correo"> </input>
+                            <input class="inputcorreo" id="correo" required placeholder="cliente@correo.com"> </input>
                       </div>
                       
                       <div class="contenedortitulomasinputcontraseña ">
-                            <p class="titulocontraseña"> Contraseña: </p>
-                            <input class="inputcontraseña"required placeholder="Digite aqui su contraseña"> </input>
+                            <p class="titulocontraseña" id="contraseña"> Contraseña: </p>
+                            <input class="inputcontraseña"required placeholder="1234"> </input>
                       </div>
 
                       <div class="contenedortitulotipodecuentamasradiogroup">
                             <label for="titulotipodecuenta" class="titulotipodecuenta">Tipo de cuenta:<span class="enterpersonalizado"></span></label>
                             <div class="radiogroupdeltipodecuenta">
                                   <label for="cliente">Cliente</label>
-                                  <input type="radio" id="cliente" name="tipo_cuenta" required>
+                                  <input type="radio" id="cliente" name="tipo_cuenta" checked required>
                       
                                   <label for="Admin">Administrador</label>
-                                  <input type="radio" id="Admin" name="tipo_cuenta" required>
+                                  <input type="radio" id="administrador" name="tipo_cuenta" required>
                             </div>
                       </div>
 
@@ -555,6 +556,51 @@
                   </div> 
             </footer>    
       </body>
+
+
+      <script>
+        // Base de datos simulada con tus usuarios
+        const usuarios = [
+          { correo: "cliente@correo.com", contraseña: "1234", tipo: "cliente" },
+          { correo: "admin@correo.com", contraseña: "1234", tipo: "administrador" },
+          { correo: "mayerly@correo.com", contraseña: "1234", tipo: "administrador" },
+          { correo: "juanita@correo.com", contraseña: "1234", tipo: "administrador" }
+        ];
+      
+        // Evento al hacer clic en Iniciar Sesión
+        document.querySelector(".botoniniciarsesion").addEventListener("click", function() {
+          const correoInput = document.querySelector(".inputcorreo").value.trim();
+          const contraseñaInput = document.querySelector(".inputcontraseña").value.trim();
+          const tipoSeleccionado = document.querySelector('input[name="tipo_cuenta"]:checked');
+      
+          // Validación de campos
+          if (!correoInput || !contraseñaInput || !tipoSeleccionado) {
+            alert("Por favor completa todos los campos y selecciona el tipo de cuenta.");
+            return;
+          }
+      
+          const tipoCuenta = tipoSeleccionado.id === "cliente" ? "cliente" : "administrador";
+      
+          // Buscar usuario en la "base de datos"
+          const usuarioEncontrado = usuarios.find(usuario =>
+            usuario.correo === correoInput &&
+            usuario.contraseña === contraseñaInput &&
+            usuario.tipo === tipoCuenta
+          );
+      
+          if (usuarioEncontrado) {
+            // Si es correcto, redirige a 1index.html
+            /*alert(`✅ Bienvenido, ${tipoCuenta}`);*/
+            window.location.href = '1index.html';  // Aquí rediriges
+          } else {
+            // Si no encuentra el usuario
+            alert("❌ Correo, contraseña o tipo de cuenta incorrectos, \n \n ✅ si deja correo: cliente@correo.com , contraseña:1234 y tipo:cliente, lo deja ingresar a cliente, \n \n ✅ si deja correo: admin@correo.com , contraseña:1234 y tipo:administador, lo deja ingresar a administrador");
+          }
+        });
+      </script>
+      
+
+
 </html>
 
 
