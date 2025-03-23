@@ -51,6 +51,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
 
 
+
+
     /* =================================================================================================
                                                 H E A D E R 
     ==================================================================================================== */
@@ -85,7 +87,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               margin: 2% 2% 2% 2%;  /*arriba derecha abajo izquierda;*/
                               padding:0; /*relleno*/
                               border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                              width: 15%; /* 5% del contenedor donde esta:osea del header   */
+                              width: 24%; /* 5% del contenedor donde esta:osea del header   */
                               height: auto; /* 5% del contenedor donde esta:osea del header   */
                               object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
                               cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
@@ -110,10 +112,10 @@ section, article, nav, aside, header, footer, main {  display: block; }
                           {
                               grid-column: 2 / 3; /* ocupara 1 columnas*/
                               grid-row: 1 / 2; /* ocupara 1 fila*/    
-                              margin: 2% 2% 2% 83%;  /*arriba derecha abajo izquierda;*/
+                              margin: 2% 2% 2% 74%;  /*arriba derecha abajo izquierda;*/
                               padding:0; /*relleno*/
                               border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                              width: 15%; /* 5% del contenedor donde esta:osea del header   */
+                              width: 24%; /* 5% del contenedor donde esta:osea del header   */
                               height: auto; /* 5% del contenedor donde esta:osea del header   */
                               object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
                               cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
@@ -132,6 +134,9 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               width: 100%; 
                               height: auto;
                           }
+
+
+
 
 
 
@@ -310,7 +315,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                         grid-row: 3 / 4; /* ocupará 2 fila */
                         width: 100%;
                         height: auto;
-                        margin:0;     /*reiniciamos las margenes a cero*/
+                        margin:0;     /*margin: top right bottom left;*/   
                         padding:0;    /*reiniciamos el padding o relleno a cero*/
                         border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
                         display:flex;
@@ -331,65 +336,6 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
 
 
-          h1
-              {
-                   color:rgb(0, 34, 65);
-              }
-            
-          h2 
-              {
-                    color: rgb(255, 255, 255);
-                    margin-bottom: 2em !important;
-                    font-size: clamp(30px, calc(0.5vw + 0.5vh), 50px);  /* de manera personalizada para que no dependa del tamaño de letra del cuerpo.*/
-                    text-shadow: 
-                    -2px -2px 0 rgb(124, 0, 0),  
-                    2px -2px 0 rgb(124, 0, 0),
-                    -2px  2px 0 rgb(124, 0, 0),
-                    2px  2px 0 rgb(124, 0, 0); /* Bordes en cada dirección */
-
-                    font-weight: bold; 
-                    grid-column: span 2; /* Ocupa todas las columnas del grid */
-                    grid-row: 1;
-                    text-align: flex-start; /* Centra el texto */   
-              }
-
-          form 
-              {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center; /* Centra los elementos */
-                    margin-bottom: 50px;
-              }
-
-          label 
-              {
-                    text-align: left;
-                    color: white;
-              }
-            
-          .radio-group 
-              {
-                    display: flex;
-                    gap: 15px; /* Espaciado entre Cliente y Administrador */
-                    align-items: center;
-              }
-
-          button 
-              {
-                grid-column: span 2; /* Hace que el botón ocupe las dos columnas */
-                width: 100%; /* Asegura que se mantenga centrado */
-                margin-top: 15px; /* Añade espacio arriba */
-                padding: 10px; /* Ajusta el tamaño */
-                background-color: #8b0000;
-                color: white;
-                border: none;
-                cursor: pointer;
-              }
-          
-          button:hover 
-              {
-                  background-color: #a00000;
-              }
             
 
           
@@ -399,138 +345,115 @@ section, article, nav, aside, header, footer, main {  display: block; }
       ==================================================================================================== */
 
       footer 
-            {
-              /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
-              grid-column: 1 / 2 ;/* ocupara 1 columna */
-              grid-row: 3/ 4; /* ocupara 1 fila */
-              background-color: rgb(0, 0, 0); /* Morado con 30% de transparencia */
-              display:flex;/*modelo que usaremos en la estructura: flex ya solo es alinearle los elementos dentro   */
-              margin:0;     /*reiniciamos las margenes a cero*/
-              padding:0;    /*reiniciamos el padding o relleno a cero*/
-              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-              flex-direction: column;
-            }
-          a 
-            {
-              /*display: inline; /*situarlos horizontalmente, en lugar de verticalmente*/            
-              flex-direction: row; /*situar los elementos en columna*/
-              background-color: #ffffff;   
-              text-decoration: underline;
-              font-family: Arial, sans-serif;
-              color: #000000;
-              margin-top: 30% 20% 0% 20%; /*margin: top right bottom left;*/   
-              font-size: 90%;  /* Tamaño del texto */          
-              transition: color 0.3s ease;
-              justify-content: center;  /* Centra el contenido horizontalmente */
-              text-align: center;  /* Centra el texto dentro del párrafo */
-            }
+              {
+                  /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+                  grid-column: 1 / 2 ;/* ocupara 1 columna */
+                  grid-row: 3/ 4; /* ocupara 1 fila */
+                  background-color: rgb(0, 0, 0); /* Morado con 30% de transparencia */
+                  margin:0;     /*margin: top right bottom left;*/   
+                  padding:10px;    
+                  border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                  display:grid;                                   
+                  grid-template-columns: repeat(1, 1fr);  /*1 columna*/
+                  grid-template-rows: repeat(4, auto);    /*4 filas*/
+                  grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                  color: #ffffff; /*color de texto*/ 
+              }
 
-          .a:hover 
-            {
-              box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
-              /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
-              color: #005bb5;
-              text-decoration: underline;
-            }
+              footer .parrafoquienesblackdrop 
+                    {
+                        grid-column: 1 / 2 ;/* ocupara 1 columna */
+                        grid-row: 1/ 2; /* ocupara 1 fila */
+                        text-align: center; /* Hace que el texto ocupe todo el renglón */
+                        display: flex;
+                        justify-content: center;  /* Centra el contenido horizontalmente */
+                        font-size: 100%;  /* Tamaño del texto */
+                        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        margin: 0; /*margin: top right bottom left;*/   
+                        padding: 0; /* Elimina el relleno por defecto */
+                    }
 
-          .parrafoquienesblackdrop 
-            {
-              flex-direction: column;
-              display: flex;
-              justify-content: center;  /* Centra el contenido horizontalmente */
-              color: #ffffff;
-              font-size: 90%;  /* Tamaño del texto */
-            }
+              footer .contenedortelefonomaslinkdeinstagram
+                    {
+                        grid-column: 1 / 2 ;/* ocupara 1 columna */
+                        grid-row: 2/ 3; /* ocupara 1 fila */
+                        width:100%;
+                        color:#ffffff;
+                        display:grid;                                   
+                        grid-template-columns: repeat(2, 1fr);  /*1 columna*/
+                        grid-template-rows: repeat(1, auto);    /*1 filas*/
+                        grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
 
-          p
-            {
-              text-align: center;  /* Centra el texto dentro del párrafo */
-              color: #ffffff;
-              margin: 0; /* Elimina el margen por defecto */
-              padding: 0; /* Elimina el relleno por defecto */
+              footer .contenedortelefonomaslinkdeinstagram .telefonodeblackdrop 
+                    {
+                        grid-column: 1 / 2 ;/* ocupara 1 columna */
+                        grid-row: 1/ 2; /* ocupara 1 fila */
+                        background-color: #ffffff;
+                        color: #000000;
+                        padding: 10px; 
+                        margin:1% 1% 1% 65%;  /*margin: top right bottom left;*/          
+                        border-radius: 25px;  /* Bordes más redondeados */             
+                        justify-content: center;  /* Centra el contenido horizontalmente */
+                        transition: color 0.3s ease;  
+                        text-align: center;
+                        font-size: 100%;
+                        box-shadow: 0px 0px 25px rgb(255, 255, 255); /* Sombra */
+                    }
 
-            }
+              footer .contenedortelefonomaslinkdeinstagram .linkdeinstagramblackdrop 
+                    {
+                        grid-column: 2 / 3 ;/* ocupara 1 columna */
+                        grid-row: 1/ 2; /* ocupara 1 fila */
+                        background-color: #ffffff;
+                        color: #000000;
+                        text-decoration: underline;
+                        padding: 10px; 
+                        margin:1% 65% 1% 1%;  /*margin: top right bottom left;*/          
+                        border-radius: 25px;  /* Bordes más redondeados */;              
+                        justify-content: center;  /* Centra el contenido horizontalmente */
+                        transition: color 0.3s ease; 
+                        text-align: center; 
+                        font-size: 100%;
+                        font-weight: bold;
+                        box-shadow: 0px 0px 25px rgb(255, 255, 255); /* Sombra */
+                    }
 
-            .parrafoinstagramblackdrop 
-            {
-              
-              display: flex;
-              flex-direction: row;
-              justify-content: center;  /* Centra el contenido horizontalmente */
-              color: #ffffff;
-            }
+              footer .contenedortelefonomaslinkdeinstagram .linkdeinstagramblackdrop:hover 
+                    {
+                        box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                        background-color: rgb(168, 24, 28);
+                        color:white;
+                    }
 
-          .linkinstagramblackdrop 
-            {
-              display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */
-              background-color: #ffffff;
-              color: black;
-              text-decoration: underline;
-              padding: 8px; 
-              margin:1%;           
-              font-size: 30%;
-              border-radius: 10%;              
-              flex-direction: row;
-              justify-content: center;  /* Centra el contenido horizontalmente */
-              transition: color 0.3s ease;              
-            }
-
-          .linkinstagramblackdrop:hover 
-            {
-              background-color:#a00000;
-              color: rgb(255, 255, 255);
-              box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
-              /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
-              text-decoration: underline;
-            }          
-
-          .parrafocontactoautoras 
-            {
-              flex-direction: row;
-              display: flex;
-              justify-content: center;  /* Centra el contenido horizontalmente */
-              color: #ffffff;
-
-            }
+              footer .contenedorlinkcontactoautoras 
+                    {                  
+                        grid-column: 1 / 2 ;/* ocupara 1 columna */
+                        grid-row: 3/ 4; /* ocupara 1 fila */flex-direction: row;
+                        display: flex;
+                        justify-content: center;  /* Centra el contenido horizontalmente */
+                        color: #ffffff;
+                    }
          
-          .linkinstagramautoras 
-            {
-              display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */             
-              background-color: #ffffff;
-              color: black;
-              text-decoration: underline;
-              padding: 8px;
-              margin:1%;
-              font-size: 30%;
-              border-radius: 10%;                        
-              flex-direction: row;
-              justify-content: center;  /* Centra el contenido horizontalmente */
-              transition: color 0.3s ease;
-            }
+              footer .contenedorlinkcontactoautoras .linkinstagramautoras 
+                    {
+                        display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */             
+                        background-color: #ffffff;
+                        color: black;
+                        padding: 10px;
+                        margin:1.05%;
+                        font-size: 55%;
+                        border-radius: 25px;  /* Bordes más redondeados */                     
+                        flex-direction: row;
+                        justify-content: center;  /* Centra el contenido horizontalmente */
+                        transition: color 0.3s ease;
+                    }
 
-          .linkinstagramautoras:hover 
-            {
-              background-color:   #a00000;
-              color: rgb(255, 255, 255);
-              box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
-              /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
-              text-decoration: underline;
-            }
-            .cuadrodeprueba {
-              width: 320px;
-              height: 200px;
-              background-color: #4adb34; /* Color de fondo */
-              display: flex; /* Usamos Flexbox para centrar el texto */
-              justify-content: center; /* Centra el texto horizontalmente */
-              align-items: center; /* Centra el texto verticalmente */
-              color: white; /* Color del texto */
-              font-family: Arial, sans-serif; /* Fuente del texto */
-              font-size: 140%; /* Tamaño del texto */
-              text-align: center; /* Centra el texto dentro del div */
-              margin-left: 30px;
-          }
-
-
+              footer .contenedorlinkcontactoautoras  .linkinstagramautoras:hover 
+                    {
+                        box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                    }
 
         
 
@@ -615,6 +538,71 @@ section, article, nav, aside, header, footer, main {  display: block; }
           background-color: rgb(216, 0, 0);
         }
 
+        h1
+        {
+             color:rgb(0, 34, 65);
+        }
+      
+    h2 
+        {
+              color: rgb(255, 255, 255);
+              margin-bottom: 2em !important;
+              font-size: clamp(30px, calc(0.5vw + 0.5vh), 50px);  /* de manera personalizada para que no dependa del tamaño de letra del cuerpo.*/
+              text-shadow: 
+              -2px -2px 0 rgb(124, 0, 0),  
+              2px -2px 0 rgb(124, 0, 0),
+              -2px  2px 0 rgb(124, 0, 0),
+              2px  2px 0 rgb(124, 0, 0); /* Bordes en cada dirección */
+
+              font-weight: bold; 
+              grid-column: span 2; /* Ocupa todas las columnas del grid */
+              grid-row: 1;
+              text-align: flex-start; /* Centra el texto */   
+        }
+
+    form 
+        {
+              display: flex;
+              flex-direction: column;
+              align-items: center; /* Centra los elementos */
+              margin-bottom: 50px;
+        }
+
+    label 
+        {
+              text-align: left;
+              color: white;
+        }
+      
+    .radio-group 
+        {
+              display: flex;
+              gap: 15px; /* Espaciado entre Cliente y Administrador */
+              align-items: center;
+        }
+
+    button 
+        {
+          grid-column: span 2; /* Hace que el botón ocupe las dos columnas */
+          width: 100%; /* Asegura que se mantenga centrado */
+          margin-top: 15px; /* Añade espacio arriba */
+          padding: 10px; /* Ajusta el tamaño */
+          background-color: #8b0000;
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+    
+    button:hover 
+        {
+            background-color: #a00000;
+        }
+
+
+
+
+
+
 
 
 
@@ -635,16 +623,15 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
           header .contenedorlogoencabezado 
                     {
-                          margin: 2% 63% 2% 2%;  /*arriba derecha abajo izquierda;*/  
-                          width: 35%; /* 5% del contenedor donde esta:osea del header   */
+                          width: 45%; /* 5% del contenedor donde esta:osea del header   */
                           height: auto; /* 5% del contenedor donde esta:osea del header   */                               
                     }
 
           header .contenedoriconoiniciarsesion
                     {
-                          width: 35%; /* 5% del contenedor donde esta:osea del header   */
+                          width: 45%; /* 5% del contenedor donde esta:osea del header   */
                           height: auto; /* 5% del contenedor donde esta:osea del header   */    
-                          margin: 2% 2% 2% 63%;  /*arriba derecha abajo izquierda;*/                                                
+                          margin: 2% 2% 2% 53%;  /*arriba derecha abajo izquierda;*/                                                
                     }
 
             main .bannersuperior-text 
@@ -703,4 +690,37 @@ section, article, nav, aside, header, footer, main {  display: block; }
                           font-size: 150%;  /* Tamaño del texto */
                           margin: 5% 0 8% 10% ;  /*margin: top right bottom left;*/   
                       }
+            main .bannerinferior img 
+                      {
+                          width: 50%;
+                          height: auto;
+                          border-radius: 8%; /* Bordes redondeados para la imagen */  
+                          padding:10px;  
+                      }
+            footer .parrafoquienesblackdrop 
+                      {
+                        font-size: 60%;
+                      }
+
+            footer .contenedortelefonomaslinkdeinstagram .telefonodeblackdrop 
+                      {
+                          padding: 3px; 
+                          margin:1% 1% 1% 30%;  /*margin: top right bottom left;*/          
+                          font-size: 70%;
+                      }
+  
+            footer .contenedortelefonomaslinkdeinstagram .linkdeinstagramblackdrop 
+                      {
+                          padding: 3px; 
+                          margin:1% 30% 1% 1%;  /*margin: top right bottom left;*/          
+                          font-size: 70%;
+                      }  
+
+            footer .contenedorlinkcontactoautoras  .linkinstagramautoras
+                      {
+                          padding: 3px;
+                          margin:2%;
+                          font-size: 35%;                          
+                      }
+      
        }
