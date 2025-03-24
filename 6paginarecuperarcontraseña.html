@@ -75,7 +75,7 @@
                     background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
                     display:grid;
                     /*se dividira en 2 columnas, 1 fila*/
-                    grid-template-columns: repeat(3, auto); /*dividido 3 columnas*/
+                    grid-template-columns: repeat(2, auto); /*dividido 3 columnas*/
                     grid-template-rows: repeat (1,auto); /*tamaño automatico osea que se ajusten al contenido*/
                     overflow-x: hidden; /* Esto desactiva el deslizador vertical */
                     overflow-y: auto; /* Esto permite el deslizador lateral */
@@ -92,8 +92,8 @@
                                   margin: 8px 0px 8px 8px;  /*arriba derecha abajo izquierda;*/
                                   padding:0; /*relleno*/
                                   border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                                  width: 85%; /* 5% del contenedor donde esta:osea del header   */
-                                  height: 75px; /* 5% del contenedor donde esta:osea del header   */
+                                  width: 50px; /* 5% del contenedor donde esta:osea del header   */
+                                  height: 50px; /* 5% del contenedor donde esta:osea del header   */
                                   object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
                                   cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
                                   transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
@@ -112,13 +112,13 @@
                                                   height: auto;
                                               }
 
-              header .contenedortituloiniciarsesion
+              header .contenedortitulorecuperarcontraseña
                               {
                                   grid-column: 2 / 3; /* ocupara 1 columnas*/
                                   grid-row: 1 / 2; /* ocupara 1 fila*/ 
                                   margin: 5px 0 0 0px;  /*arriba derecha abajo izquierda;*/
                                   text-align: center;
-                                  width: 200px; 
+                                  width: 270px; 
                                   height: 60px;
                                   font-weight: bold;;
                                   padding: 0;
@@ -127,42 +127,16 @@
                                   justify-content: center;
                               }
                 
-                              header .contenedortituloiniciarsesion .tituloiniciarsesion
+                              header .contenedortitulorecuperarcontraseña .titulorecuperarcontraseña
                                             {
-                                                font-size: 160%;
+                                                font-size: 22px;
                                                 display:flex;
                                                 align-items: center;
                                                 justify-content: center;
                                                 
                                             }
 
-              header .contenedorlogoiralatiendasinloguearse 
-                              {
-                                  grid-column: 3 / 4; /* ocupara 1 columnas*/
-                                  grid-row: 1 / 2; /* ocupara 1 fila*/    
-                                  margin: 8px 0px 8px 0px;  /*arriba derecha abajo izquierda;*/
-                                  padding:0; /*relleno*/
-                                  border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                                  width: 90%; /* 5% del contenedor donde esta:osea del header   */
-                                  height: 65px; /* 5% del contenedor donde esta:osea del header   */
-                                  object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
-                                  cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
-                                  transition: color 0.3s ease;                    
-                              }
-                
-                              header .contenedorlogoiralatiendasinloguearse:hover 
-                                              {
-                                                  box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
-                                                  /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
-                                              }
-
-                              header .contenedorlogoiralatiendasinloguearse img
-                                              {
-                                                  width: 100%; 
-                                                  height: auto;
-                                              }
-
-
+              
       /* =================================================================================================
                                       E S T I L O S    D E L       M A I N  
       ==================================================================================================== */
@@ -179,110 +153,41 @@
                 ordenar unos elementos dentro de el*/ 
                 display:grid;                                   
                 grid-template-columns: repeat(1, auto);  /*1 columna*/
-                grid-template-rows: repeat(6, auto);    /*5 filas*/
-                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                grid-template-rows: repeat(3, auto);    /*5 filas*/
             }
-            main .contenedortitulomasinputcorreo
-                      {
-                          grid-column: 1 / 2; /* ocupara 1 columna */
-                          grid-row: 1 / 2; /* ocupara 1 fila */
-                          height: auto; /* 5% del contenedor donde esta:osea del header   */
-                          padding:0;
-                          margin:0 0 0 0; /*arriba derecha abajo izquierda;*/
-                          display:grid;                                   
-                          grid-template-columns: repeat(2, auto);  /*2 columna*/
-                          grid-template-rows: repeat(1, auto);    /*2 filas*/                          
-                      }
-
-                      main .contenedortitulomasinputcorreo .titulocorreo 
-                            {
-                                grid-column: 1 / 2; /* ocupara 1 columna */
-                                grid-row: 1 / 2; /* ocupara 1 fila */  
-                                color: rgb(255, 255, 255); /* Texto blanco */
-                                font-size: 100%; /* El texto ocupara el 10% del alto de la ventana */
-                                font-weight: bold;  /*texto en negrilla*/
-                                margin: 20px 0 0 15px; /*arriba derecha abajo izquierda;*/
-                                width:60px;
-                            } 
-
-                      main .contenedortitulomasinputcorreo .inputcorreo 
-                            {
-                                grid-column: 2 / 3; /* ocupara 1 columna */
-                                grid-row: 1 / 2; /* ocupara 1 fila */    
-                                background-color: rgb(255, 255, 255); /* Texto blanco */
-                                color: rgb(0, 0, 0);
-                                font-size: 80%; /* El texto ocupara el 10% del alto de la ventana */
-                                width: 90%;
-                                margin: 20px 30px 0 8px; /*arriba derecha abajo izquierda;*/
-                            }  
-            main .contenedortitulomasinputcontraseña
-                      {
-                          grid-column: 1 / 2; /* ocupara 1 columna */
-                          grid-row: 2 / 3; /* ocupara 1 fila */
-                          height: auto; /* 5% del contenedor donde esta:osea del header   */
-                          padding:0;
-                          margin:0;
-                          display:grid;                                   
-                          grid-template-columns: repeat(2, auto);  /*2 columna*/
-                          grid-template-rows: repeat(1, auto);    /*2 filas*/
-                          grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
-                          margin:0 0 20px 0; /*arriba derecha abajo izquierda;*/ 
-                      }
-
-                      main .contenedortitulomasinputcontraseña .titulocontraseña 
-                      {
-                          grid-column: 1 / 2; /* ocupara 1 columna */
-                          grid-row: 1 / 2; /* ocupara 1 fila */  
-                          color: rgb(255, 255, 255); /* Texto blanco */
-                          font-size: 100%; /* El texto ocupara el 10% del alto de la ventana */
-                          font-weight: bold;  /*texto en negrilla*/
-                          margin: 20px 0 0 15px; /*arriba derecha abajo izquierda;*/
-                          width:60px;
-                      } 
-
-                      main .contenedortitulomasinputcontraseña .inputcontraseña 
-                      {
-                          grid-column: 2 / 3; /* ocupara 1 columna */
-                          grid-row: 1 / 2; /* ocupara 1 fila */    
-                          background-color: rgb(255, 255, 255); /* Texto blanco */
-                          color: rgb(0, 0, 0);
-                          font-size: 80%; /* El texto ocupara el 10% del alto de la ventana */
-                          width: 90%;
-                          margin: 20px 30px 0 0; /*arriba derecha abajo izquierda;*/
-                      }  
-                      
-            main.contenedortitulotipodecuentamasradiogroup  
-                      {
-                          grid-column: 1 / 2; /* ocupara 1 columna */
-                          grid-row: 3 / 4; /* ocupara 1 fila */
-                          margin: 0 20% 0 50%; /*arriba derecha abajo izquierda;*/
-                          display:grid;                                   
-                          grid-template-columns: repeat(2, auto);  /*2 columna*/
-                          grid-template-rows: repeat(1, auto);    /*2 filas*/
-                          grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
-                          background-color: rgb(54, 30, 0);
-                          margin: 20px 0 0 20px; /*arriba derecha abajo izquierda;*/
-                      }      
-
-                      main.contenedortitulotipodecuentamasradiogroup .titulotipodecuenta
+            main .contenedortitulohemosenviado
+                        {
+                            grid-column: 1 / 2; /* ocupará 1 columnas*/
+                            grid-row: 1 / 2; /* ocupará 1 fila */
+                            text-align: center;
+                            padding:12px;
+                            margin:0;
+                            height: 70px;
+                        }
+                        main .contenedortitulohemosenviado .titulohemosenviado
                                 {
-                                    grid-column: 1 / 2; /* ocupara 1 columna */
-                                    grid-row: 1 / 2; /* ocupara 1 fila */
+                                    font-size: 17px;
+                                    color:#ffffff;
                                 }
-
-                      main.contenedortitulotipodecuentamasradiogroup .radiogroupdeltipodecuenta
+            main .contenedortitulosinotienesacceso
+                        {
+                            grid-column: 1 / 2; /* ocupará 1 columnas*/
+                            grid-row: 2 / 3; /* ocupará 1 fila */
+                            text-align: center;
+                            padding:12px;
+                            margin:0;
+                            height: 20px;
+                        }
+                                main .contenedortitulosinotienesacceso .titulosinotienesacceso
                                 {
-                                    grid-column: 2 / 3; /* ocupara 1 columna */
-                                    grid-row: 1 / 2; /* ocupara 1 fila */
-                                    display: flex;
-                                    gap: 15px; /* Espaciado entre Cliente y Administrador */
-                                    align-items: center;
+                                    font-size: 10px;
+                                    color:#ffffff;
                                 }
 
             main .contenedorbotoniniciarsesion
                       {
                           grid-column: 1 / 2; /* ocupará 1 columnas*/
-                          grid-row: 4 / 5; /* ocupará 1 fila */
+                          grid-row: 3 / 4; /* ocupará 1 fila */
                       }
 
                       main .contenedorbotoniniciarsesion .botoniniciarsesion
@@ -296,7 +201,7 @@
                                   font-size: 120%;  /* Tamaño del texto */
                                   border-radius: 25px;  /* Bordes más redondeados */
                                   cursor: pointer; /* Cambia el cursor al pasar por encima */
-                                  margin: 20px 30px 0px 85px ;  /*margin: top right bottom left;*/   
+                                  margin: 20px 30px 20px 85px ;  /*margin: top right bottom left;*/   
                                   text-align: center;        
                                   display: flex; /* Ajusta el comportamiento del botón */
                                   justify-content: center; /* Centra el texto horizontalmente */
@@ -311,60 +216,7 @@
                                             box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
                                         }                
 
-            main .contenedortituloolvidosucontraseña
-                              {
-                                  grid-column: 1 / 2; /* ocupará 1 columnas*/
-                                  grid-row: 5 / 6; /* ocupará 1 fila */
-                                  display:flex;
-                                  align-items: center;
-                                  justify-content: center;
-                                  margin:0;
-                                  padding:0;
-                              }
-                              main .contenedortituloolvidosucontraseña .tituloolvidosucontraseña
-                                        {
-                                            font-size: 10px;  /* Tamaño del texto */
-                                            color:rgb(255, 255, 255);
-                                            cursor: pointer; /* Cambia el cursor al pasar por encima */
-                                            text-decoration: underline;
-                                        }
-                              main .contenedortituloolvidosucontraseña .tituloolvidosucontraseña:hover
-                                        {
-                                            box-shadow: 0px 0px 30px rgb(255, 255, 255); /* Sombra cuando se pasa el mouse*/
-                                            /*color:rgb(255, 66, 66);*/
-                                        }
-
-            main .contenedorbotonregistrarse
-                      {
-                          grid-column: 1 / 2; /* ocupará 1 columnas*/
-                          grid-row: 6 / 7; /* ocupará 1 fila */
-                      }
-
-                      main .contenedorbotonregistrarse .botonregistrarse
-                              {
-                                  background-color: rgb(168, 24, 28); /* Color de fondo del botón */
-                                  height: 30px;  /*Ajustamos la altura */
-                                  width: 50%;   /* Ancho en porcentaje */                                  
-                                  color: white;  /* Color del texto */
-                                  border: none;  /* Sin borde */
-                                  padding: 3%; /* Espaciado interno */
-                                  font-size: 120%;  /* Tamaño del texto */
-                                  border-radius: 25px;  /* Bordes más redondeados */
-                                  cursor: pointer; /* Cambia el cursor al pasar por encima */
-                                  margin: 10px 30px 20px 85px ;  /*margin: top right bottom left;*/   
-                                  text-align: center;        
-                                  display: flex; /* Ajusta el comportamiento del botón */
-                                  justify-content: center; /* Centra el texto horizontalmente */
-                                  align-items: center; /* Centra el texto verticalmente */
-                                  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efecto suave de transición */
-                              }
-
-                                /* Efecto cuando se pasa el mouse sobre el botón */
-                                main .contenedorbotonregistrarse .botonregistrarse:hover 
-                                          {
-                                              background-color: green; /* Cambia a verde */
-                                              box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
-                                          }  
+            
 
           /* =================================================================================================
                                          E S T I L O S   D E L   F O O T E R     
@@ -498,52 +350,26 @@
                       <img src="imagenes/iconos/atras.png" alt="Icono para volver atras" onclick="location.href='1index.html'" >
                       </div>
 
-                      <div class="contenedortituloiniciarsesion">          
-                      <p class="tituloiniciarsesion"> Iniciar Sesión </p>
+                      <div class="contenedortitulorecuperarcontraseña">          
+                      <p class="titulorecuperarcontraseña"> Recuperar contraseña </p>
                       </div>
-
-                      <div class="contenedorlogoiralatiendasinloguearse">  
-                      <img src="imagenes/iconos/iralatiendasinloguearse.png" alt="Icono ir a la tienda sin loguearse" onclick="location.href='1index.html'">
-                      </div>            
+         
               </header>
 
 
             <!-- ===========================================================================================
                                                     H T M L - M A I N   
             ================================================================================================ --> 
-              <main>
-                      <div class="contenedortitulomasinputcorreo ">
-                            <p class="titulocorreo"> Correo: </p>
-                            <input class="inputcorreo" id="correo" required placeholder="cliente@correo.com"> </input>
-                      </div>
-                      
-                      <div class="contenedortitulomasinputcontraseña ">
-                            <p class="titulocontraseña" id="contraseña"> Contraseña: </p>
-                            <input class="inputcontraseña"required placeholder="1234"> </input>
-                      </div>
-
-                      <div class="contenedortitulotipodecuentamasradiogroup">
-                            <label for="titulotipodecuenta" class="titulotipodecuenta">Tipo de cuenta:<span class="enterpersonalizado"></span></label>
-                            <div class="radiogroupdeltipodecuenta">
-                                  <label for="cliente">Cliente</label>
-                                  <input type="radio" id="cliente" name="tipo_cuenta" checked required>
-                      
-                                  <label for="Admin">Administrador</label>
-                                  <input type="radio" id="administrador" name="tipo_cuenta" required>
-                            </div>
-                      </div>
-
-                      <div class="contenedorbotoniniciarsesion">             
-                            <button class="botoniniciarsesion" >Iniciar Sesión</button>
-                      </div>
-
-                      <div class="contenedortituloolvidosucontraseña">
-                            <p class="tituloolvidosucontraseña" onclick="location.href='6paginarecuperarcontraseña.html'"> ¿ Olvido su contraseña ? </p>
-                      </div>
-
-                      <div class="contenedorbotonregistrarse">             
-                            <button class="botonregistrarse" onclick="location.href='7paginaregistrarse.html'">Registrarse</button>
-                      </div>
+              <main>                
+                    <div class="contenedortitulohemosenviado">             
+                         <p class="titulohemosenviado" > Hemos enviado una nueva contraseña al correo mari********@unimilitar.edu.co, con la que podrás iniciar nuevamente </p>
+                    </div>
+                    <div class="contenedortitulosinotienesacceso">             
+                        <p class="titulosinotienesacceso" > Si no tienes acceso al correo o no te llego el codigo, puedes comunicarte con nosotros al whatsapp 311 222 22 11 </p>
+                   </div>
+                    <div class="contenedorbotoniniciarsesion">             
+                         <button class="botoniniciarsesion" onclick="location.href='2paginalogin.html'">Iniciar Sesión</button>
+                    </div>                      
               </main>
 
             <!-- ===========================================================================================
@@ -556,77 +382,6 @@
                   </div> 
             </footer>    
       </body>
-
-
-
-            <!-- ===========================================================================================
-                                                    S C R I P T S  
-            ================================================================================================ --> 
-
-
-      <script>
-        // Base de datos simulada
-        const usuarios = [
-          { correo: "clientemujer@correo.com", contraseña: "1234", tipo: "cliente" , foto: "imagenes/fotosdeperfil/fotodeclientemujer.jpg"},
-          { correo: "clientehombre@correo.com", contraseña: "1234", tipo: "cliente" , foto: "imagenes/fotosdeperfil/fotodeclientehombre.jpg"},
-          { correo: "admin@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotodeadministrador.jpg"},
-          { correo: "mayerly@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotodemayerly.jpg"},
-          { correo: "juanita@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotosdejuanita.jpg"}
-        ];
-
-        
-      
-        // Evento al hacer clic en Iniciar Sesión
-        document.querySelector(".botoniniciarsesion").addEventListener("click", function() {
-          const correoInput = document.querySelector(".inputcorreo").value.trim();
-          const contraseñaInput = document.querySelector(".inputcontraseña").value.trim();
-          const tipoSeleccionado = document.querySelector('input[name="tipo_cuenta"]:checked');
-      
-          // Validación de campos
-          if (!correoInput || !contraseñaInput || !tipoSeleccionado) {
-            alert("Por favor completa todos los campos y selecciona el tipo de cuenta.");
-            return;
-          }
-      
-          const tipoCuenta = tipoSeleccionado.id === "cliente" ? "cliente" : "administrador";
-      
-          // Buscar usuario en la "base de datos"
-          const usuarioEncontrado = usuarios.find(usuario =>
-            usuario.correo === correoInput &&
-            usuario.contraseña === contraseñaInput &&
-            usuario.tipo === tipoCuenta
-          );
-      
-          if (usuarioEncontrado) {
-          // ✅ Guarda el usuario en el LocalStorage siempre que sea encontrado
-          localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioEncontrado));
-
-          // ✅ Redirige según el tipo de cuenta
-          alert(`✅ Login correcto \n\n ✅ Bienvenido: ${usuarioEncontrado.correo}`);
-
-          if (tipoCuenta === "cliente") {
-              // Redirige a la página cliente
-              window.location.href = '4paginacliente.html';
-          } else if (tipoCuenta === "administrador") {
-              // Redirige a la página administrador
-              window.location.href = '3paginaadministrador.html';
-          }
-      } else {
-          // Si no encuentra el usuario, muestra ejemplos
-          alert("❌ Correo, contraseña o tipo de cuenta incorrectos.\n\n✅ Ejemplo válido:\nCorreo: clientemujer@correo.com\nContraseña: 1234\nTipo: cliente\n\n✅ Otro válido:\nCorreo: clientehombre@correo.com\nContraseña: 1234\nTipo:cliente\n\n✅ Otro válido:\nCorreo: admin@correo.com\nContraseña: 1234\nTipo: administrador");
-      }
-
-        });
-
-
-        /*   con esto se puede sacar la info del usuario desde otra pagina          */
-        /*   const usuario = JSON.parse(localStorage.getItem('usuarioLogueado'));   */
-
-      </script>
-      
-      
-
-
 </html>
 
 

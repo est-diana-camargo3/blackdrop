@@ -157,7 +157,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
                               cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
                               transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
-                              /*background-color: rgb(142, 56, 247);     */                         
+                              /*background-color: rgb(142, 56, 247);     */      
+                              text-align: center;                   
                           }
                           
           header .contenedorfotodecliente:hover 
@@ -165,6 +166,14 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
                               /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
                           }
+
+
+          header .textoperfil 
+                        {
+                            font-size: 14px;
+                            color: black;
+                            margin-top: 5px;
+                        }
 
           header .contenedorfotodecliente img
                           {
@@ -503,11 +512,6 @@ section, article, nav, aside, header, footer, main {  display: block; }
         @media (max-width: 750px) 
 
         {
-          body
-                    {
-                      /*SE DEJA AQUI COMO PRUEBA, AL FINAL SE QUITA  */
-                      /*background-color: rgb(173, 173, 173); */
-                    }
           .contenedorBienvenida p 
                         {
                               font-size: 16px;
@@ -624,7 +628,9 @@ section, article, nav, aside, header, footer, main {  display: block; }
             </head>
 
 
-
+            <!-- =================================================================================================
+                                                  P A G I N A    H T M L
+            ====================================================================================================== --> 
 
 
             <!-- =================================================================================================
@@ -649,8 +655,9 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               <p>Bienvenido:...<span id="correoUsuario"></span></p>
                         </div>
 
-                        <div class="contenedorfotodecliente" id="contenedorFoto">
+                        <div class="contenedorfotodecliente" id="contenedorFoto" onclick="location.href='8perfil.html'">
                               <!-- Aquí se insertará la foto desde JS -->
+                               
                           </div>
 
                   </header>
@@ -833,6 +840,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                     
                             // Insertar la imagen en el header
                             contenedorFoto.innerHTML = `<img id="fotousuario" src="${foto}" alt="Foto del usuario">`;
+                            
 
                     
                         } else {
