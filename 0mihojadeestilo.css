@@ -465,12 +465,6 @@ section, article, nav, aside, header, footer, main {  display: block; }
         @media (max-width: 750px) 
 
         {
-          body
-                    {
-                      /*SE DEJA AQUI COMO PRUEBA, AL FINAL SE QUITA  */
-                      /*background-color: rgb(173, 173, 173); */
-                    }
-
           header .contenedorlogoencabezado 
                     {
                           width: 45%; /* 5% del contenedor donde esta:osea del header   */
