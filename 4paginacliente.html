@@ -1,0 +1,858 @@
+
+<!-- Página web Blackdrop -->
+
+<!DOCTYPE html> <!-- Paso 1: Declaramos el tipo de documento que vamos a hacer, 
+                     esto no es una etiqueta o elemento html, sino que es un declaración o linea de codigo
+                     para que el browser o navegador entienda que el tipo de archivo es html -->
+
+      <html>      <!-- Paso 2: Indicamos el formato del contenido, denominando el root element o elemento raiz:
+                     nuestro root element es <html> lo cual indica que el formato es html
+                     osea todo lo que esta dentro de esta etiquetas es formato html.
+                     dentro de este elemento,se contiene todo,(de ahi su nombre),no puede haber otro elemento que lo contenga a él -->
+            
+
+
+
+            <!-- =================================================================================================
+                                              H E A D metadatos
+            ====================================================================================================== -->  
+              
+            <head> <!-- Head ó Metadatos-->        
+                        <!-- Paso 3: Creamos el head o encabezado, el cual contiene los elementos que 
+                              NO son renderizados ó mostrados al darle display a la pagina
+                              osea no se ven en la pagina real, sino que es codigo que hay "por debajo"
+                              Aqui van los metadatos, por ejemplo: el idioma, el titulo de la pagina, 
+                              los nombre de los autores, la descripcion del contenido de la pagina 
+                              las hojas de estilo CSS (opcional, buena practica manejarlas en una pagina aparte).
+                              ...etc. -->
+                        <!--esta linea de codigo es para las versiones anteriores de internet explorer,
+                        if intenet explorer es less than o menor que la version 9 
+                        que es cargar html_shiv, es la que esta en el libro 
+                        esta linea de codigo debe quedar en comentario y solo se ejectua si la version es menor.-->
+                              <!--[if lt IE 9]>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+                        <![endif]-->  
+                              
+                        <meta charset="utf-8"> </meta>  <!-- Paso 5: Definimos la codificacion de caracteres o "idioma", el de nosotros es:
+                                                                  Unicode Transformation Format 8 bits, que es un formato de codificacion
+                                                                  que acepta: tildes, eñes, simbolos y caracteres del idioma español
+                                                                  esto para que cuando se visualice la pagina en chrome aparezcan todas 
+                                                                  las letras y caracteres del idioma español, sin error-->
+                        
+                        <title> Venta de proteinas para deportistas en Colombia, empresa BlackDrop </title>  
+                              <!-- Paso 6: Definimos el titulo que llevara la pagina, en el navegador, el cual, 
+                                          aparecerá en la pestaña de navegación , y servira para que nos encuentren 
+                                          debe ser corto conciso y claro -->                  
+                        <meta name="Pagina de venta de proteinas para deportistas en Colombia, empresa BlackDrop" content="width=device-width, initial-scale=1.0"> 
+                              <!--Hace que la página se ajuste correctamente en dispositivos móviles, asegurando que el ancho se ajuste al dispositivo y la escala inicial sea 1.-->
+                           
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- =================================================================================================
+                                            E S T I L O S  - C S S 
+====================================================================================================== --> 
+
+<style>
+section, article, nav, aside, header, footer, main {  display: block; } 
+        /*indicamos a los navegadores,que formatee cada uno de los elementos como un nivel de bloque,
+        a la veersion que concuerde. Esto para que todos los navegadores admitan nuestras etiquetas html5, 
+        y para aquellos que depronto por lo antiguos no lo hacen, posteriores a internet explorer
+        version 8 o anteriores, formateamos estas etiquetas y buscamos la version que las puedan mostrar*/
+
+
+
+
+  /* =================================================================================================
+                                                  H T M L 
+  ==================================================================================================== */
+  *{
+        margin:0;
+        padding:0;
+   }
+
+
+
+
+    /* =================================================================================================
+                                                  B O D Y
+    ==================================================================================================== */
+
+    body /* Cuerpo , su papa es html */
+          {
+                background-color: rgb(255, 255, 255); /* Naranja con 30% de transparencia */ 
+                color:rgb(0, 0, 0); /*color de texto*/
+                font-family: Arial, sans-serif; /* Fuente: Arial, sino que no tenga adornos es decir cualquier fuente sans-serif*/
+                margin:10px auto;     /*margenes automaticas, menos la superior*/
+                padding:0;    /*reiniciamos el padding o relleno a cero*/
+                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                width:100%; /*que ocupe el 95% de ancho de la ventana*/
+                max-width: 1400px; /*maximo ocupa 1400 pixeles*/
+                min-width: 300px; /*maximo ocupa 1400 pixeles*/
+                display:grid;
+                /*se dividira en 3 filas, 3 columnas*/
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat (3,auto); /*tamaño automatico osea que se ajusten al contenido*/
+                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                overflow-y: auto; /* Esto permite el deslizador lateral */
+          }
+          
+
+
+
+
+
+
+    /* =================================================================================================
+                                                H E A D E R 
+    ==================================================================================================== */
+
+    header /* encabezado */
+          {
+                /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
+                grid-column: 1 / 2; /* ocupara 1 columnas*/
+                grid-row: 1 / 2; /* ocupara 1 fila*/
+                margin:0;     /*reiniciamos las margenes a cero*/
+                padding:0;    /*reiniciamos el padding o relleno a cero*/
+                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                background-image: url('imagenes/texturas/texturafondoblanco.jpg');
+                background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
+                background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
+                background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
+                background-position: center center; /* Centra la imagen de fondo dentro del header */
+                background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+                display:grid;
+                /*se dividira en 2 columnas, 1 fila*/
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat (1,auto); /*tamaño automatico osea que se ajusten al contenido*/
+                overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                overflow-y: auto; /* Esto permite el deslizador lateral */
+                
+          }
+           .contenedorBienvenida p 
+                        {
+                              grid-column: 1 / 2; /* ocupara 1 columnas*/
+                              grid-row: 1 / 2; /* ocupara 1 fila*/  
+                              font-size: 40px;
+                              font-weight: bold;
+                              color: black;
+                              text-align: center;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              height: 120px;
+                              margin: 0 0 0 40px/*margin: top right bottom left;*/
+                         }
+
+          header .contenedorfotodecliente
+                          {
+                              grid-column: 2 / 3; /* ocupara 1 columnas*/
+                              grid-row: 1 / 2; /* ocupara 1 fila*/    
+                              margin: 2% 10px 2% 78%;  /*arriba derecha abajo izquierda;*/
+                              padding:0; /*relleno*/
+                              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                              width: 100px; /* 5% del contenedor donde esta:osea del header   */
+                              height: auto; /* 5% del contenedor donde esta:osea del header   */
+                              object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
+                              cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+                              transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
+                              /*background-color: rgb(142, 56, 247);     */      
+                              text-align: center;                   
+                          }
+                          
+          header .contenedorfotodecliente:hover 
+                          {
+                              box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
+                              /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
+                          }
+
+
+          header .textoperfil 
+                        {
+                            font-size: 14px;
+                            color: black;
+                            margin-top: 5px;
+                        }
+
+          header .contenedorfotodecliente img
+                          {
+                              width: 100px;   /* Aumenta el tamaño de la foto */
+                              height: 100px;
+                              border-radius:50%
+                          }
+
+
+
+
+
+
+
+      /* =================================================================================================
+                                                   M A I N  
+      ==================================================================================================== */
+
+      main /* contenido principal del body */
+            {
+                grid-column: 1 / 2; /* ocupara 1 columnas*/
+                grid-row: 2 / 3; /* ocupara 1 filas */
+                background-color: rgb(255, 255, 255); /* Azul con 15% de transparencia */
+                padding:0;    /*reiniciamos el padding o relleno a cero*/
+                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                margin:0;     /*margin: top right bottom left;*/
+                /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
+                ordenar unos elementos dentro de el*/ 
+                display:grid;                                   
+                grid-template-columns: repeat(1, 1fr);  /*1 columna*/
+                grid-template-rows: repeat(3, auto);    /*3 filas*/
+                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+            }
+
+            main .bannersuperior 
+                      {
+                          grid-column: 1 / 2; /* ocupara 1 columna */
+                          grid-row: 1 / 2; /* ocupara 1 fila */
+                          background-color: rgb(168, 24, 28); /* Fondo rojo */
+                          height: auto; /* 5% del contenedor donde esta:osea del header   */
+                          display: flex;
+                          justify-content: center; /* Centra el contenido horizontalmente */
+                          align-items: center; /* Centra el contenido verticalmente */
+                          padding:3%;
+                      }
+
+            main .bannersuperior-text 
+                      {
+                          color: white; /* Texto blanco */
+                          font-size: 270%; /* El texto ocupara el 10% del alto de la ventana */
+                          /*text-transform: uppercase; /* Convertir el texto a mayúsculas */
+                          text-align: center; /* Centrar el texto */
+                          margin: 0;/*margin: top right bottom left;*/
+                          font-weight: bold;  /*texto en negrilla*/
+                      }            
+
+            main .grillade6productos 
+                      {
+                          grid-column: 1 / 2; /* ocupará 1 columna */
+                          grid-row: 2 / 3; /* ocuapara 1 fila  */
+                          background-color: rgb(0, 0, 0); /* Fondo negro */
+                          padding:0;    /*reiniciamos el padding o relleno a cero*/
+                          border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                          margin:0;     /*margin: top right bottom left;*/
+                          /*La grilla de productos EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
+                            ordenar unos elementos dentro de el*/ 
+                          display:grid;                        
+                          grid-template-columns: repeat(3, 1fr);  /*3 columnas*/
+                          grid-template-rows: repeat(2, auto);    /*2 filas*/
+                          grid-gap:15px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                          padding:15px;
+                      }
+
+            main .grillade6productos .productogeneral
+                      {
+                        width: 100%; /* El ancho de cada producto será el 30% del contenedor */
+                        height: auto;
+                        padding: 0px;
+                        text-align: center;
+                        display:grid;
+                        grid-template-columns: repeat(1, 1fr);  /*1 columnas*/
+                        grid-template-rows: repeat(5, auto);    /*5 filas*/
+                        grid-gap:5px; /*espacio entre una columna y otra o entre una fila y otra*/                      
+                        background-color: #ffffff;                        
+                        border-radius: 8px; /* Bordes redondeados */  
+                        transition: transform 0.3s ease; /* Animación al pasar el mouse */
+                        margin: 0;  /*margin: top right bottom left;*/                                         
+                      }
+
+            /* Efecto al pasar el mouse por el producto */
+            main .grillade6productos .productogeneral:hover 
+                      {
+                        box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                        transform: translateY(-15px); /* Levanta ligeramente el producto */
+                      }
+
+            main .grillade6productos.productogeneral .producto1   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            main .grillade6productos.productogeneral .producto2   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            main .grillade6productos.productogeneral .producto3   {  grid-column: 3 / 4; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            main .grillade6productos.productogeneral .producto4   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            main .grillade6productos.productogeneral .producto5   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            main .grillade6productos.productogeneral .producto6   {  grid-column: 3 / 4; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+
+          main .grillade6productos .productogeneral img 
+                    {
+                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                        grid-row: 1 / 2; /* ocupará 1 fila */
+                        width: 80%;
+                        height: auto;
+                        border-radius: 8%; /* Bordes redondeados para la imagen */    
+                        text-align: center;        
+                        margin:10px 0 0 9% /*margin: top right bottom left;*/
+                    }
+
+          main .grillade6productos .productogeneral .nombreproducto 
+                    {
+                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                        grid-row: 2 / 3; /* ocupará 1 fila */
+                        font-size: 230%;
+                        color: #000000;
+                        font-weight: bold;
+                        margin:0 25px 0 25px; /*margin: top right bottom left;*/
+                    }
+
+          main .grillade6productos .productogeneral .precioproducto 
+                    {
+                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                        grid-row: 3 / 4; /* ocupará 1 fila */
+                        font-size: 280%;
+                        color: rgb(168, 24, 28); /* Rojo oscuro */
+                        font-weight: bold;
+                        margin: 10px 0 10px 0 ; /*margin: top right bottom left;*/
+                    }
+
+          main .grillade6productos .productogeneral .descripcionproducto 
+                    {
+                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                        grid-row: 4 / 5; /* ocupará 1 fila */
+                        list-style-type: disc; /* Usa viñetas (bullets) */
+                        padding: 0px 25px 0px 35px; /* top right bottom left;*/
+                        text-align: left;
+                        margin:0px; /*margin: top right bottom left;*/
+                        font-size: 150%;  /* Tamaño del texto */
+                        text-align: justify; /* Hace que el texto ocupe todo el renglón */
+                        font-family: 'Courier New', Courier, monospace;
+                    }
+
+          .enterpersonalizado  
+                    {
+                        display: block;
+                        height: 15px; /* Ajusta el tamaño del salto de línea */
+                    }
+
+          main .grillade6productos .productogeneral .btn-comprarproducto 
+                    {
+                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                        grid-row: 5 / 6; /* ocupará 1 fila */
+                        background-color: rgb(168, 24, 28); /* Color de fondo del botón */
+                        height: 50%;  /* Ajustamos la altura */
+                        width: 80%;   /* Ancho en porcentaje */
+                        color: white;  /* Color del texto */
+                        border: none;  /* Sin borde */
+                        padding: 3%; /* Espaciado interno */
+                        font-size: 240%;  /* Tamaño del texto */
+                        border-radius: 25px;  /* Bordes más redondeados */
+                        cursor: pointer; /* Cambia el cursor al pasar por encima */
+                        margin: 5% 0 8% 10% ;  /*margin: top right bottom left;*/   
+                        text-align: center;        
+                        display: flex; /* Ajusta el comportamiento del botón */
+                        justify-content: center; /* Centra el texto horizontalmente */
+                        align-items: center; /* Centra el texto verticalmente */
+                        transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efecto suave de transición */
+                    }
+
+          /* Efecto cuando se pasa el mouse sobre el botón */
+          main .grillade6productos .productogeneral .btn-comprarproducto:hover 
+                    {
+                        background-color: green; /* Cambia a verde */
+                        box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                    }
+
+          main .bannerinferior 
+                    {
+                        background-color: #ffffff;  
+                        grid-column: 1 / 2; /* ocupará 1 columna */
+                        grid-row: 3 / 4; /* ocupará 2 fila */
+                        width: 100%;
+                        height: auto;
+                        margin:0;     /*margin: top right bottom left;*/   
+                        padding:0;    /*reiniciamos el padding o relleno a cero*/
+                        border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                        display:flex;
+                        align-items: center; /*que los elementos llenen el contenedor*/
+                        justify-content: center; /* Distribuye el espacio HORIZONTAL entre los elementos para que queden en una linea  */
+                    }
+          main .bannerinferior img 
+                    {
+                        width: 40%;
+                        height: auto;
+                        border-radius: 8%; /* Bordes redondeados para la imagen */  
+                        padding:10px;  
+                    }
+
+
+
+
+
+
+
+            
+
+          
+
+      /* =================================================================================================
+                                               F O O T E R   
+      ==================================================================================================== */
+
+      footer 
+              {
+                  /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+                  grid-column: 1 / 2 ;/* ocupara 1 columna */
+                  grid-row: 3/ 4; /* ocupara 1 fila */
+                  background-color: rgb(0, 0, 0); /* Morado con 30% de transparencia */
+                  margin:0;     /*margin: top right bottom left;*/   
+                  padding:10px;    
+                  border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                  display:grid;                                   
+                  grid-template-columns: repeat(1, 1fr);  /*1 columna*/
+                  grid-template-rows: repeat(4, auto);    /*4 filas*/
+                  grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                  color: #ffffff; /*color de texto*/ 
+              }
+
+              footer .parrafoquienesblackdrop 
+                    {
+                        grid-column: 1 / 2 ;/* ocupara 1 columna */
+                        grid-row: 1/ 2; /* ocupara 1 fila */
+                        text-align: center; /* Hace que el texto ocupe todo el renglón */
+                        display: flex;
+                        justify-content: center;  /* Centra el contenido horizontalmente */
+                        font-size: 100%;  /* Tamaño del texto */
+                        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        margin: 0; /*margin: top right bottom left;*/   
+                        padding: 0; /* Elimina el relleno por defecto */
+                    }
+
+              footer .contenedortelefonomaslinkdeinstagram
+                    {
+                        grid-column: 1 / 2 ;/* ocupara 1 columna */
+                        grid-row: 2/ 3; /* ocupara 1 fila */
+                        width:100%;
+                        color:#ffffff;
+                        display:grid;                                   
+                        grid-template-columns: repeat(2, 1fr);  /*1 columna*/
+                        grid-template-rows: repeat(1, auto);    /*1 filas*/
+                        grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+
+              footer .contenedortelefonomaslinkdeinstagram .telefonodeblackdrop 
+                    {
+                        grid-column: 1 / 2 ;/* ocupara 1 columna */
+                        grid-row: 1/ 2; /* ocupara 1 fila */
+                        background-color: #ffffff;
+                        color: #000000;
+                        padding: 10px; 
+                        margin:1% 1% 1% 65%;  /*margin: top right bottom left;*/          
+                        border-radius: 25px;  /* Bordes más redondeados */             
+                        justify-content: center;  /* Centra el contenido horizontalmente */
+                        transition: color 0.3s ease;  
+                        text-align: center;
+                        font-size: 100%;
+                        box-shadow: 0px 0px 25px rgb(255, 255, 255); /* Sombra */
+                    }
+
+              footer .contenedortelefonomaslinkdeinstagram .linkdeinstagramblackdrop 
+                    {
+                        grid-column: 2 / 3 ;/* ocupara 1 columna */
+                        grid-row: 1/ 2; /* ocupara 1 fila */
+                        background-color: #ffffff;
+                        color: #000000;
+                        text-decoration: underline;
+                        padding: 10px; 
+                        margin:1% 65% 1% 1%;  /*margin: top right bottom left;*/          
+                        border-radius: 25px;  /* Bordes más redondeados */;              
+                        justify-content: center;  /* Centra el contenido horizontalmente */
+                        transition: color 0.3s ease; 
+                        text-align: center; 
+                        font-size: 100%;
+                        font-weight: bold;
+                        box-shadow: 0px 0px 25px rgb(255, 255, 255); /* Sombra */
+                    }
+
+              footer .contenedortelefonomaslinkdeinstagram .linkdeinstagramblackdrop:hover 
+                    {
+                        box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                        background-color: rgb(168, 24, 28);
+                        color:white;
+                    }
+
+              footer .contenedorlinkcontactoautoras 
+                    {                  
+                        grid-column: 1 / 2 ;/* ocupara 1 columna */
+                        grid-row: 3/ 4; /* ocupara 1 fila */flex-direction: row;
+                        display: flex;
+                        justify-content: center;  /* Centra el contenido horizontalmente */
+                        color: #ffffff;
+                    }
+         
+              footer .contenedorlinkcontactoautoras .linkinstagramautoras 
+                    {
+                        display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */             
+                        background-color: #ffffff;
+                        color: black;
+                        padding: 10px;
+                        margin:1.05%;
+                        font-size: 55%;
+                        border-radius: 25px;  /* Bordes más redondeados */                     
+                        flex-direction: row;
+                        justify-content: center;  /* Centra el contenido horizontalmente */
+                        transition: color 0.3s ease;
+                    }
+
+              footer .contenedorlinkcontactoautoras  .linkinstagramautoras:hover 
+                    {
+                        box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                    }
+
+    
+
+      /* =================================================================================================
+                         configuracion de home para celulares  de 320 a 750 pixeles
+      ==================================================================================================== */
+
+        
+        @media (max-width: 750px) 
+
+        {
+          .contenedorBienvenida p 
+                        {
+                              font-size: 16px;
+                              height: 70px;
+                              margin: 0 0 0 20px/*margin: top right bottom left;*/
+                         }
+
+          header .contenedorfotodecliente
+                          {
+                              margin: 2% 10px 2% 87px;  /*arriba derecha abajo izquierda;*/
+                              width: 60px; /* 5% del contenedor donde esta:osea del header   */
+                              height: 60px; /* 5% del contenedor donde esta:osea del header   */                        
+                          }
+                          
+            header .contenedorfotodecliente img
+                          {
+                              width: 60px;   /* Aumenta el tamaño de la foto */
+                              height: 60px;
+                          }
+
+            main .bannersuperior-text 
+                    {
+                          font-size: 160%; /* El texto ocupara el 10% del alto de la ventana */
+                    }
+
+            main .grillade6productos 
+                    {
+                        display:grid;                        
+                        grid-template-columns: repeat(2, 1fr);  /*2 columnas*/
+                        grid-template-rows: repeat(3, auto);    /*3 filas*/
+                        grid-gap:12px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                        padding:12px;
+                    }
+                    
+            .productogeneral .producto1   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            .productogeneral .producto2   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 2 / 3; /* ocupará 1 fila */   }
+            .productogeneral .producto3   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 3 / 4; /* ocupará 1 fila */   }
+            .productogeneral .producto4   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            .productogeneral .producto5   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 2 / 3; /* ocupará 1 fila */   }
+            .productogeneral .producto6   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 3 / 4; /* ocupará 1 fila */   }
+            
+            main .grillade6productos .productogeneral img 
+                    {
+                        width: 100%;
+                        height: auto;
+                        margin:6px 0 0 0; /*margin: top right bottom left;*/           
+                    }
+
+            main .grillade6productos .productogeneral .nombreproducto 
+                    {
+                        font-size: 180%;
+                    }
+
+            main .grillade6productos .productogeneral .precioproducto 
+                    {
+                        font-size: 200%;
+                    }
+
+            main .grillade6productos .productogeneral .descripcionproducto 
+                      {
+                        padding: 0px 15px 0px 25px; /* top right bottom left;*/  
+                        font-size: 90%;  /* Tamaño del texto */
+                      }
+            .enterpersonalizado  
+                      {
+                          display: block;
+                          height: 8px; /* Ajusta el tamaño del salto de línea */
+                      }
+
+            main .grillade6productos .productogeneral .btn-comprarproducto 
+                      {
+                          height: 50%;  /* Ajustamos la altura */
+                          width: 80%;   /* Ancho en porcentaje */
+                          font-size: 150%;  /* Tamaño del texto */
+                          margin: 5% 0 8% 10% ;  /*margin: top right bottom left;*/   
+                      }
+            main .bannerinferior img 
+                      {
+                          width: 50%;
+                          height: auto;
+                          border-radius: 8%; /* Bordes redondeados para la imagen */  
+                          padding:10px;  
+                      }
+            footer .parrafoquienesblackdrop 
+                      {
+                        font-size: 60%;
+                      }
+
+            footer .contenedortelefonomaslinkdeinstagram .telefonodeblackdrop 
+                      {
+                          padding: 3px; 
+                          margin:1% 1% 1% 30%;  /*margin: top right bottom left;*/          
+                          font-size: 70%;
+                      }
+  
+            footer .contenedortelefonomaslinkdeinstagram .linkdeinstagramblackdrop 
+                      {
+                          padding: 3px; 
+                          margin:1% 30% 1% 1%;  /*margin: top right bottom left;*/          
+                          font-size: 70%;
+                      }  
+
+            footer .contenedorlinkcontactoautoras  .linkinstagramautoras
+                      {
+                          padding: 3px;
+                          margin:2%;
+                          font-size: 35%;                          
+                      }
+      
+       }
+
+
+</style>
+            </head>
+
+
+            <!-- =================================================================================================
+                                                  P A G I N A    H T M L
+            ====================================================================================================== --> 
+
+
+            <!-- =================================================================================================
+                                                  B O D Y 
+            ====================================================================================================== --> 
+
+            <body>  <!-- Body-->
+                        <!-- Paso 7: Creamos el body, el cual contendrá todo lo que se mostrara en el browser o navegador (ejm: en chrome)
+                                    al darle display a la pagina -->
+                  
+
+
+
+                  <!-- ===========================================================================================
+                                                   H E A D E R encabezado
+                  ================================================================================================ --> 
+                  
+                  <header> <!-- headER ó encabezado-->                         
+
+                        <!-- Bienvenida con correo -->
+                        <div class="contenedorBienvenida">  
+                              <p>Bienvenido:...<span id="correoUsuario"></span></p>
+                        </div>
+
+                        <div class="contenedorfotodecliente" id="contenedorFoto" onclick="location.href='8perfil.html'">
+                              <!-- Aquí se insertará la foto desde JS -->
+                               
+                          </div>
+
+                  </header>
+
+
+
+
+                  <!-- ============================================================================================
+                                                       M A I N  
+                  ================================================================================================= --> 
+
+                  <main> <!-- Main, contenido principal del body-->
+                        <!-- Paso 8: Iniciamos a poner elementos en la pagina, ejm: un título de nivel 1  --> 
+                        
+                        <div class="bannersuperior">
+                              <p class="bannersuperior-text">Compra tu proteina en Blackdrop <br> y paga contraentrega</br> </p>
+                        </div>
+
+                        <section class="grillade6productos">
+                               <!-- Producto 1 -->
+                              <div class="productogeneral producto1">
+                                    <img src="imagenes/proteinas/proteinawheypure.jpg" alt="Producto whey pure">
+                                    <div class ="nombreproducto">Proteina Whey Pure <span class="enterpersonalizado"></span> (2 libras) </div>
+                                    <div class ="precioproducto" > $ 160.000</div>
+                                    <ul class="descripcionproducto">
+                                          <li><b>Tipo:</b> Proteina de suero lácteo concentrada<span class="enterpersonalizado"></span></li>
+                                          <li><b>Uso:</b> Diseñada para mejorar recuperación muscular<span class="enterpersonalizado"></span></li>
+                                          <li><b>Preparación:</b> 30 gramos a 250 ml de agua ó leche<span class="enterpersonalizado"></span></li>
+                                          <li><b>Endulzada con:</b> Splenda Sucralosa<span class="enterpersonalizado"></span></li>
+                                          <li><b>Grasas: </b>libre de grasas, pureza al 87 %<span class="enterpersonalizado"></span></li>
+                                          <li><b>Edad de consumo: </b>Después de 18 años<span class="enterpersonalizado"></span></li>
+                                          <li><b>Contraindicación:</b> puede no ser adecuado para personas
+                                                con intolerancia a la lactosa ó en estado de embarazo
+                                                (consulte con su médico) <span class="enterpersonalizado"></span></li>                                                
+                                    </ul>
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
+                              </div>
+                                    
+                              <!-- Producto 2 -->
+                              <div class="productogeneral producto2">
+                                    <img src="imagenes/proteinas/proteinaiso100.jpg" alt="Producto iso 100 ">
+                                    <div class ="nombreproducto">Proteina Iso 100 <span class="enterpersonalizado"></span>(600 gramos) </div>
+                                    <div class ="precioproducto" > $ 350.000</div>
+                                    <ul class="descripcionproducto">
+                                          <li><b>Tipo:</b> Proteína 100% hidrolizada de suero de leche<span class="enterpersonalizado"></span></li>
+                                          <li><b>Uso:</b> Ideal para la tonificación muscular <span class="enterpersonalizado"></span></li>
+                                          <li><b>Preparación:</b> 30 gramos a 250 ml de agua o leche<span class="enterpersonalizado"></span></li>
+                                          <li><b>Endulzada con:</b> Sin ázucar, ni gluten<span class="enterpersonalizado"></span></li>
+                                          <li><b>Grasas: </b> Libre de grasas, pureza al 90 % <span class="enterpersonalizado"></span></li>
+                                          <li><b>Edad de consumo: </b> A partir de los 18 años<span class="enterpersonalizado"></span></li>
+                                          <li><b>Contraindicación:</b> Puede no ser adecuado para personas con intolerancia a la lactosa o en estado de embarazo (consultar con su médico)<span class="enterpersonalizado"></span></li>
+                                    </ul>                                            
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
+                              </div>
+                                    
+                              <!-- Producto 3 -->
+                              <div class="productogeneral producto3">
+                                    <img src="imagenes/proteinas/proteinabiprolite.png" alt="Producto biprolite ">
+                                    <div class ="nombreproducto">Proteina Bipro Lite<span class="enterpersonalizado"></span> (2 libras) </div>
+                                    <div class ="precioproducto" > $ 170.000</div>
+                                    <ul class="descripcionproducto">
+                                          <li><b>Tipo:</b> Proteína de suero de leche y caseina <span class="enterpersonalizado"></span></li>
+                                          <li><b>Uso:</b> Ideal para la definición muscular, tomar después 
+                                                de entrenamientos de fuerza <span class="enterpersonalizado"></span></li>
+                                          <li><b>Preparación:</b> 30 gramos a 250 ml de agua o leche<span class="enterpersonalizado"></span></li>
+                                          <li><b>Endulzada con:</b> Sucralosa y edulcorantes <span class="enterpersonalizado"></span></li>
+                                          <li><b>Grasas: </b> Libre de grasas, pureza al 85 % <span class="enterpersonalizado"></span></li>
+                                          <li><b>Edad de consumo: </b> Más de 18 años<span class="enterpersonalizado"></span></li>
+                                          <li><b>Contraindicación:</b> Puede no ser bueno en personas intolerantes a la lactosa o en embarazo (consulte al médico)<span class="enterpersonalizado"></span></li>
+                                    </ul>                                            
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
+                              </div>
+                                                                    
+                              <!-- Producto 4 -->
+                              <div class="productogeneral producto4">
+                                    <img src="imagenes/proteinas/proteinaallenwhey.jpg" alt="Producto allen whey 2.2 libras  ">
+                                    <div class ="nombreproducto">Proteina Allen Whey <span class="enterpersonalizado"></span> (2.2 libras) </div>
+                                    <div class ="precioproducto" > $ 180.000</div>
+                                    <ul class="descripcionproducto">
+                                          <li><b>Tipo:</b> Proteina de suero lácteo concentrada <span class="enterpersonalizado"></span></li>
+                                          <li><b>Uso:</b> Diseñada para desarrollo muscular por su rápida absorción al ser hidrolizada <span class="enterpersonalizado"></span></li>
+                                          <li><b>Preparación:</b>40 gramos a 250 ml de agua ó leche<span class="enterpersonalizado"></span></li>
+                                          <li><b>Endulzada con:</b>cero azucar <span class="enterpersonalizado"></span></li>
+                                          <li><b>Grasas: </b> libre de grasas, pureza al 89 % <span class="enterpersonalizado"></span></li>
+                                          <li><b>Edad de consumo: </b>Después de 18 años <span class="enterpersonalizado"></span></li>
+                                          <li><b>Contraindicación:</b> Alergía a la leche, problemas renales (consulte con su médico) <span class="enterpersonalizado"></span></li>
+                                    </ul>                                          
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
+                              </div>
+
+                              <!-- Producto 5 -->
+                              <div class="productogeneral producto5">
+                                    <img src="imagenes/proteinas/proteinacarnivor.jpg" alt="Producto carnivor 4 libras  ">
+                                    <div class ="nombreproducto">Proteina Carnivor <span class="enterpersonalizado"></span> (4 libras) </div>
+                                    <div class ="precioproducto" > $ 350.000</div>
+                                    <ul class="descripcionproducto">
+                                          <li><b>Tipo:</b> Proteina derivada de la carne <span class="enterpersonalizado"></span></li>
+                                          <li><b>Uso:</b> Diseñada para mujeres en estado de embarazo o personas que deseen suplementar su dieta <span class="enterpersonalizado"></span> </li>
+                                          <li><b>Preparación:</b> 30 gramos a 250 ml de agua ó leche <span class="enterpersonalizado"></span> </li>
+                                          <li><b>Endulzada con:</b> cero azucar <span class="enterpersonalizado"></span></li>
+                                          <li><b>Grasas: </b> libre de grasas, pureza al 95 % <span class="enterpersonalizado"></span></li>
+                                          <li><b>Edad de consumo: </b> Después de 12 años <span class="enterpersonalizado"></span></li>
+                                          <li><b>Contraindicación:</b> Hipertensión, problemas renales (consulte con su médico) <span class="enterpersonalizado"></span> </li>
+                                    </ul>                                          
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
+                              </div>
+                                          
+                              <!-- Producto 6 -->
+                              <div class="productogeneral producto6">
+                                    <img src="imagenes/proteinas/proteinaveganpro.jpg" alt="Producto vegan pro  2 libras  ">
+                                    <div class ="nombreproducto">Proteina Vegan pro (2 libras) </div>
+                                    <div class ="precioproducto" > $ 190.000</div>
+                                    <ul class="descripcionproducto">
+                                          <li><b>Tipo:</b> Proteina vegetal: derivada de la quinoa, proteína de arveja y proteína de garbanzo <span class="enterpersonalizado"></span></li>
+                                          <li><b>Uso:</b>  Diseñada para personas veganas, vegetarianos ó con intolerancias alimentarias  <span class="enterpersonalizado"></span></li>
+                                          <li><b>Preparación:</b> 30 gramos a 250 ml de agua ó leche <span class="enterpersonalizado"></span></li>
+                                          <li><b>Endulzada con:</b> cero azucar <span class="enterpersonalizado"></span></li>
+                                          <li><b>Grasas: </b> libre de grasas y sodio, gluten,lactosa, y 
+                                                alérgenos, pureza al 80 % <span class="enterpersonalizado"></span></li>
+                                          <li><b>Edad de consumo: </b> Después de 18 años <span class="enterpersonalizado"></span></li>
+                                          <li><b>Contraindicación:</b> Ninguna  <span class="enterpersonalizado"></span></li>
+                                    </ul>                                          
+                                    <button class="btn-comprarproducto" onclick="location.href='5carritodecompras.html'">Comprar</button>
+                              </div>                      
+                        </section>
+
+                        <div class="bannerinferior"> 
+                              <img src="imagenes/logos/logo_blanco_letras_negras_rojas.png" alt="Logo empresa blackdrop  ">    
+                        </div>
+
+                  </main>
+                   
+
+
+
+                  
+                  <!-- ============================================================================================
+                                                     F O O T E R  
+                  ================================================================================================= --> 
+
+                  <footer> 
+                        <div class="parrafoquienesblackdrop">
+                              Blackdrop S.A.S identificada con Nit: 901.285.849-7, es una es una empresa dedicada a la venta de suplementos 
+                              nutricionales para estudiantes de la Universidad Militar Nueva Granada en Bogotá, su principal objetivo es ofrecer
+                              los 6 tipos de proteinas mas consumidas, al mejor precio, y con método de pago contraentrega.
+                        </div>
+                        <div class="contenedortelefonomaslinkdeinstagram " >
+                              <h1 class="telefonodeblackdrop">Teléfono: 311 222 22 11</h1>
+                              <a href="https://www.instagram.com/blackdropsupps?igsh=MXgwZGU5ZWZ3NGJkdg%3D%3D" target="_blank" class="linkdeinstagramblackdrop">Instagram de Blackdrop</a>
+                        </div>                             
+                        <div class="contenedorlinkcontactoautoras ">                              
+                            <a href="https://www.instagram.com/juanita.p28/" target="_blank"  class="linkinstagramautoras">Contacto Autora 1: Juanita Palacios</a>
+                            <a href="https://www.instagram.com/diana.camargo3/" target="_blank"  class="linkinstagramautoras">Contacto Autora 2: Mayerly Camargo</a>
+                        </div> 
+                    </footer>
+
+
+
+
+                    <script>
+                        // Trae el usuario desde localStorage
+                        const usuario = JSON.parse(localStorage.getItem('usuarioLogueado'));
+                        const contenedorFoto = document.getElementById('contenedorFoto');
+                        const correoUsuario = document.getElementById('correoUsuario');
+                    
+                        if (usuario) {
+                            // Mostrar el correo
+                            correoUsuario.textContent = usuario.correo;
+                    
+                            // Selección de foto según el correo o foto asignada
+                            let foto = "imagenes/fotos de perfil/default.png"; // Ruta de imagen por defecto
+                    
+                            if (usuario.correo === "clientemujer@correo.com") {
+                                foto = "imagenes/fotos de perfil/fotodeclientemujer.jpg";
+                            } else if (usuario.correo === "clientehombre@correo.com") {
+                                foto = "imagenes/fotos de perfil/fotodeclientehombre.jpg";
+                            } else if (usuario.foto) {
+                                foto = usuario.foto;  // Si en la base de datos tiene foto
+                            }
+                    
+                            // Insertar la imagen en el header
+                            contenedorFoto.innerHTML = `<img id="fotousuario" src="${foto}" alt="Foto del usuario">`;
+                            
+
+                    
+                        } else {
+                            // Si no hay sesión, redirige al login
+                            window.location.href = '2paginalogin.html';
+                        }
+                    </script>
+
+                    
+            </body>
+
+
+
+
+

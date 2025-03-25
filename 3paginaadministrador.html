@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administrador</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 20px 0;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    h1, h2 {
+      color: #444;
+    }
+
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 15px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #333;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 15px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Panel de Administración</h1>
+  </header>
+
+  <main>
+    <h2>Inventario de Productos</h2>
+    <table>
+      <tr>
+        <th>Producto</th>
+        <th>Categoría</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+      </tr>
+      <tr>
+        <td>Proteína Whey</td>
+        <td>Suplemento</td>
+        <td>50</td>
+        <td>$120.000</td>
+      </tr>
+      <tr>
+        <td>Creatina</td>
+        <td>Suplemento</td>
+        <td>30</td>
+        <td>$80.000</td>
+      </tr>
+      <tr>
+        <td>Aminoácidos BCAA</td>
+        <td>Suplemento</td>
+        <td>20</td>
+        <td>$90.000</td>
+      </tr>
+      <tr>
+        <td>Shaker</td>
+        <td>Accesorio</td>
+        <td>100</td>
+        <td>$30.000</td>
+      </tr>
+    </table>
+
+    <h2>Listado de Clientes Registrados</h2>
+    <table id="clientes-table">
+      <tr>
+        <th>Correo</th>
+        <th>Tipo de Cuenta</th>
+      </tr>
+      <!-- Los clientes se agregarán aquí desde el script -->
+    </table>
+  </main>
+
+  <footer>
+    &copy; 2025 - Sistema de Administración
+  </footer>
+
+  <script>
+    // Traemos la "base de datos" de usuarios
+    const usuarios = [
+      { correo: "cliente@correo.com", contraseña: "1234", tipo: "cliente" },
+      { correo: "admin@correo.com", contraseña: "1234", tipo: "administrador" },
+      { correo: "mayerly@correo.com", contraseña: "1234", tipo: "administrador" },
+      { correo: "juanita@correo.com", contraseña: "1234", tipo: "administrador" }
+    ];
+
+    // Filtramos solo los clientes
+    const clientes = usuarios.filter(user => user.tipo === "cliente");
+
+    // Seleccionamos la tabla de clientes
+    const clientesTable = document.getElementById("clientes-table");
+
+    // Recorremos los clientes y los agregamos a la tabla
+    clientes.forEach(cliente => {
+      const fila = `
+        <tr>
+          <td>${cliente.correo}</td>
+          <td>${cliente.tipo}</td>
+        </tr>
+      `;
+      clientesTable.innerHTML += fila;
+    });
+  </script>
+
+</body>
+</html>

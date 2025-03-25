@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de Compras</title>
+  <style>
+    body {
+      font-family: 'Arial Black', sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .titulo {
+      font-size: 32px;
+      color: #000;
+      flex-grow: 1;
+      text-align: center;
+      letter-spacing: 3px;
+    }
+
+    .bd-logo img {
+      width: 80px;
+      height: auto;
+    }
+
+    .tabla-carrito {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #000;
+      color: #fff;
+      border-collapse: collapse;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .tabla-carrito th, .tabla-carrito td {
+      padding: 15px;
+      border-bottom: 1px solid #fff;
+    }
+
+    .tabla-carrito th {
+      text-align: left;
+      font-size: 18px;
+    }
+
+    .tabla-carrito td {
+      font-size: 16px;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 20px;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .btn-comprar {
+      background-color: #E63C1F;
+      color: #fff;
+      padding: 15px 40px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .btn-comprar:hover {
+      background-color: #c4311b;
+    }
+
+    .contacto {
+      margin: 30px auto;
+      font-size: 18px;
+      color: #000;
+    }
+
+    .contacto a {
+      color: #E63C1F;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contacto a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://i.imgur.com/QdZjz3N.png" alt="Atrás"> <!-- Icono de atrás -->
+    </div>
+    <div class="titulo">CARRITO DE COMPRAS</div>
+    <div class="bd-logo">
+      <img src="https://i.imgur.com/WZsTxBv.png" alt="BD Blackdrop">
+    </div>
+  </header>
+
+  <table class="tabla-carrito">
+    <thead>
+      <tr>
+        <th>Cantidad</th>
+        <th>Producto</th>
+        <th>Precio Unitario</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Whey Pure 2 lb</td>
+        <td>$160.000</td>
+        <td>$160.000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="total"><strong>Total</strong> &nbsp; $160.000</div>
+
+  <button class="btn-comprar">Confirmar Compra</button>
+
+  <div class="contacto">
+    📞 Contáctanos: <strong>+57 310 123 4567</strong><br>
+    📸 Síguenos en <a href="https://www.instagram.com/blackdropsupps?igsh=MXgwZGU5ZWZ3NGJkdg%3D%3D" target="_blank">Instagram</a>
+  </div>
+</body>
+</html>
