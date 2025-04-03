@@ -21,3 +21,13 @@ window.addEventListener("click", (event) => {
         modal.style.display = "none";
     }
 });
+
+/*document.addEventListener("DOMContentLoaded", function() {
+    const botonAtras = document.querySelector(".contenedoriconoatras"); 
+
+    if (botonAtras) {
+        botonAtras.addEventListener("click", function() {
+            window.location.href = "index.html"; // Redirige a index
+        });
+    }
+});*/
