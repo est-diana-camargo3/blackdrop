@@ -41,14 +41,6 @@
                     width:330px; /*que ocupe el 95% de ancho de la ventana*/
                     max-width: 330px; /*maximo ocupa 1400 pixeles*/
                     min-width: 330px; /*maximo ocupa 1400 pixeles*/
-
-                    
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100vh;  /* Ocupa toda la pantalla */
-                    margin: 0;
-                    flex-direction: column;
                 
                  
                     display:grid;
@@ -629,28 +621,7 @@
       }
 
         });
-        let modal = document.getElementById("modal");
-      let iconoInicioSesion = document.querySelector(".iconoiniciarsesion");
-      let cerrarModal = document.querySelector(".cerrar");
-
-      if (modal && iconoInicioSesion && cerrarModal) {
-          // Evento para abrir el modal
-          iconoInicioSesion.addEventListener("click", function () {
-              modal.style.display = "block";
-          });
-
-          // Evento para cerrar el modal con la "X"
-          cerrarModal.addEventListener("click", function () {
-              modal.style.display = "none";
-          });
-
-          // Evento para cerrar el modal si se hace clic fuera de él
-          window.addEventListener("click", function (event) {
-              if (event.target === modal) {
-                  modal.style.display = "none";
-              }
-          });
-      }
+        
 
       // 📌 Evento para el botón "Atrás"
       let botonAtras = document.querySelector(".contenedoriconoatras");
@@ -659,6 +630,7 @@
               window.location.href = "index.html"; // Redirige a la página principal
           });
       }
+          
   
 
 

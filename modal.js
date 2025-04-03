@@ -22,7 +22,7 @@ window.addEventListener("click", (event) => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+/*document.addEventListener("DOMContentLoaded", function() {
     const botonAtras = document.querySelector(".contenedoriconoatras"); 
 
     if (botonAtras) {
@@ -30,4 +30,4 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = "index.html"; // Redirige a index
         });
     }
-});
+});*/
