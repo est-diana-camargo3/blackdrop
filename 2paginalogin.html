@@ -31,7 +31,7 @@
 
         body /* Cuerpo , su papa es html */
               {
-                    background-color: rgb(255, 255, 255); /* Naranja con 30% de transparencia */ 
+                    background-color: rgb(0, 0, 0); /* Naranja con 30% de transparencia */ 
                     color:rgb(0, 0, 0); /*color de texto*/
                     font-family: Arial, sans-serif; /* Fuente: Arial, sino que no tenga adornos es decir cualquier fuente sans-serif*/
                     margin:auto ;     /*margenes automaticas, menos la superior*/
@@ -41,6 +41,16 @@
                     width:330px; /*que ocupe el 95% de ancho de la ventana*/
                     max-width: 330px; /*maximo ocupa 1400 pixeles*/
                     min-width: 330px; /*maximo ocupa 1400 pixeles*/
+
+                    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;  /* Ocupa toda la pantalla */
+                    margin: 0;
+                    flex-direction: column;
+                
+                 
                     display:grid;
                     /*se dividira en 3 filas, 3 columnas*/
                     grid-template-columns: repeat(1, 1fr);
@@ -97,7 +107,8 @@
                                   object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
                                   cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
                                   transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
-                                  /*background-color: rgb(142, 56, 247);     */                         
+                                  /*background-color: rgb(142, 56, 247);     */    
+                                                   
                               }
                               
                               header .contenedoriconoatras:hover 
@@ -176,8 +187,7 @@
                 border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
                 margin:0;     /*arriba derecha abajo izquierda;*/
                 /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
-                ordenar unos elementos dentro de el*/ 
-                display:grid;                                   
+                ordenar unos elementos dentro de el*/                                
                 grid-template-columns: repeat(1, auto);  /*1 columna*/
                 grid-template-rows: repeat(6, auto);    /*5 filas*/
                 grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
@@ -554,7 +564,9 @@
                           <h1 class="telefonodeblackdrop">Teléfono: 311 222 22 11</h1>
                           <a href="https://www.instagram.com/blackdropsupps?igsh=MXgwZGU5ZWZ3NGJkdg%3D%3D" target="_blank" class="linkdeinstagramblackdrop">Instagram de Blackdrop</a>
                   </div> 
-            </footer>    
+            </footer>   
+            
+
       </body>
 
 
@@ -617,10 +629,39 @@
       }
 
         });
+        let modal = document.getElementById("modal");
+      let iconoInicioSesion = document.querySelector(".iconoiniciarsesion");
+      let cerrarModal = document.querySelector(".cerrar");
+
+      if (modal && iconoInicioSesion && cerrarModal) {
+          // Evento para abrir el modal
+          iconoInicioSesion.addEventListener("click", function () {
+              modal.style.display = "block";
+          });
+
+          // Evento para cerrar el modal con la "X"
+          cerrarModal.addEventListener("click", function () {
+              modal.style.display = "none";
+          });
+
+          // Evento para cerrar el modal si se hace clic fuera de él
+          window.addEventListener("click", function (event) {
+              if (event.target === modal) {
+                  modal.style.display = "none";
+              }
+          });
+      }
+
+      // 📌 Evento para el botón "Atrás"
+      let botonAtras = document.querySelector(".contenedoriconoatras");
+      if (botonAtras) {
+          botonAtras.addEventListener("click", function () {
+              window.location.href = "index.html"; // Redirige a la página principal
+          });
+      }
+  
 
 
-        /*   con esto se puede sacar la info del usuario desde otra pagina          */
-        /*   const usuario = JSON.parse(localStorage.getItem('usuarioLogueado'));   */
 
       </script>
       
