@@ -181,11 +181,25 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               height: 100px;
                               border-radius:50%
                           }
-           
+            header .contenedorCarrito
+                    {
+            grid-column: 3 / 4;
+            margin: 10% 2px 2% 0%;  
+            width: 100px;
+            height: 100px;
+            cursor: pointer;   
+                       
+                    }
 
-
-
-
+            header .contenedorCarrito img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 50%;
+            }
+            header .contenedorCarrito:hover{
+                box-shadow: 0px 0px 50px red;
+            }
 
 
 
@@ -661,6 +675,11 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                
                           </div>
 
+                        <div class="contenedorCarrito" id="contenedorCarrito" onclick="location.href='5carritodecompras.html'">
+                            <img id="iconoCarrito" src="imagenes/iconos/carrito.png" alt="Carrito de compras">
+                             
+                        </div>
+
                   </header>
 
 
@@ -817,11 +836,6 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
 
 
-
-
-             <!-- ============================================================================================
-                                                     S C R I P T S 
-                  ================================================================================================= --> 
 
                     <script>
                         // Trae el usuario desde localStorage
