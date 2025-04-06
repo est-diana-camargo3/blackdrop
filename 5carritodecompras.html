@@ -157,6 +157,19 @@
     background-color: #c4311b;
   }
 
+  .eliminar-producto {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: #E63C1F;
+  transition: transform 0.2s ease;
+}
+
+.eliminar-producto:hover {
+  transform: scale(1.2);
+}
+
   </style>
 </head>
 
@@ -191,13 +204,14 @@
         <td>Whey Pure 2 lb</td>
         <td>$160.000</td>
         <td>$160.000</td>
+        <td><button class="eliminar-producto">❌</button></td>
       </tr>
     </tbody>
   </table>
 
   <div class="total"><strong>Total</strong> &nbsp; $160.000</div>
 
-  <button class="btn-comprar">Confirmar Compra</button>
+  <button class="btn-comprar" onclick="location.href='confirmarcompra.html'">Confirmar Compra</button>
 
   <div class="contacto">
     📞 Contáctanos: <strong>+57 310 123 4567</strong><br>
