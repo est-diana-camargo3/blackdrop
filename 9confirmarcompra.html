@@ -7,33 +7,54 @@
   <style>
    
 
-    body {
+   body {
       font-family: 'Arial Black', sans-serif;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 20px;
     }
 
     header {
-      width: 100%;
       background-color: #fff;
-      padding: 20px 0;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #000;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #000;
     }
 
-    .logo {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      height: 40px;
+    .contenedoriconoatras {
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      width: 8%;
+      height: 75px;
+      object-fit: contain;
+      cursor: pointer;
+      transition: color 0.1s ease;
     }
-    .logo img {
+
+    .contenedoriconoatras:hover {
+      box-shadow: 0px 0px 50px red;
+    }
+
+    .contenedoriconoatras img {
       width: auto;
+      height: auto;
+    }
+
+    .titulo {
+      font-size: 32px;
+      color: #000;
+      flex-grow: 1;
+      text-align: center;
+      letter-spacing: 3px;
+    }
+
+    .bd-logo img {
+      width: 80px;
       height: auto;
     }
 
@@ -42,7 +63,8 @@
       color: white;
       padding: 30px;
       border-radius: 10px;
-      margin: 30px 0;
+      margin: auto;
+      margin-top: 4%;
       max-width: 600px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
@@ -118,8 +140,12 @@
   <div class="fondo"></div>
 
   <header>
-    CONFIRMACIÓN DE PAGO
-    <img src="imagenes/LOGOS/logo_blanco_letras_negras_rojas.png" alt="Logo" class="logo"> <!-- Asegúrate de tener el logo -->
+    <div class="contenedoriconoatras">
+      <img src="imagenes/iconos/atras.png" alt="Icono para volver atrás" onclick="location.href='4paginacliente.html'">
+    </div>
+    <div class="bd-logo">
+      <img src="imagenes/LOGOS/logo_blanco_letras_negras_rojas.png" alt="BD Blackdrop">
+    </div>
   </header>
 
   <div class="contenedor-confirmacion">
@@ -128,7 +154,7 @@
     para acordar día, hora y recibir tu pedido en la Universidad <br><strong>¡totalmentre gratis!</strong></p>
 
     <button class="btn" onclick="location.href='2paginalogin.html'">CONTINUAR COMPRANDO</button> <br>
-    <button class="btn">VER HISTORIAL DE COMPRAS</button>
+    <button class="btn" onclick="location.href='10historialdecompras.html'">VER HISTORIAL DE COMPRAS</button>
 
     <div class="iconos-contacto">
       <a href="https://wa.me/573107601227" target="_blank">

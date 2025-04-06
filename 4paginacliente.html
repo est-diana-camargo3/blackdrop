@@ -1,67 +1,24 @@
 
 <!-- Página web Blackdrop -->
 
-<!DOCTYPE html> <!-- Paso 1: Declaramos el tipo de documento que vamos a hacer, 
-                     esto no es una etiqueta o elemento html, sino que es un declaración o linea de codigo
-                     para que el browser o navegador entienda que el tipo de archivo es html -->
+<!DOCTYPE html>
 
-      <html>      <!-- Paso 2: Indicamos el formato del contenido, denominando el root element o elemento raiz:
-                     nuestro root element es <html> lo cual indica que el formato es html
-                     osea todo lo que esta dentro de esta etiquetas es formato html.
-                     dentro de este elemento,se contiene todo,(de ahi su nombre),no puede haber otro elemento que lo contenga a él -->
+      <html>     
             
-
-
-
-            <!-- =================================================================================================
-                                              H E A D metadatos
-            ====================================================================================================== -->  
-              
-            <head> <!-- Head ó Metadatos-->        
-                        <!-- Paso 3: Creamos el head o encabezado, el cual contiene los elementos que 
-                              NO son renderizados ó mostrados al darle display a la pagina
-                              osea no se ven en la pagina real, sino que es codigo que hay "por debajo"
-                              Aqui van los metadatos, por ejemplo: el idioma, el titulo de la pagina, 
-                              los nombre de los autores, la descripcion del contenido de la pagina 
-                              las hojas de estilo CSS (opcional, buena practica manejarlas en una pagina aparte).
-                              ...etc. -->
-                        <!--esta linea de codigo es para las versiones anteriores de internet explorer,
-                        if intenet explorer es less than o menor que la version 9 
-                        que es cargar html_shiv, es la que esta en el libro 
-                        esta linea de codigo debe quedar en comentario y solo se ejectua si la version es menor.-->
-                              <!--[if lt IE 9]>
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-                        <![endif]-->  
+            
+            <head> 
                               
-                        <meta charset="utf-8"> </meta>  <!-- Paso 5: Definimos la codificacion de caracteres o "idioma", el de nosotros es:
-                                                                  Unicode Transformation Format 8 bits, que es un formato de codificacion
-                                                                  que acepta: tildes, eñes, simbolos y caracteres del idioma español
-                                                                  esto para que cuando se visualice la pagina en chrome aparezcan todas 
-                                                                  las letras y caracteres del idioma español, sin error-->
+                        <meta charset="utf-8"> </meta>  
                         
                         <title> Venta de proteinas para deportistas en Colombia, empresa BlackDrop </title>  
-                              <!-- Paso 6: Definimos el titulo que llevara la pagina, en el navegador, el cual, 
-                                          aparecerá en la pestaña de navegación , y servira para que nos encuentren 
-                                          debe ser corto conciso y claro -->                  
+                                     
                         <meta name="Pagina de venta de proteinas para deportistas en Colombia, empresa BlackDrop" content="width=device-width, initial-scale=1.0"> 
-                              <!--Hace que la página se ajuste correctamente en dispositivos móviles, asegurando que el ancho se ajuste al dispositivo y la escala inicial sea 1.-->
-                           
+                              
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<!-- =================================================================================================
-                                            E S T I L O S  - C S S 
-====================================================================================================== --> 
-
 <style>
 section, article, nav, aside, header, footer, main {  display: block; } 
-        /*indicamos a los navegadores,que formatee cada uno de los elementos como un nivel de bloque,
-        a la veersion que concuerde. Esto para que todos los navegadores admitan nuestras etiquetas html5, 
-        y para aquellos que depronto por lo antiguos no lo hacen, posteriores a internet explorer
-        version 8 o anteriores, formateamos estas etiquetas y buscamos la version que las puedan mostrar*/
-
-
-
 
   /* =================================================================================================
                                                   H T M L 
@@ -200,6 +157,55 @@ section, article, nav, aside, header, footer, main {  display: block; }
             header .contenedorCarrito:hover{
                 box-shadow: 0px 0px 50px red;
             }
+            .menu-icono {
+                width: 8vw;            /* 8% del ancho de la ventana */
+    max-width: 60px;       /* tamaño máximo si la ventana es muy grande */
+    min-width: 30px;       /* tamaño mínimo si la ventana es muy pequeña */
+    height: auto;
+    margin: auto;
+    cursor: pointer;
+    grid-column: 2 / 3;
+    justify-self: end;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+                }
+
+                .menu-icono img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                }
+
+                .menu-icono img:hover {
+                    box-shadow: 0px 0px 50px red;
+                }
+
+                .menu-desplegable {
+                    position: absolute;
+    top: 100px; /* o ajusta según el alto de tu header */
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    min-width: 160px;
+                }
+
+                .menu-desplegable a {
+                    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+                }
+
+                .menu-desplegable a:hover {
+                background-color: rgba(255, 0, 0, 0.6);
+                }
 
 
 
@@ -643,25 +649,8 @@ section, article, nav, aside, header, footer, main {  display: block; }
             </head>
 
 
-            <!-- =================================================================================================
-                                                  P A G I N A    H T M L
-            ====================================================================================================== --> 
 
-
-            <!-- =================================================================================================
-                                                  B O D Y 
-            ====================================================================================================== --> 
-
-            <body>  <!-- Body-->
-                        <!-- Paso 7: Creamos el body, el cual contendrá todo lo que se mostrara en el browser o navegador (ejm: en chrome)
-                                    al darle display a la pagina -->
-                  
-
-
-
-                  <!-- ===========================================================================================
-                                                   H E A D E R encabezado
-                  ================================================================================================ --> 
+            <body>  
                   
                   <header> <!-- headER ó encabezado-->                         
 
@@ -670,27 +659,23 @@ section, article, nav, aside, header, footer, main {  display: block; }
                               <p>Bienvenido:...<span id="correoUsuario"></span></p>
                         </div>
 
-                        <div class="contenedorfotodecliente" id="contenedorFoto" onclick="location.href='8perfil.html'">
-                              <!-- Aquí se insertará la foto desde JS -->
-                               
-                          </div>
+                        <!-- Ícono de menú hamburguesa -->
+                        <div class="menu-icono" onclick="toggleMenu()">
+                            <img src="imagenes/iconos/Menu.png" alt="Menú">
+                        </div>
 
-                        <div class="contenedorCarrito" id="contenedorCarrito" onclick="location.href='5carritodecompras.html'">
-                            <img id="iconoCarrito" src="imagenes/iconos/carrito.png" alt="Carrito de compras">
-                             
+                        <!-- Menú desplegable oculto por defecto -->
+                        <div class="menu-desplegable" id="menuDesplegable">
+                            <a href="8perfil.html">Perfil</a>
+                            <a href="5carritodecompras.html">Carrito</a>
+                            <a href="10historialdecompras.html">Historial de Compras</a>
                         </div>
 
                   </header>
 
 
 
-
-                  <!-- ============================================================================================
-                                                       M A I N  
-                  ================================================================================================= --> 
-
-                  <main> <!-- Main, contenido principal del body-->
-                        <!-- Paso 8: Iniciamos a poner elementos en la pagina, ejm: un título de nivel 1  --> 
+                  <main>
                         
                         <div class="bannersuperior">
                               <p class="bannersuperior-text">Compra tu proteina en Blackdrop <br> y paga contraentrega</br> </p>
@@ -867,6 +852,11 @@ section, article, nav, aside, header, footer, main {  display: block; }
                             // Si no hay sesión, redirige al login
                             window.location.href = '2paginalogin.html';
                         }
+                        function toggleMenu() {
+                        const menu = document.getElementById("menuDesplegable");
+                        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+                    }
+                        
                     </script>
 
                     
