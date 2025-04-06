@@ -76,14 +76,21 @@
 
     .iconos-contacto {
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
+      align-items: center;
+      gap: 10px;
+      margin-top: 70px;
     }
 
     .iconos-contacto img {
-      height: 40px;
+      height: 50px;
       cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .iconos-contacto:hover{
+      transform: scale(1.05);
     }
 
 
@@ -98,6 +105,13 @@
       background-size: cover;
       opacity: 0.07;
     }
+    .numero-contacto{
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+
+    }
   </style>
 </head>
 <body>
@@ -109,19 +123,21 @@
   </header>
 
   <div class="contenedor-confirmacion">
-    <h2>¡Compra exitosa! <br> <br>numero de pedido: <strong>2351</strong></h2><br>
-    <p>Llámanos o escríbenos por WhatsApp al <strong>310 111 11 12</strong><br>
-    para acordar dia y hora y recibir tu pedido en la Universidad <br><strong>¡de manera gratuita!</strong></p>
+    <h2>¡Compra exitosa! <br> <br>Número de pedido: <strong>2351</strong></h2><br>
+    <p>Llámanos o escríbenos a nuestro <strong>WhatsApp</strong> <br>
+    para acordar día, hora y recibir tu pedido en la Universidad <br><strong>¡totalmentre gratis!</strong></p>
 
-    <button class="btn">CONTINUAR A LA TIENDA</button><br>
+    <button class="btn" onclick="location.href='2paginalogin.html'">CONTINUAR COMPRANDO</button> <br>
     <button class="btn">VER HISTORIAL DE COMPRAS</button>
 
     <div class="iconos-contacto">
-      <img src="whatsapp.png" alt="WhatsApp">
+      <a href="https://wa.me/573107601227" target="_blank">
+        <img src="imagenes/iconos/WhatsApp.svg.webp" alt="WhatsApp">
+      </a>
     </div>
-    <div class="contenedor-confirmacion">
-      Contacto: 310 111 11 12
-    </div>
+      <p>Contacto: 310 111 11 12</p>
+    
+    
   </div>
 
 </body>
