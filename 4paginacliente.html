@@ -67,57 +67,54 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
     header /* encabezado */
           {
-                /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
-                grid-column: 1 / 2; /* ocupara 1 columnas*/
-                grid-row: 1 / 2; /* ocupara 1 fila*/
-                margin:0;     /*reiniciamos las margenes a cero*/
-                padding:0;    /*reiniciamos el padding o relleno a cero*/
-                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                background-image: url('imagenes/texturas/texturafondoblanco.jpg');
-                background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
-                background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
-                background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
-                background-position: center center; /* Centra la imagen de fondo dentro del header */
-                background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-                display:grid;
-                /*se dividira en 2 columnas, 1 fila*/
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat (1,auto); /*tamaño automatico osea que se ajusten al contenido*/
-                overflow-x: hidden; /* Esto desactiva el deslizador vertical */
-                overflow-y: auto; /* Esto permite el deslizador lateral */
-                min-height: 100px;
-          }
+           
+    display: flex;
+    justify-content: space-between; /* Distribuye logo - título - menú */
+    align-items: center;            /* Centra verticalmente todos los hijos */
+    padding: 10px 20px;
+    background-image: url('imagenes/texturas/texturafondoblanco.jpg');
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: overlay;
+    background-size: 100% 600%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100px;
+}
+
+          
+          .logo {
+            flex: 1; /* Ocupa 1 parte proporcional del espacio */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 60px;
+                }
+
+                .logo img {
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+                }
 
           .titulo {
            
-            font-size: 60px;
-            color: #000;
-            letter-spacing: 3px;
-            font-weight: bold;
-
-            /* Centrado horizontal y vertical usando grid */
-            grid-column: 1 / 3;
-            grid-row: 1;       /* Ocupa ambas columnas */
-            display: flex;            /* Flexbox para centrar el contenido */
-            justify-content: center;  /* Centrado horizontal */
-            align-items: flex-end;      /* Centrado vertical */
-            padding: 0;    
+            flex: 2; /* Ocupa 2 partes: estará centrado */
+    text-align: center;
+    font-size: 40px;
+    color: #000;
+    letter-spacing: 3px;
+    font-weight: bold;
           }
 
   
             .menu-icono {
-                width: 8vw;            /* 8% del ancho de la ventana */
-    max-width: 60px;       /* tamaño máximo si la ventana es muy grande */
-    min-width: 30px;       /* tamaño mínimo si la ventana es muy pequeña */
-    height: auto;
-    margin: auto;
-    cursor: pointer;
-    grid-column: 2 / 3;
-    justify-self: end;
-    margin-right: 20px;
+                flex: 1;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
+    max-width: 6%;
+    cursor: pointer;
                 }
 
                 .menu-icono img {
@@ -601,7 +598,9 @@ section, article, nav, aside, header, footer, main {  display: block; }
             <body>  
                   
                   <header> <!-- headER ó encabezado-->                         
-
+                    <div class="logo">
+                        <img src="imagenes/logos/logo_blanco_letras_negras_rojas.png" alt="BD Blackdrop">
+                      </div>
                         <!-- Bienvenida con correo -->
                          <div class="titulo">¡Bienvenido!</div>
 
