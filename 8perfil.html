@@ -494,6 +494,7 @@
                 <div class="contenedortituloregistrarse">          
                 <p class="tituloregistrarse"> Mi perfil  </p>
                 </div>
+                
    
         </header>
 
@@ -504,20 +505,16 @@
               <main>
                     <form>
                             <div class="contenedortitulomasinputcorreo ">
-                                    <p class="titulocorreo"> ModificarCorreo: </p>
+                                    <p class="titulocorreo"> Modificar Correo: </p>
                                     <input class="inputcorreo" type="email" id="correo" required placeholder="cliente@correo.com"> </input>
                             </div>
                             
                             <div class="contenedortitulomasinputcontraseña ">
-                                    <p class="titulocontraseña" > ModificarContraseña: </p>
+                                    <p class="titulocontraseña" > Modificar Contraseña: </p>
                                     <input class="inputcontraseña" id="contrasena" required placeholder="1234"> </input>
                             </div>
 
-                            <div class="contenedortitulomasinputfoto">
-                                <label class="titulofoto" for="foto">ModificarFoto: </label>
-                                <input class="inputfoto" type="file" id="foto" name="foto" accept="image/*" onchange="mostrarMiniatura(event)"><br><br>
-                                <div id="miniatura"></div> 
-                            </div>
+                            
 
                             <div class="contenedortitulotipodecuentamasradiogroup">
                                     <label for="titulotipodecuenta" class="titulotipodecuenta">Tipo de cuenta:<span class="enterpersonalizado"></span></label>
@@ -549,27 +546,14 @@
                                                    javascript
             ================================================================================================ --> 
             
-            <script>
-                function mostrarMiniatura(event) {
-                    const miniatura = document.getElementById('miniatura');
-                    const archivo = event.target.files[0];
-                    if (archivo) {
-                        const lector = new FileReader();
-                        lector.onload = function(e) {
-                            miniatura.innerHTML = `<img src="${e.target.result}" alt="Foto" style="width:100px;height:100px;border-radius:50%; margin-left:40px;">`;
-                        }
-                        lector.readAsDataURL(archivo);
-                    } else {
-                        miniatura.innerHTML = '';
-                    }
-                }
-                </script>
+       
+              
 
             <script>
                 function registrarUsuario() {
                     const correo = document.getElementById('correo').value;
                     const constrasena = document.getElementById('contrasena').value;
-                    const archivoFoto = document.getElementById('foto').files[0];
+                    /*const archivoFoto = document.getElementById('foto').files[0];*/
 
                     if (!correo  ) {
                         alert('Debes escribir correo ');
@@ -579,10 +563,10 @@
                         alert('Debes escribir contrasena ');
                         return;
                     }
-                    if (!foto) {
+                    /*if (!foto) {
                         alert("Debes cargar una foto.");
                         return;
-                    }
+                    }*/
 
                     const lector = new FileReader();
                     lector.onload = function (e) {
@@ -592,7 +576,7 @@
                         const nuevoUsuario = {
                             correo: correo,
                             constrasena: constrasena,
-                            foto: nuevaFotoBase64,
+                            /*foto: nuevaFotoBase64,*/
                             tipo: "cliente"
                         };
 
@@ -604,7 +588,7 @@
                         window.location.href = '4paginacliente.html';
                     };
 
-                    lector.readAsDataURL(archivoFoto);
+                    /*lector.readAsDataURL(archivoFoto);*/
                 }
             </script>
 

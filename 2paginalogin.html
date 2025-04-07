@@ -31,7 +31,8 @@
 
         body /* Cuerpo , su papa es html */
               {
-                    background-color: rgb(0, 0, 0); /* Naranja con 30% de transparencia */ 
+                height: 100vh;
+                    background-color: rgb(255, 255, 255); /* Naranja con 30% de transparencia */ 
                     color:rgb(0, 0, 0); /*color de texto*/
                     font-family: Arial, sans-serif; /* Fuente: Arial, sino que no tenga adornos es decir cualquier fuente sans-serif*/
                     margin:auto ;     /*margenes automaticas, menos la superior*/
@@ -48,6 +49,8 @@
                     grid-template-columns: repeat(1, 1fr);
                     grid-template-rows: repeat (3,auto); /*tamaño automatico osea que se ajusten al contenido*/
                     grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                    justify-content: center; /* centrar horizontal */
+    align-content: center;   /* centrar vertical */
                     overflow-x: hidden; /* Esto desactiva el deslizador vertical */
                     overflow-y: auto; /* Esto permite el deslizador lateral */
               }         
@@ -89,17 +92,17 @@
 
               header .contenedoriconoatras
                               {
-                                  grid-column: 1 / 2; /* ocupara 1 columnas*/
-                                  grid-row: 1 / 2; /* ocupara 1 fila*/    
-                                  margin: 8px 0px 8px 8px;  /*arriba derecha abajo izquierda;*/
-                                  padding:0; /*relleno*/
-                                  border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                                  width: 85%; /* 5% del contenedor donde esta:osea del header   */
-                                  height: 75px; /* 5% del contenedor donde esta:osea del header   */
-                                  object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
-                                  cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
-                                  transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
-                                  /*background-color: rgb(142, 56, 247);     */    
+                                grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin: 8px;
+    padding: 0;
+    width: 60px; /* Tamaño fijo o usa una unidad relativa */
+    height: 60px; /* Ajusta según tu diseño */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
                                                    
                               }
                               
@@ -111,8 +114,9 @@
 
                               header .contenedoriconoatras img
                                               {
-                                                  width: 100%; 
-                                                  height: auto;
+                                                width: 100%;
+    height: 100%;
+    object-fit: contain;;
                                               }
 
               header .contenedortituloiniciarsesion
@@ -139,32 +143,7 @@
                                                 
                                             }
 
-              header .contenedorlogoiralatiendasinloguearse 
-                              {
-                                  grid-column: 3 / 4; /* ocupara 1 columnas*/
-                                  grid-row: 1 / 2; /* ocupara 1 fila*/    
-                                  margin: 8px 0px 8px 0px;  /*arriba derecha abajo izquierda;*/
-                                  padding:0; /*relleno*/
-                                  border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                                  width: 90%; /* 5% del contenedor donde esta:osea del header   */
-                                  height: 65px; /* 5% del contenedor donde esta:osea del header   */
-                                  object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */
-                                  cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
-                                  transition: color 0.3s ease;                    
-                              }
-                
-                              header .contenedorlogoiralatiendasinloguearse:hover 
-                                              {
-                                                  box-shadow: 0px 0px 50px red; /* Sombra cuando se pasa el mouse*/
-                                                  /*border: 25px solid red; /*borde sólido cuando se pasa el mouse */
-                                              }
-
-                              header .contenedorlogoiralatiendasinloguearse img
-                                              {
-                                                  width: 100%; 
-                                                  height: auto;
-                                              }
-
+              
 
       /* =================================================================================================
                                       E S T I L O S    D E L       M A I N  
@@ -503,10 +482,7 @@
                       <div class="contenedortituloiniciarsesion">          
                       <p class="tituloiniciarsesion"> Iniciar Sesión </p>
                       </div>
-
-                      <div class="contenedorlogoiralatiendasinloguearse">  
-                      <img src="imagenes/iconos/iralatiendasinloguearse.png" alt="Icono ir a la tienda sin loguearse" onclick="location.href='1index.html'">
-                      </div>            
+         
               </header>
 
 
