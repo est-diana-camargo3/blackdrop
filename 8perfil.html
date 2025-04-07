@@ -31,6 +31,7 @@
 
         body /* Cuerpo , su papa es html */
               {
+                height: 100vh;
                     background-color: rgb(255, 255, 255); /* Naranja con 30% de transparencia */ 
                     color:rgb(0, 0, 0); /*color de texto*/
                     font-family: Arial, sans-serif; /* Fuente: Arial, sino que no tenga adornos es decir cualquier fuente sans-serif*/
@@ -41,11 +42,15 @@
                     width:330px; /*que ocupe el 95% de ancho de la ventana*/
                     max-width: 330px; /*maximo ocupa 1400 pixeles*/
                     min-width: 330px; /*maximo ocupa 1400 pixeles*/
+                
+                 
                     display:grid;
                     /*se dividira en 3 filas, 3 columnas*/
                     grid-template-columns: repeat(1, 1fr);
                     grid-template-rows: repeat (3,auto); /*tamaño automatico osea que se ajusten al contenido*/
                     grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                    justify-content: center; /* centrar horizontal */
+                    align-content: center;   /* centrar vertical */
                     overflow-x: hidden; /* Esto desactiva el deslizador vertical */
                     overflow-y: auto; /* Esto permite el deslizador lateral */
               }         
