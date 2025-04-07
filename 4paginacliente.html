@@ -85,78 +85,26 @@ section, article, nav, aside, header, footer, main {  display: block; }
                 grid-template-rows: repeat (1,auto); /*tamaño automatico osea que se ajusten al contenido*/
                 overflow-x: hidden; /* Esto desactiva el deslizador vertical */
                 overflow-y: auto; /* Esto permite el deslizador lateral */
-                
+                min-height: 100px;
           }
-           .contenedorBienvenida p 
-                        {
-                              grid-column: 1 / 2; /* ocupara 1 columnas*/
-                              grid-row: 1 / 2; /* ocupara 1 fila*/  
-                              font-size: 40px;
-                              font-weight: bold;
-                              color: black;
-                              text-align: center;
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              height: 120px;
-                              margin: 0 0 0 40px/*margin: top right bottom left;*/
-                         }
 
-          header .contenedorfotodecliente
-                          {
-                              grid-column: 2 / 3; /* ocupara 1 columnas*/
-                              grid-row: 1 / 2; /* ocupara 1 fila*/    
-                              margin: 2% 10px 2% 78%;  /*arriba derecha abajo izquierda;*/
-                              padding:0; /*relleno*/
-                              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                              width: 100px; /* 5% del contenedor donde esta:osea del header   */
-                              height: auto; /* 5% del contenedor donde esta:osea del header   */
-                              object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
-                              cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
-                              transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
-                              /*background-color: rgb(142, 56, 247);     */      
-                              text-align: center;                   
-                          }
-                          
-          header .contenedorfotodecliente:hover 
-                          {
-                              box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
-                              /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
-                          }
+          .titulo {
+           
+            font-size: 60px;
+            color: #000;
+            letter-spacing: 3px;
+            font-weight: bold;
 
+            /* Centrado horizontal y vertical usando grid */
+            grid-column: 1 / 3;
+            grid-row: 1;       /* Ocupa ambas columnas */
+            display: flex;            /* Flexbox para centrar el contenido */
+            justify-content: center;  /* Centrado horizontal */
+            align-items: flex-end;      /* Centrado vertical */
+            padding: 0;    
+          }
 
-          header .textoperfil 
-                        {
-                            font-size: 14px;
-                            color: black;
-                            margin-top: 5px;
-                        }
-
-          header .contenedorfotodecliente img
-                          {
-                              width: 100px;   /* Aumenta el tamaño de la foto */
-                              height: 100px;
-                              border-radius:50%
-                          }
-            header .contenedorCarrito
-                    {
-            grid-column: 3 / 4;
-            margin: 10% 2px 2% 0%;  
-            width: 100px;
-            height: 100px;
-            cursor: pointer;   
-                       
-                    }
-
-            header .contenedorCarrito img{
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                border-radius: 50%;
-            }
-            header .contenedorCarrito:hover{
-                box-shadow: 0px 0px 50px red;
-            }
+  
             .menu-icono {
                 width: 8vw;            /* 8% del ancho de la ventana */
     max-width: 60px;       /* tamaño máximo si la ventana es muy grande */
@@ -655,9 +603,7 @@ section, article, nav, aside, header, footer, main {  display: block; }
                   <header> <!-- headER ó encabezado-->                         
 
                         <!-- Bienvenida con correo -->
-                        <div class="contenedorBienvenida">  
-                              <p>Bienvenido:...<span id="correoUsuario"></span></p>
-                        </div>
+                         <div class="titulo">¡Bienvenido!</div>
 
                         <!-- Ícono de menú hamburguesa -->
                         <div class="menu-icono" onclick="toggleMenu()">
@@ -826,33 +772,20 @@ section, article, nav, aside, header, footer, main {  display: block; }
                     <script>
                         // Trae el usuario desde localStorage
                         const usuario = JSON.parse(localStorage.getItem('usuarioLogueado'));
-                        const contenedorFoto = document.getElementById('contenedorFoto');
+
                         const correoUsuario = document.getElementById('correoUsuario');
-                    
-                        if (usuario) {
-                            // Mostrar el correo
-                            correoUsuario.textContent = usuario.correo;
-                    
-                            // Selección de foto según el correo o foto asignada
-                            let foto = "imagenes/fotos de perfil/default.png"; // Ruta de imagen por defecto
-                    
-                            if (usuario.correo === "clientemujer@correo.com") {
-                                foto = "imagenes/fotos de perfil/fotodeclientemujer.jpg";
-                            } else if (usuario.correo === "clientehombre@correo.com") {
-                                foto = "imagenes/fotos de perfil/fotodeclientehombre.jpg";
-                            } else if (usuario.foto) {
-                                foto = usuario.foto;  // Si en la base de datos tiene foto
-                            }
-                    
-                            // Insertar la imagen en el header
-                            contenedorFoto.innerHTML = `<img id="fotousuario" src="${foto}" alt="Foto del usuario">`;
-                            
+                        const contrasena = document.getElementById('correoUsuario');
 
                     
+                        /*if (usuario) {
+                            // Mostrar el correo
+                            correoUsuario.textContent = usuario.correo;
+
                         } else {
                             // Si no hay sesión, redirige al login
                             window.location.href = '2paginalogin.html';
-                        }
+                        }*/
+          
                         function toggleMenu() {
                         const menu = document.getElementById("menuDesplegable");
                         menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
