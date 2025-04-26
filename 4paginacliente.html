@@ -1,67 +1,24 @@
 
 <!-- Página web Blackdrop -->
 
-<!DOCTYPE html> <!-- Paso 1: Declaramos el tipo de documento que vamos a hacer, 
-                     esto no es una etiqueta o elemento html, sino que es un declaración o linea de codigo
-                     para que el browser o navegador entienda que el tipo de archivo es html -->
+<!DOCTYPE html>
 
-      <html>      <!-- Paso 2: Indicamos el formato del contenido, denominando el root element o elemento raiz:
-                     nuestro root element es <html> lo cual indica que el formato es html
-                     osea todo lo que esta dentro de esta etiquetas es formato html.
-                     dentro de este elemento,se contiene todo,(de ahi su nombre),no puede haber otro elemento que lo contenga a él -->
+      <html>     
             
-
-
-
-            <!-- =================================================================================================
-                                              H E A D metadatos
-            ====================================================================================================== -->  
-              
-            <head> <!-- Head ó Metadatos-->        
-                        <!-- Paso 3: Creamos el head o encabezado, el cual contiene los elementos que 
-                              NO son renderizados ó mostrados al darle display a la pagina
-                              osea no se ven en la pagina real, sino que es codigo que hay "por debajo"
-                              Aqui van los metadatos, por ejemplo: el idioma, el titulo de la pagina, 
-                              los nombre de los autores, la descripcion del contenido de la pagina 
-                              las hojas de estilo CSS (opcional, buena practica manejarlas en una pagina aparte).
-                              ...etc. -->
-                        <!--esta linea de codigo es para las versiones anteriores de internet explorer,
-                        if intenet explorer es less than o menor que la version 9 
-                        que es cargar html_shiv, es la que esta en el libro 
-                        esta linea de codigo debe quedar en comentario y solo se ejectua si la version es menor.-->
-                              <!--[if lt IE 9]>
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-                        <![endif]-->  
+            
+            <head> 
                               
-                        <meta charset="utf-8"> </meta>  <!-- Paso 5: Definimos la codificacion de caracteres o "idioma", el de nosotros es:
-                                                                  Unicode Transformation Format 8 bits, que es un formato de codificacion
-                                                                  que acepta: tildes, eñes, simbolos y caracteres del idioma español
-                                                                  esto para que cuando se visualice la pagina en chrome aparezcan todas 
-                                                                  las letras y caracteres del idioma español, sin error-->
+                        <meta charset="utf-8"> </meta>  
                         
                         <title> Venta de proteinas para deportistas en Colombia, empresa BlackDrop </title>  
-                              <!-- Paso 6: Definimos el titulo que llevara la pagina, en el navegador, el cual, 
-                                          aparecerá en la pestaña de navegación , y servira para que nos encuentren 
-                                          debe ser corto conciso y claro -->                  
+                                     
                         <meta name="Pagina de venta de proteinas para deportistas en Colombia, empresa BlackDrop" content="width=device-width, initial-scale=1.0"> 
-                              <!--Hace que la página se ajuste correctamente en dispositivos móviles, asegurando que el ancho se ajuste al dispositivo y la escala inicial sea 1.-->
-                           
+                              
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<!-- =================================================================================================
-                                            E S T I L O S  - C S S 
-====================================================================================================== --> 
-
 <style>
 section, article, nav, aside, header, footer, main {  display: block; } 
-        /*indicamos a los navegadores,que formatee cada uno de los elementos como un nivel de bloque,
-        a la veersion que concuerde. Esto para que todos los navegadores admitan nuestras etiquetas html5, 
-        y para aquellos que depronto por lo antiguos no lo hacen, posteriores a internet explorer
-        version 8 o anteriores, formateamos estas etiquetas y buscamos la version que las puedan mostrar*/
-
-
-
 
   /* =================================================================================================
                                                   H T M L 
@@ -110,81 +67,90 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
     header /* encabezado */
           {
-                /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
-                grid-column: 1 / 2; /* ocupara 1 columnas*/
-                grid-row: 1 / 2; /* ocupara 1 fila*/
-                margin:0;     /*reiniciamos las margenes a cero*/
-                padding:0;    /*reiniciamos el padding o relleno a cero*/
-                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                background-image: url('imagenes/texturas/texturafondoblanco.jpg');
-                background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
-                background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
-                background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
-                background-position: center center; /* Centra la imagen de fondo dentro del header */
-                background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-                display:grid;
-                /*se dividira en 2 columnas, 1 fila*/
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat (1,auto); /*tamaño automatico osea que se ajusten al contenido*/
-                overflow-x: hidden; /* Esto desactiva el deslizador vertical */
-                overflow-y: auto; /* Esto permite el deslizador lateral */
-                
+           
+    display: flex;
+    justify-content: space-between; /* Distribuye logo - título - menú */
+    align-items: center;            /* Centra verticalmente todos los hijos */
+    padding: 10px 20px;
+    background-image: url('imagenes/texturas/texturafondoblanco.jpg');
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: overlay;
+    background-size: 100% 600%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100px;
+}
+
+          
+          .logo {
+            flex: 1; /* Ocupa 1 parte proporcional del espacio */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 60px;
+                }
+
+                .logo img {
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+                }
+
+          .titulo {
+           
+            flex: 2; /* Ocupa 2 partes: estará centrado */
+    text-align: center;
+    font-size: 40px;
+    color: #000;
+    letter-spacing: 3px;
+    font-weight: bold;
           }
-           .contenedorBienvenida p 
-                        {
-                              grid-column: 1 / 2; /* ocupara 1 columnas*/
-                              grid-row: 1 / 2; /* ocupara 1 fila*/  
-                              font-size: 40px;
-                              font-weight: bold;
-                              color: black;
-                              text-align: center;
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              height: 120px;
-                              margin: 0 0 0 40px/*margin: top right bottom left;*/
-                         }
 
-          header .contenedorfotodecliente
-                          {
-                              grid-column: 2 / 3; /* ocupara 1 columnas*/
-                              grid-row: 1 / 2; /* ocupara 1 fila*/    
-                              margin: 2% 10px 2% 78%;  /*arriba derecha abajo izquierda;*/
-                              padding:0; /*relleno*/
-                              border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                              width: 100px; /* 5% del contenedor donde esta:osea del header   */
-                              height: auto; /* 5% del contenedor donde esta:osea del header   */
-                              object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
-                              cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
-                              transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
-                              /*background-color: rgb(142, 56, 247);     */      
-                              text-align: center;                   
-                          }
-                          
-          header .contenedorfotodecliente:hover 
-                          {
-                              box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
-                              /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
-                          }
+  
+            .menu-icono {
+                flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 6%;
+    cursor: pointer;
+                }
 
+                .menu-icono img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                }
 
-          header .textoperfil 
-                        {
-                            font-size: 14px;
-                            color: black;
-                            margin-top: 5px;
-                        }
+                .menu-icono img:hover {
+                    box-shadow: 0px 0px 50px red;
+                }
 
-          header .contenedorfotodecliente img
-                          {
-                              width: 100px;   /* Aumenta el tamaño de la foto */
-                              height: 100px;
-                              border-radius:50%
-                          }
+                .menu-desplegable {
+                    position: absolute;
+    top: 100px; /* o ajusta según el alto de tu header */
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    min-width: 160px;
+                }
 
+                .menu-desplegable a {
+                    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+                }
 
-
-
+                .menu-desplegable a:hover {
+                background-color: rgba(255, 0, 0, 0.6);
+                }
 
 
 
@@ -628,49 +594,34 @@ section, article, nav, aside, header, footer, main {  display: block; }
             </head>
 
 
-            <!-- =================================================================================================
-                                                  P A G I N A    H T M L
-            ====================================================================================================== --> 
 
-
-            <!-- =================================================================================================
-                                                  B O D Y 
-            ====================================================================================================== --> 
-
-            <body>  <!-- Body-->
-                        <!-- Paso 7: Creamos el body, el cual contendrá todo lo que se mostrara en el browser o navegador (ejm: en chrome)
-                                    al darle display a la pagina -->
-                  
-
-
-
-                  <!-- ===========================================================================================
-                                                   H E A D E R encabezado
-                  ================================================================================================ --> 
+            <body>  
                   
                   <header> <!-- headER ó encabezado-->                         
-
+                    <div class="logo">
+                        <img src="imagenes/logos/logo_blanco_letras_negras_rojas.png" alt="BD Blackdrop">
+                      </div>
                         <!-- Bienvenida con correo -->
-                        <div class="contenedorBienvenida">  
-                              <p>Bienvenido:...<span id="correoUsuario"></span></p>
+                         <div class="titulo">¡Bienvenido!</div>
+
+                        <!-- Ícono de menú hamburguesa -->
+                        <div class="menu-icono" onclick="toggleMenu()">
+                            <img src="imagenes/iconos/Menu.png" alt="Menú">
                         </div>
 
-                        <div class="contenedorfotodecliente" id="contenedorFoto" onclick="location.href='8perfil.html'">
-                              <!-- Aquí se insertará la foto desde JS -->
-                               
-                          </div>
+                        <!-- Menú desplegable oculto por defecto -->
+                        <div class="menu-desplegable" id="menuDesplegable">
+                            <a href="8perfil.html">Perfil</a>
+                            <a href="5carritodecompras.html">Carrito</a>
+                            <a href="10historialdecompras.html">Historial de Compras</a>
+                            <a href="index.html">Cerrar Sesión</a>
+                        </div>
 
                   </header>
 
 
 
-
-                  <!-- ============================================================================================
-                                                       M A I N  
-                  ================================================================================================= --> 
-
-                  <main> <!-- Main, contenido principal del body-->
-                        <!-- Paso 8: Iniciamos a poner elementos en la pagina, ejm: un título de nivel 1  --> 
+                  <main>
                         
                         <div class="bannersuperior">
                               <p class="bannersuperior-text">Compra tu proteina en Blackdrop <br> y paga contraentrega</br> </p>
@@ -817,41 +768,28 @@ section, article, nav, aside, header, footer, main {  display: block; }
 
 
 
-
-             <!-- ============================================================================================
-                                                     S C R I P T S 
-                  ================================================================================================= --> 
-
                     <script>
                         // Trae el usuario desde localStorage
                         const usuario = JSON.parse(localStorage.getItem('usuarioLogueado'));
-                        const contenedorFoto = document.getElementById('contenedorFoto');
+
                         const correoUsuario = document.getElementById('correoUsuario');
-                    
-                        if (usuario) {
-                            // Mostrar el correo
-                            correoUsuario.textContent = usuario.correo;
-                    
-                            // Selección de foto según el correo o foto asignada
-                            let foto = "imagenes/fotos de perfil/default.png"; // Ruta de imagen por defecto
-                    
-                            if (usuario.correo === "clientemujer@correo.com") {
-                                foto = "imagenes/fotos de perfil/fotodeclientemujer.jpg";
-                            } else if (usuario.correo === "clientehombre@correo.com") {
-                                foto = "imagenes/fotos de perfil/fotodeclientehombre.jpg";
-                            } else if (usuario.foto) {
-                                foto = usuario.foto;  // Si en la base de datos tiene foto
-                            }
-                    
-                            // Insertar la imagen en el header
-                            contenedorFoto.innerHTML = `<img id="fotousuario" src="${foto}" alt="Foto del usuario">`;
-                            
+                        const contrasena = document.getElementById('correoUsuario');
 
                     
+                        /*if (usuario) {
+                            // Mostrar el correo
+                            correoUsuario.textContent = usuario.correo;
+
                         } else {
                             // Si no hay sesión, redirige al login
                             window.location.href = '2paginalogin.html';
-                        }
+                        }*/
+          
+                        function toggleMenu() {
+                        const menu = document.getElementById("menuDesplegable");
+                        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+                    }
+                        
                     </script>
 
                     

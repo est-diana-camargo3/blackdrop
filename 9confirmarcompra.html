@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación de Pago</title>
+  <style>
+   
+
+   body {
+      font-family: 'Arial Black', sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #000;
+    }
+
+    .contenedoriconoatras {
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      width: 8%;
+      height: 75px;
+      object-fit: contain;
+      cursor: pointer;
+      transition: color 0.1s ease;
+    }
+
+    .contenedoriconoatras:hover {
+      box-shadow: 0px 0px 50px red;
+    }
+
+    .contenedoriconoatras img {
+      width: auto;
+      height: auto;
+    }
+
+    .titulo {
+      font-size: 32px;
+      color: #000;
+      flex-grow: 1;
+      text-align: center;
+      letter-spacing: 3px;
+    }
+
+    .logo {
+      width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    }
+
+    .logo img {
+      width: 100%;
+  height: 100%;
+  object-fit: contain;
+    }
+
+    .bd-logo img {
+      width: 80px;
+      height: auto;
+    }
+
+    .contenedor-confirmacion {
+      background-color: #000;
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin: auto;
+      margin-top: 4%;
+      max-width: 600px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .contenedor-confirmacion h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .contenedor-confirmacion p {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    .btn {
+      background-color: #E63C1F;
+      color: white;
+      font-weight: bold;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .iconos-contacto {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 70px;
+    }
+
+    .iconos-contacto img {
+      height: 50px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .iconos-contacto:hover{
+      transform: scale(1.05);
+    }
+
+
+    .fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background-image: url('image.png'); /* Asegúrate de que esté en el mismo directorio */
+      background-size: cover;
+      opacity: 0.07;
+    }
+    .numero-contacto{
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="fondo"></div>
+
+  <header>
+    <div class="contenedoriconoatras">
+      <img src="imagenes/iconos/atras.png" alt="Icono para volver atrás" onclick="location.href='4paginacliente.html'">
+    </div>
+    <div class="logo">
+      <img src="imagenes/logos/logo_blanco_letras_negras_rojas.png" alt="BD Blackdrop">
+    </div>
+  </header>
+
+  <div class="contenedor-confirmacion">
+    <h2>¡Compra exitosa! <br> <br>Número de pedido: <strong>2351</strong></h2><br>
+    <p>Llámanos o escríbenos a nuestro <strong>WhatsApp</strong> <br>
+    para acordar día, hora y recibir tu pedido en la Universidad <br><strong>¡totalmentre gratis!</strong></p>
+
+    <button class="btn" onclick="location.href='2paginalogin.html'">CONTINUAR COMPRANDO</button> <br>
+    <button class="btn" onclick="location.href='10historialdecompras.html'">VER HISTORIAL DE COMPRAS</button>
+
+    <div class="iconos-contacto">
+      <a href="https://wa.me/573107601227" target="_blank">
+        <img src="imagenes/iconos/WhatsApp.svg.webp" alt="WhatsApp">
+      </a>
+    </div>
+      <p>Contacto: 310 111 11 12</p>
+    
+    
+  </div>
+
+</body>
+</html>

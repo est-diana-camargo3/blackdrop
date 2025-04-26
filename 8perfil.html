@@ -31,6 +31,7 @@
 
         body /* Cuerpo , su papa es html */
               {
+                height: 100vh;
                     background-color: rgb(255, 255, 255); /* Naranja con 30% de transparencia */ 
                     color:rgb(0, 0, 0); /*color de texto*/
                     font-family: Arial, sans-serif; /* Fuente: Arial, sino que no tenga adornos es decir cualquier fuente sans-serif*/
@@ -41,11 +42,15 @@
                     width:330px; /*que ocupe el 95% de ancho de la ventana*/
                     max-width: 330px; /*maximo ocupa 1400 pixeles*/
                     min-width: 330px; /*maximo ocupa 1400 pixeles*/
+                
+                 
                     display:grid;
                     /*se dividira en 3 filas, 3 columnas*/
                     grid-template-columns: repeat(1, 1fr);
                     grid-template-rows: repeat (3,auto); /*tamaño automatico osea que se ajusten al contenido*/
                     grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                    justify-content: center; /* centrar horizontal */
+                    align-content: center;   /* centrar vertical */
                     overflow-x: hidden; /* Esto desactiva el deslizador vertical */
                     overflow-y: auto; /* Esto permite el deslizador lateral */
               }         
@@ -494,6 +499,7 @@
                 <div class="contenedortituloregistrarse">          
                 <p class="tituloregistrarse"> Mi perfil  </p>
                 </div>
+                
    
         </header>
 
@@ -504,20 +510,16 @@
               <main>
                     <form>
                             <div class="contenedortitulomasinputcorreo ">
-                                    <p class="titulocorreo"> ModificarCorreo: </p>
+                                    <p class="titulocorreo"> Modificar Correo: </p>
                                     <input class="inputcorreo" type="email" id="correo" required placeholder="cliente@correo.com"> </input>
                             </div>
                             
                             <div class="contenedortitulomasinputcontraseña ">
-                                    <p class="titulocontraseña" > ModificarContraseña: </p>
+                                    <p class="titulocontraseña" > Modificar Contraseña: </p>
                                     <input class="inputcontraseña" id="contrasena" required placeholder="1234"> </input>
                             </div>
 
-                            <div class="contenedortitulomasinputfoto">
-                                <label class="titulofoto" for="foto">ModificarFoto: </label>
-                                <input class="inputfoto" type="file" id="foto" name="foto" accept="image/*" onchange="mostrarMiniatura(event)"><br><br>
-                                <div id="miniatura"></div> 
-                            </div>
+                            
 
                             <div class="contenedortitulotipodecuentamasradiogroup">
                                     <label for="titulotipodecuenta" class="titulotipodecuenta">Tipo de cuenta:<span class="enterpersonalizado"></span></label>
@@ -549,27 +551,14 @@
                                                    javascript
             ================================================================================================ --> 
             
-            <script>
-                function mostrarMiniatura(event) {
-                    const miniatura = document.getElementById('miniatura');
-                    const archivo = event.target.files[0];
-                    if (archivo) {
-                        const lector = new FileReader();
-                        lector.onload = function(e) {
-                            miniatura.innerHTML = `<img src="${e.target.result}" alt="Foto" style="width:100px;height:100px;border-radius:50%; margin-left:40px;">`;
-                        }
-                        lector.readAsDataURL(archivo);
-                    } else {
-                        miniatura.innerHTML = '';
-                    }
-                }
-                </script>
+       
+              
 
             <script>
                 function registrarUsuario() {
                     const correo = document.getElementById('correo').value;
                     const constrasena = document.getElementById('contrasena').value;
-                    const archivoFoto = document.getElementById('foto').files[0];
+                    /*const archivoFoto = document.getElementById('foto').files[0];*/
 
                     if (!correo  ) {
                         alert('Debes escribir correo ');
@@ -579,10 +568,10 @@
                         alert('Debes escribir contrasena ');
                         return;
                     }
-                    if (!foto) {
+                    /*if (!foto) {
                         alert("Debes cargar una foto.");
                         return;
-                    }
+                    }*/
 
                     const lector = new FileReader();
                     lector.onload = function (e) {
@@ -592,7 +581,7 @@
                         const nuevoUsuario = {
                             correo: correo,
                             constrasena: constrasena,
-                            foto: nuevaFotoBase64,
+                            /*foto: nuevaFotoBase64,*/
                             tipo: "cliente"
                         };
 
@@ -604,7 +593,7 @@
                         window.location.href = '4paginacliente.html';
                     };
 
-                    lector.readAsDataURL(archivoFoto);
+                    /*lector.readAsDataURL(archivoFoto);*/
                 }
             </script>
 

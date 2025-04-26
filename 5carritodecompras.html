@@ -21,15 +21,45 @@
       border-bottom: 2px solid #000;
     }
 
+    .contenedoriconoatras
+    {
+                                  align-items:center;
+                                  margin: 0;  /*arriba derecha abajo izquierda;*/
+                                  padding:0; /*relleno*/
+                                  border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                                  width: 8%; /* 5% del contenedor donde esta:osea del header   */
+                                  height: 75px; /* 5% del contenedor donde esta:osea del header   */
+                                  object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */    
+                                  cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+                                  transition: color 0.1s ease; /*que las transiciones que haga cuando le den clic sean en 0.1 seg*/
+                                  /*background-color: rgb(142, 56, 247);     */    
+                                                   
+                              }
+                              
+    .contenedoriconoatras:hover 
+                                              {
+                                                  box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
+                                                  /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
+                                              }
+
+    .contenedoriconoatras img
+                                              {
+                                                  width: auto; 
+                                                  height: auto;
+                                              }
+
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
     }
 
     .logo img {
-      width: 50px;
-      height: 50px;
+      width: 100%;
+  height: 100%;
+  object-fit: contain;
     }
 
     .titulo {
@@ -41,7 +71,7 @@
     }
 
     .bd-logo img {
-      width: 80px;
+      width: auto;
       height: auto;
     }
 
@@ -61,12 +91,12 @@
     }
 
     .tabla-carrito th {
-      text-align: left;
+      text-align: center;
       font-size: 18px;
     }
 
     .tabla-carrito td {
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .total {
@@ -108,19 +138,54 @@
     .contacto a:hover {
       text-decoration: underline;
     }
+    .cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .cantidad button {
+    background-color: #E63C1F;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .cantidad button:hover {
+    background-color: #c4311b;
+  }
+
+  .eliminar-producto {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: #E63C1F;
+  transition: transform 0.2s ease;
+}
+
+.eliminar-producto:hover {
+  transform: scale(1.2);
+}
 
   </style>
 </head>
 
 <body>
   <header>
-    <div class="logo">
-      <img src="https://i.imgur.com/QdZjz3N.png" alt="Atrás"> <!-- Icono de atrás -->
+    <div class="contenedoriconoatras">          
+      <img src="imagenes/iconos/atras.png" alt="Icono para volver atras" onclick="location.href='4paginacliente.html'" >
     </div>
     <div class="titulo">CARRITO DE COMPRAS</div>
-    <div class="bd-logo">
-      <img src="https://i.imgur.com/WZsTxBv.png" alt="BD Blackdrop">
+
+    <div class="logo">
+      <img src="imagenes/logos/logo_blanco_letras_negras_rojas.png" alt="BD Blackdrop">
     </div>
+    
   </header>
 
   <table class="tabla-carrito">
@@ -134,21 +199,59 @@
     </thead>
     <tbody>
       <tr>
-        <td>1</td>
+        
+        <td class="cantidad">
+          <button class="btn-menos">−</button>
+          <span class="valor-cantidad">1</span>
+          <button class="btn-mas">+</button>
+        </td>
         <td>Whey Pure 2 lb</td>
         <td>$160.000</td>
         <td>$160.000</td>
+        <td><button class="eliminar-producto">❌</button></td>
       </tr>
     </tbody>
   </table>
 
   <div class="total"><strong>Total</strong> &nbsp; $160.000</div>
 
-  <button class="btn-comprar">Confirmar Compra</button>
+  <button class="btn-comprar" onclick="location.href='9confirmarcompra.html'">Confirmar Compra</button>
 
   <div class="contacto">
     📞 Contáctanos: <strong>+57 310 123 4567</strong><br>
     📸 Síguenos en <a href="https://www.instagram.com/blackdropsupps?igsh=MXgwZGU5ZWZ3NGJkdg%3D%3D" target="_blank">Instagram</a>
   </div>
 </body>
+<script>
+  // Selecciona los elementos necesarios
+  const btnMas = document.querySelector('.btn-mas');
+  const btnMenos = document.querySelector('.btn-menos');
+  const cantidadSpan = document.querySelector('.valor-cantidad');
+  const subtotalTd = document.querySelectorAll('td')[3]; // Subtotal
+  const totalDiv = document.querySelector('.total');      // Total
+
+  const precioUnitario = 160000; // Precio en pesos sin formato
+
+  function actualizarSubtotal(cantidad) {
+    const subtotal = precioUnitario * cantidad;
+    subtotalTd.textContent = `$${subtotal.toLocaleString("es-CO")}`;
+    totalDiv.innerHTML = `<strong>Total</strong> &nbsp; $${subtotal.toLocaleString("es-CO")}`;
+  }
+
+  btnMas.addEventListener('click', () => {
+    let cantidad = parseInt(cantidadSpan.textContent);
+    cantidad++;
+    cantidadSpan.textContent = cantidad;
+    actualizarSubtotal(cantidad);
+  });
+
+  btnMenos.addEventListener('click', () => {
+    let cantidad = parseInt(cantidadSpan.textContent);
+    if (cantidad > 1) {
+      cantidad--;
+      cantidadSpan.textContent = cantidad;
+      actualizarSubtotal(cantidad);
+    }
+  });
+</script>
 </html>
