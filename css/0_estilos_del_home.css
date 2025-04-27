@@ -1,0 +1,626 @@
+
+/* HOJA DE ESTILO CSS- DE LA PAGINA BLACKDROP */ 
+/*
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+▓▓                                                                                                                           ▓▓
+▓▓                                                   C S S  -  E S T I L O S                                                 ▓▓
+▓▓                                                                                                                           ▓▓
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ */
+
+
+section, article, nav, aside, header, footer, main {  display: block; } 
+        /*indicamos a los navegadores,que formatee cada uno de los elementos como un nivel de bloque,
+        a la veersion que concuerde. Esto para que todos los navegadores admitan nuestras etiquetas html5, 
+        y para aquellos que depronto por lo antiguos no lo hacen, posteriores a internet explorer
+        version 8 o anteriores, formateamos estas etiquetas y buscamos la version que las puedan mostrar*/
+
+
+
+/* 💻 💻 💻 💻 💻 💻 💻 💻 💻 💻 💻   E S T I L O S   P A R A   C O M P U T A D O R   💻 💻 💻 💻 💻 💻 💻 💻 💻 💻 💻 */
+         
+
+
+
+   /*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+        █                                             💻     B O D Y     💻                                                   █
+        ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+
+
+        body /* Cuerpo , su papa es html */
+            {
+                background-color: rgb(255, 255, 255);  
+                color:rgb(0, 0, 0); /*color de texto*/
+                font-family: Arial, sans-serif; /* Fuente: Arial, sino que no tenga adornos es decir cualquier fuente sans-serif*/
+                margin:10px auto;    padding:0;  border:0; /* reiniciamos margenes, padding y bordes a cero. margen sup 10 px*/
+                width:100%; /*que ocupe el 95% de ancho de la ventana*/
+                max-width: 1400px; /*maximo ocupa 1400 pixeles de ancho*/
+                min-width: 300px; /*minimo ocupa 300 pixeles de ancho*/
+
+                display:grid; /*en cuadricula o grilla*/
+                /*se dividira en 3 filas, 1 columnas*/                
+                grid-template-rows: repeat (3,auto); /*3 filas, tamaño automatico osea que se ajusten al contenido*/
+                grid-template-columns: repeat(1, auto);/* 1 columna, tamaño automatico osea que se ajusta al contenido*/
+                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                overflow-x: hidden; /* Esto desactiva el deslizador en x  */
+                overflow-y: auto; /* Esto permite el deslizador en y */
+            }
+            
+            .enterpersonalizado  
+            {
+                display: block;
+                height: 15px; /* Ajusta el tamaño del salto de línea */
+            }
+          
+
+
+       /*   ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                     💻      H E A D E R encabezado       💻                                    ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */ 
+
+                /*  El header en si mismo es un contenedor que dentro va a tener al lado derecho el icono de iniciar sesion 
+                y al lado izquierdo el logo de la empresa */
+
+                header /* encabezado */
+                        {
+                            /* ════════  Espacio que ocupará  ════════ */
+                            /* como el header es hijo de body, se organizara en forma de display en el grid DE SU PAPÁ y ocupara ...*/
+                            grid-column: 1 / 2; /* ocupara 1 columna del body */
+                            grid-row: 1 / 2; /* ocupara 1 fila del body */
+                            margin:0;      padding:0;  border:0; /* reiniciamos margenes, padding y bordes a cero */
+                            
+                            /* ════════  Configuracion de fondo  ════════*/
+                            background-image: url('../imagenes/texturas/texturarojafondoblanco.jpg');
+                            background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 80% transparente*/
+                            background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
+                            background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
+                            background-position: center center; /* Centra la imagen de fondo dentro del header */
+                            background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+
+                            /* ════════  Modelo de estructura  ════════*/
+                            display:grid;
+                            /*se dividira en 2 columnas, 1 fila, en una columna ira el logo y en la otra el logo de la empresa*/
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-template-rows: repeat (1,auto); /*tamaño automatico osea que se ajusten al contenido*/
+                                    
+                        }
+
+
+           /*   ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+                ║                                💻   L o g o    d e  l   e n c a b e z a d o   💻                              ║                                                                        
+                ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+
+                    .contenedorlogoencabezado  /*clase*/
+                                    {
+                                        grid-column: 1 / 2; /* ocupara 1 columnas*/
+                                        grid-row: 1 / 2; /* ocupara 1 fila*/    
+                                        margin: 0.5% ;  padding:0;  border:0;/*reiniciamos el padding o relleno y el borde a cero */                                                               
+                                        width: 100%; /* 100% de la columna donde se ubica   */
+                                        height: auto; 
+                                        /*background-color: rgba(255, 37, 37);*/
+                                        display:flex; /* modelo para poder cuadrar su alineacion centrada */
+                                        object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */               
+                                        justify-content: flex-start;  /* alinear hijos a la izquierda*/             
+                                        align-items: center; /*centrar hijos verticalmente*/    
+                                    }
+
+                    .contenedorlogoencabezado img  /*clase*/ /*configuracion imagen que va dentro del logo del encabezado*/
+                                    {
+                                        width: 20%; 
+                                        height: auto;
+                                    }
+
+           /*   ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+                ║                            💻    I c o n o   d e   i n i c i a r   s e s i o n    💻                             ║                                                                        
+                ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+
+                    .contenedoriconoiniciarsesion
+                                    {
+                                        grid-column: 2 / 3; /* ocupara 1 columnas*/
+                                        grid-row: 1 / 2; /* ocupara 1 fila*/    
+                                        margin: 0.5%;  /*arriba derecha abajo izquierda;*/
+                                        padding:0; border:0; /*reiniciamos relleno y borde */
+                                        width: 100%; /* 100% de la columna donde se ubica   */
+                                        height: auto;
+                                        cursor: pointer; /*que aparezca la manito cuando el cursor esta encima */
+                                        /*background-color: rgb(142, 56, 247);  */    
+                                        display:flex; /* modelo para poder cuadrar su alineacion centrada */
+                                        /*object-fit: contain; /* Asegura que el logo mantenga su proporción sin deformarse */               
+                                        justify-content: flex-end;  /* alinear hijos a la derecha*/             
+                                        align-items: center; /*centrar hijos verticalmente*/                         
+                                        transition: color 0.3s ease;  /* abra una transicion o animacion cuando el mouse pase por encima 
+                                                                            hover, sera un cambio de color, que se demorara 0.3 segundos en 
+                                                                            hacerse y sera suave o ease.*/                                                           
+                                    }
+                                    
+                    .contenedoriconoiniciarsesion img /*clase*/ /*configuracion imagen que va dentro del logo del encabezado*/
+                                    {
+                                        width: 20%; 
+                                        height: auto;
+                                    }
+
+                    .contenedoriconoiniciarsesion img:hover /*ëfecto cuando el mouse pase por encima*/
+                                    {
+                                        box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
+                                        /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
+                                    }
+
+
+
+       /*   ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                 💻     M A I N  contenido principal del body     💻                            ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */
+
+
+                main /* contenido principal del body */
+                        {
+                            grid-column: 1 / 2; /* ocupara 1 columnas*/
+                            grid-row: 2 / 3; /* ocupara 1 filas */
+                            background-color: rgb(255, 255, 255); /* Azul con 15% de transparencia */
+                            padding:0;    /*reiniciamos el padding o relleno a cero*/
+                            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                            margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
+                            /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
+                            ordenar unos elementos dentro de el*/ 
+                            display:grid;                                   
+                            grid-template-columns: repeat(1, 1fr);  /*1 columna*/
+                            grid-template-rows: repeat(3, auto);    /*3 filas*/
+                            grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                        }
+
+           /*   ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+                ║                                     💻    B a n n e r    S u p e r i o r    💻                                ║                                                                        
+                ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+
+                    .bannersuperior 
+                            {
+                                grid-column: 1 / 2; /* ocupara 1 columna */
+                                grid-row: 1 / 2; /* ocupara 1 fila */
+                                background-color: rgb(168, 24, 28); /* Fondo rojo */
+                                height: auto; /* 5% del contenedor donde esta:osea del header   */
+                                display: flex;
+                                justify-content: center; /* Centra el contenido horizontalmente */
+                                align-items: center; /* Centra el contenido verticalmente */
+                                padding:3%;
+                            }
+
+                    .bannersuperior-text 
+                      {
+                          color: white; /* Texto blanco */
+                          font-size: 270%; /* El texto ocupara el 10% del alto de la ventana */
+                          /*text-transform: uppercase; /* Convertir el texto a mayúsculas */
+                          text-align: center; /* Centrar el texto */
+                          margin: 0;
+                          font-weight: bold;  /*texto en negrilla*/
+                      }                        
+                      
+           /*   ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                ║                          💻      G r i l l a    d e    6   p r o d u c t o s        💻                      ║                                                                        
+                ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══••════╝ */
+
+                    .grillade6productos 
+                            {
+                                grid-column: 1 / 2; /* ocupará 1 columna */
+                                grid-row: 2 / 3; /* ocuapara 1 fila  */
+                                background-color: rgb(0, 0, 0); /* Fondo negro */
+                                padding:0;    /*reiniciamos el padding o relleno a cero*/
+                                border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                                margin:0;     /*reiniciamos la margen a cero, osea que la pagina no tenga margen*/ 
+                                /*La grilla de productos EN SI MISMA también sera  desarrollado como un modelo de grid porque aun necesitamos 
+                                    ordenar unos elementos dentro de el*/ 
+                                display:grid;                        
+                                grid-template-columns: repeat(3, 1fr);  /*3 columnas*/
+                                grid-template-rows: repeat(2, auto);    /*2 filas*/
+                                grid-gap:15px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                                padding:15px;
+                            }
+
+               /*   ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                                               💻         U n   s o l o   p r o d u c t o        💻                                                                                       
+                    ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○ */
+                    
+                        .grillade6productos .productogeneral
+                                {
+                                    width: 100%; /* El ancho de cada producto será el 30% del contenedor */
+                                    height: auto;
+                                    padding: 0px;
+                                    text-align: center;
+                                    display:grid;
+                                    grid-template-columns: repeat(1, 1fr);  /*1 columnas*/
+                                    grid-template-rows: repeat(5, auto);    /*5 filas*/
+                                    grid-gap:5px; /*espacio entre una columna y otra o entre una fila y otra*/                      
+                                    background-color: #ffffff;                        
+                                    border-radius: 8px; /* Bordes redondeados */  
+                                    transition: transform 0.3s ease; /* Animación al pasar el mouse */
+                                    margin: 0;                                           
+                                }
+
+                        /* Efecto al pasar el mouse por el producto */
+                        .grillade6productos .productogeneral:hover 
+                                {
+                                    box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                                    transform: translateY(-15px); /* Levanta ligeramente el producto */
+                                }
+
+                        .grillade6productos .productogeneral img 
+                                {
+                                    grid-column: 1 / 2; /* ocupará 1 columnas*/
+                                    grid-row: 1 / 2; /* ocupará 1 fila */
+                                    width: 80%;
+                                    height: auto;
+                                    border-radius: 8%; /* Bordes redondeados para la imagen */    
+                                    text-align: center;        
+                                    margin:10px 0 0 9% /*margin: top right bottom left;*/
+                                }
+
+                        .grillade6productos .productogeneral .nombreproducto 
+                                    {
+                                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                                        grid-row: 2 / 3; /* ocupará 1 fila */
+                                        font-size: 230%;
+                                        color: #000000;
+                                        font-weight: bold;
+                                        margin:0 25px 0 25px; /*margin: top right bottom left;*/
+                                    }
+
+                        .grillade6productos .productogeneral .precioproducto 
+                                    {
+                                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                                        grid-row: 3 / 4; /* ocupará 1 fila */
+                                        font-size: 280%;
+                                        color: rgb(168, 24, 28); /* Rojo oscuro */
+                                        font-weight: bold;
+                                        margin: 10px 0 10px 0 ; /*margin: top right bottom left;*/
+                                    }
+
+                        .grillade6productos .productogeneral .descripcionproducto 
+                                    {
+                                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                                        grid-row: 4 / 5; /* ocupará 1 fila */
+                                        list-style-type: disc; /* Usa viñetas (bullets) */
+                                        padding: 0px 25px 0px 35px; /* top right bottom left;*/
+                                        text-align: left;
+                                        margin:0px; /*margin: top right bottom left;*/
+                                        font-size: 150%;  /* Tamaño del texto */
+                                        text-align: justify; /* Hace que el texto ocupe todo el renglón */
+                                        font-family: 'Courier New', Courier, monospace;
+                                    }      
+
+                        .grillade6productos .productogeneral .btn-comprarproducto 
+                                    {
+                                        grid-column: 1 / 2; /* ocupará 1 columnas*/
+                                        grid-row: 5 / 6; /* ocupará 1 fila */
+                                        background-color: rgb(168, 24, 28); /* Color de fondo del botón */
+                                        height: 50%;  /* Ajustamos la altura */
+                                        width: 80%;   /* Ancho en porcentaje */
+                                        color: white;  /* Color del texto */
+                                        border: none;  /* Sin borde */
+                                        padding: 3%; /* Espaciado interno */
+                                        font-size: 240%;  /* Tamaño del texto */
+                                        border-radius: 25px;  /* Bordes más redondeados */
+                                        cursor: pointer; /* Cambia el cursor al pasar por encima */
+                                        margin: 5% 0 8% 10% ;  /*margin: top right bottom left;*/   
+                                        text-align: center;        
+                                        display: flex; /* Ajusta el comportamiento del botón */
+                                        justify-content: center; /* Centra el texto horizontalmente */
+                                        align-items: center; /* Centra el texto verticalmente */
+                                        transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efecto suave de transición */
+                                    }
+
+                        /* Efecto cuando se pasa el mouse sobre el botón */
+                        .grillade6productos .productogeneral .btn-comprarproducto:hover 
+                                    {
+                                        background-color: green; /* Cambia a verde */
+                                        box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                                    }
+
+
+               /*   ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+                                 💻          E s p a c i o s    p a r a   l o s   6   P r o d u c t o s         💻                                                                                    
+                    ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○ */
+
+                        .grillade6productos.productogeneral .producto1   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+                        .grillade6productos.productogeneral .producto2   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+                        .grillade6productos.productogeneral .producto3   {  grid-column: 3 / 4; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+                        .grillade6productos.productogeneral .producto4   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+                        .grillade6productos.productogeneral .producto5   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+                        .grillade6productos.productogeneral .producto6   {  grid-column: 3 / 4; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+            
+            /*  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+                ║                             💻          B a n n e r    I n f e r i o r        💻                           ║                                                                        
+                ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+
+                    .bannerinferior 
+                                {
+                                    background-color: #ffffff;  
+                                    grid-column: 1 / 2; /* ocupará 1 columna */
+                                    grid-row: 3 / 4; /* ocupará 2 fila */
+                                    width: 100%;
+                                    height: auto;
+                                    margin:0;     /*margin: top right bottom left;*/   
+                                    padding:0;    /*reiniciamos el padding o relleno a cero*/
+                                    border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                                    display:flex;
+                                    align-items: center; /*que los elementos llenen el contenedor*/
+                                    justify-content: center; /* Distribuye el espacio HORIZONTAL entre los elementos para que queden en una linea  */
+                                }
+
+                    .bannerinferior img 
+                                {
+                                    width: 40%;
+                                    height: auto;
+                                    border-radius: 8%; /* Bordes redondeados para la imagen */  
+                                    padding:10px;  
+                                }
+
+
+            
+       /*   ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                      💻        F O O T E R        💻                                           ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */
+          
+
+                footer 
+                        {
+                            /*como el footer es hijo de body, se organizara en el display grid DE SU PAPÁ por defecto y ocupara */
+                            grid-column: 1 / 2 ;/* ocupara 1 columna */
+                            grid-row: 3/ 4; /* ocupara 1 fila */
+                            background-color: rgb(0, 0, 0); /* Morado con 30% de transparencia */
+                            margin:0;     /*margin: top right bottom left;*/   
+                            padding:10px;    
+                            border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                            display:grid;                                   
+                            grid-template-columns: repeat(1, 1fr);  /*1 columna*/
+                            grid-template-rows: repeat(4, auto);    /*4 filas*/
+                            grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                            color: #ffffff; /*color de texto*/ 
+                        }
+
+            /*  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+                ║                        💻         Q u i e n    e s    B l a c k d r o p         💻                         ║                                                                        
+                ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+
+                    .parrafoquienesblackdrop 
+                            {
+                                grid-column: 1 / 2 ;/* ocupara 1 columna */
+                                grid-row: 1/ 2; /* ocupara 1 fila */
+                                text-align: center; /* Hace que el texto ocupe todo el renglón */
+                                display: flex;
+                                justify-content: center;  /* Centra el contenido horizontalmente */
+                                font-size: 100%;  /* Tamaño del texto */
+                                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                                margin: 0; /*margin: top right bottom left;*/   
+                                padding: 0; /* Elimina el relleno por defecto */
+                            }
+
+            /*  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+                ║            💻        I n s t a g r a m    y   t e l é f o n o    d e    B l a c k d r o p        💻        ║                                                                        
+                ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+
+                    .contenedortelefonomaslinkdeinstagram
+                            {
+                                grid-column: 1 / 2 ;/* ocupara 1 columna */
+                                grid-row: 2/ 3; /* ocupara 1 fila */
+                                width:100%;
+                                color:#ffffff;
+                                display:grid;                                   
+                                grid-template-columns: repeat(2, 1fr);  /*1 columna*/
+                                grid-template-rows: repeat(1, auto);    /*1 filas*/
+                                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                                font-family: Arial, Helvetica, sans-serif;
+                            }
+
+                    .contenedortelefonomaslinkdeinstagram .telefonodeblackdrop 
+                                {
+                                    grid-column: 1 / 2 ;/* ocupara 1 columna */
+                                    grid-row: 1/ 2; /* ocupara 1 fila */
+                                    background-color: #ffffff;
+                                    color: #000000;
+                                    padding: 10px; 
+                                    margin:1% 1% 1% 65%;  /*margin: top right bottom left;*/          
+                                    border-radius: 25px;  /* Bordes más redondeados */             
+                                    justify-content: center;  /* Centra el contenido horizontalmente */
+                                    transition: color 0.3s ease;  
+                                    text-align: center;
+                                    font-size: 100%;
+                                    box-shadow: 0px 0px 25px rgb(255, 255, 255); /* Sombra */
+                                }
+
+                    .contenedortelefonomaslinkdeinstagram .linkdeinstagramblackdrop 
+                                {
+                                    grid-column: 2 / 3 ;/* ocupara 1 columna */
+                                    grid-row: 1/ 2; /* ocupara 1 fila */
+                                    background-color: #ffffff;
+                                    color: #000000;
+                                    text-decoration: underline;
+                                    padding: 10px; 
+                                    margin:1% 65% 1% 1%;  /*margin: top right bottom left;*/          
+                                    border-radius: 25px;  /* Bordes más redondeados */;              
+                                    justify-content: center;  /* Centra el contenido horizontalmente */
+                                    transition: color 0.3s ease; 
+                                    text-align: center; 
+                                    font-size: 100%;
+                                    font-weight: bold;
+                                    box-shadow: 0px 0px 25px rgb(255, 255, 255); /* Sombra */
+                                }
+
+                    .contenedortelefonomaslinkdeinstagram .linkdeinstagramblackdrop:hover 
+                                {
+                                    box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                                    background-color: rgb(168, 24, 28);
+                                    color:white;
+                                }
+
+
+            /*  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+                ║             💻         I n s t a g r a m    y   t e l é f o n o    d e    a u t o r a s        💻          ║                                                                        
+                ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+                
+                    .contenedorlinkcontactoautoras 
+                                {                  
+                                    grid-column: 1 / 2 ;/* ocupara 1 columna */
+                                    grid-row: 3/ 4; /* ocupara 1 fila */flex-direction: row;
+                                    display: flex;
+                                    justify-content: center;  /* Centra el contenido horizontalmente */
+                                    color: #ffffff;
+                                }
+                
+                    .contenedorlinkcontactoautoras .linkinstagramautoras 
+                                {
+                                    display: inline-block; /* Hace que el fondo se ajuste al tamaño del texto */             
+                                    background-color: #ffffff;
+                                    color: black;
+                                    padding: 10px;
+                                    margin:1.05%;
+                                    font-size: 55%;
+                                    border-radius: 25px;  /* Bordes más redondeados */                     
+                                    flex-direction: row;
+                                    justify-content: center;  /* Centra el contenido horizontalmente */
+                                    transition: color 0.3s ease;
+                                }
+
+                    .contenedorlinkcontactoautoras  .linkinstagramautoras:hover 
+                                {
+                                    box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 📞 📞 📞 📞 📞 📞 📞 📞 📞 📞 📞 📞    E S T I L O S   P A R A   C E L U   📞 📞 📞 📞 📞 📞 📞 📞 📞 📞 📞 📞  */
+
+
+
+    @media (max-width: 750px)  /* ira de 320 a maximo 750 pixeles...los 320 estan definidos en el body de las primeras lineas*/
+
+    {
+
+   /*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+        █                                               📞     B O D Y     📞                                                 █
+        ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+                body.enterpersonalizado  
+                        {
+                            display: block;
+                            height: 8px; /* Ajusta el tamaño del salto de línea */
+                        }
+
+
+       /*   ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                📞     H E A D E R  -  E n c a b e z a d o     📞                               ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */
+                header .contenedorlogoencabezado img       
+                        {    
+                            width: 35%;     
+                        }
+                            
+                header .contenedoriconoiniciarsesion img   
+                        {    
+                            width: 35%;     
+                        }
+
+
+       /*   ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                 📞     M A I N  contenido principal del body     📞                            ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */
+                main .bannersuperior-text 
+                        {
+                            font-size: 160%; /* El texto ocupara el 10% del alto de la ventana */
+                        }
+
+                main .grillade6productos 
+                        {
+                            display:grid;                        
+                            grid-template-columns: repeat(2, 1fr);  /*2 columnas*/
+                            grid-template-rows: repeat(3, auto);    /*3 filas*/
+                            grid-gap:12px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                            padding:12px;
+                        }
+                        
+                main .productogeneral .producto1   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+                main .productogeneral .producto2   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 2 / 3; /* ocupará 1 fila */   }
+                main .productogeneral .producto3   {  grid-column: 1 / 2; /* ocupará 1 columna*/ grid-row: 3 / 4; /* ocupará 1 fila */   }
+                main .productogeneral .producto4   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 1 / 2; /* ocupará 1 fila */   }
+                main .productogeneral .producto5   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 2 / 3; /* ocupará 1 fila */   }
+                main .productogeneral .producto6   {  grid-column: 2 / 3; /* ocupará 1 columna*/ grid-row: 3 / 4; /* ocupará 1 fila */   }
+                
+                main .grillade6productos .productogeneral img 
+                        {
+                            width: 100%;
+                            height: auto;
+                            margin:6px 0 0 0; /*margin: top right bottom left;*/           
+                        }
+
+                main .grillade6productos .productogeneral .nombreproducto 
+                        {
+                            font-size: 180%;
+                        }
+
+                main .grillade6productos .productogeneral .precioproducto 
+                        {
+                            font-size: 200%;
+                        }
+
+                main .grillade6productos .productogeneral .descripcionproducto 
+                        {
+                        padding: 0px 15px 0px 25px; /* top right bottom left;*/  
+                        font-size: 90%;  /* Tamaño del texto */
+                        }
+
+                main .grillade6productos .productogeneral .btn-comprarproducto 
+                        {
+                            height: 50%;  /* Ajustamos la altura */
+                            width: 80%;   /* Ancho en porcentaje */
+                            font-size: 150%;  /* Tamaño del texto */
+                            margin: 5% 0 8% 10% ;  /*margin: top right bottom left;*/   
+                        }
+
+                main .bannerinferior img 
+                        {
+                            width: 50%;
+                            height: auto;
+                            border-radius: 8%; /* Bordes redondeados para la imagen */  
+                            padding:10px;  
+                        }
+
+
+       /*   ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                            📞      F O O T E R      📞                                         ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */
+                
+                footer .parrafoquienesblackdrop 
+                        {
+                            font-size: 60%;
+                        }
+
+                footer .contenedortelefonomaslinkdeinstagram .telefonodeblackdrop 
+                        {
+                            padding: 3px; 
+                            margin:1% 1% 1% 30%;  /*margin: top right bottom left;*/          
+                            font-size: 70%;
+                        }
+    
+                footer .contenedortelefonomaslinkdeinstagram .linkdeinstagramblackdrop 
+                        {
+                            padding: 3px; 
+                            margin:1% 30% 1% 1%;  /*margin: top right bottom left;*/          
+                            font-size: 70%;
+                        }  
+
+                footer .contenedorlinkcontactoautoras  .linkinstagramautoras
+                        {
+                            padding: 3px;
+                            margin:2%;
+                            font-size: 35%;                          
+                        }      
+       }
+    
+    
