@@ -25,13 +25,16 @@ alert ("Esta página utiliza cookies, si continuas navegando aceptas su uso");
       // por eso se crea esta funcion.
       function getCookie(nombre)  /*obtener el valor de una cookie específica por su nombre.*/
       {
-        let cookies = document.cookie.split("; "); /* devuelve todas las cookies en un solo string, ejm :"usuario1=Diana Camargo; usuario2=Pedro Perez"*/
-                                                    /* divide ese string en un array de cookies individuales: ejm ["usuario1=Diana Camargo", "usuario2=Pedro Perez"]*/
+        let cookies = document.cookie.split("; "); /* devuelve todas las cookies en un solo string, ejm :"cookienombredelusuario=Diana Camargo;
+                                                      cookienumerodevisitas=23; cookiegenero=femenino"*/
+                                                    /* divide ese string en un array de cookies individuales: ejm ["cookienombredelusuario1=Diana Camargo", 
+                                                       "cookienumerodevisitas=23", "cookiegenero=femenino" ]*/
         for (let c of cookies)  /* se recorre cada cookie del array*/
         {
-          let [clave, valor] = c.split("="); /*separa el nombre(clave), del valor de cada cookie. Por ejemplo: "usuario1=Maye" se convierte en:
-                                               clave = "usuario1"
-                                               valor = "Maye"   */
+          let [clave, valor] = c.split("="); /*separa el nombre(clave), del valor de cada cookie. Por ejemplo: "cookienombredelusuario=Diana Camargo" 
+                                               se convierte en:
+                                               clave = "cookienombredelusuario"
+                                               valor = "Diana Camargo"   */
 
           if (clave === nombre) return valor; /*si el nombre de la cookie (clave) coincide con el que estamos buscando (nombre), retorna el valor. y sale de la funcion*/
         }
@@ -39,20 +42,20 @@ alert ("Esta página utiliza cookies, si continuas navegando aceptas su uso");
       }
 
       // Crear cookies
-      document.cookie = "nombredelusuario=Diana Camargo; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
-      document.cookie = "numerodevisitas=23; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
-      document.cookie = "genero=Femenino; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
+      document.cookie = "cookienombredelusuario=Diana Camargo; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
+      document.cookie = "cookienumerodevisitas=23; expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
+      document.cookie = "cookiegenero=Femenino;  max-age=300;  path=/;";
       alert("Creación:");
       alert(document.cookie);
 
       // Modificar cookie usuario1
-      document.cookie = "nombredelusuario=Maye Pérez; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
+      document.cookie = "nombredelusuario=Mayes Pérez; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
       alert("Modificación:");
-      alert(document.cookie);
+      alert(getCookie("cookienombredelusuario"));
 
       // Borrar cookie usuario2
       alert("Borrar:");
-      document.cookie = "numerodevisitas=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "cookiegenero=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
       // Leer cookies individualmente
       alert("(debe ser nombredleusuario): " + getCookie("nombredelusuario"));
