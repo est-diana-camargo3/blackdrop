@@ -60,9 +60,9 @@
                   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
                   <!-- ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥  ♥ ♥ ♥ ♥  -->
-                              <link rel="stylesheet" href="../css/0_estilos_del_home.css"> <!--Enlazo mi pagina de 1_estilos_del_home-->
+                              <link rel="stylesheet" href="css/0_estilos_del_home.css"> <!--Enlazo mi pagina de 1_estilos_del_home-->
 
-                              <script src="../javascript/0_scripts_del_home.js" defer></script> <!--Enlazo mi pagina de 1_scripts_del_home, algunas 
+                              <script src="javascript/0_scripts_del_home.js" defer></script> <!--Enlazo mi pagina de 1_scripts_del_home, algunas 
                               personas lo hacen al final del body, para que primero se cargue todo el html y de ultimas las interacciones sin que 
                               bloqueen el renderizado de la página, pero es una buena practica hacerlo aqui y colocarle "defer" para que ejecute 
                               todo y de ultimas esta linea, y lo bueno es que tenemos todos los archivos externos, ordenados aqui en el head.-->
@@ -95,10 +95,10 @@
 
                   <header> <!-- headER ó encabezado-->                         
                          <div class="contenedorlogoencabezado img">  <!--básese en la clase contenedorlogoencabezado+la clase img -->       
-                              <img src="../imagenes/logos/logo_negro_letras_blancas_rojas.png" alt="Logo de la empresa Blackdrop">
+                              <img src="imagenes/logos/logo_negro_letras_blancas_rojas.png" alt="Logo de la empresa Blackdrop">
                          </div>
                          <div class="contenedoriconoiniciarsesion img">  
-                              <img id="iconoLogin" src="../imagenes/iconos/iniciar_sesion.png" alt="Icono para iniciar sesion" onclick="location.href='2paginalogin.html'" >
+                              <img id="iconoLogin" src="imagenes/iconos/iniciar_sesion.png" alt="Icono para iniciar sesion" onclick="location.href='2paginalogin.html'" >
                          </div>                        
                   </header>
 
@@ -106,6 +106,9 @@
       <!--  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
             ◙                                    M A I N  contenido principal del body                                        ◙
             ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  -->
+            <div id="bannerCookies" style="display:none; position:fixed; bottom:0; background:black; color:white; width:100%; padding:10px; text-align:center;">
+                  Esta página usa cookies. <button onclick="aceptarCookies()">Aceptar</button>
+                </div>
 
 
                   <main> <!-- Main, contenido principal del body-->
@@ -236,7 +239,7 @@
                   ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ -->
 
                         <div class="bannerinferior"> 
-                              <img src="../imagenes/logos/logo_blanco_letras_negras_rojas.png" alt="Logo empresa blackdrop  ">    
+                              <img src="imagenes/logos/logo_blanco_letras_negras_rojas.png" alt="Logo empresa blackdrop  ">    
                         </div>
 
                   </main>
@@ -261,7 +264,7 @@
                             <a href="https://www.instagram.com/juanita.p28/" target="_blank"  class="linkinstagramautoras">Contacto Autora 1: Juanita Palacios</a>
                             <a href="https://www.instagram.com/diana.camargo3/" target="_blank"  class="linkinstagramautoras">Contacto Autora 2: Mayerly Camargo</a>
                         </div> 
-                  </footer>
+                  </footer>              
 
        </body>
 </html>
