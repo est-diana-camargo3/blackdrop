@@ -578,19 +578,22 @@
           );
       
           if (usuarioEncontrado) {
-          // ✅ Guarda el usuario en el LocalStorage siempre que sea encontrado
-          localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioEncontrado));
+    localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioEncontrado));
+    alert(`✅ Login correcto \n\n ✅ Bienvenido: ${usuarioEncontrado.correo}`);
 
-          // ✅ Redirige según el tipo de cuenta
-          alert(`✅ Login correcto \n\n ✅ Bienvenido: ${usuarioEncontrado.correo}`);
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirect = urlParams.get('redirect');
 
-          if (tipoCuenta === "cliente") {
-              // Redirige a la página cliente
-              window.location.href = '4paginacliente.html';
-          } else if (tipoCuenta === "administrador") {
-              // Redirige a la página administrador
-              window.location.href = '3paginaadministrador.html';
-          }
+    if (tipoCuenta === "cliente") {
+        if (redirect === "carrito") {
+            window.location.href = '5carritodecompras.html';
+        } else {
+            window.location.href = '4paginacliente.html';
+        }
+    } else if (tipoCuenta === "administrador") {
+        window.location.href = '3paginaadministrador.html';
+    }
+
       } else {
           // Si no encuentra el usuario, muestra ejemplos
           alert("❌ Correo, contraseña o tipo de cuenta incorrectos.\n\n✅ Ejemplo válido:\nCorreo: clientemujer@correo.com\nContraseña: 1234\nTipo: cliente\n\n✅ Otro válido:\nCorreo: clientehombre@correo.com\nContraseña: 1234\nTipo:cliente\n\n✅ Otro válido:\nCorreo: admin@correo.com\nContraseña: 1234\nTipo: administrador");
@@ -607,15 +610,9 @@
           });
       }
           
-  
-
-
 
       </script>
       
-      
-
-
 </html>
 
 

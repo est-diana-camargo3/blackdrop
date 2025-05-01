@@ -59,6 +59,25 @@
       bottom: 0;
       width: 100%;
     }
+    button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-editar {
+  background-color: #007BFF; /* azul */
+  color: white;
+}
+
+.btn-guardar {
+  background-color: #28A745; /* verde */
+  color: white;
+}
+
   </style>
 </head>
 <body>
@@ -101,6 +120,14 @@
         <td>$30.000</td>
       </tr>
     </table>
+    <button onclick="mostrarFormulario()" style="margin-top: 20px; padding: 10px 20px; background-color: #c20202; color: white; border: none; cursor: pointer;">
+      Agregar producto
+    </button>
+
+    <button onclick="editarParametros()" id="btn-editar-parametros" class="btn-editar">Editar parámetros</button>
+
+
+
 
     <h2>Listado de Clientes Registrados</h2>
     <table id="clientes-table">
@@ -142,7 +169,111 @@
       `;
       clientesTable.innerHTML += fila;
     });
+    // Mostrar el modal
+function mostrarFormulario() {
+  document.getElementById("modal").style.display = "block";
+}
+
+// Cerrar el modal
+function cerrarFormulario() {
+  document.getElementById("modal").style.display = "none";
+}
+
+// Agregar producto a la tabla
+function agregarProducto() {
+  const nombre = document.getElementById("nombreProducto").value;
+  const categoria = document.getElementById("categoriaProducto").value;
+  const cantidad = document.getElementById("cantidadProducto").value;
+  const precio = document.getElementById("precioProducto").value;
+
+  if (nombre && categoria && cantidad && precio) {
+    const tabla = document.querySelector("table"); // la primera tabla es la de productos
+    const nuevaFila = `
+      <tr>
+        <td>${nombre}</td>
+        <td>${categoria}</td>
+        <td>${cantidad}</td>
+        <td>${precio}</td>
+      </tr>
+    `;
+    tabla.innerHTML += nuevaFila;
+    cerrarFormulario();
+  } else {
+    alert("Por favor, completa todos los campos.");
+  }
+}
+let modoEdicion = false;
+
+function editarParametros() {
+  const btn = document.getElementById("btn-editar-parametros");
+  const filas = document.querySelectorAll("table:nth-of-type(1) tr");
+
+  if (!modoEdicion) {
+    filas.forEach((fila, index) => {
+      if (index === 0) return; // saltar encabezado
+
+      // Editar cantidad (columna 3, índice 2)
+      const celdaCantidad = fila.cells[2];
+      const valorCantidad = celdaCantidad.textContent;
+      celdaCantidad.innerHTML = `<input type="number" value="${valorCantidad}" min="0" style="width: 80px;">`;
+
+      // Editar precio (columna 4, índice 3)
+      const celdaPrecio = fila.cells[3];
+      const valorPrecio = celdaPrecio.textContent.replace(/[^\d]/g, ""); // eliminar símbolos
+      celdaPrecio.innerHTML = `<input type="number" value="${valorPrecio}" min="0" style="width: 100px;">`;
+    });
+
+    btn.textContent = "Guardar cambios";
+    btn.classList.remove("btn-editar");
+    btn.classList.add("btn-guardar");
+
+    modoEdicion = true;
+  } else {
+    filas.forEach((fila, index) => {
+      if (index === 0) return;
+
+      // Guardar cantidad
+      const celdaCantidad = fila.cells[2];
+      const inputCantidad = celdaCantidad.querySelector("input");
+      celdaCantidad.textContent = inputCantidad.value;
+
+      // Guardar precio
+      const celdaPrecio = fila.cells[3];
+      const inputPrecio = celdaPrecio.querySelector("input");
+      celdaPrecio.textContent = `$${parseInt(inputPrecio.value).toLocaleString("es-CO")}`;
+    });
+
+    btn.textContent = "Editar parámetros";
+    btn.classList.remove("btn-guardar");
+    btn.classList.add("btn-editar");
+
+    modoEdicion = false;
+  }
+}
+
+
+
   </script>
+
+  <div id="modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);">
+    <div style="background: white; width: 300px; margin: 100px auto; padding: 20px; border-radius: 10px; text-align: left;">
+      <h3>Agregar Producto</h3>
+      <label>Nombre:</label><br>
+      <input type="text" id="nombreProducto" style="width: 100%;"><br><br>
+  
+      <label>Categoría:</label><br>
+      <input type="text" id="categoriaProducto" style="width: 100%;"><br><br>
+  
+      <label>Cantidad:</label><br>
+      <input type="number" id="cantidadProducto" style="width: 100%;"><br><br>
+  
+      <label>Precio:</label><br>
+      <input type="text" id="precioProducto" style="width: 100%;"><br><br>
+  
+      <button onclick="agregarProducto()" style="background-color: #c20202; color: white; padding: 8px 15px; border: none;">Guardar</button>
+      <button onclick="cerrarFormulario()" style="margin-left: 10px;">Cancelar</button>
+    </div>
+  </div>
 
 </body>
 </html>

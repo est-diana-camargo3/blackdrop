@@ -156,7 +156,9 @@
                                           <li><b>Edad de consumo: </b> A partir de los 18 años<span class="enterpersonalizado"></span></li>
                                           <li><b>Contraindicación:</b> Puede no ser adecuado para personas con intolerancia a la lactosa o en estado de embarazo (consultar con su médico)<span class="enterpersonalizado"></span></li>
                                     </ul>                                            
-                                    <button class="btn-comprarproducto" onclick="location.href='2paginalogin.html'">Comprar</button>
+                                    <button class="btn-comprarproducto">Comprar</button>
+
+
                               </div>
                                     
                               <!-- Producto 3 -->
@@ -191,7 +193,8 @@
                                           <li><b>Edad de consumo: </b>Después de 18 años <span class="enterpersonalizado"></span></li>
                                           <li><b>Contraindicación:</b> Alergía a la leche, problemas renales (consulte con su médico) <span class="enterpersonalizado"></span></li>
                                     </ul>                                          
-                                    <button class="btn-comprarproducto" onclick="location.href='2paginalogin.html'">Comprar</button>
+                                    <button class="btn-comprarproducto">Comprar</button>
+
                               </div>
 
                               <!-- Producto 5 -->
@@ -208,7 +211,8 @@
                                           <li><b>Edad de consumo: </b> Después de 12 años <span class="enterpersonalizado"></span></li>
                                           <li><b>Contraindicación:</b> Hipertensión, problemas renales (consulte con su médico) <span class="enterpersonalizado"></span> </li>
                                     </ul>                                          
-                                    <button class="btn-comprarproducto" onclick="location.href='2paginalogin.html'">Comprar</button>
+                                    <button class="btn-comprarproducto">Comprar</button>
+
                               </div>
                                           
                               <!-- Producto 6 -->
@@ -226,7 +230,8 @@
                                           <li><b>Edad de consumo: </b> Después de 18 años <span class="enterpersonalizado"></span></li>
                                           <li><b>Contraindicación:</b> Ninguna  <span class="enterpersonalizado"></span></li>
                                     </ul>                                          
-                                    <button class="btn-comprarproducto" onclick="location.href='2paginalogin.html'">Comprar</button>
+                                    <button class="btn-comprarproducto">Comprar</button>
+
                               </div>                      
                         </section>
 
@@ -260,7 +265,30 @@
                             <a href="https://www.instagram.com/juanita.p28/" target="_blank"  class="linkinstagramautoras">Contacto Autora 1: Juanita Palacios</a>
                             <a href="https://www.instagram.com/diana.camargo3/" target="_blank"  class="linkinstagramautoras">Contacto Autora 2: Mayerly Camargo</a>
                         </div> 
-                  </footer>              
+                  </footer>    
+                    
+                  <script>
+                        // Esta función se ejecuta cuando se carga la página
+                        document.addEventListener("DOMContentLoaded", function() {
+                            const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
+                        
+                            botonesComprar.forEach(function(boton) {
+                                boton.addEventListener("click", function() {
+                                    // Verifica si el usuario está logueado (aquí puedes poner tu propia lógica)
+                                    const usuarioLogueado = false; // ← aquí va tu verificación real
+                        
+                                    if (usuarioLogueado) {
+                                        // Si ya está logueado, lo envías al carrito
+                                        window.location.href = "5carritodecompras.html";
+                                    } else {
+                                        // Si no está logueado, lo envías al login con redirect al carrito
+                                        window.location.href = "2paginalogin.html?redirect=carrito";
+                                    }
+                                });
+                            });
+                        });
+                        </script>
+                        
 
        </body>
 </html>
