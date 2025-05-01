@@ -1,0 +1,493 @@
+
+/*
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+▓▓                                                                                                                           ▓▓
+▓▓                                     💻 📞          C S S  -  E S T I L O S          💻 📞                               ▓▓
+▓▓                                                                                                                           ▓▓
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ */
+
+
+
+/* 💻 💻 💻 💻 💻 💻 💻 💻 💻 💻 💻   E S T I L O S   P A R A   C O M P U T A D O R   💻 💻 💻 💻 💻 💻 💻 💻 💻 💻 💻 */
+  
+            /*sin hacer*/
+
+
+   /*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+        █                                             💻     B O D Y     💻                                                   █
+        ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+
+        body /* Cuerpo , su papa es html */
+                {
+                    height: 100vh;
+                    background-color: rgb(255, 255, 255); /* Naranja con 30% de transparencia */ 
+                    color:rgb(0, 0, 0); /*color de texto*/
+                    font-family: Arial, sans-serif; /* Fuente: Arial, sino que no tenga adornos es decir cualquier fuente sans-serif*/
+                    margin:auto ;     /*margenes automaticas, menos la superior*/
+                    text-align: center;
+                    padding:0;    /*reiniciamos el padding o relleno a cero*/
+                    border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                    width:330px; /*que ocupe el 95% de ancho de la ventana*/
+                    max-width: 330px; /*maximo ocupa 1400 pixeles*/
+                    min-width: 330px; /*maximo ocupa 1400 pixeles*/
+                
+                
+                    display:grid;
+                    /*se dividira en 3 filas, 3 columnas*/
+                    grid-template-columns: repeat(1, 1fr);
+                    grid-template-rows: repeat (3,auto); /*tamaño automatico osea que se ajusten al contenido*/
+                    grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                    justify-content: center; /* centrar horizontal */
+                    align-content: center;   /* centrar vertical */
+                    overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                    overflow-y: auto; /* Esto permite el deslizador lateral */
+                }         
+        .enterpersonalizado  
+                {
+                    display: block;
+                    height: 15px; /* Ajusta el tamaño del salto de línea */
+                }
+        label 
+                {
+                    text-align: left;
+                    color: white;
+                }
+
+       /*   ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                     💻      H E A D E R encabezado       💻                                    ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */ 
+
+
+            header /* encabezado */
+                    {
+                        /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
+                        grid-column: 1 / 2; /* ocupara 1 columnas*/
+                        grid-row: 1 / 2; /* ocupara 1 fila*/
+                        margin:0;     /*reiniciamos las margenes a cero*/
+                        padding:0;    /*reiniciamos el padding o relleno a cero*/
+                        border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                        background-image: url('../imagenes/texturas/texturafondoblanco.jpg');
+                        background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
+                        background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
+                        background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
+                        background-position: center center; /* Centra la imagen de fondo dentro del header */
+                        background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+                        display:grid;
+                        /*se dividira en 2 columnas, 1 fila*/
+                        grid-template-columns: repeat(3, auto); /*dividido 3 columnas*/
+                        grid-template-rows: repeat (1,auto); /*tamaño automatico osea que se ajusten al contenido*/
+                        overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                        overflow-y: auto; /* Esto permite el deslizador lateral */
+                        height: 70px;
+                        overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                        overflow-y: hidden; /* Esto permite el deslizador lateral */                            
+                    }
+
+
+            /*  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+                ║                                         💻   i c o n o    a t r a s   💻                                      ║                                                                        
+                ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+
+                .contenedoriconoatras
+                        {
+                            grid-column: 1 / 2;
+                            grid-row: 1 / 2;
+                            margin: 8px;
+                            padding: 0;
+                            width: 60px; /* Tamaño fijo o usa una unidad relativa */
+                            height: 60px; /* Ajusta según tu diseño */
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                            transition: box-shadow 0.2s ease;                                                   
+                        }
+                              
+                .contenedoriconoatras:hover 
+                        {
+                            box-shadow: 0px 0px 50px red; /* Sombra  cuando se pasa el mouse*/
+                            /*border: 25px solid red;  /*borde sólido cuando se pasa el mouse*/
+                        }
+
+                .contenedoriconoatras img
+                        {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;;
+                        }
+
+            /*  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+                ║                                      💻   i n i c i a r    s e s i o n   💻                                   ║                                                                        
+                ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+
+                .contenedortituloiniciarsesion
+                              {
+                                  grid-column: 2 / 3; /* ocupara 1 columnas*/
+                                  grid-row: 1 / 2; /* ocupara 1 fila*/ 
+                                  margin: 5px 0 0 0px;  /*arriba derecha abajo izquierda;*/
+                                  text-align: center;
+                                  width: 200px; 
+                                  height: 60px;
+                                  font-weight: bold;;
+                                  padding: 0;
+                                  display:flex;
+                                  align-items: center;
+                                  justify-content: center;
+                              }
+                
+                .contenedortituloiniciarsesion .tituloiniciarsesion
+                        {
+                            font-size: 160%;
+                            display:flex;
+                            align-items: center;
+                            justify-content: center;
+                            
+                        }
+
+              
+
+       /*   ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                 💻     M A I N  contenido principal del body     💻                            ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */
+
+
+            main /* contenido principal del body */
+                    {
+                        grid-column: 1 / 2; /* ocupara 1 columnas*/
+                        grid-row: 2 / 3; /* ocupara 1 filas */
+                        background-color: rgb(0, 0, 0); /* Azul con 15% de transparencia */
+                        padding:0;    /*reiniciamos el padding o relleno a cero*/
+                        border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                        margin:0;     /*arriba derecha abajo izquierda;*/
+                        /*El main EN SI MISMO también sera  desarrollado como un modelo de grid porque aun necesitamos 
+                        ordenar unos elementos dentro de el*/                                
+                        grid-template-columns: repeat(1, auto);  /*1 columna*/
+                        grid-template-rows: repeat(6, auto);    /*5 filas*/
+                        grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                    }
+
+            /*     ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                   ║                                 💻    C O R R E O  ( Título mas input )    💻                            ║                                                                        
+                   ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝*/
+
+                    .contenedortitulomasinputcorreo
+                            {
+                                grid-column: 1 / 2; /* ocupara 1 columna */
+                                grid-row: 1 / 2; /* ocupara 1 fila */
+                                height: auto; /* 5% del contenedor donde esta:osea del header   */
+                                padding:0;
+                                margin:0 0 0 0; /*arriba derecha abajo izquierda;*/
+                                display:grid;                                   
+                                grid-template-columns: repeat(2, auto);  /*2 columna*/
+                                grid-template-rows: repeat(1, auto);    /*2 filas*/                          
+                            }
+
+                    .contenedortitulomasinputcorreo .titulocorreo 
+                            {
+                                grid-column: 1 / 2; /* ocupara 1 columna */
+                                grid-row: 1 / 2; /* ocupara 1 fila */  
+                                color: rgb(255, 255, 255); /* Texto blanco */
+                                font-size: 100%; /* El texto ocupara el 10% del alto de la ventana */
+                                font-weight: bold;  /*texto en negrilla*/
+                                margin: 20px 0 0 15px; /*arriba derecha abajo izquierda;*/
+                                width:60px;
+                            } 
+
+                    .contenedortitulomasinputcorreo .inputcorreo 
+                            {
+                                grid-column: 2 / 3; /* ocupara 1 columna */
+                                grid-row: 1 / 2; /* ocupara 1 fila */    
+                                background-color: rgb(255, 255, 255); /* Texto blanco */
+                                color: rgb(0, 0, 0);
+                                font-size: 80%; /* El texto ocupara el 10% del alto de la ventana */
+                                width: 90%;
+                                margin: 20px 30px 0 8px; /*arriba derecha abajo izquierda;*/
+                            }  
+
+            /*     ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                   ║                        💻        C O N T R A S E Ñ A ( Título mas input )       💻                       ║                                                                        
+                   ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝*/
+                    
+                   .contenedortitulomasinputcontraseña
+                            {
+                                grid-column: 1 / 2; /* ocupara 1 columna */
+                                grid-row: 2 / 3; /* ocupara 1 fila */
+                                height: auto; /* 5% del contenedor donde esta:osea del header   */
+                                padding:0;
+                                margin:0;
+                                display:grid;                                   
+                                grid-template-columns: repeat(2, auto);  /*2 columna*/
+                                grid-template-rows: repeat(1, auto);    /*2 filas*/
+                                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                                margin:0 0 20px 0; /*arriba derecha abajo izquierda;*/ 
+                            }
+
+                    .contenedortitulomasinputcontraseña .titulocontraseña 
+                            {
+                                grid-column: 1 / 2; /* ocupara 1 columna */
+                                grid-row: 1 / 2; /* ocupara 1 fila */  
+                                color: rgb(255, 255, 255); /* Texto blanco */
+                                font-size: 100%; /* El texto ocupara el 10% del alto de la ventana */
+                                font-weight: bold;  /*texto en negrilla*/
+                                margin: 20px 0 0 15px; /*arriba derecha abajo izquierda;*/
+                                width:60px;
+                            } 
+
+                    .contenedortitulomasinputcontraseña .inputcontraseña 
+                            {
+                                grid-column: 2 / 3; /* ocupara 1 columna */
+                                grid-row: 1 / 2; /* ocupara 1 fila */    
+                                background-color: rgb(255, 255, 255); /* Texto blanco */
+                                color: rgb(0, 0, 0);
+                                font-size: 80%; /* El texto ocupara el 10% del alto de la ventana */
+                                width: 90%;
+                                margin: 20px 30px 0 0; /*arriba derecha abajo izquierda;*/
+                            }  
+                            
+           /*       ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                    ║                   💻        T I P O    D E   C U E N T A  ( Radio admin o cliente)     💻                ║                                                                        
+                    ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝*/
+                    
+                    .contenedortitulotipodecuentamasradiogroup  
+                            {
+                                grid-column: 1 / 2; /* ocupara 1 columna */
+                                grid-row: 3 / 4; /* ocupara 1 fila */
+                                margin: 0 20% 0 50%; /*arriba derecha abajo izquierda;*/
+                                display:grid;                                   
+                                grid-template-columns: repeat(2, auto);  /*2 columna*/
+                                grid-template-rows: repeat(1, auto);    /*2 filas*/
+                                grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/ 
+                                background-color: rgb(54, 30, 0);
+                                margin: 20px 0 0 20px; /*arriba derecha abajo izquierda;*/
+                            }      
+
+                    .contenedortitulotipodecuentamasradiogroup .titulotipodecuenta
+                                        {
+                                            grid-column: 1 / 2; /* ocupara 1 columna */
+                                            grid-row: 1 / 2; /* ocupara 1 fila */
+                                        }
+
+                    .contenedortitulotipodecuentamasradiogroup .radiogroupdeltipodecuenta
+                                        {
+                                            grid-column: 2 / 3; /* ocupara 1 columna */
+                                            grid-row: 1 / 2; /* ocupara 1 fila */
+                                            display: flex;
+                                            gap: 15px; /* Espaciado entre Cliente y Administrador */
+                                            align-items: center;
+                                        }
+
+            /*     ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                   ║                        💻          B O T Ó N   I N I C I A R   S E S I O N        💻                     ║                                                                        
+                   ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝*/
+
+                    .contenedorbotoniniciarsesion
+                            {
+                                grid-column: 1 / 2; /* ocupará 1 columnas*/
+                                grid-row: 4 / 5; /* ocupará 1 fila */
+                            }
+
+                    .contenedorbotoniniciarsesion .botoniniciarsesion
+                            {
+                                background-color: rgb(168, 24, 28); /* Color de fondo del botón */
+                                height: 30px;  /*Ajustamos la altura */
+                                width: 50%;   /* Ancho en porcentaje */                                  
+                                color: white;  /* Color del texto */
+                                border: none;  /* Sin borde */
+                                padding: 3%; /* Espaciado interno */
+                                font-size: 120%;  /* Tamaño del texto */
+                                border-radius: 25px;  /* Bordes más redondeados */
+                                cursor: pointer; /* Cambia el cursor al pasar por encima */
+                                margin: 20px 30px 0px 85px ;  /*margin: top right bottom left;*/   
+                                text-align: center;        
+                                display: flex; /* Ajusta el comportamiento del botón */
+                                justify-content: center; /* Centra el texto horizontalmente */
+                                align-items: center; /* Centra el texto verticalmente */
+                                transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efecto suave de transición */
+                            }
+
+                    /* Efecto cuando se pasa el mouse sobre el botón */
+                    .contenedorbotoniniciarsesion .botoniniciarsesion:hover 
+                            {
+                                background-color: green; /* Cambia a verde */
+                                box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                            }                
+
+           /*       ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                    ║                    💻          O L V I D O    S U    C O N T R A S E Ñ A       💻                        ║                                                                        
+                    ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝*/
+                    
+                    .contenedortituloolvidosucontraseña
+                            {
+                                grid-column: 1 / 2; /* ocupará 1 columnas*/
+                                grid-row: 5 / 6; /* ocupará 1 fila */
+                                display:flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin:0;
+                                padding:0;
+                            }
+                    .contenedortituloolvidosucontraseña .tituloolvidosucontraseña
+                            {
+                                font-size: 10px;  /* Tamaño del texto */
+                                color:rgb(255, 255, 255);
+                                cursor: pointer; /* Cambia el cursor al pasar por encima */
+                                text-decoration: underline;
+                            }
+                    .contenedortituloolvidosucontraseña .tituloolvidosucontraseña:hover
+                            {
+                                box-shadow: 0px 0px 30px rgb(255, 255, 255); /* Sombra cuando se pasa el mouse*/
+                                /*color:rgb(255, 66, 66);*/
+                            }
+
+            /*      ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                    ║                           💻         B O T O N   R E G I S T R A R S E        💻                         ║                                                                        
+                    ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ */
+
+                    .contenedorbotonregistrarse
+                            {
+                                grid-column: 1 / 2; /* ocupará 1 columnas*/
+                                grid-row: 6 / 7; /* ocupará 1 fila */
+                            }
+
+                    .contenedorbotonregistrarse .botonregistrarse
+                            {
+                                background-color: rgb(168, 24, 28); /* Color de fondo del botón */
+                                height: 30px;  /*Ajustamos la altura */
+                                width: 50%;   /* Ancho en porcentaje */                                  
+                                color: white;  /* Color del texto */
+                                border: none;  /* Sin borde */
+                                padding: 3%; /* Espaciado interno */
+                                font-size: 120%;  /* Tamaño del texto */
+                                border-radius: 25px;  /* Bordes más redondeados */
+                                cursor: pointer; /* Cambia el cursor al pasar por encima */
+                                margin: 10px 30px 20px 85px ;  /*margin: top right bottom left;*/   
+                                text-align: center;        
+                                display: flex; /* Ajusta el comportamiento del botón */
+                                justify-content: center; /* Centra el texto horizontalmente */
+                                align-items: center; /* Centra el texto verticalmente */
+                                transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efecto suave de transición */
+                            }
+
+                    /* Efecto cuando se pasa el mouse sobre el botón */
+                    .contenedorbotonregistrarse .botonregistrarse:hover 
+                            {
+                                background-color: green; /* Cambia a verde */
+                                box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                            }  
+
+
+
+        /*  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                         💻       F O O T E R       💻                                          ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */
+                            
+            footer 
+                    {
+                        /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
+                        grid-column: 1 / 2; /* ocupara 1 columnas*/
+                        grid-row: 3 / 4; /* ocupara 1 fila*/
+                        margin:0;     /*reiniciamos las margenes a cero*/
+                        padding:0;    /*reiniciamos el padding o relleno a cero*/
+                        border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                        background-image: url('imagenes/texturas/texturafondoblanco.jpg');
+                        background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
+                        background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
+                        background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
+                        background-position: center center; /* Centra la imagen de fondo dentro del header */
+                        background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+                        display:grid;
+                        /*se dividira en 2 columnas, 1 fila*/
+                        grid-template-columns: repeat(1, 1fr);/*dividido en 2 columnas*/
+                        grid-template-rows: repeat (1,auto); /*dividido en 1 fila*/
+                        overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                        overflow-y: auto; /* Esto permite el deslizador lateral */ 
+                        width: 100%;     
+                        height: 70px;          
+                    }
+
+            /*  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+                ║            💻        I n s t a g r a m    y   t e l é f o n o    d e    B l a c k d r o p        💻        ║                                                                        
+                ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+
+                footer .contenedortelefonomaslinkdeinstagram
+                            {
+                                grid-column: 1 / 2 ;/* ocupara 1 columna */
+                                grid-row: 2/ 3; /* ocupara 1 fila */
+                                width:100%;
+                                height: 35px;
+                                color:#ffffff;
+                                display:grid;                                   
+                                grid-template-columns: repeat(2, 1fr);  /*1 columna*/
+                                grid-template-rows: repeat(1, auto);    /*1 filas*/
+                                font-family: Arial, Helvetica, sans-serif;
+                                display:grid;
+                                /*se dividira en 2 columnas, 1 fila*/
+                                grid-template-columns: repeat(2, 1fr);/*dividido en 2 columnas*/
+                                grid-template-rows: repeat (1,auto); /*dividido en 1 fila*/
+                            }
+                            footer .contenedortelefonomaslinkdeinstagram .telefonodeblackdrop 
+                                {
+                                    grid-column: 1 / 2 ;/* ocupara 1 columna */
+                                    grid-row: 1/ 2; /* ocupara 1 fila */
+                                    background-color: #ffffff;
+                                    color: #000000;
+                                    padding: 5px; 
+                                    margin:10px 5px 10px 10px;  /*margin: top right bottom left;*/          
+                                    border-radius: 25px;  /* Bordes más redondeados */             
+                                    justify-content: center;  /* Centra el contenido horizontalmente */
+                                    transition: color 0.3s ease;  
+                                    text-align: center;
+                                    font-size: 70%;
+                                    box-shadow: 0px 0px 25px rgb(255, 255, 255); /* Sombra */
+                                }
+
+                            footer .contenedortelefonomaslinkdeinstagram .linkdeinstagramblackdrop 
+                                {
+                                    grid-column: 2 / 3 ;/* ocupara 1 columna */
+                                    grid-row: 1/ 2; /* ocupara 1 fila */
+                                    background-color: #ffffff;
+                                    color: #000000;
+                                    text-decoration: underline;
+                                    padding: 5px; 
+                                    margin:10px 10px 10px 5px;  /*margin: top right bottom left;*/          
+                                    border-radius: 25px;  /* Bordes más redondeados */;              
+                                    justify-content: center;  /* Centra el contenido horizontalmente */
+                                    transition: color 0.3s ease; 
+                                    text-align: center; 
+                                    font-size: 70%;
+                                    font-weight: bold;
+                                    box-shadow: 0px 0px 25px rgb(255, 255, 255); /* Sombra */
+                                }
+
+                            footer .contenedortelefonomaslinkdeinstagram .linkdeinstagramblackdrop:hover 
+                                {
+                                    box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
+                                    background-color: rgb(168, 24, 28);
+                                    color:white;
+                                }
+
+
+
+
+
+
+
+
+/* 📞 📞 📞 📞 📞 📞 📞 📞 📞 📞 📞 📞    E S T I L O S   P A R A   C E L U   📞 📞 📞 📞 📞 📞 📞 📞 📞 📞 📞 📞  */
+
+
+
+@media (max-width: 750px)  /* ira de 320 a maximo 750 pixeles...los 320 estan definidos en el body de las primeras lineas*/
+
+{
+
+/*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+    █                                               📞     B O D Y     📞                                                 █
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+
+    body
+    {
+      margin:0;
+    }
+
+}

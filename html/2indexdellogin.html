@@ -1,0 +1,134 @@
+
+<!--
+
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+▓▓                                                                                                                           ▓▓
+▓▓                                               H T M L   -   E T I Q U E T A S                                             ▓▓
+▓▓                                                                                                                           ▓▓
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
+
+<!--HTML-->
+<!--Esta es la bolsa inicialmente vacia donde estan todos los elementos o etiquetas que conforman la pagina-->
+<!--Es el terreno donde voy construire mi edificio y en ese terreno colocare paredes, techos...etc.-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<!--   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+       █                                           H E A D metadatos                                                          █
+       ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  -->  
+       
+        <head>
+                <meta charset="UTF-8">
+                <!--Hace que la página se ajuste correctamente en dispositivos móviles, asegurando que el ancho se ajuste al dispositivo y la escala inicial sea 1.-->
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Pagina login</title>
+
+                <!-- ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥  ♥ ♥ ♥ ♥  -->
+                        <!--Enlazar archivos externos: hojas de estilo y scripts -->
+                            <link rel="stylesheet" href="../css/2estilosdellogin.css"> <!--Enlazo mi pagina de 1_estilos_del_home-->
+
+                            <script src="../javascript/2scriptsdellogin.js" defer></script> <!--Enlazo mi pagina de 1_scripts_del_home, algunas 
+                            personas lo hacen al final del body, para que primero se cargue todo el html y de ultimas las interacciones sin que 
+                            bloqueen el renderizado de la página, pero es una buena practica hacerlo aqui y colocarle "defer" para que ejecute 
+                            todo y de ultimas esta linea, y lo bueno es que tenemos todos los archivos externos, ordenados aqui en el head.-->
+
+                <!-- ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥  ♥ ♥ ♥ ♥-->
+
+        </head>
+
+<!--   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+       █                                                  B O D Y                                                             █
+       ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  -->  
+          
+       <body>
+        
+      <!--  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                            H E A D E R encabezado                                               ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  --> 
+
+              <header> <!-- headER ó encabezado-->                         
+                       <div class="contenedoriconoatras">          
+                       <img src="../imagenes/iconos/atras.png" alt="Icono para volver atras" onclick="location.href='../index.html'" >
+                       </div>
+
+                       <div class="contenedortituloiniciarsesion">          
+                       <p class="tituloiniciarsesion"> Iniciar Sesión </p>
+                       </div>         
+              </header>
+
+
+      <!--  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                    M A I N  contenido principal del body                                        ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  -->
+
+            <main>
+            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                  ║                                       C O R R E O  ( Título mas input )                                   ║                                                                        
+                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+
+                        <div class="contenedortitulomasinputcorreo ">
+                             <p class="titulocorreo"> Correo: </p>
+                             <input class="inputcorreo" id="correo" required placeholder="cliente@correo.com"> </input>
+                        </div>
+
+            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                  ║                                   C O N T R A S E Ñ A ( Título mas input )                                ║                                                                        
+                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+                        <div class="contenedortitulomasinputcontraseña ">
+                             <p class="titulocontraseña" id="contraseña"> Contraseña: </p>
+                             <input class="inputcontraseña"required placeholder="1234"> </input>
+                        </div>
+
+            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                  ║                           T I P O    D E   C U E N T A  ( Radio admin o cliente)                          ║                                                                        
+                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+                        <div class="contenedortitulotipodecuentamasradiogroup">
+                             <label for="titulotipodecuenta" class="titulotipodecuenta">Tipo de cuenta:<span class="enterpersonalizado"></span></label>
+                             <div class="radiogroupdeltipodecuenta">
+                                  <label for="cliente">Cliente</label>
+                                  <input type="radio" id="cliente" name="tipo_cuenta" checked required>
+                      
+                                  <label for="Admin">Administrador</label>
+                                  <input type="radio" id="administrador" name="tipo_cuenta" required>
+                             </div>
+                        </div>
+
+            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                  ║                                    B O T Ó N   I N I C I A R   S E S I O N                                ║                                                                        
+                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+                        <div class="contenedorbotoniniciarsesion">             
+                             <button class="botoniniciarsesion" >Iniciar Sesión</button>
+                        </div>
+
+            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                  ║                               O L V I D O    S U    C O N T R A S E Ñ A                                   ║                                                                        
+                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+                        <div class="contenedortituloolvidosucontraseña">
+                             <p class="tituloolvidosucontraseña" onclick="location.href='6paginarecuperarcontraseña.html'"> ¿ Olvido su contraseña ? </p>
+                        </div>
+
+            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                  ║                                      B O T O N   R E G I S T R A R S E                                    ║                                                                        
+                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+                        <div class="contenedorbotonregistrarse">             
+                             <button class="botonregistrarse" onclick="location.href='7paginaregistrarse.html'">Registrarse</button>
+                        </div>
+            </main>
+
+
+      <!--  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                                  F O O T E R                                                    ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  -->
+            
+            <footer>
+                    <div class="contenedortelefonomaslinkdeinstagram " >
+                          <h1 class="telefonodeblackdrop">Teléfono: 311 222 22 11</h1>
+                          <a href="https://www.instagram.com/blackdropsupps?igsh=MXgwZGU5ZWZ3NGJkdg%3D%3D" target="_blank" class="linkdeinstagramblackdrop">Instagram de Blackdrop</a>
+                  </div> 
+            </footer>               
+
+      </body>      
+</html>
+
+
