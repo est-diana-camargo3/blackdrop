@@ -50,7 +50,7 @@ o cuando algo pase*/
       ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
 
 
-            // Crear una cookie especifica 
+            // Mofificar las cookies originales, agregandoles los valores que me dio el usuario  
             function modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava, inputcontrasenaenjava)
                     {
                         //console.log("Prueba Valor de inputcorreoenjava", inputcorreoenjava); 
@@ -60,12 +60,13 @@ o cuando algo pase*/
                         //console.log("Prueba Todas las cookies actuales:", document.cookie);
                         document.cookie = "cookiecontrasenadelusuario="+ encodeURIComponent(inputcontrasenaenjava) + "; expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
                         //console.log("cookiecontrasnadelusuario: ", document.cookie);
-                        alert(" 📝 Cookiecorreodelsuario=    "+getcookie("cookiecorreodelusuario")
-                           +"\n 📝 Cookiecontrasenasuario=  "+getcookie("cookiecontrasenadelusuario"));               
+                        alert("Estas son las cookies que guarde: "
+                             +"\n\n 📝 Cookiecorreodelsuario=    "+obteneroleercookie("cookiecorreodelusuario")
+                             +"\n 📝 Cookiecontrasenasuario=  "+obteneroleercookie("cookiecontrasenadelusuario"));               
                     }
 
             // funcion para obtener o extraer info de una cookie especifica 
-            function getcookie(nombreoclavedelacookiequebusco)
+            function obteneroleercookie(nombreoclavedelacookiequebusco)
                     {
                         let todaslascookies=document.cookie.split(";") // devuelve todas las cookies en un string, con split, 
                                                                     // cogemos todo el string y lo transformamos en un array en el 
