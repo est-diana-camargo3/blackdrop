@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/8estilosdeperfil.css"> <!--Enlazo mi pagina de 1_estilos_del_login-->
+    <script src="../javascript/8scriptsdeperfil.js" defer></script>
+    <title>Pagina Perfil</title>
+
+
+<!-- =================================================================================================
+                                            E S T I L O S  - C S S 
+====================================================================================================== --> 
+
+
+
+</head>
+
+
+
+
+<!-- ===========================================================================================
+                                            H T M L 
+================================================================================================ -->
+
+      <!-- ===========================================================================================
+                                                 H T M L - B O D Y 
+      ================================================================================================ --> 
+          
+      <body>
+        
+            <!-- ===========================================================================================
+                                                    H T M L -H E A D E R 
+            ================================================================================================ --> 
+            <header> <!-- headER ó encabezado-->                         
+                <div class="contenedoriconoatras">          
+                <img src="../imagenes/iconos/atras.png" alt="Icono para volver atras" onclick="location.href='4paginacliente.html'" >
+                </div>
+
+                <div class="contenedortituloregistrarse">          
+                <p class="tituloregistrarse"> Mi perfil  </p>
+                </div>
+                
+   
+        </header>
+
+
+            <!-- ===========================================================================================
+                                                    H T M L - M A I N   
+            ================================================================================================ --> 
+              <main>
+                    <form>
+                            <div class="contenedortitulomasinputcorreo ">
+                                    <p class="titulocorreo"> Modificar Correo: </p>
+                                    <input class="inputcorreo" type="email" id="correo" required placeholder="cliente@correo.com"> </input>
+                            </div>
+                            
+                            <div class="contenedortitulomasinputcontraseña ">
+                                    <p class="titulocontraseña" > Modificar Contraseña: </p>
+                                    <input class="inputcontraseña" id="contrasena" required placeholder="1234"> </input>
+                            </div>
+
+                            
+
+                            <div class="contenedortitulotipodecuentamasradiogroup">
+                                    <label for="titulotipodecuenta" class="titulotipodecuenta">Tipo de cuenta:<span class="enterpersonalizado"></span></label>
+                                    <div class="radiogroupdeltipodecuenta">
+                                        <label for="cliente">Cliente</label>
+                                        <input type="radio" id="cliente" name="tipo_cuenta" checked required>
+                            
+                                        <label for="Admin">Administrador</label>
+                                        <input type="radio" id="administrador" name="tipo_cuenta" required>
+                                    </div>
+                            </div>
+
+                            <div class="contenedorbotonregistrarse">             
+                                <button class="botonregistrarse" type="button" onclick="registrarUsuario()">Actualizar Perfil</button>
+                            </div>
+                    </form>
+              </main>
+
+            <!-- ===========================================================================================
+                                                    H T M L - F O O T E R   
+            ================================================================================================ --> 
+            <footer>
+                    <div class="contenedortelefonomaslinkdeinstagram " >
+                          <h1 class="telefonodeblackdrop">Teléfono: 311 222 22 11</h1>
+                          <a href="https://www.instagram.com/blackdropsupps?igsh=MXgwZGU5ZWZ3NGJkdg%3D%3D" target="_blank" class="linkdeinstagramblackdrop">Instagram de Blackdrop</a>
+                  </div> 
+            </footer> 
+            
+       
+          
+      </body>
+</html>
+

@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: center;
+  }
+
+  header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px 0;
+  }
+
+  main {
+    padding: 30px;
+  }
+
+  h1, h2 {
+    color: #c20202;
+  }
+
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #333;
+    color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  button {
+padding: 10px 20px;
+font-size: 16px;
+margin-top: 20px;
+cursor: pointer;
+border: none;
+border-radius: 5px;
+}
+
+.btn-editar {
+background-color: #007BFF; /* azul */
+color: white;
+}
+
+.btn-guardar {
+background-color: #28A745; /* verde */
+color: white;
+}
