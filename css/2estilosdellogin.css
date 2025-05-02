@@ -193,7 +193,7 @@
                                 width:60px;
                             } 
 
-                    .contenedortitulomasinputcorreo .inputcorreo 
+                    .contenedortitulomasinputcorreo #inputcorreoenhtml
                             {
                                 grid-column: 2 / 3; /* ocupara 1 columna */
                                 grid-row: 1 / 2; /* ocupara 1 fila */    
@@ -233,7 +233,7 @@
                                 width:60px;
                             } 
 
-                    .contenedortitulomasinputcontraseña .inputcontraseña 
+                    .contenedortitulomasinputcontraseña #inputcontraseña 
                             {
                                 grid-column: 2 / 3; /* ocupara 1 columna */
                                 grid-row: 1 / 2; /* ocupara 1 fila */    

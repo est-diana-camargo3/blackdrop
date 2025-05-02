@@ -13,6 +13,43 @@ o cuando algo pase*/
 
 
   /*  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+      █                                              I n i c i a r    S e s i o n                                            █
+      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+
+      // Evento al hacer clic en el boton Iniciar Sesión
+      // copio y selecciono el boton desde html a js y le agrego un listener o escuchador de eventos, para el evento click 
+      // y que cuando perciba un clic en el boton ejecute las acciones que estan en la funcion. llamada  
+      // validarquetodoelformularioestediligenciado   
+      // addEventListener("evento ejm: click", funcionqueeejecutara si hacen click SIN PARENTESIS)
+      // si yo coloco addEventListener("click", funciona CON PARENTESIS()); , se ejecutara funciona, asi haya o no clic...no queremos eso 
+
+      document.querySelector(".botoniniciarsesion").addEventListener("click", validarquetodoelformularioestediligenciado);
+
+        function validarquetodoelformularioestediligenciado()
+        {
+            //copio y selecciono los inputs del formulario html a java 
+            let inputcorreoenjava = document.querySelector("#inputcorreoenhtml").value.trim(); // value trim, quita los espacios vacios del valor que escriba el usuario 
+            //let contraseñaInput = document.querySelector("#inputcontraseña").value.trim();
+            //let tipoSeleccionado = document.querySelector('input[name="tipo_cuenta"]:checked');
+            //let tipoCuenta = tipoSeleccionado.id === "cliente" ? "cliente" : "administrador";
+
+            // Validación de campos
+            while (!inputcorreoenjava ) //   || !contraseñaInput || !tipoSeleccionado) 
+                {
+                    alert("Por favor completa todos los campos y selecciona el tipo de cuenta.");
+                    return;
+                }
+                alert(inputcorreoenjava);       
+                modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava);         
+            }
+
+
+           
+        
+
+
+
+  /*  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
       █                                            B a s e   d e   d a t o s   s i m u l a d a                                                        █
       ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
 
@@ -26,19 +63,12 @@ o cuando algo pase*/
       ];
 
 
-      // Evento al hacer clic en Iniciar Sesión
-      document.querySelector(".botoniniciarsesion").addEventListener("click", function() {
-      const correoInput = document.querySelector(".inputcorreo").value.trim();
-      const contraseñaInput = document.querySelector(".inputcontraseña").value.trim();
-      const tipoSeleccionado = document.querySelector('input[name="tipo_cuenta"]:checked');
 
-      // Validación de campos
-      if (!correoInput || !contraseñaInput || !tipoSeleccionado) {
-      alert("Por favor completa todos los campos y selecciona el tipo de cuenta.");
-      return;
-      }
 
-      const tipoCuenta = tipoSeleccionado.id === "cliente" ? "cliente" : "administrador";
+
+            function Nosequesera()
+            {
+                alert(correoInput);
 
       // Buscar usuario en la "base de datos"
       const usuarioEncontrado = usuarios.find(usuario =>
@@ -69,7 +99,42 @@ o cuando algo pase*/
       alert("❌ Correo, contraseña o tipo de cuenta incorrectos.\n\n✅ Ejemplo válido:\nCorreo: clientemujer@correo.com\nContraseña: 1234\nTipo: cliente\n\n✅ Otro válido:\nCorreo: clientehombre@correo.com\nContraseña: 1234\nTipo:cliente\n\n✅ Otro válido:\nCorreo: admin@correo.com\nContraseña: 1234\nTipo: administrador");
       }
 
-      });
+      };
+
+  /*  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+      █   M o d i f i c a r   C o o k i e s   i n i c i a l e s    c o n   d a t o s   R E A L E S   d e l   u s u a r i o   █
+      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+
+
+              // Crear una cookie especifica 
+              function modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava)
+              {
+                  // Crear cookies
+                  //let fechadeexpiracion =Thu, 31 Jul 2025 12:00:00 UTC;
+  
+                  //Modifico la cookie, dandole el valor que tengo en correoInput 
+                  //la razon por la que usamos encode es porque eso codifica lo que tiene la variable...osea me lee @, +, =
+                  //
+                 document.cookie = "cookienombredelusuario=" + encodeURIComponent(inputcorreoenjava) + "; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
+                  //document.cookie = "cookienumerodevisitas=23; expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
+                  //document.cookie = "cookiegenero=Femenino;  max-age=300;  path=/;";
+                  /*alert("Creación:");
+                  alert(document.cookie);
+  
+                  // Modificar cookie usuario1*/
+                  //document.cookie = "nombredelusuario=Mayes Pérez; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
+                  /*alert("Modificación:");
+                  alert(getCookie("cookienombredelusuario"));
+  
+                  // Borrar cookie usuario2
+                  alert("Borrar:");*/
+                  //document.cookie = "cookiegenero=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  
+                  // Leer cookies individualmente
+                  /*alert("(debe ser nombredleusuario): " + getCookie("nombredelusuario"));
+                  alert("(debe estar numerodevisitas: vacia ): " + getCookie("numerodevisitas"));
+                  alert("Todas las cookies actuales:"+document.cookie);  */
+              }
 
 
  /*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■

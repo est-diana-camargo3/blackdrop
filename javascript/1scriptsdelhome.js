@@ -26,7 +26,7 @@ o cuando algo pase*/
         // creacion de cookies 
             if  (confirm("Esta página utiliza cookies, si continúas navegando aceptas su uso")) 
                 {
-                    crearcookiesiniciales();
+                    crearcookiesinicialesvacias();
                 } 
             else 
                 {
@@ -56,12 +56,16 @@ o cuando algo pase*/
                 }
 
         // Crear una cookie especifica 
-            function crearcookiesiniciales()
+            function crearcookiesinicialesvacias()
             {
                 // Crear cookies
-                document.cookie = "cookienombredelusuario=Diana Camargo; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
-                document.cookie = "cookienumerodevisitas=23; expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
-                document.cookie = "cookiegenero=Femenino;  max-age=300;  path=/;";
+                //let fechadeexpiracion =Thu, 31 Jul 2025 12:00:00 UTC;
+
+                document.cookie = "cookienombredelusuario=vacio_aun no se ha logueado; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
+                document.cookie = "cookienumerodevisitas=vacio_aun no se ha logueado; expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
+                document.cookie = "cookiegenero=vacio_aun no se ha logueado;  max-age=300;  path=/;";
+                
+                let nombre =prompt("holaa");
                 /*alert("Creación:");
                 alert(document.cookie);
 
