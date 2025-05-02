@@ -12,78 +12,111 @@ o cuando algo pase*/
 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ */
 
 
-  /*  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-      █                                              I n i c i a r    S e s i o n                                            █
-      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+   /*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+        █                     V a l i d a r    q u e   e l   F o r m u l a r i o   e s t e   l l e n o                         █
+        ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
 
-      // Evento al hacer clic en el boton Iniciar Sesión
-      // copio y selecciono el boton desde html a js y le agrego un listener o escuchador de eventos, para el evento click 
-      // y que cuando perciba un clic en el boton ejecute las acciones que estan en la funcion. llamada  
-      // validarquetodoelformularioestediligenciado   
-      // addEventListener("evento ejm: click", funcionqueeejecutara si hacen click SIN PARENTESIS)
-      // si yo coloco addEventListener("click", funciona CON PARENTESIS()); , se ejecutara funciona, asi haya o no clic...no queremos eso 
+            // Evento al hacer clic en el boton Iniciar Sesión
+            // copio y selecciono el boton desde html a js y le agrego un listener o escuchador de eventos, para el evento click 
+            // y que cuando perciba un clic en el boton ejecute las acciones que estan en la funcion. llamada  
+            // validarquetodoelformularioestediligenciado   
+            // addEventListener("evento ejm: click", funcionqueeejecutara si hacen click SIN PARENTESIS)
+            // si yo coloco addEventListener("click", funciona CON PARENTESIS()); , se ejecutara funciona, asi haya o no clic...no queremos eso 
 
-      document.querySelector(".botoniniciarsesion").addEventListener("click", validarquetodoelformularioestediligenciado);
+            document.querySelector(".botoniniciarsesion").addEventListener("click", validarquetodoelformularioestediligenciado);
 
-        function validarquetodoelformularioestediligenciado()
-        {
-            //copio y selecciono los inputs del formulario html a java 
-            let inputcorreoenjava = document.querySelector("#inputcorreoenhtml").value.trim(); // value trim, quita los espacios vacios del valor que escriba el usuario 
-            let inputcontrasenaenjava = document.querySelector("#inputcontrasenaenhtml").value.trim();
-            //let tipoSeleccionado = document.querySelector('input[name="tipo_cuenta"]:checked');
-            //let tipoCuenta = tipoSeleccionado.id === "cliente" ? "cliente" : "administrador";
-
-            // Validación de campos
-            while (!inputcorreoenjava || !inputcontrasenaenjava )  //  || !tipoSeleccionado) 
+                function validarquetodoelformularioestediligenciado()
                 {
-                    alert("Por favor completa todos los campos.");
-                    return;
-                }
-                  
-                modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava, inputcontrasenaenjava);  
-               
-        }
+                    //copio y selecciono los inputs del formulario html a java 
+                    let inputcorreoenjava = document.querySelector("#inputcorreoenhtml").value.trim(); // value trim, quita los espacios vacios del valor que escriba el usuario 
+                    let inputcontrasenaenjava = document.querySelector("#inputcontrasenaenhtml").value.trim();
+                    // verifico que haya una opcion presionada o checkeada, 
+                    //  Si un radio está seleccionado, espresionado contendrá el elemento <input> seleccionado; 
+                    //  si no, hay nada presionado sera igual a null
+                    let espresionado = document.querySelector('input[name="tipodecuentaenhtml"]:checked'); 
+                    // miro cual es la opcion presionada, por medio de la operacion ternaria
+                    // si es presionado tiene algun elemento seleccionado devuleve el valor de ese elemento
+                    // si es presionado no tiene ningun elemento seleccionado devuelve null
+                    let tipodecuentaenjava = espresionado ? espresionado.value : null;
+                    //let tipoCuenta = tipoSeleccionado.id === "cliente" ? "cliente" : "administrador";
 
-
-  /*  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-      █   M o d i f i c a r   C o o k i e s   i n i c i a l e s    c o n   d a t o s   R E A L E S   d e l   u s u a r i o   █
-      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
-
-
-            // Mofificar las cookies originales, agregandoles los valores que me dio el usuario  
-            function modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava, inputcontrasenaenjava)
-                    {
-                        //console.log("Prueba Valor de inputcorreoenjava", inputcorreoenjava); 
-                        //Modifico la cookie, dandole el valor que tengo en correoInput 
-                        //la razon por la que usamos encode es porque eso codifica lo que tiene la variable...osea me lee @, +, =
-                        document.cookie="cookiecorreodelusuario="+encodeURIComponent(inputcorreoenjava)+";expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
-                        //console.log("Prueba Todas las cookies actuales:", document.cookie);
-                        document.cookie = "cookiecontrasenadelusuario="+ encodeURIComponent(inputcontrasenaenjava) + "; expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
-                        //console.log("cookiecontrasnadelusuario: ", document.cookie);
-                        alert("Estas son las cookies que guarde: "
-                             +"\n\n 📝 Cookiecorreodelsuario=    "+obteneroleercookie("cookiecorreodelusuario")
-                             +"\n 📝 Cookiecontrasenasuario=  "+obteneroleercookie("cookiecontrasenadelusuario"));               
-                    }
-
-            // funcion para obtener o extraer info de una cookie especifica 
-            function obteneroleercookie(nombreoclavedelacookiequebusco)
-                    {
-                        let todaslascookies=document.cookie.split(";") // devuelve todas las cookies en un string, con split, 
-                                                                    // cogemos todo el string y lo transformamos en un array en el 
-                                                                    // que cada cookie ubica una posicion
-                        //leemos Cada elemento Contenido dentro del arreglo cookies, osea recorremos todo el arreglo
-                        for(let c of todaslascookies)
+                    // Validación de campos
+                    while (!inputcorreoenjava || !inputcontrasenaenjava || !espresionado)  //  ) 
                         {
-                            let [clave, valor] = c.trim().split("="); //separa el nombre de la cookie del valor de la misma. ejm nombre=diana, lo 
-                                                                      // divide en clave=nombre; valor=diana y c.trim quita los espacios en blanco
-                            if(clave===nombreoclavedelacookiequebusco) {  return decodeURIComponent(valor)}; // decodificamos por si hay caracteres especiales; }
+                            alert("Por favor completa todos los campos.");
+                            return;
                         }
-                        return null ; // su recorre todas las cookies ydel ciclo y no la encuetra, devuelve null
-                    }
+                        
+                        modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava, inputcontrasenaenjava,tipodecuentaenjava);  
+                    
+                }
+
+
+   /*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+        █                                   C o o k i e s   R E A L E S   (con datos del usuario)                              █
+        ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+
+
+
+       /*   ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+            ║                                          M o d i f i c a r     c o o k i e                                     ║                                                                        
+            ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+
+                // Mofificar las cookies originales, agregandoles los valores que me dio el usuario  
+                function modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava, inputcontrasenaenjava,tipodecuentaenjava)
+                        {
+                            //console.log("Prueba Valor de inputcorreoenjava", inputcorreoenjava); 
+                            //Modifico la cookie, dandole el valor que tengo en correoInput 
+                            //la razon por la que usamos encode es porque eso codifica lo que tiene la variable...osea me lee @, +, =
+                            document.cookie="cookiecorreodelusuario="+encodeURIComponent(inputcorreoenjava)+";expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
+                            //console.log("Prueba Todas las cookies actuales:", document.cookie);
+                            document.cookie = "cookiecontrasenadelusuario="+ encodeURIComponent(inputcontrasenaenjava) + "; expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
+                            //console.log("cookiecontrasnadelusuario: ", document.cookie);
+                            document.cookie="cookietipodecuenta="+encodeURIComponent(tipodecuentaenjava)+";expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
+                            alert("Estas son las cookies que guarde: "
+                                +"\n\n 📝 Cookiecorreodelsuario=    "+obteneroleercookie("cookiecorreodelusuario")
+                                +"\n 📝 Cookiecontrasenasuario=  "+obteneroleercookie("cookiecontrasenadelusuario")
+                                +"\n 📝 Cookietipodecuenta=  "+obteneroleercookie("cookietipodecuenta"));               
+                        }
+
+                    
+       /*   ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
+            ║                                                L e e r     c o o k i e                                         ║                                                                        
+            ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
+
+                // funcion para obtener o extraer info de una cookie especifica 
+                function obteneroleercookie(nombreoclavedelacookiequebusco)
+                        {
+                            let todaslascookies=document.cookie.split(";") // devuelve todas las cookies en un string, con split, 
+                                                                        // cogemos todo el string y lo transformamos en un array en el 
+                                                                        // que cada cookie ubica una posicion
+                            //leemos Cada elemento Contenido dentro del arreglo cookies, osea recorremos todo el arreglo
+                            for(let c of todaslascookies)
+                            {
+                                let [clave, valor] = c.trim().split("="); //separa el nombre de la cookie del valor de la misma. ejm nombre=diana, lo 
+                                                                        // divide en clave=nombre; valor=diana y c.trim quita los espacios en blanco
+                                if(clave===nombreoclavedelacookiequebusco) {  return decodeURIComponent(valor)}; // decodificamos por si hay caracteres especiales; }
+                            }
+                            return null ; // su recorre todas las cookies ydel ciclo y no la encuetra, devuelve null
+                        }
+
+
+
+
 
 
    
-        
+        //    aqui de para abajo no he revisado____________________________________________
+        //    _____________________________________________________________________________
+        //    _____________________________________________________________________________
+        //    _____________________________________________________________________________
+        //    _____________________________________________________________________________
+        //    _____________________________________________________________________________
+        //    _____________________________________________________________________________
+
+
+
+
 
 
 
@@ -104,9 +137,8 @@ o cuando algo pase*/
 
 
 
-            function Nosequesera()
-            {
-                alert(correoInput);
+    function Nosequesera()
+    {
 
       // Buscar usuario en la "base de datos"
       const usuarioEncontrado = usuarios.find(usuario =>

@@ -63,7 +63,7 @@ o cuando algo pase*/
 
                 document.cookie="cookiecorreodelusuario=vacioaunnosehalogueado;expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
                 document.cookie="cookiecontraseñadelusuario=vacioaunnosehalogueado;expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
-                document.cookie="cookiegenero=vacioaunnosehalogueado;max-age=300;path=/;";
+                document.cookie="cookietipodecuenta=vacioaunnosehalogueado;expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
                 
                 let nombre =prompt("holaa");
                 /*alert("Creación:");
