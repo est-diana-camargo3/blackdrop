@@ -63,43 +63,45 @@
             ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  -->
 
             <main>
-            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
-                  ║                                       C O R R E O  ( Título mas input )                                   ║                                                                        
-                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+                  <form>
+                        <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                              ║                                       C O R R E O  ( Título mas input )                                   ║                                                                        
+                              ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
 
-                        <div class="contenedortitulomasinputcorreo ">
-                             <p class="titulocorreo"> Correo: </p>
-                             <input class="inputcorreo" id="correo" required placeholder="cliente@correo.com"> </input>
-                        </div>
+                                    <div class="contenedortitulomasinputcorreo ">
+                                    <label for="inputcorreoenhtml" class="titulocorreo">Correo:</label>
+                                    <input id="inputcorreoenhtml" type="email"  placeholder="cliente@correo.com"  required> <!-- </input> -->
+                                    </div>
 
-            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
-                  ║                                   C O N T R A S E Ñ A ( Título mas input )                                ║                                                                        
-                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
-                        <div class="contenedortitulomasinputcontraseña ">
-                             <p class="titulocontraseña" id="contraseña"> Contraseña: </p>
-                             <input class="inputcontraseña"required placeholder="1234"> </input>
-                        </div>
+                        <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                              ║                                   C O N T R A S E Ñ A ( Título mas input )                                ║                                                                        
+                              ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+                                    <div class="contenedortitulomasinputcontraseña ">
+                                    <label for="inputcontraseña" class="titulocontraseña">Contraseña:</label>
+                                    <input id="inputcontraseña" type="password"   placeholder="1234" required> <!-- </input> -->
+                                    </div>
 
-            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
-                  ║                           T I P O    D E   C U E N T A  ( Radio admin o cliente)                          ║                                                                        
-                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
-                        <div class="contenedortitulotipodecuentamasradiogroup">
-                             <label for="titulotipodecuenta" class="titulotipodecuenta">Tipo de cuenta:<span class="enterpersonalizado"></span></label>
-                             <div class="radiogroupdeltipodecuenta">
-                                  <label for="cliente">Cliente</label>
-                                  <input type="radio" id="cliente" name="tipo_cuenta" checked required>
-                      
-                                  <label for="Admin">Administrador</label>
-                                  <input type="radio" id="administrador" name="tipo_cuenta" required>
-                             </div>
-                        </div>
+                        <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                              ║                           T I P O    D E   C U E N T A  ( Radio admin o cliente)                          ║                                                                        
+                              ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+                                    <div class="contenedortitulotipodecuentamasradiogroup">
+                                    <label for="titulotipodecuenta" class="titulotipodecuenta">Tipo de cuenta:<span class="enterpersonalizado"></span></label>
+                                    <div class="radiogroupdeltipodecuenta">
+                                          <label for="cliente">Cliente</label>
+                                          <input type="radio" id="cliente" name="tipo_cuenta" checked required>
+                              
+                                          <label for="Admin">Administrador</label>
+                                          <input type="radio" id="administrador" name="tipo_cuenta" required>
+                                    </div>
+                                    </div>
 
-            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
-                  ║                                    B O T Ó N   I N I C I A R   S E S I O N                                ║                                                                        
-                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
-                        <div class="contenedorbotoniniciarsesion">             
-                             <button class="botoniniciarsesion" >Iniciar Sesión</button>
-                        </div>
+                        <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                              ║                                    B O T Ó N   I N I C I A R   S E S I O N                                ║                                                                        
+                              ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+                                    <div class="contenedorbotoniniciarsesion">             
+                                    <button type ="submit" id= "botoniniciarsesion" class="botoniniciarsesion"> Iniciar Sesión</button>
+                                    </div>
+                  </form>
 
             <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
                   ║                               O L V I D O    S U    C O N T R A S E Ñ A                                   ║                                                                        
