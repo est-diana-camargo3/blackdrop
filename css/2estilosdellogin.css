@@ -208,7 +208,7 @@
                    ║                        💻        C O N T R A S E Ñ A ( Título mas input )       💻                       ║                                                                        
                    ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝*/
                     
-                   .contenedortitulomasinputcontraseña
+                   .contenedortitulomasinputcontrasena
                             {
                                 grid-column: 1 / 2; /* ocupara 1 columna */
                                 grid-row: 2 / 3; /* ocupara 1 fila */
@@ -222,7 +222,7 @@
                                 margin:0 0 20px 0; /*arriba derecha abajo izquierda;*/ 
                             }
 
-                    .contenedortitulomasinputcontraseña .titulocontraseña 
+                    .contenedortitulomasinputcontrasena .titulocontrasena 
                             {
                                 grid-column: 1 / 2; /* ocupara 1 columna */
                                 grid-row: 1 / 2; /* ocupara 1 fila */  
@@ -233,7 +233,7 @@
                                 width:60px;
                             } 
 
-                    .contenedortitulomasinputcontraseña #inputcontraseña 
+                    .contenedortitulomasinputcontrasena #inputcontrasenaenhtml 
                             {
                                 grid-column: 2 / 3; /* ocupara 1 columna */
                                 grid-row: 1 / 2; /* ocupara 1 fila */    

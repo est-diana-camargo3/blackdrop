@@ -61,9 +61,9 @@ o cuando algo pase*/
                 // Crear cookies
                 //let fechadeexpiracion =Thu, 31 Jul 2025 12:00:00 UTC;
 
-                document.cookie = "cookienombredelusuario=vacio_aun no se ha logueado; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
-                document.cookie = "cookienumerodevisitas=vacio_aun no se ha logueado; expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
-                document.cookie = "cookiegenero=vacio_aun no se ha logueado;  max-age=300;  path=/;";
+                document.cookie="cookiecorreodelusuario=vacioaunnosehalogueado;expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
+                document.cookie="cookiecontraseñadelusuario=vacioaunnosehalogueado;expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
+                document.cookie="cookiegenero=vacioaunnosehalogueado;max-age=300;path=/;";
                 
                 let nombre =prompt("holaa");
                 /*alert("Creación:");
