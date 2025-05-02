@@ -48,6 +48,7 @@ o cuando algo pase*/
                         }
                         
                         modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava, inputcontrasenaenjava,tipodecuentaenjava);  
+                        Nosequesera(inputcorreoenjava, inputcontrasenaenjava, tipodecuentaenjava);  
                     
                 }
 
@@ -137,39 +138,35 @@ o cuando algo pase*/
 
 
 
-    function Nosequesera()
-    {
+  function Nosequesera(correoInput, contraseñaInput, tipoCuenta)
+{
+    const usuarioEncontrado = usuarios.find(usuario =>
+        usuario.correo === correoInput &&
+        usuario.contraseña === contraseñaInput &&
+        usuario.tipo === tipoCuenta
+    );
 
-      // Buscar usuario en la "base de datos"
-      const usuarioEncontrado = usuarios.find(usuario =>
-      usuario.correo === correoInput &&
-      usuario.contraseña === contraseñaInput &&
-      usuario.tipo === tipoCuenta
-      );
+    if (usuarioEncontrado) {
+        localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioEncontrado));
+        alert(`✅ Login correcto \n\n ✅ Bienvenido: ${usuarioEncontrado.correo}`);
 
-      if (usuarioEncontrado) {
-      localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioEncontrado));
-      alert(`✅ Login correcto \n\n ✅ Bienvenido: ${usuarioEncontrado.correo}`);
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirect = urlParams.get('redirect');
 
-      const urlParams = new URLSearchParams(window.location.search);
-      const redirect = urlParams.get('redirect');
+        if (tipoCuenta === "cliente") {
+            if (redirect === "carrito") {
+                window.location.href = '5carritodecompras.html';
+            } else {
+                window.location.href = '4paginacliente.html';
+            }
+        } else if (tipoCuenta === "administrador") {
+            window.location.href = '3paginaadministrador.html';
+        }
+    } else {
+        alert("❌ Correo, contraseña o tipo de cuenta incorrectos.\n\n✅ Ejemplo válido:\nCorreo: clientemujer@correo.com\nContraseña: 1234\nTipo: cliente\n\n✅ Otro válido:\nCorreo: clientehombre@correo.com\nContraseña: 1234\nTipo:cliente\n\n✅ Otro válido:\nCorreo: admin@correo.com\nContraseña: 1234\nTipo: administrador");
+    }
+}
 
-      if (tipoCuenta === "cliente") {
-      if (redirect === "carrito") {
-      window.location.href = '../5carritodecompras.html';
-      } else {
-      window.location.href = '../4paginacliente.html';
-      }
-      } else if (tipoCuenta === "administrador") {
-      window.location.href = '../3paginaadministrador.html';
-      }
-
-      } else {
-      // Si no encuentra el usuario, muestra ejemplos
-      alert("❌ Correo, contraseña o tipo de cuenta incorrectos.\n\n✅ Ejemplo válido:\nCorreo: clientemujer@correo.com\nContraseña: 1234\nTipo: cliente\n\n✅ Otro válido:\nCorreo: clientehombre@correo.com\nContraseña: 1234\nTipo:cliente\n\n✅ Otro válido:\nCorreo: admin@correo.com\nContraseña: 1234\nTipo: administrador");
-      }
-
-      };
 
 
                     
