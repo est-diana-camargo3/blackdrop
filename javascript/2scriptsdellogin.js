@@ -29,22 +29,59 @@ o cuando algo pase*/
         {
             //copio y selecciono los inputs del formulario html a java 
             let inputcorreoenjava = document.querySelector("#inputcorreoenhtml").value.trim(); // value trim, quita los espacios vacios del valor que escriba el usuario 
-            //let contraseñaInput = document.querySelector("#inputcontraseña").value.trim();
+            let inputcontrasenaenjava = document.querySelector("#inputcontrasenaenhtml").value.trim();
             //let tipoSeleccionado = document.querySelector('input[name="tipo_cuenta"]:checked');
             //let tipoCuenta = tipoSeleccionado.id === "cliente" ? "cliente" : "administrador";
 
             // Validación de campos
-            while (!inputcorreoenjava ) //   || !contraseñaInput || !tipoSeleccionado) 
+            while (!inputcorreoenjava || !inputcontrasenaenjava )  //  || !tipoSeleccionado) 
                 {
-                    alert("Por favor completa todos los campos y selecciona el tipo de cuenta.");
+                    alert("Por favor completa todos los campos.");
                     return;
                 }
-                alert(inputcorreoenjava);       
-                modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava);         
-            }
+                  
+                modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava, inputcontrasenaenjava);  
+               
+        }
 
 
-           
+  /*  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+      █   M o d i f i c a r   C o o k i e s   i n i c i a l e s    c o n   d a t o s   R E A L E S   d e l   u s u a r i o   █
+      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+
+
+            // Crear una cookie especifica 
+            function modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava, inputcontrasenaenjava)
+                    {
+                        //console.log("Prueba Valor de inputcorreoenjava", inputcorreoenjava); 
+                        //Modifico la cookie, dandole el valor que tengo en correoInput 
+                        //la razon por la que usamos encode es porque eso codifica lo que tiene la variable...osea me lee @, +, =
+                        document.cookie="cookiecorreodelusuario="+encodeURIComponent(inputcorreoenjava)+";expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
+                        //console.log("Prueba Todas las cookies actuales:", document.cookie);
+                        document.cookie = "cookiecontrasenadelusuario="+ encodeURIComponent(inputcontrasenaenjava) + "; expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
+                        //console.log("cookiecontrasnadelusuario: ", document.cookie);
+                        alert(" 📝 Cookiecorreodelsuario=    "+getcookie("cookiecorreodelusuario")
+                           +"\n 📝 Cookiecontrasenasuario=  "+getcookie("cookiecontrasenadelusuario"));               
+                    }
+
+            // funcion para obtener o extraer info de una cookie especifica 
+            function getcookie(nombreoclavedelacookiequebusco)
+                    {
+                        let todaslascookies=document.cookie.split(";") // devuelve todas las cookies en un string, con split, 
+                                                                    // cogemos todo el string y lo transformamos en un array en el 
+                                                                    // que cada cookie ubica una posicion
+                        //leemos Cada elemento Contenido dentro del arreglo cookies, osea recorremos todo el arreglo
+                        for(let c of todaslascookies)
+                        {
+                            let [clave, valor] = c.trim().split("="); //separa el nombre de la cookie del valor de la misma. ejm nombre=diana, lo 
+                                                                      // divide en clave=nombre; valor=diana y c.trim quita los espacios en blanco
+                            if(clave===nombreoclavedelacookiequebusco) {  return decodeURIComponent(valor)}; // decodificamos por si hay caracteres especiales; }
+                        }
+                        return null ; // su recorre todas las cookies ydel ciclo y no la encuetra, devuelve null
+                    }
+
+
+   
         
 
 
@@ -101,40 +138,10 @@ o cuando algo pase*/
 
       };
 
-  /*  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-      █   M o d i f i c a r   C o o k i e s   i n i c i a l e s    c o n   d a t o s   R E A L E S   d e l   u s u a r i o   █
-      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+
+                    
 
 
-              // Crear una cookie especifica 
-              function modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava)
-              {
-                  // Crear cookies
-                  //let fechadeexpiracion =Thu, 31 Jul 2025 12:00:00 UTC;
-  
-                  //Modifico la cookie, dandole el valor que tengo en correoInput 
-                  //la razon por la que usamos encode es porque eso codifica lo que tiene la variable...osea me lee @, +, =
-                  //
-                 document.cookie = "cookienombredelusuario=" + encodeURIComponent(inputcorreoenjava) + "; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
-                  //document.cookie = "cookienumerodevisitas=23; expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
-                  //document.cookie = "cookiegenero=Femenino;  max-age=300;  path=/;";
-                  /*alert("Creación:");
-                  alert(document.cookie);
-  
-                  // Modificar cookie usuario1*/
-                  //document.cookie = "nombredelusuario=Mayes Pérez; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
-                  /*alert("Modificación:");
-                  alert(getCookie("cookienombredelusuario"));
-  
-                  // Borrar cookie usuario2
-                  alert("Borrar:");*/
-                  //document.cookie = "cookiegenero=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-  
-                  // Leer cookies individualmente
-                  /*alert("(debe ser nombredleusuario): " + getCookie("nombredelusuario"));
-                  alert("(debe estar numerodevisitas: vacia ): " + getCookie("numerodevisitas"));
-                  alert("Todas las cookies actuales:"+document.cookie);  */
-              }
 
 
  /*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
