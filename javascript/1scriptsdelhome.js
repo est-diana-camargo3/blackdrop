@@ -83,4 +83,23 @@ o cuando algo pase*/
                 alert("(debe estar numerodevisitas: vacia ): " + getCookie("numerodevisitas"));
                 alert("Todas las cookies actuales:"+document.cookie);  */
             }
-      
+            
+      // Esta función se ejecuta cuando se carga la página
+      document.addEventListener("DOMContentLoaded", function() {
+        const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
+    
+        botonesComprar.forEach(function(boton) {
+            boton.addEventListener("click", function() {
+                // Verifica si el usuario está logueado (aquí puedes poner tu propia lógica)
+                const usuarioLogueado = false; // ← aquí va tu verificación real
+    
+                if (usuarioLogueado) {
+                    // Si ya está logueado, lo envías al carrito
+                    window.location.href = "../html/5carritodecompras.html";
+                } else {
+                    // Si no está logueado, lo envías al login con redirect al carrito
+                    window.location.href = "2indexdellogin.html?redirect=carrito";
+                }
+            });
+        });
+    });

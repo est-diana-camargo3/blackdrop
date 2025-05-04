@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de Compras</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/5estilosdelcarrito.css"> <!--Enlazo mi pagina de 1_estilos_del_login-->
+  <script src="../javascript/5scriptsdelcarrito.js" defer></script>
+  
+</head>
+
+<body>
+  <header>
+    <div class="contenedoriconoatras">          
+      <img src="../imagenes/iconos/atras.png" alt="Icono para volver atras" onclick="location.href='4paginacliente.html'" >
+    </div>
+    <div class="titulo">CARRITO DE COMPRAS</div>
+
+    <div class="logo">
+      <img src="../imagenes/logos/logo_blanco_letras_negras_rojas.png" alt="BD Blackdrop">
+    </div>
+    
+  </header>
+
+  <table class="tabla-carrito">
+    <thead>
+      <tr>
+        <th>Cantidad</th>
+        <th>Producto</th>
+        <th>Precio Unitario</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td class="cantidad">
+          <button class="btn-menos">−</button>
+          <span class="valor-cantidad">1</span>
+          <button class="btn-mas">+</button>
+        </td>
+        <td>Whey Pure 2 lb</td>
+        <td>$160.000</td>
+        <td>$160.000</td>
+        <td><button class="eliminar-producto">❌</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="total"><strong>Total</strong> &nbsp; $160.000</div>
+
+  <button class="btn-comprar" onclick="location.href='../html/9confirmarcompra.html'">Confirmar Compra</button>
+
+  <div class="contacto">
+    📞 Contáctanos: <strong>+57 310 123 4567</strong><br>
+    📸 Síguenos en <a href="https://www.instagram.com/blackdropsupps?igsh=MXgwZGU5ZWZ3NGJkdg%3D%3D" target="_blank">Instagram</a>
+  </div>
+</body>
+
+</html>
