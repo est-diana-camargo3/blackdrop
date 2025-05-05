@@ -83,6 +83,17 @@ o cuando algo pase*/
                 alert("(debe estar numerodevisitas: vacia ): " + getCookie("numerodevisitas"));
                 alert("Todas las cookies actuales:"+document.cookie);  */
             }
+
+            document.querySelectorAll('.productogeneral').forEach(producto => {
+                producto.addEventListener('click', function (event) {
+                  // Verifica si se hizo clic en el botón (o dentro de él)
+                  if (!event.target.closest('.btn-comprar')) {
+                    const url = producto.dataset.link;
+                    window.location.href = url;
+                  }
+                });
+              });
+              
             
       // Esta función se ejecuta cuando se carga la página
       document.addEventListener("DOMContentLoaded", function() {
