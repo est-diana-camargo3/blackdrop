@@ -1,0 +1,142 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #ffffff;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.logo img {
+  height: 70px;
+}
+
+.contenedoriconoatras img {
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Contenedor Principal */
+.contenedor-detalle-producto {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+/* Imagen */
+.imagen-producto img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Información */
+.informacion-producto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.informacion-producto h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.informacion-producto p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Selector de cantidad */
+.selector-cantidad label {
+  font-weight: bold;
+}
+
+.control-cantidad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px 0;
+}
+
+.control-cantidad button {
+  padding: 8px 15px;
+  font-size: 20px;
+  background-color: #e63c1f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.control-cantidad input {
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Botones de acción */
+.botones-acciones {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-agregar, .btn-volver {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-agregar {
+  background-color: #e63c1f;
+  color: white;
+}
+
+.btn-agregar:hover {
+  background-color: #c12f16;
+}
+
+.btn-volver {
+  background-color: #ccc;
+}
+
+.btn-volver:hover {
+  background-color: #aaa;
+}
