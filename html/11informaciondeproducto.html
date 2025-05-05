@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../css/11estilosdeinformacion.css">
+  <title>Detalle del Producto</title>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="contenedoriconoatras">
+      <img src="../imagenes/iconos/atras.png" alt="Icono para volver atrás" onclick="location.href='../html/4paginacliente.html'">
+    </div>
+    <div class="logo">
+      <img src="../imagenes/logos/logo_blanco_letras_negras_rojas.png" alt="BD Blackdrop">
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="contenedor-detalle-producto">
+    <div class="producto">
+      <div class="imagen-producto">
+        <img src="../imagenes/proteinas/proteinawheypure.jpg" alt="Whey Pure">
+      </div>
+
+      <div class="informacion-producto">
+        <h2>Whey Protein 2lb</h2>
+        <p><strong>Precio:</strong> $120.000</p>
+        <p><strong>Diseñada para aumento de masa muscular y una mejor recuperacion</strong></p>
+        <p><strong>Uso recomendado:</strong> 30 gramos a 250 ml de agua o leche, se recomienda post-entreno.</p>
+        <p><strong>Tamaño:</strong> 2 libras</p>
+        <p><strong>Sabor:</strong> Chocolate</p>
+        <p><strong>Informacion nutricional:</strong></p>
+        <p>21g de proteina aislada</p>
+        <p>Endulzado con Stevia</p>
+        <p>Carbohidratos: >1g </p>
+        <p>Grasas totales: 1.5g </p>
+        <p>5.5g BCAA</p>
+
+        <!-- Selector de cantidad -->
+        <div class="selector-cantidad">
+          <label for="cantidad"><strong>Cantidad:</strong></label>
+          <div class="control-cantidad">
+            <button onclick="cambiarCantidad(-1)">–</button>
+            <input type="number" id="cantidad" value="1" min="1" readonly>
+            <button onclick="cambiarCantidad(1)">+</button>
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="botones-acciones">
+          <button class="btn-agregar" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+          <button class="btn-volver" onclick="location.href='../html/4paginacliente.html'">Volver a la Tienda</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- JS para cantidad y carrito -->
+  <script>
+    function cambiarCantidad(delta) {
+      const input = document.getElementById('cantidad');
+      let cantidad = parseInt(input.value);
+      if (cantidad + delta >= 1) {
+        input.value = cantidad + delta;
+      }
+    }
+
+    function agregarAlCarrito() {
+      const cantidad = document.getElementById('cantidad').value;
+      // Puedes guardar esto en localStorage o pasar como parámetro más adelante
+      alert(`Producto agregado: ${cantidad} unidad(es)`);
+      window.location.href = '../html/5carritodecompras.html';
+    }
+  </script>
+
+</body>
+</html>
