@@ -60,30 +60,42 @@ o cuando algo pase*/
             {
                 // Crear cookies
                 //let fechadeexpiracion =Thu, 31 Jul 2025 12:00:00 UTC;
-
                 document.cookie="cookiecorreodelusuario=vacioaunnosehalogueado;expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
                 document.cookie="cookiecontraseñadelusuario=vacioaunnosehalogueado;expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
                 document.cookie="cookietipodecuenta=vacioaunnosehalogueado;expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
-                
-                let nombre =prompt("holaa");
-                /*alert("Creación:");
-                alert(document.cookie);
-
-                // Modificar cookie usuario1*/
-                document.cookie = "nombredelusuario=Mayes Pérez; expires=Thu, 31 Jul 2025 12:00:00 UTC; path=/;";
-                /*alert("Modificación:");
-                alert(getCookie("cookienombredelusuario"));
-
-                // Borrar cookie usuario2
-                alert("Borrar:");*/
-                document.cookie = "cookiegenero=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-
-                // Leer cookies individualmente
-                /*alert("(debe ser nombredleusuario): " + getCookie("nombredelusuario"));
-                alert("(debe estar numerodevisitas: vacia ): " + getCookie("numerodevisitas"));
-                alert("Todas las cookies actuales:"+document.cookie);  */
             }
+<<<<<<< HEAD
+         
+
+/*      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+        █                                    B o t o n     i n i c i a r    S e s i o n                                        █
+        ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+   
+            document.getElementById("iconologin").addEventListener("click", () => 
+                {
+                    location.href = '../html/2indexdellogin.html'; // lléveme a esta pagina 
+                });
+          
+
+/*      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+        █                                    Esto no lo hizo Diana...explicar aqui que es????                                        █
+        ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+   
+
+=======
+
+            document.querySelectorAll('.productogeneral').forEach(producto => {
+                producto.addEventListener('click', function (event) {
+                  // Verifica si se hizo clic en el botón (o dentro de él)
+                  if (!event.target.closest('.btn-comprar')) {
+                    const url = producto.dataset.link;
+                    window.location.href = url;
+                  }
+                });
+              });
+              
             
+>>>>>>> bcb4f90fdfcdc20f9161b787ff804c8e5272df6f
       // Esta función se ejecuta cuando se carga la página
       document.addEventListener("DOMContentLoaded", function() {
         const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
