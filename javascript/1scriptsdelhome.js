@@ -87,7 +87,7 @@ o cuando algo pase*/
             document.querySelectorAll('.productogeneral').forEach(producto => {
                 producto.addEventListener('click', function (event) {
                   // Verifica si se hizo clic en el botón (o dentro de él)
-                  if (!event.target.closest('.btn-comprar')) {
+                  if (!event.target.closest('.btn-comprarproducto')) {
                     const url = producto.dataset.link;
                     window.location.href = url;
                   }
@@ -100,7 +100,8 @@ o cuando algo pase*/
         const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
     
         botonesComprar.forEach(function(boton) {
-            boton.addEventListener("click", function() {
+            boton.addEventListener("click", function(event) {
+                event.stopPropagation(); // ← Esto soluciona tu problema
                 // Verifica si el usuario está logueado (aquí puedes poner tu propia lógica)
                 const usuarioLogueado = false; // ← aquí va tu verificación real
     
