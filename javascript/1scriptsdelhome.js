@@ -65,7 +65,7 @@ o cuando algo pase*/
                 document.cookie="cookiecontraseñadelusuario=vacioaunnosehalogueado;expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
                 document.cookie="cookietipodecuenta=vacioaunnosehalogueado;expires=Thu, 31 Jul 2025 12:00:00 UTC;path=/;";
                 
-                let nombre =prompt("holaa");
+                /*let nombre =prompt("holaa"); */
                 /*alert("Creación:");
                 alert(document.cookie);
 
