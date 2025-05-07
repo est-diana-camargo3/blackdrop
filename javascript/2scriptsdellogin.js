@@ -182,7 +182,7 @@ o cuando algo pase*/
       let botonAtras = document.querySelector(".contenedoriconoatras");
       if (botonAtras) {
       botonAtras.addEventListener("click", function () {
-      window.location.href = "index.html"; // Redirige a la página principal
+      window.location.href = "1indexdelhome.html"; // Redirige a la página principal
       });
       }
 
