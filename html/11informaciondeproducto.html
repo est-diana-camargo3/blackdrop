@@ -25,22 +25,27 @@
   <main class="contenedor-detalle-producto">
     <div class="producto">
       <div class="imagen-producto">
-        <img src="../imagenes/proteinas/proteinawheypure.jpg" alt="Whey Pure">
+        <img id="imagenProducto"  alt="Imagen del producto">
       </div>
-
+  
       <div class="informacion-producto">
-        <h2>Whey Pure 2lb</h2>
-        <p><strong>Precio:</strong> $120.000</p>
-        <p><strong>Diseñada para aumento de masa muscular y una mejor recuperacion</strong></p>
-        <p><strong>Uso recomendado:</strong> 30 gramos a 250 ml de agua o leche, se recomienda post-entreno.</p>
-        <p><strong>Tamaño:</strong> 2 libras</p>
-        <p><strong>Sabor:</strong> Chocolate</p>
-        <p><strong>Informacion nutricional:</strong></p>
-        <p>21g de proteina aislada</p>
-        <p>Endulzado con Stevia</p>
-        <p>Carbohidratos: >1g </p>
-        <p>Grasas totales: 1.5g </p>
-        <p>5.5g BCAA</p>
+        <h2 id="nombreProducto">Whey Pure 2lb</h2>
+        <p><strong>Precio:</strong> <span id="precioProducto">$120.000</span></p>
+        <p><strong>Descripción:</strong> <span id="descripcionProducto"></span></p>
+        <p><strong>Uso recomendado:</strong> <span id="usoProducto"></span></p>
+        <p><strong>Tamaño:</strong> <span id="tamanoProducto"></span></p>
+        <p><strong>Sabor:</strong> <span id="saborProducto"></span></p>
+
+        <p><strong>Información nutricional:</strong></p>
+        <ul>
+          <li id="nutricion1"></li>
+          <li id="nutricion2"></li>
+          <li id="nutricion3"></li>
+          <li id="nutricion4"></li>
+          <li id="nutricion5"></li>
+        </ul>
+
+  
 
         <!-- Selector de cantidad -->
         <div class="selector-cantidad">
@@ -61,23 +66,6 @@
     </div>
   </main>
 
-  <!-- JS para cantidad y carrito -->
-  <script>
-    function cambiarCantidad(delta) {
-      const input = document.getElementById('cantidad');
-      let cantidad = parseInt(input.value);
-      if (cantidad + delta >= 1) {
-        input.value = cantidad + delta;
-      }
-    }
-
-    function agregarAlCarrito() {
-      const cantidad = document.getElementById('cantidad').value;
-      // Puedes guardar esto en localStorage o pasar como parámetro más adelante
-      alert(`Producto agregado: ${cantidad} unidad(es)`);
-      window.location.href = '../html/5carritodecompras.html';
-    }
-  </script>
 
 </body>
 </html>
