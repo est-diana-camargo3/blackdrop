@@ -7,5 +7,5 @@ COPY . /var/www/html/
 RUN a2enmod rewrite
 
 # Redirige la raíz (/) al archivo dentro de /html
-RUN echo 'RedirectMatch "^/$" "/html/1index_del_home.html"' > /etc/apache2/conf-available/redirect.conf \
+RUN echo 'RedirectMatch "^/$" "/html/1indexdelhome.html"' > /etc/apache2/conf-available/redirect.conf \
     && a2enconf redirect
