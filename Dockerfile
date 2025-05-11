@@ -1,10 +1,14 @@
 FROM php:8.1-apache
 
-# Copia todo el contenido del repositorio a la carpeta raíz del servidor Apache
+# Copiar todo el contenido del proyecto al contenedor
 COPY . /var/www/html/
 
-# Habilita mod_rewrite por si lo necesitas
+# Habilitar el módulo rewrite de Apache
 RUN a2enmod rewrite
 
-# Exponer el puerto 80
-EXPOSE 80
+# Establecer como archivo de inicio el archivo correcto
+RUN echo "DirectoryIndex 1index_del_home.html" > /etc/apache2/conf-available/custom-index.conf \
+    && a2enconf custom-index
+
+# Opcional: establecer permisos adecuados
+RUN chown -R www-data:www-data /var/www/html
