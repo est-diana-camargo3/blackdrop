@@ -100,6 +100,15 @@ o cuando algo pase*/
                             }
                             return null ; // su recorre todas las cookies ydel ciclo y no la encuetra, devuelve null
                         }
+                        function volverAtras() {
+                            if (document.referrer !== "") {
+                              window.history.back();
+                            } else {
+                              // Si no hay historial, lo redirigimos a una página por defecto (opcional)
+                              window.location.href = "../html/1indexdelhome.html";
+                            }
+                          }
+                          
 
 
 
@@ -182,7 +191,7 @@ o cuando algo pase*/
       let botonAtras = document.querySelector(".contenedoriconoatras");
       if (botonAtras) {
       botonAtras.addEventListener("click", function () {
-      window.location.href = "index.html"; // Redirige a la página principal
+      window.location.href = "1indexdelhome.html"; // Redirige a la página principal
       });
       }
 
