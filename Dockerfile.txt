@@ -8,7 +8,7 @@ COPY html/ /var/www/html/
 RUN a2enmod rewrite
 
 # Configura Apache para que use 1_index_del_home.html como el archivo predeterminado
-RUN echo "DirectoryIndex 1_index_del_home.html" >> /etc/apache2/apache2.conf
+RUN echo "DirectoryIndex html/1_index_del_home.html" >> /etc/apache2/apache2.conf
 
 # Expone el puerto 80
 EXPOSE 80
