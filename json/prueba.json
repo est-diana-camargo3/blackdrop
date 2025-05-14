@@ -1,0 +1,19 @@
+[
+    {
+        "_comentario": "Este JSON contiene la base de  datos de todos los  clientes",
+        "correo":"cliente@correo.com",
+        "contraseña":1234,
+        "tipodeusuario":"cliente"
+    },    
+    {
+        "correo":"clientemujer@correo.com",
+        "contraseña":1234,
+        "tipodeusuario":"cliente"
+    },
+    {
+        "correo":"clientehombre@correo.com",
+        "contraseña":1234,
+        "tipodeusuario":"cliente"
+    }
+
+]
