@@ -43,38 +43,42 @@
                                                     H T M L - M A I N   
             ================================================================================================ --> 
               <main>
-                    <form>
-                            <div class="contenedortitulomasinputcorreo ">
-                                    <p class="titulocorreo"> Correo: </p>
-                                    <input class="inputcorreo" type="email" id="correo" required placeholder="cliente@correo.com"> </input>
-                            </div>
-                            
-                            <div class="contenedortitulomasinputcontraseña ">
-                                    <p class="titulocontraseña" > Contraseña: </p>
-                                    <input class="inputcontraseña" id="contrasena" required placeholder="1234"> </input>
-                            </div>
+               <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                     ║                   F o r m u l a r i o    q u e     f u n c i o n a    c o n    P H P  y A J A X               ║                                                                        
+                     ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+                    
+                     <form action="../php/registrarusuario.php" method="POST" enctype="multipart/form-data">
+                          <div class="contenedortitulomasinputcorreo">
+                          <p class="titulocorreo">Correo:</p>
+                          <input class="inputcorreo" type="email" id="correo" name="correo" required placeholder="cliente@correo.com">
+                          </div>
 
-                            <div class="contenedortitulomasinputfoto">
-                                <label class="titulofoto" for="foto">Foto: </label>
-                                <input class="inputfoto" type="file" id="foto" name="foto" accept="image/*" onchange="mostrarMiniatura(event)"><br><br>
-                                <div id="miniatura"></div> 
-                            </div>
+                          <div class="contenedortitulomasinputcontraseña">
+                          <p class="titulocontraseña">Contraseña:</p>
+                          <input class="inputcontraseña" type="password" id="contrasena" name="contrasena" required placeholder="1234">
+                          </div>
 
-                            <div class="contenedortitulotipodecuentamasradiogroup">
-                                    <label for="titulotipodecuenta" class="titulotipodecuenta">Tipo de cuenta:<span class="enterpersonalizado"></span></label>
-                                    <div class="radiogroupdeltipodecuenta">
-                                        <label for="cliente">Cliente</label>
-                                        <input type="radio" id="cliente" name="tipo_cuenta" checked required>
-                            
-                                        <label for="Admin">Administrador</label>
-                                        <input type="radio" id="administrador" name="tipo_cuenta" required>
-                                    </div>
-                            </div>
+                          <div class="contenedortitulomasinputfoto">
+                          <label class="titulofoto" for="foto">Foto:</label>
+                          <input class="inputfoto" type="file" id="foto" name="foto" accept="image/*">
+                          <div id="miniatura"></div>
+                          </div>
 
-                            <div class="contenedorbotonregistrarse">             
-                                <button class="botonregistrarse" type="button" onclick="registrarUsuario()">Finalizar Registro</button>
-                            </div>
-                    </form>
+                          <div class="contenedortitulotipodecuentamasradiogroup">
+                          <label class="titulotipodecuenta">Tipo de cuenta:</label>
+                          <div class="radiogroupdeltipodecuenta">
+                          <label for="cliente">Cliente</label>
+                          <input type="radio" id="cliente" name="tipodeusuario" value="cliente" checked required>
+
+                          <label for="administrador">Administrador</label>
+                          <input type="radio" id="administrador" name="tipodeusuario" value="admin" required>
+                          </div>
+                          </div>
+
+                          <div class="contenedorbotonregistrarse">
+                          <button class="botonregistrarse" type="submit" >Finalizar Registro </button>
+                          </div>
+                     </form>
               </main>
 
             <!-- ===========================================================================================
