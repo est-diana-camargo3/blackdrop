@@ -1,5 +1,5 @@
 <?php
-        $host = "dpg-d0huho24d50c73atua80-a.oregon-postgres.render.com/bdclientes_cajy"; 
+        $host = "dpg-d0huho24d50c73atua80-a.oregon-postgres.render.com"; 
          $db = "bdclientes_cajy";
         $user = "admin";
         $pass = "ZduqhhOYRyT84vE9dPpwowsLucS1Zl4q";
