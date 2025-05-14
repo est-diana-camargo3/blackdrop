@@ -33,7 +33,7 @@
         if ($resultado) {
             echo "Registro exitoso.";
             // redirigir al home logueado
-             header("Location: /html/4paginacliente.html");
+             header("Location: ../html/4paginacliente.html");
         } else {
             echo "Error al registrar: " . pg_last_error($conn);
         }
