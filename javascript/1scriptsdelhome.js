@@ -18,11 +18,40 @@ o cuando algo pase*/
    se guardan en forma de pares "nombre=valor"     
    si no le colocamos fecha de expiracion, esta desaparecera cuando el navegador se cierre */
 
+/*      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+        █                                 B A S E    D E   D A T O S   C O N   J S O N       (en prueba)                             █
+        ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
+          
+          let prueba=[
+              {
+                  "_comentario": "Este JSON contiene la base de  datos de todos los  clientes",
+                  "correo":"cliente@correo.com",
+                  "contraseña":1234,
+                  "tipodeusuario":"cliente"
+              },    
+              {
+                  "correo":"clientemujer@correo.com",
+                  "contraseña":1234,
+                  "tipodeusuario":"cliente"
+              },
+              {
+                  "correo":"clientehombre@correo.com",
+                  "contraseña":1234,
+                  "tipodeusuario":"cliente"
+              } 
+          ]
+
+          //console.log(prueba)
+          //console.log(JSON.parse(prueba)[0])
+          //console.log(JSON.parse(prueba)[0])
+
+
 
 /*      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
         █                                  C O O K I E S   I N I C I A L E S  (vacias)                                         █
         ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
-
+ 
+ 
         // creacion de cookies 
             if  (confirm("Esta página utiliza cookies, si continúas navegando aceptas su uso")) 
                 {
