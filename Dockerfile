@@ -9,3 +9,5 @@ RUN a2enmod rewrite
 # Redirige la raíz (/) al archivo dentro de /html
 RUN echo 'RedirectMatch "^/$" "/html/1indexdelhome.html"' > /etc/apache2/conf-available/redirect.conf \
     && a2enconf redirect
+    
+RUN apt-get update && apt-get install -y php-pgsql
