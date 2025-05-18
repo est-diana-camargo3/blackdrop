@@ -51,14 +51,6 @@ o cuando algo pase*/
                         validarInicioSesion(inputcorreoenjava, inputcontrasenaenjava, tipodecuentaenjava);
                     
                 }
-
-
-   /*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-        █                                   C o o k i e s   R E A L E S   (con datos del usuario)                              █
-        ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
-
-
-
        /*   ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
             ║                                          M o d i f i c a r     c o o k i e                                     ║                                                                        
             ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
@@ -115,45 +107,13 @@ o cuando algo pase*/
 
 
 
-   
-        //    aqui de para abajo no he revisado____________________________________________
-        //    _____________________________________________________________________________
-        //    _____________________________________________________________________________
-        //    _____________________________________________________________________________
-        //    _____________________________________________________________________________
-        //    _____________________________________________________________________________
-        //    _____________________________________________________________________________
-
-
-
-
-
-
-
-  /*  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-      █                                            B a s e   d e   d a t o s   s i m u l a d a                                                        █
-      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
-
-      /*const usuarios = 
-      [
-          { correo: "clientemujer@correo.com", contraseña: "1234", tipo: "cliente" , foto: "imagenes/fotosdeperfil/fotodeclientemujer.jpg"},
-          { correo: "clientehombre@correo.com", contraseña: "1234", tipo: "cliente" , foto: "imagenes/fotosdeperfil/fotodeclientehombre.jpg"},
-          { correo: "admin@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotodeadministrador.jpg"},
-          { correo: "mayerly@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotodemayerly.jpg"},
-          { correo: "juanita@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotosdejuanita.jpg"}
-      ];
-*/
-
-
-
-
         function validarInicioSesion(correo, contrasena, tipoCuenta) {
             fetch('../php/verificarusuario.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeuenta=${encodeURIComponent(tipodeuenta)}`
+                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeuenta=${encodeURIComponent(tipodecuenta)}`
             })
             .then(response => response.json())
             .then(data => {
