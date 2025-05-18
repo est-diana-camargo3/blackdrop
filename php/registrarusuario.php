@@ -15,8 +15,6 @@
         $correo = $_POST['correo'];
         $contrasena = $_POST['contrasena'];
         $tipodeusuario = $_POST['tipodeusuario'];
-        var_dump($_POST);
-        die();
 
 
         // Procesar imagen
