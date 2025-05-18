@@ -32,7 +32,6 @@
         $resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
 
         if ($resultado) {
-            echo "Registro exitoso.";
             // redirigir al home logueado
              header("Location: ../html/4paginacliente.html");
         } else {
