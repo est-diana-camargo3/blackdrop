@@ -27,7 +27,7 @@
 
         move_uploaded_file($foto_tmp, $ruta_destino);*/
 
-        $query = "INSERT INTO usuarios22 (correo, contrasena, tipodeusuario) VALUES ($1, $2, $3);
+        $query = "INSERT INTO usuarios22 (correo, contrasena, tipodeusuario) VALUES ($1, $2, $3)";
         $resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
 
         if ($resultado) {
