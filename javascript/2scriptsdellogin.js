@@ -121,6 +121,7 @@ o cuando algo pase*/
                 console.log("Respuesta del servidor:", data); // Muestra la respuesta en la consola
                 if (data.exito) {
                     alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
+                    console.log("Redirigiendo a:", data.redireccion);
                     window.location.href = data.redireccion;
                 } else {
                     alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
