@@ -30,5 +30,7 @@ if (pg_num_rows($resultado) > 0) {
 
 // 🔧 Agrega esta línea para depurar:
 header("Content-Type: application/json");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 echo json_encode($respuesta);
 ?>
