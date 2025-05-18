@@ -28,6 +28,17 @@
 
         move_uploaded_file($foto_tmp, $ruta_destino);*/
 
+        // Comprobar si el correo ya existe en la base de datos
+        $consulta_existe = "SELECT 1 FROM usuarios22 WHERE correo = $1";
+        $resultado_existe = pg_query_params($conn, $consulta_existe, array($correo));
+
+        if (pg_num_rows($resultado_existe) > 0) {
+            // Si el correo ya está registrado, mostrar mensaje y detener ejecución
+            echo "❌ Este correo ya está registrado. Intenta con otro.";
+            exit;
+        }
+
+
         $query = "INSERT INTO usuarios22 (correo, contrasena, tipodeusuario) VALUES ($1, $2, $3)";
         $resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
 
