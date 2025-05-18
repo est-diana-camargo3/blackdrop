@@ -33,7 +33,7 @@ o cuando algo pase*/
                     // verifico que haya una opcion presionada o checkeada, 
                     //  Si un radio está seleccionado, espresionado contendrá el elemento <input> seleccionado; 
                     //  si no, hay nada presionado sera igual a null
-                    let espresionado = document.querySelector('input[name="tipodecuentaenhtml"]:checked'); 
+                    let espresionado = document.querySelector('input[name="tipodeusuario"]:checked'); 
                     // miro cual es la opcion presionada, por medio de la operacion ternaria
                     // si es presionado tiene algun elemento seleccionado devuleve el valor de ese elemento
                     // si es presionado no tiene ningun elemento seleccionado devuelve null
