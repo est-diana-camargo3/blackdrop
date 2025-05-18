@@ -1,8 +1,9 @@
 <?php
+include("conexion.php"); // Asegúrate de tener un archivo con la conexión a la base de datos
 header("Content-Type: application/json");
+
 var_dump($_POST);
 die();
-include("conexion.php"); // Asegúrate de tener un archivo con la conexión a la base de datos
 
 $correo = $_POST['correo'];
 $contrasena = $_POST['contrasena'];
