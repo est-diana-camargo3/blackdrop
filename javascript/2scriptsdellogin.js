@@ -107,13 +107,13 @@ o cuando algo pase*/
 
 
 
-        function validarInicioSesion(correo, contrasena, tipoCuenta) {
+        function validarInicioSesion(correo, contrasena, tipodecuenta) {
             fetch('../php/verificarusuario.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeuenta=${encodeURIComponent(tipodecuenta)}`
+                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodecuenta=${encodeURIComponent(tipodecuenta)}`
             })
             .then(response => response.json())
             .then(data => {
