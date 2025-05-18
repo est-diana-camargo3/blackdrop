@@ -1,16 +1,6 @@
 <?php
-        $host = "dpg-d0huho24d50c73atua80-a.oregon-postgres.render.com"; 
-         $db = "bdclientes_cajy";
-        $user = "admin";
-        $pass = "ZduqhhOYRyT84vE9dPpwowsLucS1Zl4q";
-        $port = "5432";
+        include("conexion.php"); // Importa la conexión
 
-        // Conexión a PostgreSQL
-        $conn = pg_connect("host=$host dbname=$db user=$user password=$pass port=$port");
-
-        if (!$conn) {
-            die("Error al conectar: " . pg_last_error());
-        }
 
         $correo = $_POST['correo'];
         $contrasena = $_POST['contrasena'];
