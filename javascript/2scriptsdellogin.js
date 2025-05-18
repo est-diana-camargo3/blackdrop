@@ -134,7 +134,7 @@ o cuando algo pase*/
       █                                            B a s e   d e   d a t o s   s i m u l a d a                                                        █
       ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
 
-      const usuarios = 
+      /*const usuarios = 
       [
           { correo: "clientemujer@correo.com", contraseña: "1234", tipo: "cliente" , foto: "imagenes/fotosdeperfil/fotodeclientemujer.jpg"},
           { correo: "clientehombre@correo.com", contraseña: "1234", tipo: "cliente" , foto: "imagenes/fotosdeperfil/fotodeclientehombre.jpg"},
@@ -142,7 +142,7 @@ o cuando algo pase*/
           { correo: "mayerly@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotodemayerly.jpg"},
           { correo: "juanita@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotosdejuanita.jpg"}
       ];
-
+*/
 
 
 
@@ -153,7 +153,7 @@ o cuando algo pase*/
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipoCuenta=${encodeURIComponent(tipoCuenta)}`
+                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeuenta=${encodeURIComponent(tipodeuenta)}`
             })
             .then(response => response.json())
             .then(data => {
