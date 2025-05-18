@@ -119,6 +119,7 @@ o cuando algo pase*/
             .then(response => response.json())
             .then(data => {
                 console.log("Respuesta del servidor:", data); // Muestra la respuesta en la consola
+                console.log("Valor de data.redireccion:", data.redireccion);
                 if (data.exito) {
                     alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
                     console.log("Redirigiendo a:", data.redireccion);
