@@ -33,10 +33,12 @@
         $resultado_existe = pg_query_params($conn, $consulta_existe, array($correo));
 
         if (pg_num_rows($resultado_existe) > 0) {
-            echo "<script>alert('❌ Este correo ya está registrado. Intenta con otro.');</script>";
+            echo "<script>
+                    alert('❌ Este correo ya está registrado. Intenta con otro.');
+                    window.location.href = '../html/7paginaregistrarse.html'; // Redirige al formulario
+                </script>";
             exit;
         }
-
 
         $query = "INSERT INTO usuarios22 (correo, contrasena, tipodeusuario) VALUES ($1, $2, $3)";
         $resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
