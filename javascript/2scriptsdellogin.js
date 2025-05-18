@@ -48,7 +48,7 @@ o cuando algo pase*/
                         }
                         
                         modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava, inputcontrasenaenjava,tipodecuentaenjava);  
-                        Nosequesera(inputcorreoenjava, inputcontrasenaenjava, tipodecuentaenjava);  
+                        validarInicioSesion(inputcorreoenjava, inputcontrasenaenjava, tipodecuentaenjava);
                     
                 }
 
@@ -147,35 +147,25 @@ o cuando algo pase*/
 
 
 
-  function Nosequesera(correoInput, contraseñaInput, tipoCuenta)
-{
-    const usuarioEncontrado = usuarios.find(usuario =>
-        usuario.correo === correoInput &&
-        usuario.contraseña === contraseñaInput &&
-        usuario.tipo === tipoCuenta
-    );
-
-    if (usuarioEncontrado) {
-        localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioEncontrado));
-        alert(`✅ Login correcto \n\n ✅ Bienvenido: ${usuarioEncontrado.correo}`);
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const redirect = urlParams.get('redirect');
-
-        if (tipoCuenta === "cliente") {
-            if (redirect === "carrito") {
-                window.location.href = '5carritodecompras.html';
-            } else {
-                window.location.href = '4paginacliente.html';
-            }
-        } else if (tipoCuenta === "administrador") {
-            window.location.href = '3paginaadministrador.html';
+        function validarInicioSesion(correo, contrasena, tipoCuenta) {
+            fetch('../php/verificarusuario.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipoCuenta=${encodeURIComponent(tipoCuenta)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.exito) {
+                    alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
+                    window.location.href = data.redireccion;
+                } else {
+                    alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
+                }
+            })
+            .catch(error => console.error("Error en la autenticación:", error));
         }
-    } else {
-        alert("❌ Correo, contraseña o tipo de cuenta incorrectos.\n\n✅ Ejemplo válido:\nCorreo: clientemujer@correo.com\nContraseña: 1234\nTipo: cliente\n\n✅ Otro válido:\nCorreo: clientehombre@correo.com\nContraseña: 1234\nTipo:cliente\n\n✅ Otro válido:\nCorreo: admin@correo.com\nContraseña: 1234\nTipo: administrador");
-    }
-}
-
 
 
                     
