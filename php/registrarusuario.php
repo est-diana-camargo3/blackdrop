@@ -33,8 +33,7 @@
         $resultado_existe = pg_query_params($conn, $consulta_existe, array($correo));
 
         if (pg_num_rows($resultado_existe) > 0) {
-            // Si el correo ya está registrado, mostrar mensaje y detener ejecución
-            echo "❌ Este correo ya está registrado. Intenta con otro.";
+            echo "<script>alert('❌ Este correo ya está registrado. Intenta con otro.');</script>";
             exit;
         }
 
