@@ -19,12 +19,16 @@ if (!$resultado) {
 
 if (pg_num_rows($resultado) > 0) {
     $usuario = pg_fetch_assoc($resultado);
-    echo json_encode([
+    $respuesta = [
         "exito" => true,
         "correo" => $usuario['correo'],
         "redireccion" => $usuario['tipodeusuario'] == "cliente" ? "../html/4paginacliente.html" : "../html/3paginaadministrador.html"
-    ]);
+    ];
 } else {
-    echo json_encode(["exito" => false]);
+    $respuesta = ["exito" => false];
 }
+
+// 🔧 Agrega esta línea para depurar:
+header("Content-Type: application/json");
+echo json_encode($respuesta);
 ?>
