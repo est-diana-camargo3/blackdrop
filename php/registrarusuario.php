@@ -17,7 +17,7 @@
         $tipodeusuario = $_POST['tipodeusuario'];
 
         // Procesar imagen
-        $foto_nombre = $_FILES['foto']['name'];
+        /*$foto_nombre = $_FILES['foto']['name'];
         $foto_tmp = $_FILES['foto']['tmp_name'];
         $ruta_destino = "../uploads/" . $foto_nombre;
 
@@ -25,10 +25,10 @@
             mkdir("../uploads", 0777, true);
         }
 
-        move_uploaded_file($foto_tmp, $ruta_destino);
+        move_uploaded_file($foto_tmp, $ruta_destino);*/
 
-        $query = "INSERT INTO usuarios22 (correo, contrasena, tipodeusuario, foto) VALUES ('test@mail.com', '12345', 'cliente', '../imagenes/fotodeclientehombre.jpg')";
-        $resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario, $ruta_destino));
+        $query = "INSERT INTO usuarios22 (correo, contrasena, tipodeusuario) VALUES ($1, $2, $3);
+        $resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
 
         if ($resultado) {
             echo "Registro exitoso.";
