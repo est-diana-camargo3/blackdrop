@@ -108,6 +108,7 @@ o cuando algo pase*/
 
 
         function validarInicioSesion(correo, contrasena, tipodecuenta) {
+            console.log("Enviando datos al servidor:", correo, contrasena, tipodecuenta); // Muestra en la consola los valores que se enviarán
             fetch('../php/verificarusuario.php', {
                 method: 'POST',
                 headers: {
@@ -117,6 +118,7 @@ o cuando algo pase*/
             })
             .then(response => response.json())
             .then(data => {
+                console.log("Respuesta del servidor:", data); // Muestra la respuesta en la consola
                 if (data.exito) {
                     alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
                     window.location.href = data.redireccion;
