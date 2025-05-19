@@ -19,13 +19,25 @@ if (!$resultado) {
 
 if (pg_num_rows($resultado) > 0) {
     $usuario = pg_fetch_assoc($resultado);
-    $respuesta = [
+
+    // ✅ Redirección según el tipo de usuario
+    if ($usuario['tipodeusuario'] === 'cliente') {
+        header("Location: ../html/4paginacliente.html");
+        exit;
+    } elseif ($usuario['tipodeusuario'] === 'administrador') {
+        header("Location: ../html/3paginaadministrador.html");
+        exit;
+
+    /*$respuesta = [
         "exito" => true,
         "correo" => $usuario['correo'],
         "redireccion" => $usuario['tipodeusuario'] == "cliente" ? "../html/4paginacliente.html" : "../html/3paginaadministrador.html"
-    ];
+        
+    ];*/
 } else {
-    $respuesta = ["exito" => false];
+    /*$respuesta = ["exito" => false];*/
+    // ❌ Usuario no válido
+    echo "<script>alert('Usuario o contraseña incorrectos'); window.location.href = '../html/2indexdellogin.html';</script>";
 }
 
 // 🔧 Agrega esta línea para depurar:
