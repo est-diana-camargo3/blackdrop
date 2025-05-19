@@ -40,14 +40,10 @@ if (pg_num_rows($resultado) > 0)
         
     } 
 else 
-    {
-    $respuesta = ["exito" => false];
-
-    // ❌ Usuario no válido
-    //alert('Usuario o contraseña incorrectos'); 
-    die("❌ Usuario o contraseña incorrectos");
-    header("Location: ../html/2indexdellogin.html");    
-}
+    $respuesta = [
+        "exito" => false,
+        "mensaje" => "❌ Usuario o contraseña incorrectos"
+    ];
 
 // 🔧 Agrega esta línea para depurar:
 header("Content-Type: application/json");
