@@ -161,10 +161,10 @@ function iniciarSesion() {
     const contrasena = document.getElementById("contrasena").value;
     const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
 
-    fetch('../php/verificarusuario.php', {
-        method: 'POST',
+    fetch("../php/verificarusuario.php", {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            "Content-Type": "application/x-www-form-urlencoded"
         },
         body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeusuario=${encodeURIComponent(tipodeusuario)}`
     })
@@ -172,13 +172,14 @@ function iniciarSesion() {
     .then(data => {
         if (data.exito) {
             window.location.href = data.redireccion;
+            alert(data.mensaje); // usuario exitoso
         } else {
-            alert(data.mensaje || "❌ Error al iniciar sesión.");
+            alert(data.mensaje); // ❌ Usuario erroneo 
         }
     })
     .catch(error => {
-        console.error('Error:', error);
         alert("❌ Error al conectar con el servidor.");
+        console.error(error);
     });
 }
 
