@@ -44,7 +44,7 @@ else
     $respuesta = ["exito" => false];
 
     // ❌ Usuario no válido
-    alert('Usuario o contraseña incorrectos'); 
+    //alert('Usuario o contraseña incorrectos'); 
     header("Location: ../html/2indexdellogin.html");    
 }
 
