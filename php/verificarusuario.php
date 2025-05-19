@@ -44,6 +44,7 @@ else
         "exito" => false,
         "mensaje" => "❌ Usuario o contraseña incorrectos"
     ];
+    header("Location: ../html/2indexdellogin.html");
 
 // 🔧 Agrega esta línea para depurar:
 header("Content-Type: application/json");
