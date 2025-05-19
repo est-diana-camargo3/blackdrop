@@ -44,8 +44,9 @@ else
     $respuesta = ["exito" => false];
 
     // ❌ Usuario no válido
-    echo "<script>alert('Usuario o contraseña incorrectos'); window.location.href = '../html/2indexdellogin.html';</script>";
-    }
+    alert('Usuario o contraseña incorrectos'); 
+    header("Location: ../html/2indexdellogin.html");    
+}
 
 // 🔧 Agrega esta línea para depurar:
 header("Content-Type: application/json");
