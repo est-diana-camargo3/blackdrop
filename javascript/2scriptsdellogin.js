@@ -107,29 +107,53 @@ o cuando algo pase*/
 
 
 
-        function validarInicioSesion(correo, contrasena, tipodecuenta) {
-            console.log("Enviando datos al servidor:", correo, contrasena, tipodecuenta); // Muestra en la consola los valores que se enviarán
-            fetch('../php/verificarusuario.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodecuenta=${encodeURIComponent(tipodecuenta)}`
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Respuesta del servidor:", data); // Muestra la respuesta en la consola
-                console.log("Valor de data.redireccion:", data.redireccion);
-                if (data.exito) {
-                    alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
-                    console.log("Redirigiendo a:", data.redireccion);
-                    window.location.href = data.redireccion;
+function validarInicioSesion(correo, contrasena, tipodecuenta) {
+    console.log("Enviando datos al servidor:", correo, contrasena, tipodecuenta);
+    
+    fetch('../php/verificarusuario.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodecuenta=${encodeURIComponent(tipodecuenta)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Respuesta del servidor:", data);
+        console.log("Valor de data.redireccion:", data.redireccion);
+
+        if (data.exito) {
+            alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
+            
+            // Guardar usuario en localStorage
+            localStorage.setItem("usuarioLogueado", JSON.stringify({ correo: data.correo }));
+
+            // Verificar si hay un producto pendiente
+            const productoPendiente = JSON.parse(localStorage.getItem("productoPendiente"));
+
+            if (productoPendiente) {
+                let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                const productoExistente = carrito.find(p => p.nombre === productoPendiente.nombre);
+
+                if (productoExistente) {
+                    productoExistente.cantidad += productoPendiente.cantidad;
                 } else {
-                    alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
+                    carrito.push(productoPendiente);
                 }
-            })
-            .catch(error => console.error("Error en la autenticación:", error));
+
+                localStorage.setItem("carrito", JSON.stringify(carrito));
+                localStorage.removeItem("productoPendiente"); // Limpiar el producto pendiente
+                
+                console.log("🔹 Producto pendiente agregado al carrito:", productoPendiente);
+                window.location.href = "../html/5carritodecompras.html"; // Ir al carrito después del login
+            } else {
+                window.location.href = data.redireccion; // Si no había producto pendiente, ir a la página normal
+            }
+        } else {
+            alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
         }
+    })
+    .catch(error => console.error("Error en la autenticación:", error));
+}
+
 
 
                     
