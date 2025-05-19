@@ -28,6 +28,7 @@ if (pg_num_rows($resultado) > 0)
             $respuesta = [
             "exito" => true,
             "correo" => $usuario['correo']];
+            "mensaje" => "❌ Autenticacion de cliente correcta"
             exit;
         } elseif ($usuario['tipodeusuario'] === 'administrador') 
         {
@@ -35,6 +36,7 @@ if (pg_num_rows($resultado) > 0)
             $respuesta = [
             "exito" => true,
             "correo" => $usuario['correo']];
+           "mensaje" => "❌ Autenticacion de administrador correcta"
             exit;
         }
         
@@ -45,6 +47,8 @@ else
         "mensaje" => "❌ Usuario o contraseña incorrectos"
     ];
     header("Location: ../html/2indexdellogin.html");
+
+    
 
 // 🔧 Agrega esta línea para depurar:
 header("Content-Type: application/json");
