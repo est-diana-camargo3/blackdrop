@@ -45,6 +45,7 @@ else
 
     // ❌ Usuario no válido
     //alert('Usuario o contraseña incorrectos'); 
+    die("❌ Usuario o contraseña incorrectos");
     header("Location: ../html/2indexdellogin.html");    
 }
 
