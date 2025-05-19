@@ -33,7 +33,7 @@ o cuando algo pase*/
                     // verifico que haya una opcion presionada o checkeada, 
                     //  Si un radio está seleccionado, espresionado contendrá el elemento <input> seleccionado; 
                     //  si no, hay nada presionado sera igual a null
-                    let espresionado = document.querySelector('input[name="tipodecuentaenhtml"]:checked'); 
+                    let espresionado = document.querySelector('input[name="tipodeusuario"]:checked'); 
                     // miro cual es la opcion presionada, por medio de la operacion ternaria
                     // si es presionado tiene algun elemento seleccionado devuleve el valor de ese elemento
                     // si es presionado no tiene ningun elemento seleccionado devuelve null
@@ -48,17 +48,9 @@ o cuando algo pase*/
                         }
                         
                         modificarcookiesinicialescondatosrealesdelusuario(inputcorreoenjava, inputcontrasenaenjava,tipodecuentaenjava);  
-                        Nosequesera(inputcorreoenjava, inputcontrasenaenjava, tipodecuentaenjava);  
+                        validarInicioSesion(inputcorreoenjava, inputcontrasenaenjava, tipodecuentaenjava);
                     
                 }
-
-
-   /*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-        █                                   C o o k i e s   R E A L E S   (con datos del usuario)                              █
-        ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
-
-
-
        /*   ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╗
             ║                                          M o d i f i c a r     c o o k i e                                     ║                                                                        
             ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•═╝ */
@@ -115,65 +107,51 @@ o cuando algo pase*/
 
 
 
-   
-        //    aqui de para abajo no he revisado____________________________________________
-        //    _____________________________________________________________________________
-        //    _____________________________________________________________________________
-        //    _____________________________________________________________________________
-        //    _____________________________________________________________________________
-        //    _____________________________________________________________________________
-        //    _____________________________________________________________________________
+function validarInicioSesion(correo, contrasena, tipodecuenta) {
+    console.log("Enviando datos al servidor:", correo, contrasena, tipodecuenta);
+    
+    fetch('../php/verificarusuario.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodecuenta=${encodeURIComponent(tipodecuenta)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Respuesta del servidor:", data);
+        console.log("Valor de data.redireccion:", data.redireccion);
 
+        if (data.exito) {
+            alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
+            
+            // Guardar usuario en localStorage
+            localStorage.setItem("usuarioLogueado", JSON.stringify({ correo: data.correo }));
 
+            // Verificar si hay un producto pendiente
+            const productoPendiente = JSON.parse(localStorage.getItem("productoPendiente"));
 
+            if (productoPendiente) {
+                let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                const productoExistente = carrito.find(p => p.nombre === productoPendiente.nombre);
 
+                if (productoExistente) {
+                    productoExistente.cantidad += productoPendiente.cantidad;
+                } else {
+                    carrito.push(productoPendiente);
+                }
 
-
-
-  /*  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-      █                                            B a s e   d e   d a t o s   s i m u l a d a                                                        █
-      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
-
-      const usuarios = 
-      [
-          { correo: "clientemujer@correo.com", contraseña: "1234", tipo: "cliente" , foto: "imagenes/fotosdeperfil/fotodeclientemujer.jpg"},
-          { correo: "clientehombre@correo.com", contraseña: "1234", tipo: "cliente" , foto: "imagenes/fotosdeperfil/fotodeclientehombre.jpg"},
-          { correo: "admin@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotodeadministrador.jpg"},
-          { correo: "mayerly@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotodemayerly.jpg"},
-          { correo: "juanita@correo.com", contraseña: "1234", tipo: "administrador" ,foto: "imagenes/fotosdeperfil/fotosdejuanita.jpg"}
-      ];
-
-
-
-
-
-  function Nosequesera(correoInput, contraseñaInput, tipoCuenta)
-{
-    const usuarioEncontrado = usuarios.find(usuario =>
-        usuario.correo === correoInput &&
-        usuario.contraseña === contraseñaInput &&
-        usuario.tipo === tipoCuenta
-    );
-
-    if (usuarioEncontrado) {
-        localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioEncontrado));
-        alert(`✅ Login correcto \n\n ✅ Bienvenido: ${usuarioEncontrado.correo}`);
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const redirect = urlParams.get('redirect');
-
-        if (tipoCuenta === "cliente") {
-            if (redirect === "carrito") {
-                window.location.href = '5carritodecompras.html';
+                localStorage.setItem("carrito", JSON.stringify(carrito));
+                localStorage.removeItem("productoPendiente"); // Limpiar el producto pendiente
+                
+                console.log("🔹 Producto pendiente agregado al carrito:", productoPendiente);
+                window.location.href = "../html/5carritodecompras.html"; // Ir al carrito después del login
             } else {
-                window.location.href = '4paginacliente.html';
+                window.location.href = data.redireccion; // Si no había producto pendiente, ir a la página normal
             }
-        } else if (tipoCuenta === "administrador") {
-            window.location.href = '3paginaadministrador.html';
+        } else {
+            alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
         }
-    } else {
-        alert("❌ Correo, contraseña o tipo de cuenta incorrectos.\n\n✅ Ejemplo válido:\nCorreo: clientemujer@correo.com\nContraseña: 1234\nTipo: cliente\n\n✅ Otro válido:\nCorreo: clientehombre@correo.com\nContraseña: 1234\nTipo:cliente\n\n✅ Otro válido:\nCorreo: admin@correo.com\nContraseña: 1234\nTipo: administrador");
-    }
+    })
+    .catch(error => console.error("Error en la autenticación:", error));
 }
 
 

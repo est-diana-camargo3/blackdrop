@@ -1,23 +1,14 @@
 <?php
-        $host = "dpg-d0huho24d50c73atua80-a.oregon-postgres.render.com"; 
-         $db = "bdclientes_cajy";
-        $user = "admin";
-        $pass = "ZduqhhOYRyT84vE9dPpwowsLucS1Zl4q";
-        $port = "5432";
+        include("conexion.php"); // Importa la conexión
 
-        // Conexión a PostgreSQL
-        $conn = pg_connect("host=$host dbname=$db user=$user password=$pass port=$port");
-
-        if (!$conn) {
-            die("Error al conectar: " . pg_last_error());
-        }
 
         $correo = $_POST['correo'];
         $contrasena = $_POST['contrasena'];
         $tipodeusuario = $_POST['tipodeusuario'];
 
+
         // Procesar imagen
-        $foto_nombre = $_FILES['foto']['name'];
+        /*$foto_nombre = $_FILES['foto']['name'];
         $foto_tmp = $_FILES['foto']['tmp_name'];
         $ruta_destino = "../uploads/" . $foto_nombre;
 
@@ -25,13 +16,24 @@
             mkdir("../uploads", 0777, true);
         }
 
-        move_uploaded_file($foto_tmp, $ruta_destino);
+        move_uploaded_file($foto_tmp, $ruta_destino);*/
 
-        $query = "INSERT INTO usuarios22 (correo, contrasena, tipodeusuario, foto) VALUES ($1, $2, $3, $4)";
-        $resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario, $ruta_destino));
+        // Comprobar si el correo ya existe en la base de datos
+        $consulta_existe = "SELECT 1 FROM usuarios22 WHERE correo = $1";
+        $resultado_existe = pg_query_params($conn, $consulta_existe, array($correo));
+
+        if (pg_num_rows($resultado_existe) > 0) {
+            echo "<script>
+                    alert('❌ Este correo ya está registrado. Intenta con otro.');
+                    window.location.href = '../html/7paginaregistrarse.html'; // Redirige al formulario
+                </script>";
+            exit;
+        }
+
+        $query = "INSERT INTO usuarios22 (correo, contrasena, tipodeusuario) VALUES ($1, $2, $3)";
+        $resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
 
         if ($resultado) {
-            echo "Registro exitoso.";
             // redirigir al home logueado
              header("Location: ../html/4paginacliente.html");
         } else {
