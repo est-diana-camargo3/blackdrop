@@ -172,9 +172,13 @@ function iniciarSesion() {
     .then(data => {
         if (data.exito) {
             window.location.href = data.redireccion;
+                alert(" Bien");
             alert(data.mensaje); // usuario exitoso
+                
         } else {
+            alert("❌ Mal");
             alert(data.mensaje); // ❌ Usuario erroneo 
+            
         }
     })
     .catch(error => {
