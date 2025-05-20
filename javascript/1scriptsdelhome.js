@@ -143,6 +143,7 @@ o cuando algo pase*/
                 }
             });
         });
+        
     });
     // Suponiendo que tienes un array con datos de los productos
 const productos = [
