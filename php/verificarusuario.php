@@ -17,16 +17,40 @@ if (!$resultado) {
 
 
 
-if (pg_num_rows($resultado) > 0) {
-    $usuario = pg_fetch_assoc($resultado);
+if (pg_num_rows($resultado) > 0) 
+    {
+        $usuario = pg_fetch_assoc($resultado);
+
+        // ✅ Redirección según el tipo de usuario
+        if ($usuario['tipodeusuario'] === 'cliente') 
+        {
+            header("Location: ../html/4paginacliente.html");
+            $respuesta = [
+            "exito" => true,
+            "correo" => $usuario['correo'],
+            "mensaje" => "❌ Autenticacion de cliente correcta"];
+            
+            exit;
+        } elseif ($usuario['tipodeusuario'] === 'administrador') 
+        {
+            header("Location: ../html/3paginaadministrador.html");
+            $respuesta = [
+            "exito" => true,
+            "correo" => $usuario['correo'],
+            "mensaje" => "❌ Autenticacion de administrador correcta"];
+           
+            exit;
+        }
+        
+    } 
+else 
     $respuesta = [
-        "exito" => true,
-        "correo" => $usuario['correo'],
-        "redireccion" => $usuario['tipodeusuario'] == "cliente" ? "../html/4paginacliente.html" : "../html/3paginaadministrador.html"
+        "exito" => false,
+        "mensaje" => "❌ Usuario o contraseña incorrectos"
     ];
-} else {
-    $respuesta = ["exito" => false];
-}
+    header("Location: ../html/2indexdellogin.html");
+
+    
 
 // 🔧 Agrega esta línea para depurar:
 header("Content-Type: application/json");
