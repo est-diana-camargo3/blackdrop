@@ -8,7 +8,7 @@ $contrasena = $_POST['contrasena'];
 $tipodeusuario = $_POST['tipodeusuario'];
 
 // Buscar si el usuario existe
-$query = "SELECT correo, tipodeusuario FROM usuarios22 WHERE correo = $1 AND contrasena = $2 AND tipodeusuario = $3";
+$query = "SELECT correo, tipodeusuario FROM usuarios22 WHERE correo = $1 AND contrasena = $2 AND tipodeusuario= $3";
 $resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
 
 // Si el usuario no existe 
@@ -21,10 +21,11 @@ if (pg_num_rows($resultado) > 0)
     {
         $usuario = pg_fetch_assoc($resultado);
 
-        // ✅ Redirección según el tipo de usuario
-        if ($usuario['tipodeusuario'] === 'cliente') 
+        // Redirección según el tipo de usuario
+        if ($usuario['tipodeusuario'] === 'administrador') 
                 {
                     //header("Location: ../html/4paginacliente.html");
+                    
                     header("Location: ../html/3paginaadministrador.html");
                     $respuesta = [
                     "exito" => true,
@@ -33,9 +34,9 @@ if (pg_num_rows($resultado) > 0)
                     
                     exit;
                 } 
-        else if ($usuario['tipodeusuario'] === 'administrador') 
+        else if ($usuario['tipodeusuario'] === 'cliente') 
                 {
-                    header("Location: ../html/3paginaadministrador.html");
+                    header("Location: ../html/4paginacliente.html");
                     $respuesta = [
                     "exito" => true,
                     "correo" => $usuario['correo'],
