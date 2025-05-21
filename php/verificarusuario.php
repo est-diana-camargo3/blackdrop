@@ -25,11 +25,11 @@ if (pg_num_rows($resultado) > 0)
         if ($usuario['tipodeusuario'] === 'cliente') 
                 {
                     //header("Location: ../html/4paginacliente.html");
-                    header("Location: ../html/3paginaadministrador.html")
+                    header("Location: ../html/3paginaadministrador.html");
                     $respuesta = [
                     "exito" => true,
                     "correo" => $usuario['correo'],
-                    "mensaje" => "❌ Autenticacion de cliente correcta"];
+                    "mensaje" => "✅ Autenticacion de cliente correcta"];
                     
                     exit;
                 } 
@@ -39,7 +39,7 @@ if (pg_num_rows($resultado) > 0)
                     $respuesta = [
                     "exito" => true,
                     "correo" => $usuario['correo'],
-                    "mensaje" => "❌ Autenticacion de administrador correcta"];
+                    "mensaje" => "✅ Autenticacion de administrador correcta"];
                 
                     exit;
                 }        
