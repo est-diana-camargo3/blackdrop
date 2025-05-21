@@ -42,16 +42,13 @@
                 if ($tipodeusuario==='cliente') 
                 {
                     //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
-                    //“Guardo en el navegador un valor que se llama correoCliente, y su contenido es lo que tenga $correo”.
-                    // Redirige a la pagina del cliente
+                    // Redirijo a la pagina del cliente
+                    // Paso por url el correo del cliente...para darle la bienvenida
                     echo "<script>
                             alert('✅ CLIENTE registrado correctamente.');
                             window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "';
                          </script>";
-                        exit;
-
-                    
-
+                        exit;                 
                 }
                 // y es un administrador...
                 // Saque un aviso que diga ADMINISTRADOR registrado correctamente y redirija a la pagina de administrador
@@ -59,9 +56,9 @@
                 {
                     echo "<script>
                         alert('✅ ADMINISTRADOR registrado correctamente .');
-                        localStorage.setItem('correoAdministrador', '" . $correo . "');  // Guarda el correo
-                        window.location.href = '../html/3paginaadministrador.html'; // Redirige al la pagina de administrador
+                        window.location.href = '../html/3paginaadministrador.html?correo=" . urlencode($correo) . "';
                     </script>";
+                    exit; 
                 }     
             } 
             //si la insercion o registro NO se puede realizar, por problemas de pc o wifi.
