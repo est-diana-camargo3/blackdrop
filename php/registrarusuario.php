@@ -36,25 +36,28 @@
         //si se puede registrar
         if ($resultado) 
         {
-             if ($tipodeusuario==='cliente') 
+            // y es un cliente...
+            // Saque un aviso que diga CLIENTE registrado correctamente y redirija a la pagina de cliente  
+            if ($tipodeusuario==='cliente') 
              {
+                //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
                 echo "<script>
                     alert('✅ CLIENTE registrado correctamente .');
                     window.location.href = '../html/4paginacliente.html'; // Redirige a la pagina del cliente 
                 </script>";
              }
+            // y es un administrador...
+            // Saque un aviso que diga ADMINISTRADOR registrado correctamente y redirija a la pagina de administrador
             else if ($tipodeusuario==='administrador') 
              {
                 echo "<script>
                     alert('✅ ADMINISTRADOR registrado correctamente .');
                     window.location.href = '../html/3paginaadministrador.html'; // Redirige al la pagina de administrador
                 </script>";
-             }
-            
-            
-            
-           
-        } else {
+             }     
+         } 
+        //si NO se puede registrar       
+        else {
             echo "Error al registrar: " . pg_last_error($conn);
         }
 
