@@ -32,7 +32,7 @@ if (pg_num_rows($resultado) > 0)
                     
                     exit;
                 } 
-        else if ($usuario['tipodeusuario'] === 'administrador') 
+        elseif ($usuario['tipodeusuario'] === 'administrador') 
                 {
                     header("Location: ../html/3paginaadministrador.html");
                     $respuesta = [
