@@ -47,7 +47,7 @@
              {
                 echo "<script>
                     alert('✅ ADMINISTRADOR registrado correctamente .');
-                    window.location.href = '../html/4paginaadministrador.html'; // Redirige al la pagina de administrador
+                    window.location.href = '../html/3paginaadministrador.html'; // Redirige al la pagina de administrador
                 </script>";
              }
             
