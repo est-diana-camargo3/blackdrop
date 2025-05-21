@@ -24,7 +24,8 @@ if (pg_num_rows($resultado) > 0)
         // ✅ Redirección según el tipo de usuario
         if ($usuario['tipodeusuario'] === 'cliente') 
                 {
-                    header("Location: ../html/4paginacliente.html");
+                    //header("Location: ../html/4paginacliente.html");
+                    header("Location: ../html/3paginaadministrador.html")
                     $respuesta = [
                     "exito" => true,
                     "correo" => $usuario['correo'],
@@ -32,7 +33,7 @@ if (pg_num_rows($resultado) > 0)
                     
                     exit;
                 } 
-        elseif ($usuario['tipodeusuario'] === 'administrador') 
+        else if ($usuario['tipodeusuario'] === 'administrador') 
                 {
                     header("Location: ../html/3paginaadministrador.html");
                     $respuesta = [
