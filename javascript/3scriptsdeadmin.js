@@ -10,12 +10,14 @@
       if (correo) {
         const titulo = document.querySelector(".titulo");
         if (titulo) {
-          titulo.innerText = "¡Bienvenido " + correo + "!";
+          titulo.innerText = "¡Bienvenido al panel de administración " + correo + "!";
         }
       } else {
         console.warn("No se encontró el correo en la URL");
       }  
     });
+    
+
     
     // Traemos la "base de datos" de usuarios
     const usuarios = [

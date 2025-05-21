@@ -1,16 +1,31 @@
 //traer el correo guardado en el php 
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    const correo = params.get("correo");
 
-    if (correo) {
-      const titulo = document.querySelector(".titulo");
-      if (titulo) {
-        titulo.innerText = "¡Bienvenido " + correo + "!";
-      }
+document.addEventListener("DOMContentLoaded", function () {
+  // Mostrar correo en el div .titulo
+  const params = new URLSearchParams(window.location.search);
+  const correo = params.get("correo");
+
+  if (correo) {
+    const titulo = document.querySelector(".titulo");
+    if (titulo) {
+      titulo.innerText = "¡Bienvenido " + correo + "!";
     }
+  } else {
+    console.warn("No se encontró el correo en la URL");
+  }
+
+  // Activar comportamiento del botón comprar
+  const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
+  botonesComprar.forEach(function (boton) {
+    boton.addEventListener("click", function (event) {
+      event.stopPropagation(); // Evita doble navegación
+      window.location.href = "../html/5carritodecompras.html";
+    });
   });
+  
+});
+
 
 
 
@@ -47,6 +62,7 @@ document.querySelectorAll('.productogeneral').forEach(producto => {
     });
   });
   
+  /*
   // Redirección directa al carrito si se hace clic en "Comprar"
   document.addEventListener("DOMContentLoaded", function() {
     const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
@@ -58,6 +74,8 @@ document.querySelectorAll('.productogeneral').forEach(producto => {
       });
     });
   });
+*/
+
   const productos = [
   {
     nombre: "Whey Pure 2lb",
