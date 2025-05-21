@@ -161,18 +161,20 @@ function iniciarSesion() {
     const contrasena = document.getElementById("contrasena").value;
     const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
 
-    fetch("../php/verificarusuario.php", {
+    fetch("../php/verificarusuario.php", 
+    {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
         body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeusuario=${encodeURIComponent(tipodeusuario)}`
     })
+    
     .then(response => response.json())
     .then(data => {
         if (data.exito) {
             window.location.href = data.redireccion;
-                alert(" Bien");
+            alert(" Bien");
             alert(data.mensaje); // usuario exitoso
                 
         } else {

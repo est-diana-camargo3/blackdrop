@@ -1,4 +1,10 @@
 
+    //traer el correo guardado en el php 
+  const correo = localStorage.getItem('correoAdministrador');
+    if (correo) {
+      document.querySelector(".titulo").innerText = "¡Bienvenido " + correo + "!";
+    }
+    
     // Traemos la "base de datos" de usuarios
     const usuarios = [
       { correo: "cliente@correo.com", contraseña: "1234", tipo: "cliente" },

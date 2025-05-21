@@ -1,3 +1,13 @@
+.titulo {
+           
+            flex: 2; /* Ocupa 2 partes: estará centrado */
+    text-align: center;
+    font-size: 40px;
+    color: #000;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
