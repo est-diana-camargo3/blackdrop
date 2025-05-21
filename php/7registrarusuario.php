@@ -45,11 +45,12 @@
                     //“Guardo en el navegador un valor que se llama correoCliente, y su contenido es lo que tenga $correo”.
                     // Redirige a la pagina del cliente
                     echo "<script>
-                        alert('✅ CLIENTE registrado correctamente .');
-                        localStorage.setItem('correoCliente', '" . $correo . "');  
-                        </script>";
-                    header("Location: ../html/4paginacliente.html?correo=$correo");
-                    exit;
+                            alert('✅ CLIENTE registrado correctamente.');
+                            window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "';
+                         </script>";
+                        exit;
+
+                    
 
                 }
                 // y es un administrador...
