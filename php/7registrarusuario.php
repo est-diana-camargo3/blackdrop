@@ -44,7 +44,7 @@
                     //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
                     echo "<script>
                         alert('✅ CLIENTE registrado correctamente .');
-                        localStorage.setItem('correoCliente', '" . $correo . "');  // Guarda el correo
+                        localStorage.setItem('correo', '" . $correo . "');  // Guarda el correo
                         window.location.href = '../html/4paginacliente.html'; // Redirige a la pagina del cliente 
                     </script>";
                 }
@@ -54,7 +54,7 @@
                 {
                     echo "<script>
                         alert('✅ ADMINISTRADOR registrado correctamente .');
-                        localStorage.setItem('correoAdministrador', '" . $correo . "');  // Guarda el correo
+                        localStorage.setItem('correo', '" . $correo . "');  // Guarda el correo
                         window.location.href = '../html/3paginaadministrador.html'; // Redirige al la pagina de administrador
                     </script>";
                 }     
