@@ -42,10 +42,12 @@
                 if ($tipodeusuario==='cliente') 
                 {
                     //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
+                    //“Guardo en el navegador un valor que se llama correoCliente, y su contenido es lo que tenga $correo”.
+                    // Redirige a la pagina del cliente
                     echo "<script>
                         alert('✅ CLIENTE registrado correctamente .');
-                        localStorage.setItem('correo', '" . $correo . "');  // Guarda el correo
-                        window.location.href = '../html/4paginacliente.html'; // Redirige a la pagina del cliente 
+                        localStorage.setItem('correoCliente', '" . $correo . "');  
+                        window.location.href = '../html/4paginacliente.html';  
                     </script>";
                 }
                 // y es un administrador...
@@ -54,7 +56,7 @@
                 {
                     echo "<script>
                         alert('✅ ADMINISTRADOR registrado correctamente .');
-                        localStorage.setItem('correo', '" . $correo . "');  // Guarda el correo
+                        localStorage.setItem('correoAdministrador', '" . $correo . "');  // Guarda el correo
                         window.location.href = '../html/3paginaadministrador.html'; // Redirige al la pagina de administrador
                     </script>";
                 }     
