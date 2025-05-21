@@ -176,6 +176,7 @@ function iniciarSesion() {
             window.location.href = data.redireccion;
             alert(" Bien");
             alert(data.mensaje); // usuario exitoso
+            validarInicioSesion(data.correo)
                 
         } else {
             alert("❌ Mal");
