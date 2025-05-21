@@ -10,7 +10,7 @@
       if (correo) {
         const titulo = document.querySelector(".titulo");
         if (titulo) {
-          titulo.innerText = "¡Bienvenido al panel de administración " + correo + "!";
+          titulo.innerText = "Panel de administración, BIENVENIDO...   " + correo + "!";
         }
       } else {
         console.warn("No se encontró el correo en la URL");
