@@ -1,9 +1,21 @@
 
-    //traer el correo guardado en el php 
-  const correo = localStorage.getItem('correoAdministrador');
-    if (correo) {
-      document.querySelector(".titulo").innerText = "¡Bienvenido " + correo + "!";
-    }
+//traer el correo guardado en el php 
+
+    document.addEventListener("DOMContentLoaded", function () 
+    {
+      // Mostrar correo en el div .titulo
+      const params = new URLSearchParams(window.location.search);
+      const correo = params.get("correo");
+
+      if (correo) {
+        const titulo = document.querySelector(".titulo");
+        if (titulo) {
+          titulo.innerText = "¡Bienvenido " + correo + "!";
+        }
+      } else {
+        console.warn("No se encontró el correo en la URL");
+      }  
+    });
     
     // Traemos la "base de datos" de usuarios
     const usuarios = [

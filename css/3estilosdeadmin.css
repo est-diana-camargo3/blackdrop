@@ -2,7 +2,7 @@
            
             flex: 2; /* Ocupa 2 partes: estará centrado */
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     color: #000;
     letter-spacing: 3px;
     font-weight: bold;
@@ -29,6 +29,7 @@ body {
 
   h1, h2 {
     color: #c20202;
+
   }
 
   table {
