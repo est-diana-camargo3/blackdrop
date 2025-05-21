@@ -33,13 +33,27 @@
         $query = "INSERT INTO usuarios22 (correo, contrasena, tipodeusuario) VALUES ($1, $2, $3)";
         $resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
 
-        if ($resultado) {
-            // redirigir al home logueado
-             //header("Location: ../html/4paginacliente.html");
-             echo "<script>
-                    alert('✅ Usuario registrado correctamente .');
-                    window.location.href = '../html/4paginacliente.html'; // Redirige al formulario
+        //si se puede registrar
+        if ($resultado) 
+        {
+             if ($tipodeusuario==='cliente') 
+             {
+                echo "<script>
+                    alert('✅ CLIENTE registrado correctamente .');
+                    window.location.href = '../html/4paginacliente.html'; // Redirige a la pagina del cliente 
                 </script>";
+             }
+            else if ($tipodeusuario==='administrador') 
+             {
+                echo "<script>
+                    alert('✅ ADMINISTRADOR registrado correctamente .');
+                    window.location.href = '../html/4paginaadministrador.html'; // Redirige al la pagina de administrador
+                </script>";
+             }
+            
+            
+            
+           
         } else {
             echo "Error al registrar: " . pg_last_error($conn);
         }
