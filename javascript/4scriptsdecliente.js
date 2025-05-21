@@ -63,6 +63,7 @@ document.querySelectorAll('.productogeneral').forEach(producto => {
   });
   
   /*
+  ya esta arriba
   // Redirección directa al carrito si se hace clic en "Comprar"
   document.addEventListener("DOMContentLoaded", function() {
     const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
