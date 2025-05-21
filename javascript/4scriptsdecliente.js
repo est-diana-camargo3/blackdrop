@@ -1,3 +1,19 @@
+//traer el correo guardado en el php 
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const correo = params.get("correo");
+
+    if (correo) {
+      const titulo = document.querySelector(".titulo");
+      if (titulo) {
+        titulo.innerText = "¡Bienvenido " + correo + "!";
+      }
+    }
+  });
+
+
+
 // Trae el usuario desde localStorage
 const usuario = JSON.parse(localStorage.getItem('usuarioLogueado'));
 
