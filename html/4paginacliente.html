@@ -31,7 +31,9 @@
                         <img src="../imagenes/logos/logo_blanco_letras_negras_rojas.png" alt="BD Blackdrop">
                       </div>
                         <!-- Bienvenida con correo -->
+
                          <div class="titulo">¡Bienvenido!</div>
+
 
                         <!-- Ícono de menú hamburguesa -->
                         <div class="menu-icono" onclick="toggleMenu()">
@@ -150,6 +152,18 @@
                         </div> 
                     </footer>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const correo = params.get("correo");
+    if (correo) {
+      const titulo = document.querySelector(".titulo");
+      if (titulo) {
+        titulo.innerText = "¡Bienvenido " + decodeURIComponent(correo) + "!";
+      }
+    }
+  });
+</script>
 
                     
             </body>
