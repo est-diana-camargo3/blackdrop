@@ -35,7 +35,11 @@
 
         if ($resultado) {
             // redirigir al home logueado
-             header("Location: ../html/4paginacliente.html");
+             //header("Location: ../html/4paginacliente.html");
+             echo "<script>
+                    alert('✅ Usuario registrado correctamente .');
+                    window.location.href = '../html/4paginacliente.html'; // Redirige al formulario
+                </script>";
         } else {
             echo "Error al registrar: " . pg_last_error($conn);
         }

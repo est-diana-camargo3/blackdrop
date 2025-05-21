@@ -47,6 +47,7 @@ function registrarUsuario() {
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
         alert('✅ Usuario registrado exitosamente');
+        
         // Puedes redirigir después si quieres
         window.location.href = '2indexdellogin.html';
     };
