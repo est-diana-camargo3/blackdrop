@@ -45,23 +45,20 @@
                     //“Guardo en el navegador un valor que se llama correoCliente, y su contenido es lo que tenga $correo”.
                     // Redirige a la pagina del cliente
                     echo "<script>
-                            alert('✅ CLIENTE registrado correctamente .');
-                            localStorage.setItem('correoCliente', '" . $correo . "');  
-                        </script>";
-                    header("Location: ../html/4paginacliente.html?correo=$correo");
-                    exit;
-
-                    
+                        alert('✅ CLIENTE registrado correctamente .');
+                        localStorage.setItem('correoCliente', '" . $correo . "');  
+                        window.location.href = '../html/4paginacliente.html';  
+                    </script>";
                 }
                 // y es un administrador...
                 // Saque un aviso que diga ADMINISTRADOR registrado correctamente y redirija a la pagina de administrador
                 else if ($tipodeusuario==='administrador') 
                 {
                     echo "<script>
-                            alert('✅ ADMINISTRADOR registrado correctamente .');
-                            localStorage.setItem('correoAdministrador', '" . $correo . "');  // Guarda el correo
-                            window.location.href = '../html/3paginaadministrador.html'; // Redirige al la pagina de administrador
-                         </script>";
+                        alert('✅ ADMINISTRADOR registrado correctamente .');
+                        localStorage.setItem('correoAdministrador', '" . $correo . "');  // Guarda el correo
+                        window.location.href = '../html/3paginaadministrador.html'; // Redirige al la pagina de administrador
+                    </script>";
                 }     
             } 
             //si la insercion o registro NO se puede realizar, por problemas de pc o wifi.
