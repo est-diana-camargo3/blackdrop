@@ -312,6 +312,31 @@ section, article, nav, aside, header, footer, main {  display: block; }
                                         background-color: green; /* Cambia a verde */
                                         box-shadow: 0px 0px 30px rgb(168, 24, 28); /* Sombra cuando se pasa el mouse*/
                                     }
+                        .grillade6productos .productogeneral .btn-mas-info {
+                                        grid-column: 1 / 2; /* ocupará 1 columna */
+                                        grid-row: 6 / 7; /* ocupará 1 fila debajo del de comprar */
+                                        background-color: rgb(36, 123, 160); /* Color de fondo diferente */
+                                        height: 50%;
+                                        width: 80%;
+                                        color: white;
+                                        border: none;
+                                        padding: 3%;
+                                        font-size: 200%;
+                                        border-radius: 25px;
+                                        cursor: pointer;
+                                        margin: 0 0 5% 10%; /* Ajuste en márgenes */
+                                        text-align: center;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+                                    }
+
+                        /* Efecto cuando se pasa el mouse sobre el botón */
+                        .grillade6productos .productogeneral .btn-mas-info:hover {
+                                        background-color: rgb(25, 85, 110); /* Cambio de color al pasar el mouse */
+                                        box-shadow: 0px 0px 30px rgb(36, 123, 160);
+                                    }
 
 
                /*   ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
