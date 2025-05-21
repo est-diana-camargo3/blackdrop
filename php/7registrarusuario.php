@@ -47,8 +47,10 @@
                     echo "<script>
                         alert('✅ CLIENTE registrado correctamente .');
                         localStorage.setItem('correoCliente', '" . $correo . "');  
-                        window.location.href = '../html/4paginacliente.html';  
-                    </script>";
+                        </script>";
+                    header("Location: ../html/4paginacliente.html?correo=$correo");
+                    exit;
+
                 }
                 // y es un administrador...
                 // Saque un aviso que diga ADMINISTRADOR registrado correctamente y redirija a la pagina de administrador
