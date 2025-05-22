@@ -24,35 +24,33 @@ if (pg_num_rows($resultado) > 0)
         // Redirección según el tipo de usuario
         if ($usuario['tipodeusuario'] === 'admin') 
                 {
-                    //header("Location: ../html/3paginaadministrador.html");
+                    header("Location: ../html/3paginaadministrador.html");
                     $respuesta = 
                                 [
                                     "exito" => true,
                                     "correo" => $usuario['correo'],
-                                    //"mensaje" => "✅ ADMINISTRADOR logueado correctamente."
-                                ];  
+                                    "mensaje" => "✅ Autenticacion de administrador correcta"
+                                ];                    
                     exit;
                 } 
         else if ($usuario['tipodeusuario'] === 'cliente') 
                 {
-                    //header("Location: ../html/4paginacliente.html");
+                    header("Location: ../html/4paginacliente.html");
                     $respuesta = 
                                 [
                                     "exito" => true,
                                     "correo" => $usuario['correo'],
-                                    //"mensaje" => "✅ CLIENTE logueado correctamente."
-                                ];           
+                                    "mensaje" => "✅ Autenticacion de cliente correcta"
+                                ];              
                     exit;
                 }        
     } 
 else 
-{
     $respuesta = [
                     "exito" => false,
-                    //"mensaje" => "❌ Usuario o contraseña incorrectos"
-                 ];          
-                exit;   
-}
+                    "mensaje" => "❌ Usuario o contraseña incorrectos"
+                 ];
+    header("Location: ../html/2indexdellogin.html");
 
     
 
