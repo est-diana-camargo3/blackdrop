@@ -63,7 +63,7 @@
                         /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
                         grid-column: 1 / 2; /* ocupara 1 columnas*/
                         grid-row: 1 / 2; /* ocupara 1 fila*/
-                        margin:0;     /*reiniciamos las margenes a cero*/
+                        margin: 20px;     /*reiniciamos las margenes a cero*/
                         padding:0;    /*reiniciamos el padding o relleno a cero*/
                         border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
                         background-image: url('../imagenes/texturas/textura_fondo_blanco_desvanecida.jpg');
@@ -105,6 +105,7 @@
 
             h1, h2 {
               color: #c20202;
+              margin:10 px;
 
             }
 
