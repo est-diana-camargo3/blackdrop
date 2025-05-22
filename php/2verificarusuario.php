@@ -36,7 +36,7 @@ if (pg_num_rows($resultado) > 0)
                     // Paso por url el correo del cliente...para darle la bienvenida
                     echo "<script>
                             alert('✅ ADMINISTRADOR logueado correctamente.');
-                            window.location.href = '../html/3paginaadministrador?correo=" . urlencode($correo) . "';
+                            window.location.href = '../html/3paginaadministrador.html?correo=" . urlencode($correo) . "';
                          </script>";
                                        
                     exit;
@@ -55,7 +55,7 @@ if (pg_num_rows($resultado) > 0)
                     // Paso por url el correo del cliente...para darle la bienvenida
                     echo "<script>
                             alert('✅ CLIENTE logueado correctamente.');
-                            window.location.href = '../html/4paginacliente?correo=" . urlencode($correo) . "';
+                            window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "';
                          </script>";            
                     exit;
                 }        
@@ -67,7 +67,7 @@ else
                  ];
                  echo "<script>
                             alert('❌ Usuario o contraseña incorrectos');
-                            window.location.href = '../html/2indexdellogin';
+                            window.location.href = '../html/2indexdellogin.html';
                          </script>";            
                     exit;   
 
