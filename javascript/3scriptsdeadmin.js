@@ -96,7 +96,7 @@ function cargarProductos() {
   fetch("../php/listar_productos.php")
     .then(res => res.json())
     .then(productos => {
-      const tabla = document.querySelector("table"); // primera tabla = productos
+      const tabla = document.getElementById("productos-table");
       tabla.innerHTML = `
         <tr>
           <th>Nombre</th>
@@ -106,19 +106,32 @@ function cargarProductos() {
           <th>Cantidad</th>
         </tr>
       `;
+
       productos.forEach(prod => {
+        const imagenHTML = prod.imagen
+          ? `<img src="${prod.imagen}" alt="imagen" style="width:60px; height:60px; object-fit:cover; border-radius:5px;">`
+          : "Sin imagen";
+
         tabla.innerHTML += `
           <tr>
             <td>${prod.nombre}</td>
-            <td>$${prod.precio}</td>
-            <td>${prod.imagen}</td>
+            <td>$${parseInt(prod.precio).toLocaleString("es-CO")}</td>
+            <td>${imagenHTML}</td>
             <td>${prod.descripcion}</td>
             <td>${prod.cantidad}</td>
           </tr>
         `;
       });
+    })
+    .catch(error => {
+      console.error("Error al cargar productos:", error);
+      const tabla = document.getElementById("productos-table");
+      tabla.innerHTML += `<tr><td colspan="5" style="color:red;">Error al cargar productos</td></tr>`;
     });
 }
+
+
+
 
 document.addEventListener("DOMContentLoaded", cargarProductos);
 
