@@ -157,11 +157,11 @@ function validarInicioSesion(correo, contrasena, tipodecuenta) {
 
 
 function iniciarSesion() {
-    const correo = document.getElementById("inputcorreoenhtml").value;
-    const contrasena = document.getElementById("inputcontrasenaenhtml").value;
-    const tipodeusuario = document.querySelector('input[name="tipodeusuario"]:checked').id;
+    const correo = document.getElementById("correo").value;
+    const contrasena = document.getElementById("contrasena").value;
+    const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
 
-    fetch("../php/2verificarusuario.php", 
+    fetch("../php/verificarusuario.php", 
     {
         method: "POST",
         headers: {
@@ -171,13 +171,10 @@ function iniciarSesion() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log("📌 Respuesta completa del servidor:", data);
         if (data.exito) {
             alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
             
             // 🔥 **Guardar usuario en `localStorage` directamente**
-            console.log("Correo recibido del servidor:", data.correo);
-            
             localStorage.setItem("usuarioLogueado", JSON.stringify({ correo: data.correo }));
 
             // 🔹 **Si había un producto pendiente, agregarlo al carrito**
