@@ -58,7 +58,7 @@
             ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */ 
 
 
-            .titulo /* encabezado */
+            header .titulo /* encabezado */
                     {
                         /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
                         grid-column: 1 / 2; /* ocupara 1 columnas*/
@@ -99,7 +99,7 @@
 
             main {
               grid-column: 1 / 2; /* ocupara 1 columnas*/
-                        grid-row: 2 / 3; /* ocupara 1 filas */
+              grid-row: 2 / 3; /* ocupara 1 filas */
               padding: 30px;
             }
 
