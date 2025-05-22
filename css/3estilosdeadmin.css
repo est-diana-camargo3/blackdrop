@@ -19,7 +19,7 @@
 
         body /* Cuerpo , su papa es html */
                 {
-                    height: 100vh;
+                    height: auto;
                     background-color: rgb(255, 255, 255); /* Naranja con 30% de transparencia */ 
                     color:rgb(0, 0, 0); /*color de texto*/
                     font-family: Arial, sans-serif; /* Fuente: Arial, sino que no tenga adornos es decir cualquier fuente sans-serif*/
