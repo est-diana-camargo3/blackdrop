@@ -103,30 +103,6 @@ o cuando algo pase*/
                           
 
 
-document.getElementById("form-login").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const formData = new FormData(this);
-
-  fetch("https://blackdrop.onrender.com/php/2verificarusuario.php", {
-    method: "POST",
-    body: formData
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (data.exito) {
-        alert("✅ " + data.tipo.toUpperCase() + " logueado correctamente.");
-        if (data.tipo === "admin") {
-          window.location.href = `../html/3paginaadministrador.html?correo=${encodeURIComponent(data.correo)}`;
-        } else if (data.tipo === "cliente") {
-          window.location.href = `../html/4paginacliente.html?correo=${encodeURIComponent(data.correo)}`;
-        }
-      } else {
-        alert("❌ " + data.error);
-        window.location.href = "../html/2indexdellogin.html";
-      }
-    });
-});
 
 
 

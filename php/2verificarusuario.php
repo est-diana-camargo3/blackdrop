@@ -1,37 +1,81 @@
 <?php
-include("conexion.php");
+include("conexion.php"); // Asegúrate de tener un archivo con la conexión a la base de datos
 header("Content-Type: application/json");
+
 
 $correo = $_POST['correo'];
 $contrasena = $_POST['contrasena'];
 $tipodeusuario = $_POST['tipodeusuario'];
 
+// Buscar si el usuario existe
 $query = "SELECT correo, tipodeusuario FROM usuarios22 WHERE correo = $1 AND contrasena = $2 AND tipodeusuario= $3";
 $resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
 
+// Si el usuario no existe 
 if (!$resultado) {
-    echo json_encode([
-        "exito" => false,
-        "error" => "Error en la consulta SQL"
-    ]);
-    exit;
+    die("❌ Error en la consulta SQL: " . pg_last_error($conn));
 }
 
-if (pg_num_rows($resultado) > 0) {
-    $usuario = pg_fetch_assoc($resultado);
+// Si el usuario si existe
+if (pg_num_rows($resultado) > 0) 
+    {
+        $usuario = pg_fetch_assoc($resultado);
 
-    echo json_encode([
-        "exito" => true,
-        "tipo" => $usuario['tipodeusuario'],
-        "correo" => $usuario['correo']
-    ]);
-    exit;
-} else {
-    echo json_encode([
-        "exito" => false,
-        "error" => "Usuario o contraseña incorrectos"
-    ]);
-    exit;
+        // Redirección según el tipo de usuario
+        if ($usuario['tipodeusuario'] === 'administrador') 
+                {
+                    //header("Location: ../html/3paginaadministrador.html");
+                    $respuesta = 
+                                [
+                                    "exito" => true,
+                                    "correo" => $usuario['correo'],
+                                    //"mensaje" => "✅ ADMINISTRADOR logueado correctamente."
+                                ];  
+                    //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
+                    // Redirijo a la pagina del administrador
+                    // Paso por url el correo del cliente...para darle la bienvenida
+                    echo "<script>
+                            alert('✅ ADMINISTRADOR logueado correctamente.');
+                            window.location.href = '../html/3paginaadministrador.html?correo=" . urlencode($correo) . "';
+                         </script>";
+                                       
+                    exit;
+                } 
+        else if ($usuario['tipodeusuario'] === 'cliente') 
+                {
+                    //header("Location: ../html/4paginacliente.html");
+                    $respuesta = 
+                                [
+                                    "exito" => true,
+                                    "correo" => $usuario['correo'],
+                                    //"mensaje" => "✅ CLIENTE logueado correctamente."
+                                ];  
+                                //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
+                    // Redirijo a la pagina del administrador
+                    // Paso por url el correo del cliente...para darle la bienvenida
+                    echo "<script>
+                            alert('✅ CLIENTE logueado correctamente.');
+                            window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "';
+                         </script>";            
+                    exit;
+                }        
+    } 
+else 
+{
+    $respuesta = [
+                    "exito" => false,
+                    //"mensaje" => "❌ Usuario o contraseña incorrectos"
+                 ];
+                 echo "<script>
+                            alert('❌ Usuario o contraseña incorrectos');
+                            window.location.href = '../html/2indexdellogin.html';
+                       </script>";            
+                exit;   
 }
 
+    
+
+// 🔧 Agrega esta línea para depurar:
+header("Content-Type: application/json");
+echo json_encode($respuesta);
 ?>
