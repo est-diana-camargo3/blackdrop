@@ -63,7 +63,7 @@
                         /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
                         grid-column: 1 / 2; /* ocupara 1 columnas*/
                         grid-row: 1 / 2; /* ocupara 1 fila*/
-                        margin: 20px;     /*reiniciamos las margenes a cero*/
+                        margin: 20px,0px,0px,0px;     /*reiniciamos las margenes a cero*/
                         padding:0;    /*reiniciamos el padding o relleno a cero*/
                         border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
                         background-image: url('../imagenes/texturas/textura_fondo_blanco_desvanecida.jpg');
@@ -81,7 +81,7 @@
                         grid-template-rows: repeat (1,auto); /*tamaño automatico osea que se ajusten al contenido*/
                         overflow-x: hidden; /* Esto desactiva el deslizador vertical */
                         overflow-y: auto; /* Esto permite el deslizador lateral */
-                        height: 70px;
+                        height: 100px;
                         overflow-x: hidden; /* Esto desactiva el deslizador vertical */
                         overflow-y: hidden; /* Esto permite el deslizador lateral */   
                         justify-content: center; /* centrar horizontal */
@@ -142,12 +142,12 @@
               /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
                         grid-column: 1 / 2; /* ocupara 1 columnas*/
                         grid-row: 3 / 4; /* ocupara 1 fila*/
-              background-color: #333;
-              color: #fff;
-              padding: 15px 0;
-              position: fixed;
-              bottom: 0;
-              width: 100%;
+                        background-color: #333;
+                        color: #fff;
+                        padding: 15px 0;
+                        position: fixed;
+                        bottom: 0;
+                        width: 100%;
             }
             button {
             padding: 10px 20px;

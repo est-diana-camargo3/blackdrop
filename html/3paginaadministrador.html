@@ -45,69 +45,80 @@
               <div class="titulo">Panel de Administración </div>              
             </header>
 
+      <!--  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                 💻     M A I N  contenido principal del body     💻                            ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  --> 
 
+            <main>
+            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                  ║                               T a b l a    i n v e n t a r i o   p r o d u c t o s                        ║                                                                        
+                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
 
+                    <h2>Inventario de Productos</h2>
+                    <table>
+                          <tr>
+                                <th>Producto</th>
+                                <th>Categoría</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                          </tr>
+                          <tr>
+                                <td>Proteína Iso Whey 5lb</td>
+                                <td>Suplemento</td>
+                                <td>50</td>
+                                <td>$120.000</td>
+                          </tr>
+                          <tr>
+                                <td>Creatina Iron Nutrition</td>
+                                <td>Suplemento</td>
+                                <td>30</td>
+                                <td>$80.000</td>
+                          </tr>
+                          <tr>
+                                <td>Aminoácidos BCAA 1lb</td>
+                                <td>Suplemento</td>
+                                <td>20</td>
+                                <td>$90.000</td>
+                          </tr>
+                          <tr>
+                                <td>Shaker 750ml</td>
+                                <td>Accesorio</td>
+                                <td>100</td>
+                                <td>$30.000</td>
+                          </tr>
+                    </table>
 
+                    <button onclick="mostrarFormulario()" style="margin-top: 20px; padding: 10px 20px; background-color: #c20202; color: white; border: none; cursor: pointer;">
+                      Agregar producto </button>
 
-        <main>
-          <h2>Inventario de Productos</h2>
-          <table>
-            <tr>
-              <th>Producto</th>
-              <th>Categoría</th>
-              <th>Cantidad</th>
-              <th>Precio</th>
-            </tr>
-            <tr>
-              <td>Proteína Iso Whey 5lb</td>
-              <td>Suplemento</td>
-              <td>50</td>
-              <td>$120.000</td>
-            </tr>
-            <tr>
-              <td>Creatina Iron Nutrition</td>
-              <td>Suplemento</td>
-              <td>30</td>
-              <td>$80.000</td>
-            </tr>
-            <tr>
-              <td>Aminoácidos BCAA 1lb</td>
-              <td>Suplemento</td>
-              <td>20</td>
-              <td>$90.000</td>
-            </tr>
-            <tr>
-              <td>Shaker 750ml</td>
-              <td>Accesorio</td>
-              <td>100</td>
-              <td>$30.000</td>
-            </tr>
-          </table>
-          <button onclick="mostrarFormulario()" style="margin-top: 20px; padding: 10px 20px; background-color: #c20202; color: white; border: none; cursor: pointer;">
-            Agregar producto
-          </button>
+                    <button onclick="editarParametros()" id="btn-editar-parametros" class="btn-editar">Editar parámetros</button>
 
-          <button onclick="editarParametros()" id="btn-editar-parametros" class="btn-editar">Editar parámetros</button>
+            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                  ║                               T a b l a    i n v e n t a r i o   p r o d u c t o s                        ║                                                                        
+                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
 
-
-
-
-          <h2>Listado de Clientes Registrados</h2>
-          <table id="clientes-table">
-            <tr>
-              <th>Correo</th>
-              <th>Tipo de Cuenta</th>
-            </tr>
+                    <h2>Listado de Clientes Registrados</h2>
+                        <table id="clientes-table">
+                              <tr>
+                                <th>Correo</th>
+                                <th>Tipo de Cuenta</th>
+                              </tr>                          
+                          <!-- Los clientes se agregarán aquí desde el script -->
+                        </table>
+              </main>
+      <!--  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                                  F O O T E R                                                    ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  -->
             
-            <!-- Los clientes se agregarán aquí desde el script -->
-          </table>
-        </main>
-
-        <footer>
-          &copy; 2025 - Sistema de Administración
-        </footer>
+            <footer>
+                      &copy; 2025 - Sistema de Administración
+            </footer>
 
 
+
+
+
+            
         <div id="modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);">
           <div style="background: white; width: 300px; margin: 100px auto; padding: 20px; border-radius: 10px; text-align: left;">
             <h3>Agregar Producto</h3>
