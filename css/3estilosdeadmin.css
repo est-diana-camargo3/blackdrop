@@ -1,83 +1,168 @@
-.titulo {
-           
-    text-align: center;
-    font-size: 20px;
-    color: #ffffff;
-    letter-spacing: 3px;
-    font-weight: bold;
-    height:50px
-}
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    text-align: center;
-  }
+/*
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+▓▓                                                                                                                           ▓▓
+▓▓                                     💻 📞          C S S  -  E S T I L O S          💻 📞                               ▓▓
+▓▓                                                                                                                           ▓▓
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ */
 
-  header {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 20px 0;
-  }
 
-  main {
-    padding: 30px;
-  }
 
-  h1, h2 {
-    color: #c20202;
+/* 💻 💻 💻 💻 💻 💻 💻 💻 💻 💻 💻   E S T I L O S   P A R A   C O M P U T A D O R   💻 💻 💻 💻 💻 💻 💻 💻 💻 💻 💻 */
+  
+            /*sin hacer*/
 
-  }
 
-  table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
+   /*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+        █                                             💻     B O D Y     💻                                                   █
+        ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
 
-  th, td {
-    border: 1px solid #ccc;
-    padding: 15px;
-    text-align: center;
-  }
+        body /* Cuerpo , su papa es html */
+                {
+                    height: 100vh;
+                    background-color: rgb(255, 255, 255); /* Naranja con 30% de transparencia */ 
+                    color:rgb(0, 0, 0); /*color de texto*/
+                    font-family: Arial, sans-serif; /* Fuente: Arial, sino que no tenga adornos es decir cualquier fuente sans-serif*/
+                    margin:auto ;     /*margenes automaticas, menos la superior*/
+                    text-align: center;
+                    padding:0;    /*reiniciamos el padding o relleno a cero*/
+                    border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                    width:330px; /*que ocupe el 95% de ancho de la ventana*/
+                    max-width: 330px; /*maximo ocupa 1400 pixeles*/
+                    min-width: 330px; /*maximo ocupa 1400 pixeles*/
+                
+                
+                    display:grid;
+                    /*se dividira en 3 filas, 3 columnas*/
+                    grid-template-columns: repeat(1, 1fr);
+                    grid-template-rows: repeat (3,auto); /*tamaño automatico osea que se ajusten al contenido*/
+                    grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
+                    justify-content: center; /* centrar horizontal */
+                    align-content: center;   /* centrar vertical */
+                    overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                    overflow-y: auto; /* Esto permite el deslizador lateral */
+                }         
+        .enterpersonalizado  
+                {
+                    display: block;
+                    height: 15px; /* Ajusta el tamaño del salto de línea */
+                }
+        label 
+                {
+                    text-align: left;
+                    color: white;
+                }
 
-  th {
-    background-color: #333;
-    color: white;
-  }
+       /*   ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                     💻      H E A D E R encabezado       💻                                    ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */ 
 
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
 
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 15px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  button {
-padding: 10px 20px;
-font-size: 16px;
-margin-top: 20px;
-cursor: pointer;
-border: none;
-border-radius: 5px;
-}
+            .titulo /* encabezado */
+                    {
+                        /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
+                        grid-column: 1 / 2; /* ocupara 1 columnas*/
+                        grid-row: 1 / 2; /* ocupara 1 fila*/
+                        margin:0;     /*reiniciamos las margenes a cero*/
+                        padding:0;    /*reiniciamos el padding o relleno a cero*/
+                        border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
+                        background-image: url('../imagenes/texturas/textura_fondo_blanco_desvanecida.jpg');
+                        /*background-color: rgba(255, 255, 255, 0.8); /*aplicarle color blanco encima 50% transparente*/
+                        background-blend-mode: overlay;  /* Cambia el modo de mezcla para combinar el color y la imagen */
+                        background-size: 100% 600%; /* La imagen se estira para cubrir todo el contenedor */
+                        background-position: center center; /* Centra la imagen de fondo dentro del header */
+                        background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+                        font-size: 30px;
+                        font-weight: bold;
+                        text-align: center;
+                        display:grid;
+                        /*se dividira en 2 columnas, 1 fila*/
+                        grid-template-columns: repeat(3, auto); /*dividido 3 columnas*/
+                        grid-template-rows: repeat (1,auto); /*tamaño automatico osea que se ajusten al contenido*/
+                        overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                        overflow-y: auto; /* Esto permite el deslizador lateral */
+                        height: 70px;
+                        overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                        overflow-y: hidden; /* Esto permite el deslizador lateral */   
+                        justify-content: center; /* centrar horizontal */
+                        align-content: center;   /* centrar vertical */
+                        overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                        overflow-y: auto; /* Esto permite el deslizador lateral */                         
+                    }
 
-.btn-editar {
-background-color: #007BFF; /* azul */
-color: white;
-}
 
-.btn-guardar {
-background-color: #28A745; /* verde */
-color: white;
-}
+
+       /*   ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                 💻     M A I N  contenido principal del body     💻                            ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */
+
+
+            main {
+              grid-column: 1 / 2; /* ocupara 1 columnas*/
+                        grid-row: 2 / 3; /* ocupara 1 filas */
+              padding: 30px;
+            }
+
+            h1, h2 {
+              color: #c20202;
+
+            }
+
+            table {
+              width: 80%;
+              margin: 20px auto;
+              border-collapse: collapse;
+              background-color: #fff;
+              box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+
+            th, td {
+              border: 1px solid #ccc;
+              padding: 15px;
+              text-align: center;
+            }
+
+            th {
+              background-color: #333;
+              color: white;
+            }
+
+            tr:nth-child(even) {
+              background-color: #f2f2f2;
+            }
+
+
+
+          /*  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                         💻       F O O T E R       💻                                          ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  */
+               
+            footer {
+              /*como el header es hijo de body, se organizara en forma de display grid DE SU PAPÁ por defecto y ocupara */
+                        grid-column: 1 / 2; /* ocupara 1 columnas*/
+                        grid-row: 3 / 4; /* ocupara 1 fila*/
+              background-color: #333;
+              color: #fff;
+              padding: 15px 0;
+              position: fixed;
+              bottom: 0;
+              width: 100%;
+            }
+            button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            }
+
+            .btn-editar {
+            background-color: #007BFF; /* azul */
+            color: white;
+            }
+
+            .btn-guardar {
+            background-color: #28A745; /* verde */
+            color: white;
+            }
