@@ -107,20 +107,24 @@ o cuando algo pase*/
 
 
 
-function validarInicioSesion(correo, contrasena, tipodecuenta) {
+function validarInicioSesion(correo, contrasena, tipodecuenta) 
+{
     console.log("Enviando datos al servidor:", correo, contrasena, tipodecuenta);
     
-    fetch('../php/2verificarusuario.php', {
+    fetch('../php/2verificarusuario.php', 
+    {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodecuenta=${encodeURIComponent(tipodecuenta)}`
     })
     .then(response => response.json())
-    .then(data => {
+    .then(data => 
+    {
         console.log("Respuesta del servidor:", data);
         console.log("Valor de data.redireccion:", data.redireccion);
 
-        if (data.exito) {
+        if (data.exito) 
+        {
             alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
             
             // Guardar usuario en localStorage
@@ -129,13 +133,17 @@ function validarInicioSesion(correo, contrasena, tipodecuenta) {
             // Verificar si hay un producto pendiente
             const productoPendiente = JSON.parse(localStorage.getItem("productoPendiente"));
 
-            if (productoPendiente) {
+            if (productoPendiente) 
+            {
                 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
                 const productoExistente = carrito.find(p => p.nombre === productoPendiente.nombre);
 
-                if (productoExistente) {
+                if (productoExistente) 
+                {
                     productoExistente.cantidad += productoPendiente.cantidad;
-                } else {
+                } 
+                else 
+                {
                     carrito.push(productoPendiente);
                 }
 
@@ -144,10 +152,13 @@ function validarInicioSesion(correo, contrasena, tipodecuenta) {
                 
                 console.log("🔹 Producto pendiente agregado al carrito:", productoPendiente);
                 window.location.href = "../html/5carritodecompras.html"; // Ir al carrito después del login
-            } else {
+            } else 
+            {
                 window.location.href = data.redireccion; // Si no había producto pendiente, ir a la página normal
             }
-        } else {
+        } 
+        else 
+        {
             alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
         }
     })
@@ -162,10 +173,12 @@ function iniciarSesion()
     const contrasena = document.getElementById("contrasena").value;
     const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
 
-    fetch("../php/verificarusuario.php", 
+    fetch
+    ("../php/verificarusuario.php", 
     {
         method: "POST",
-        headers: {
+        headers: 
+        {
             "Content-Type": "application/x-www-form-urlencoded"
         },
         body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeusuario=${encodeURIComponent(tipodeusuario)}`
@@ -181,7 +194,8 @@ function iniciarSesion()
 
       // 📌 Evento para el botón "Atrás"
       let botonAtras = document.querySelector(".contenedoriconoatras");
-      if (botonAtras) {
+      if (botonAtras) 
+      {
       botonAtras.addEventListener("click", function () {
       window.location.href = "1indexdelhome.html"; // Redirige a la página principal
       });
