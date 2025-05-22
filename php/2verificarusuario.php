@@ -30,12 +30,7 @@ if (pg_num_rows($resultado) > 0)
                                     "exito" => true,
                                     "correo" => $usuario['correo'],
                                     "mensaje" => "✅ Autenticacion de administrador correcta"
-                                ]; 
-                    echo "<script>
-                            alert('✅ Autenticacion de administrador correcta.');
-                            
-                         </script>"; 
-                    /*window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "';*/                  
+                                ];            
                     exit;
                 } 
         else if ($usuario['tipodeusuario'] === 'cliente') 

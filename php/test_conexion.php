@@ -7,9 +7,12 @@ $port = "5432";
 
 $conn = pg_connect("host=$host dbname=$db user=$user password=$pass port=$port");
 
-if (!$conn) {
+if (!$conn) 
+{
     die("❌ Error de conexión a PostgreSQL: " . pg_last_error());
-} else {
+} 
+else 
+{
     echo "✅ Conexión exitosa a PostgreSQL.";
 }
 ?>
