@@ -31,14 +31,6 @@ if (pg_num_rows($resultado) > 0)
                                     "correo" => $usuario['correo'],
                                     //"mensaje" => "✅ ADMINISTRADOR logueado correctamente."
                                 ];  
-                    //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
-                    // Redirijo a la pagina del administrador
-                    // Paso por url el correo del cliente...para darle la bienvenida
-                    echo "<script>
-                            alert('✅ ADMINISTRADOR logueado correctamente.');
-                            window.location.href = '../html/3paginaadministrador.html?correo=" . urlencode($correo) . "';
-                         </script>";
-                                       
                     exit;
                 } 
         else if ($usuario['tipodeusuario'] === 'cliente') 
@@ -49,14 +41,7 @@ if (pg_num_rows($resultado) > 0)
                                     "exito" => true,
                                     "correo" => $usuario['correo'],
                                     //"mensaje" => "✅ CLIENTE logueado correctamente."
-                                ];  
-                                //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
-                    // Redirijo a la pagina del administrador
-                    // Paso por url el correo del cliente...para darle la bienvenida
-                    echo "<script>
-                            alert('✅ CLIENTE logueado correctamente.');
-                            window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "';
-                         </script>";            
+                                ];           
                     exit;
                 }        
     } 
@@ -65,11 +50,7 @@ else
     $respuesta = [
                     "exito" => false,
                     //"mensaje" => "❌ Usuario o contraseña incorrectos"
-                 ];
-                 echo "<script>
-                            alert('❌ Usuario o contraseña incorrectos');
-                            window.location.href = '../html/2indexdellogin.html';
-                       </script>";            
+                 ];          
                 exit;   
 }
 
