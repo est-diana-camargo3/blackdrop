@@ -113,38 +113,49 @@ o cuando algo pase*/
                 alert("Todas las cookies actuales:"+document.cookie);  */
             }
 
-            document.querySelectorAll('.productogeneral').forEach(producto => {
-                producto.addEventListener('click', function (event) {
-                  // Verifica si se hizo clic en el botón (o dentro de él)
-                  if (!event.target.closest('.btn-comprarproducto')) {
-                    const url = producto.dataset.link;
-                    window.location.href = url;
-                  }
-                });
-              });
-              
-            
-      // Esta función se ejecuta cuando se carga la página
-      document.addEventListener("DOMContentLoaded", function() {
-        const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
-    
-        botonesComprar.forEach(function(boton) {
-            boton.addEventListener("click", function(event) {
-                event.stopPropagation(); // ← Esto soluciona tu problema
-                // Verifica si el usuario está logueado (aquí puedes poner tu propia lógica)
-                const usuarioLogueado = false; // ← aquí va tu verificación real
-    
-                if (usuarioLogueado) {
-                    // Si ya está logueado, lo envías al carrito
+           document.addEventListener("DOMContentLoaded", function() {
+            const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
+
+            botonesComprar.forEach(function(boton) {
+                boton.addEventListener("click", function(event) {
+                    event.stopPropagation(); // Evita conflictos de eventos
+
+                    // 🔹 **Obtener el producto desde el contenedor `.productogeneral`**
+                    const producto = boton.closest(".productogeneral");
+                    const nombreProducto = producto.querySelector(".nombreproducto").textContent.trim();
+                    const precioProducto = parseInt(producto.querySelector(".precioproducto").textContent.replace(/\D/g, ""));
+                    const cantidad = 1; // Siempre por defecto 1
+
+                    // **Verificar si el usuario está logueado**
+                    const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+                    if (!usuarioLogueado) { 
+                        // 🔹 **Si el usuario NO está logueado, guardar el producto y redirigir al login**
+                        alert("🔒 Debes iniciar sesión primero para proceder con la compra.");
+                        localStorage.setItem("productoPendiente", JSON.stringify({ nombre: nombreProducto, precio: precioProducto, cantidad: cantidad }));
+                        window.location.href = "../html/2indexdellogin.html?redirect=carrito";
+                        return;
+                    }
+
+                    // 🔹 **Si el usuario YA está autenticado, agregar el producto al carrito**
+                    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                    const productoExistente = carrito.find(p => p.nombre === nombreProducto);
+
+                    if (productoExistente) {
+                        productoExistente.cantidad += cantidad;
+                    } else {
+                        carrito.push({ nombre: nombreProducto, precio: precioProducto, cantidad: cantidad });
+                    }
+
+                    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+                    // 🔥 **Redirigir al carrito**
                     window.location.href = "../html/5carritodecompras.html";
-                } else {
-                    // Si no está logueado, lo envías al login con redirect al carrito
-                    window.location.href = "2indexdellogin.html?redirect=carrito";
-                }
+                });
             });
         });
+
         
-    });
     // Suponiendo que tienes un array con datos de los productos
 const productos = [
   {
