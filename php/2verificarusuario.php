@@ -6,11 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = $_POST['contrasena'];
     $tipodecuenta = $_POST['tipodecuenta'];
 
-    // Protección contra inyecciones SQL
-    $correo = mysqli_real_escape_string($conn, $correo);
-    $contrasena = mysqli_real_escape_string($conn, $contrasena);
-    $tipodecuenta = mysqli_real_escape_string($conn, $tipodecuenta);
-
     // Consulta a la base de datos
     $sql = "SELECT * FROM usuarios WHERE correo='$correo' AND contrasena='$contrasena' AND tipodeusuario='$tipodecuenta'";
     $resultado = mysqli_query($conn, $sql);
