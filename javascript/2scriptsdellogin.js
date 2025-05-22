@@ -157,9 +157,9 @@ function validarInicioSesion(correo, contrasena, tipodecuenta) {
 
 
 function iniciarSesion() {
-    const correo = document.getElementById("correo").value;
-    const contrasena = document.getElementById("contrasena").value;
-    const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
+    const correo = document.getElementById("inputcorreoenhtml").value;
+    const contrasena = document.getElementById("inputcontrasenaenhtml").value;
+    const tipodeusuario = document.querySelector('input[name="tipodeusuario"]:checked').id;
 
     fetch("../php/verificarusuario.php", 
     {
@@ -169,18 +169,42 @@ function iniciarSesion() {
         },
         body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeusuario=${encodeURIComponent(tipodeusuario)}`
     })
-    
     .then(response => response.json())
     .then(data => {
+        console.log("📌 Respuesta completa del servidor:", data);
         if (data.exito) {
-            window.location.href = data.redireccion;
-            alert(" Bien");
-            alert(data.mensaje); // usuario exitoso
-                
-        } else {
-            alert("❌ Mal");
-            alert(data.mensaje); // ❌ Usuario erroneo 
+            alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
             
+            // 🔥 **Guardar usuario en `localStorage` directamente**
+            console.log("Correo recibido del servidor:", data.correo);
+            
+            localStorage.setItem("usuarioLogueado", JSON.stringify({ correo: data.correo }));
+
+            // 🔹 **Si había un producto pendiente, agregarlo al carrito**
+            const productoPendiente = JSON.parse(localStorage.getItem("productoPendiente"));
+
+            if (productoPendiente) {
+                let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                const productoExistente = carrito.find(p => p.nombre === productoPendiente.nombre);
+
+                if (productoExistente) {
+                    productoExistente.cantidad += productoPendiente.cantidad;
+                } else {
+                    carrito.push(productoPendiente);
+                }
+
+                localStorage.setItem("carrito", JSON.stringify(carrito));
+                localStorage.removeItem("productoPendiente"); // Limpiar el producto pendiente
+                
+                console.log("🔹 Producto pendiente agregado al carrito:", productoPendiente);
+                window.location.href = "../html/5carritodecompras.html"; // Ir al carrito después del login
+            } else {
+                window.location.href = data.redireccion; // Si no había producto pendiente, ir a la página normal
+            }
+
+        } else {
+            alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
+            alert(data.mensaje);
         }
     })
     .catch(error => {
@@ -188,7 +212,6 @@ function iniciarSesion() {
         console.error(error);
     });
 }
-
 
 
 
