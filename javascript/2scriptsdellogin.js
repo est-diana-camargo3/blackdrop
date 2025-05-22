@@ -157,9 +157,9 @@ function validarInicioSesion(correo, contrasena, tipodecuenta) {
 
 
 function iniciarSesion() {
-    const correo = document.getElementById("correo").value;
-    const contrasena = document.getElementById("contrasena").value;
-    const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
+    const correo = document.getElementById("inputcorreoenhtml").value;
+    const contrasena = document.getElementById("inputcontrasenaenhtml").value;
+    const tipodeusuario = document.querySelector('input[name="tipodeusuario"]:checked').id;
 
     fetch("../php/verificarusuario.php", 
     {
