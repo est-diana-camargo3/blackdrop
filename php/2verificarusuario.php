@@ -22,7 +22,7 @@ if (pg_num_rows($resultado) > 0)
         $usuario = pg_fetch_assoc($resultado);
 
         // Redirección según el tipo de usuario
-        if ($usuario['tipodeusuario'] === 'administrador') 
+        if ($usuario['tipodeusuario'] === 'admin') 
                 {
                     //header("Location: ../html/3paginaadministrador.html");
                     $respuesta = 

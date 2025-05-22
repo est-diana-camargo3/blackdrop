@@ -156,8 +156,7 @@ function validarInicioSesion(correo, contrasena, tipodecuenta) {
 
 
 
-function iniciarSesion() 
-{
+function iniciarSesion() {
     const correo = document.getElementById("correo").value;
     const contrasena = document.getElementById("contrasena").value;
     const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
@@ -173,18 +172,20 @@ function iniciarSesion()
     
     .then(response => response.json())
     .then(data => {
-    if (data.exito) {
-        if (data.tipo === "administrador") {
-        alert("✅ ADMINISTRADOR logueado correctamente.");
-        window.location.href = `../html/3paginaadministrador.html?correo=${encodeURIComponent(data.correo)}`;
-        } else if (data.tipo === "cliente") {
-        alert("✅ CLIENTE logueado correctamente.");
-        window.location.href = `../html/4paginacliente.html?correo=${encodeURIComponent(data.correo)}`;
+        if (data.exito) {
+            window.location.href = data.redireccion;
+            alert(" Bien");
+            alert(data.mensaje); // usuario exitoso
+                
+        } else {
+            alert("❌ Mal");
+            alert(data.mensaje); // ❌ Usuario erroneo 
+            
         }
-    } else {
-        alert("❌ Usuario o contraseña incorrectos.");
-        window.location.href = "../html/2indexdellogin.html";
-    }
+    })
+    .catch(error => {
+        alert("❌ Error al conectar con el servidor.");
+        console.error(error);
     });
 }
 
