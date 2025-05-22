@@ -22,7 +22,7 @@ if (pg_num_rows($resultado) > 0)
         $usuario = pg_fetch_assoc($resultado);
 
         // Redirección según el tipo de usuario
-        if ($usuario['tipodeusuario'] === 'admin') 
+        if ($usuario['tipodeusuario'] === 'administrador') 
                 {
                     header("Location: ../html/3paginaadministrador.html");
                     $respuesta = 
@@ -30,7 +30,12 @@ if (pg_num_rows($resultado) > 0)
                                     "exito" => true,
                                     "correo" => $usuario['correo'],
                                     "mensaje" => "✅ Autenticacion de administrador correcta"
-                                ];                    
+                                ]; 
+                    echo "<script>
+                            alert('✅ Autenticacion de administrador correcta.');
+                            
+                         </script>"; 
+                    /*window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "';*/                  
                     exit;
                 } 
         else if ($usuario['tipodeusuario'] === 'cliente') 
@@ -57,4 +62,13 @@ else
 // 🔧 Agrega esta línea para depurar:
 header("Content-Type: application/json");
 echo json_encode($respuesta);
+
+
+
+
+
 ?>
+
+
+
+
