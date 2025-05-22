@@ -39,7 +39,7 @@
                     grid-gap:10px; /*espacio entre una columna y otra o entre una fila y otra*/
                     justify-content: center; /* centrar horizontal */
                     align-content: center;   /* centrar vertical */
-                    overflow-x: hidden; /* Esto desactiva el deslizador vertical */
+                    /*overflow-x: hidden; /* Esto desactiva el deslizador vertical */
                     overflow-y: auto; /* Esto permite el deslizador lateral */
                 }         
         .enterpersonalizado  
