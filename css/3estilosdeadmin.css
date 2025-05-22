@@ -27,9 +27,9 @@
                     text-align: center;
                     padding:0;    /*reiniciamos el padding o relleno a cero*/
                     border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
-                    width:330px; /*que ocupe el 95% de ancho de la ventana*/
-                    max-width: 330px; /*maximo ocupa 1400 pixeles*/
-                    min-width: 330px; /*maximo ocupa 1400 pixeles*/
+                    /*width:330px; /*que ocupe el 95% de ancho de la ventana*/
+                    /*max-width: 330px; /*maximo ocupa 1400 pixeles*/
+                    /*min-width: 330px; /*maximo ocupa 1400 pixeles*/
                 
                 
                     display:grid;
