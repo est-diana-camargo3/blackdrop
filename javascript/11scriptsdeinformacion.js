@@ -23,7 +23,7 @@ function agregarAlCarrito() {
         localStorage.setItem("productoPendiente", JSON.stringify({ nombre: nombreProducto, precio: precioProducto, cantidad: cantidad }));
         window.location.href = "../html/2indexdellogin.html";
         return;
-    }
+    }else{
 
     // Si el usuario ya está logueado, agregar directamente al carrito
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -38,6 +38,7 @@ function agregarAlCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
     alert(`✅ ${nombreProducto} agregado: ${cantidad} unidad(es)`);
     window.location.href = "../html/5carritodecompras.html"; // Ir al carrito
+  }
 }
   
 document.addEventListener("DOMContentLoaded", () => {
