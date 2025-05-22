@@ -14,7 +14,7 @@ if (!$conn) {
     exit;
 }
 
-$query = "SELECT * FROM productos ORDER BY nombre";
+$query = "SELECT * FROM productos22 ORDER BY nombre";
 $result = pg_query($conn, $query);
 
 if (!$result) {
