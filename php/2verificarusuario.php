@@ -29,7 +29,7 @@ if (pg_num_rows($resultado) > 0)
                                 [
                                     "exito" => true,
                                     "correo" => $usuario['correo'],
-                                    //"mensaje" => "✅ Autenticacion de administrador correcta"
+                                    //"mensaje" => "✅ ADMINISTRADOR logueado correctamente."
                                 ];  
                     //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
                     // Redirijo a la pagina del administrador
@@ -48,7 +48,7 @@ if (pg_num_rows($resultado) > 0)
                                 [
                                     "exito" => true,
                                     "correo" => $usuario['correo'],
-                                    //"mensaje" => "✅ Autenticacion de cliente correcta"
+                                    //"mensaje" => "✅ CLIENTE logueado correctamente."
                                 ];  
                                 //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
                     // Redirijo a la pagina del administrador
@@ -61,6 +61,7 @@ if (pg_num_rows($resultado) > 0)
                 }        
     } 
 else 
+{
     $respuesta = [
                     "exito" => false,
                     //"mensaje" => "❌ Usuario o contraseña incorrectos"
@@ -68,8 +69,9 @@ else
                  echo "<script>
                             alert('❌ Usuario o contraseña incorrectos');
                             window.location.href = '../html/2indexdellogin.html';
-                         </script>";            
-                    exit;   
+                       </script>";            
+                exit;   
+}
 
     
 
