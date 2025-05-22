@@ -112,6 +112,14 @@ o cuando algo pase*/
                 alert("(debe estar numerodevisitas: vacia ): " + getCookie("numerodevisitas"));
                 alert("Todas las cookies actuales:"+document.cookie);  */
             }
+            document.addEventListener("DOMContentLoaded", function () {
+              // 🔹 **Verificar si hay un usuario guardado pero realmente no está logueado**
+              const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+              if (!usuarioLogueado) {
+                  localStorage.removeItem("usuarioLogueado"); // 🔥 Borra datos si no hay sesión activa
+              }
+          });
 
            document.addEventListener("DOMContentLoaded", function() {
             const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
