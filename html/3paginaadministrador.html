@@ -77,19 +77,25 @@
   <div id="modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);">
     <div style="background: white; width: 300px; margin: 100px auto; padding: 20px; border-radius: 10px; text-align: left;">
       <h3>Agregar Producto</h3>
+
       <label>Nombre:</label><br>
       <input type="text" id="nombreProducto" style="width: 100%;"><br><br>
-  
-      <label>Categoría:</label><br>
-      <input type="text" id="categoriaProducto" style="width: 100%;"><br><br>
-  
-      <label>Cantidad:</label><br>
-      <input type="number" id="cantidadProducto" style="width: 100%;"><br><br>
-  
+
       <label>Precio:</label><br>
       <input type="text" id="precioProducto" style="width: 100%;"><br><br>
   
-      <button onclick="agregarProducto()" style="background-color: #c20202; color: white; padding: 8px 15px; border: none;">Guardar</button>
+      <label>Imagen (URL o nombre):</label><br>
+      <input type="text" id="imagenProducto"><br><br>
+
+      <label>Descripción:</label><br>
+      <input type="text" id="descripcionProducto"><br><br>
+
+      <label>Cantidad:</label><br>
+      <input type="number" id="cantidadProducto"><br><br>
+  
+
+  
+      <button onclick="agregarProducto()" style="background-color: #c20202; color: white; padding: 8px 15px; border: none;">Agregar producto</button>
       <button onclick="cerrarFormulario()" style="margin-left: 10px;">Cancelar</button>
     </div>
   </div>
