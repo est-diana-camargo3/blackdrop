@@ -169,23 +169,7 @@ function iniciarSesion()
             "Content-Type": "application/x-www-form-urlencoded"
         },
         body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeusuario=${encodeURIComponent(tipodeusuario)}`
-    })
-    
-    .then(response => response.json())
-    .then(data => {
-    if (data.exito) {
-        if (data.tipo === "administrador") {
-        alert("✅ ADMINISTRADOR logueado correctamente.");
-        window.location.href = `../html/3paginaadministrador.html?correo=${encodeURIComponent(data.correo)}`;
-        } else if (data.tipo === "cliente") {
-        alert("✅ CLIENTE logueado correctamente.");
-        window.location.href = `../html/4paginacliente.html?correo=${encodeURIComponent(data.correo)}`;
-        }
-    } else {
-        alert("❌ Usuario o contraseña incorrectos.");
-        window.location.href = "../html/2indexdellogin.html";
-    }
-    });
+    })    
 }
 
 
