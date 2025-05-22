@@ -23,7 +23,7 @@
                     background-color: rgb(255, 255, 255); /* Naranja con 30% de transparencia */ 
                     color:rgb(0, 0, 0); /*color de texto*/
                     font-family: Arial, sans-serif; /* Fuente: Arial, sino que no tenga adornos es decir cualquier fuente sans-serif*/
-                    margin:auto ;     /*margenes automaticas, menos la superior*/
+                    margin:30 px, auto ;     /*margenes automaticas, menos la superior*/
                     text-align: center;
                     padding:0;    /*reiniciamos el padding o relleno a cero*/
                     border:0;     /*reiniciamos el borde a cero, osea que la pagina no tenga borde*/
