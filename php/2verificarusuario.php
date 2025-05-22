@@ -24,7 +24,7 @@ if (pg_num_rows($resultado) > 0)
         // Redirección según el tipo de usuario
         if ($usuario['tipodeusuario'] === 'administrador') 
                 {
-                    //header("Location: ../html/3paginaadministrador.html");
+                    header("Location: ../html/3paginaadministrador.html");
                     $respuesta = 
                                 [
                                     "exito" => true,
@@ -43,7 +43,7 @@ if (pg_num_rows($resultado) > 0)
                 } 
         else if ($usuario['tipodeusuario'] === 'cliente') 
                 {
-                    //header("Location: ../html/4paginacliente.html");
+                    header("Location: ../html/4paginacliente.html");
                     $respuesta = 
                                 [
                                     "exito" => true,
@@ -55,8 +55,9 @@ if (pg_num_rows($resultado) > 0)
                     // Paso por url el correo del cliente...para darle la bienvenida
                     echo "<script>
                             alert('✅ CLIENTE logueado correctamente.');
-                            window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "';
-                         </script>";            
+                            
+                         </script>";       
+                         /*window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "'; esto va una linea antes de cerrar el script*/      
                     exit;
                 }        
     } 
@@ -66,10 +67,12 @@ else
                     "exito" => false,
                     //"mensaje" => "❌ Usuario o contraseña incorrectos"
                  ];
+                  header("Location: ../html/2indexdellogin.html");
                  echo "<script>
                             alert('❌ Usuario o contraseña incorrectos');
-                            window.location.href = '../html/2indexdellogin.html';
-                       </script>";            
+                            
+                       </script>";    
+                       /*window.location.href = '../html/2indexdellogin.html';*/        
                 exit;   
 }
 
