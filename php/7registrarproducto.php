@@ -23,14 +23,14 @@ $descripcion = $input["descripcion"];
 $cantidad = $input["cantidad"];
 
 // Verificar si ya existe
-$check = pg_query_params($conn, "SELECT 1 FROM productos WHERE nombre = $1", [$nombre]);
+$check = pg_query_params($conn, "SELECT 1 FROM productos22 WHERE nombre = $1", [$nombre]);
 if (pg_num_rows($check) > 0) {
     echo json_encode(["error" => "❌ El producto ya existe."]);
     exit;
 }
 
 // Insertar
-$query = "INSERT INTO productos (nombre, precio, imagen, descripcion, cantidad) VALUES ($1, $2, $3, $4, $5)";
+$query = "INSERT INTO productos22 (nombre, precio, imagen, descripcion, cantidad) VALUES ($1, $2, $3, $4, $5)";
 $result = pg_query_params($conn, $query, [$nombre, $precio, $imagen, $descripcion, $cantidad]);
 
 if ($result) {
