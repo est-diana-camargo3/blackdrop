@@ -29,8 +29,16 @@ if (pg_num_rows($resultado) > 0)
                                 [
                                     "exito" => true,
                                     "correo" => $usuario['correo'],
-                                    "mensaje" => "✅ Autenticacion de administrador correcta"
-                                ];                    
+                                    //"mensaje" => "✅ ADMINISTRADOR logueado correctamente."
+                                ];  
+                    //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
+                    // Redirijo a la pagina del administrador
+                    // Paso por url el correo del cliente...para darle la bienvenida
+                    echo "<script>
+                            alert('✅ ADMINISTRADOR logueado correctamente.');
+                            window.location.href = '../html/3paginaadministrador.html?correo=" . urlencode($correo) . "';
+                         </script>";
+                                       
                     exit;
                 } 
         else if ($usuario['tipodeusuario'] === 'cliente') 
@@ -40,17 +48,33 @@ if (pg_num_rows($resultado) > 0)
                                 [
                                     "exito" => true,
                                     "correo" => $usuario['correo'],
-                                    "mensaje" => "✅ Autenticacion de cliente correcta"
-                                ];              
+                                    //"mensaje" => "✅ CLIENTE logueado correctamente."
+                                ];  
+                                //asi saco un mensaje en forma de alert desde php 💛💛💛💙💙💙❤️❤️❤️
+                    // Redirijo a la pagina del administrador
+                    // Paso por url el correo del cliente...para darle la bienvenida
+                    echo "<script>
+                            alert('✅ CLIENTE logueado correctamente.');
+                            
+                         </script>";       
+                         /*window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "'; esto va una linea antes de cerrar el script*/      
                     exit;
                 }        
     } 
 else 
+{
     $respuesta = [
                     "exito" => false,
-                    "mensaje" => "❌ Usuario o contraseña incorrectos"
+                    //"mensaje" => "❌ Usuario o contraseña incorrectos"
                  ];
-    header("Location: ../html/2indexdellogin.html");
+                  header("Location: ../html/2indexdellogin.html");
+                 echo "<script>
+                            alert('❌ Usuario o contraseña incorrectos');
+                            
+                       </script>";    
+                       /*window.location.href = '../html/2indexdellogin.html';*/        
+                exit;   
+}
 
     
 
