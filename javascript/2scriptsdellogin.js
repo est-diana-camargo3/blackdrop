@@ -102,33 +102,24 @@ o cuando algo pase*/
                           }
                           
 
-
-
-
-
-
-function validarInicioSesion(correo, contrasena, tipodecuenta) {
-    console.log("Enviando datos al servidor:", correo, contrasena, tipodecuenta);
-    
-    fetch('../php/2verificarusuario.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodecuenta=${encodeURIComponent(tipodecuenta)}`
+function iniciarSesion(correo, contrasena, tipodeusuario) {
+    fetch("../php/2verificarusuario.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodecuenta=${encodeURIComponent(tipodeusuario)}`
     })
     .then(response => response.json())
     .then(data => {
         console.log("Respuesta del servidor:", data);
-        console.log("Valor de data.redireccion:", data.redireccion);
 
         if (data.exito) {
-            alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
-            
-            // Guardar usuario en localStorage
+            alert(data.mensaje); // ✅ Mensaje desde PHP (admin o cliente)
+
             localStorage.setItem("usuarioLogueado", JSON.stringify({ correo: data.correo }));
 
-            // Verificar si hay un producto pendiente
             const productoPendiente = JSON.parse(localStorage.getItem("productoPendiente"));
-
             if (productoPendiente) {
                 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
                 const productoExistente = carrito.find(p => p.nombre === productoPendiente.nombre);
@@ -140,47 +131,13 @@ function validarInicioSesion(correo, contrasena, tipodecuenta) {
                 }
 
                 localStorage.setItem("carrito", JSON.stringify(carrito));
-                localStorage.removeItem("productoPendiente"); // Limpiar el producto pendiente
-                
-                console.log("🔹 Producto pendiente agregado al carrito:", productoPendiente);
-                window.location.href = "../html/5carritodecompras.html"; // Ir al carrito después del login
+                localStorage.removeItem("productoPendiente");
+                window.location.href = "../html/5carritodecompras.html";
             } else {
-                window.location.href = data.redireccion; // Si no había producto pendiente, ir a la página normal
+                window.location.href = data.redireccion;
             }
         } else {
-            alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
-        }
-    })
-    .catch(error => console.error("Error en la autenticación:", error));
-}
-
-
-
-function iniciarSesion() {
-    const correo = document.getElementById("correo").value;
-    const contrasena = document.getElementById("contrasena").value;
-    const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
-
-    fetch("../php/verificarusuario.php", 
-    {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeusuario=${encodeURIComponent(tipodeusuario)}`
-    })
-    
-    .then(response => response.json())
-    .then(data => {
-        if (data.exito) {
-            window.location.href = data.redireccion;
-            alert(" Bien");
-            alert(data.mensaje); // usuario exitoso
-                
-        } else {
-            alert("❌ Mal");
-            alert(data.mensaje); // ❌ Usuario erroneo 
-            
+            alert("❌ " + data.mensaje);
         }
     })
     .catch(error => {
@@ -189,19 +146,16 @@ function iniciarSesion() {
     });
 }
 
+// Botón atrás
+function volverAtras() {
+    if (document.referrer !== "") {
+        window.history.back();
+    } else {
+        window.location.href = "../html/1indexdelhome.html";
+    }
+}
 
-
-
- /*   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-      █                                              B o t ó n   a t r á s                                                   █
-      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
-
-      // 📌 Evento para el botón "Atrás"
-      let botonAtras = document.querySelector(".contenedoriconoatras");
-      if (botonAtras) {
-      botonAtras.addEventListener("click", function () {
-      window.location.href = "1indexdelhome.html"; // Redirige a la página principal
-      });
-      }
-
-
+let botonAtras = document.querySelector(".contenedoriconoatras");
+if (botonAtras) {
+    botonAtras.addEventListener("click", volverAtras);
+}
