@@ -171,19 +171,21 @@
 
 
             /* Asegurar que los label del modal sean visibles y legibles */
-#modal label {
-  display: block;
-  margin-top: 10px;
-  color: #000; /* negro para asegurar visibilidad */
-  font-weight: bold;
-  font-size: 14px;
-}
+            #modal label 
+            {
+              display: block;
+              margin-top: 10px;
+              color: #000; /* negro para asegurar visibilidad */
+              font-weight: bold;
+              font-size: 14px;
+            }
 
 
-#modal input {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+            #modal input 
+            {
+              width: 100%;
+              padding: 5px;
+              margin-bottom: 10px;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+            }
