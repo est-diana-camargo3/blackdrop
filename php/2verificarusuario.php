@@ -1,47 +1,73 @@
 <?php
-require_once("conexion.php");
+include("conexion.php"); // Asegúrate de tener un archivo con la conexión a la base de datos
+header("Content-Type: application/json");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $correo = $_POST['correo'];
-    $contrasena = $_POST['contrasena'];
-    $tipodecuenta = $_POST['tipodecuenta'];
 
-    // Protección contra inyecciones SQL
-    $correo = mysqli_real_escape_string($conn, $correo);
-    $contrasena = mysqli_real_escape_string($conn, $contrasena);
-    $tipodecuenta = mysqli_real_escape_string($conn, $tipodecuenta);
+$correo = $_POST['correo'];
+$contrasena = $_POST['contrasena'];
+$tipodeusuario = $_POST['tipodeusuario'];
 
-    // Consulta a la base de datos
-    $sql = "SELECT * FROM usuarios WHERE correo='$correo' AND contrasena='$contrasena' AND tipodeusuario='$tipodecuenta'";
-    $resultado = mysqli_query($conn, $sql);
+// Buscar si el usuario existe
+$query = "SELECT correo, tipodeusuario FROM usuarios22 WHERE correo = $1 AND contrasena = $2 AND tipodeusuario= $3";
+$resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
 
-    if ($fila = mysqli_fetch_assoc($resultado)) {
-        // Verifica tipo de usuario para redireccionar y mostrar mensaje adecuado
-        $respuesta = [
-            "exito" => true,
-            "correo" => $fila['correo'],
-        ];
-
-        if ($fila['tipodeusuario'] == "administrador") {
-            $respuesta["mensaje"] = "✅ Autenticacion de administrador correcta.";
-            $respuesta["redireccion"] = "../html/3paginaadministrador.html";
-        } elseif ($fila['tipodeusuario'] == "cliente") {
-            $respuesta["mensaje"] = "✅ Autenticacion de cliente correcta.";
-            $respuesta["redireccion"] = "../html/4paginacliente.html";
-        }
-
-        echo json_encode($respuesta);
-    } else {
-        echo json_encode([
-            "exito" => false,
-            "mensaje" => "❌ Usuario o contraseña incorrectos."
-        ]);
-    }
-
-    mysqli_close($conn);
+// Si el usuario no existe 
+if (!$resultado) {
+    die("❌ Error en la consulta SQL: " . pg_last_error($conn));
 }
-?>
 
+// Si el usuario si existe
+if (pg_num_rows($resultado) > 0) 
+    {
+        $usuario = pg_fetch_assoc($resultado);
+
+        // Redirección según el tipo de usuario
+        if ($usuario['tipodeusuario'] === 'administrador') 
+                {
+                    header("Location: ../html/3paginaadministrador.html");
+                    $respuesta = 
+                                [
+                                    "exito" => true,
+                                    "correo" => $usuario['correo'],
+                                    "mensaje" => "✅ Autenticacion de administrador correcta"
+                                ]; 
+                    echo "<script>
+                            alert('✅ Autenticacion de administrador correcta.');
+                            
+                         </script>"; 
+                    /*window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "';*/                  
+                    exit;
+                } 
+        else if ($usuario['tipodeusuario'] === 'cliente') 
+                {
+                    header("Location: ../html/4paginacliente.html");
+                    $respuesta = 
+                                [
+                                    "exito" => true,
+                                    "correo" => $usuario['correo'],
+                                    "mensaje" => "✅ Autenticacion de cliente correcta"
+                                ];              
+                    exit;
+                }        
+    } 
+else 
+    $respuesta = [
+                    "exito" => false,
+                    "mensaje" => "❌ Usuario o contraseña incorrectos"
+                 ];
+    header("Location: ../html/2indexdellogin.html");
+
+    
+
+// 🔧 Agrega esta línea para depurar:
+header("Content-Type: application/json");
+echo json_encode($respuesta);
+
+
+
+
+
+?>
 
 
 
