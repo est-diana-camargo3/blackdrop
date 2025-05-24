@@ -11,4 +11,9 @@ if (!$conn)
 {
     die("❌ Error de conexión a PostgreSQL: " . pg_last_error());
 } 
+else 
+{
+    echo "✅ Conexión exitosa a PostgreSQL.";
+}
 ?>
+

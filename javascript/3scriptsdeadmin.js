@@ -46,6 +46,7 @@
     // Mostrar el modal
 function mostrarFormulario() {
   document.getElementById("modal").style.display = "block";
+
 }
 
 // Cerrar el modal
@@ -56,26 +57,89 @@ function cerrarFormulario() {
 // Agregar producto a la tabla
 function agregarProducto() {
   const nombre = document.getElementById("nombreProducto").value;
-  const categoria = document.getElementById("categoriaProducto").value;
-  const cantidad = document.getElementById("cantidadProducto").value;
   const precio = document.getElementById("precioProducto").value;
+  const imagen = document.getElementById("imagenProducto").value;
+  const descripcion = document.getElementById("descripcionProducto").value;
+  const cantidad = document.getElementById("cantidadProducto").value;
 
-  if (nombre && categoria && cantidad && precio) {
-    const tabla = document.querySelector("table"); // la primera tabla es la de productos
-    const nuevaFila = `
-      <tr>
-        <td>${nombre}</td>
-        <td>${categoria}</td>
-        <td>${cantidad}</td>
-        <td>${precio}</td>
-      </tr>
-    `;
-    tabla.innerHTML += nuevaFila;
-    cerrarFormulario();
+  if (nombre && precio && imagen && descripcion && cantidad) {
+    fetch("../php/7registrarproducto.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        nombre,
+        precio,
+        imagen,
+        descripcion,
+        cantidad,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        alert(data.message || data.error);
+        cerrarFormulario();
+        cargarProductos(); // esta función la creamos en el siguiente paso
+      })
+      .catch((error) => {
+        alert("Error al guardar producto.");
+        console.error(error);
+      });
   } else {
-    alert("Por favor, completa todos los campos.");
+    alert("Completa todos los campos.");
   }
 }
+
+
+function cargarProductos() {
+  fetch("../php/listar_productos.php")
+    .then(res => res.json())
+    .then(productos => {
+      const tabla = document.getElementById("productos-table");
+      tabla.innerHTML = `
+        <tr>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Imagen</th>
+          <th>Descripción</th>
+          <th>Cantidad</th>
+        </tr>
+      `;
+
+      productos.forEach(prod => {
+        const imagenHTML = prod.imagen
+          ? `<img src="${prod.imagen}" alt="imagen" style="width:60px; height:60px; object-fit:cover; border-radius:5px;">`
+          : "Sin imagen";
+
+        tabla.innerHTML += `
+          <tr>
+            <td>${prod.nombre}</td>
+            <td>$${parseInt(prod.precio).toLocaleString("es-CO")}</td>
+            <td>${imagenHTML}</td>
+            <td>${prod.descripcion}</td>
+            <td>${prod.cantidad}</td>
+          </tr>
+        `;
+      });
+    })
+    .catch(error => {
+      console.error("Error al cargar productos:", error);
+      const tabla = document.getElementById("productos-table");
+      tabla.innerHTML += `<tr><td colspan="5" style="color:red;">Error al cargar productos</td></tr>`;
+    });
+}
+
+
+
+
+document.addEventListener("DOMContentLoaded", cargarProductos);
+
+
+
+
+
+
 let modoEdicion = false;
 
 function editarParametros() {

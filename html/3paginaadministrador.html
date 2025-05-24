@@ -1,98 +1,152 @@
+<!-- Página panel de administracion  --> <!--
+ 
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+▓▓                                                                                                                           ▓▓
+▓▓                                               H T M L   -   E T I Q U E T A S                                             ▓▓
+▓▓                                                                                                                           ▓▓
+▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ -->
+
+<!--HTML-->
+<!--Esta es la bolsa inicialmente vacia donde estan todos los elementos o etiquetas que conforman la pagina-->
+<!--Es el terreno donde voy construire mi edificio y en ese terreno colocare paredes, techos...etc.-->
+
+
 <!DOCTYPE html>
 <html lang="es">
-<head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/3estilosdeadmin.css"> <!--Enlazo mi pagina de 1_estilos_del_login-->
-  <script src="../javascript/3scriptsdeadmin.js" defer></script>
-  <title>Panel de Administrador</title>
-
-</head>
-<body>
-
-  <header>
-    <div class="titulo">Panel de Administración...</div>
-  </header>
-
-  <main>
-    <h2>Inventario de Productos</h2>
-    <table>
-      <tr>
-        <th>Producto</th>
-        <th>Categoría</th>
-        <th>Cantidad</th>
-        <th>Precio</th>
-      </tr>
-      <tr>
-        <td>Proteína Iso Whey 5lb</td>
-        <td>Suplemento</td>
-        <td>50</td>
-        <td>$120.000</td>
-      </tr>
-      <tr>
-        <td>Creatina Iron Nutrition</td>
-        <td>Suplemento</td>
-        <td>30</td>
-        <td>$80.000</td>
-      </tr>
-      <tr>
-        <td>Aminoácidos BCAA 1lb</td>
-        <td>Suplemento</td>
-        <td>20</td>
-        <td>$90.000</td>
-      </tr>
-      <tr>
-        <td>Shaker 750ml</td>
-        <td>Accesorio</td>
-        <td>100</td>
-        <td>$30.000</td>
-      </tr>
-    </table>
-    <button onclick="mostrarFormulario()" style="margin-top: 20px; padding: 10px 20px; background-color: #c20202; color: white; border: none; cursor: pointer;">
-      Agregar producto
-    </button>
-
-    <button onclick="editarParametros()" id="btn-editar-parametros" class="btn-editar">Editar parámetros</button>
+<!--   ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+       █                                           H E A D metadatos                                                          █
+       ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  -->  
+         
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Panel de Administrador</title>
+            
+            <!-- ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥  ♥ ♥ ♥ ♥  -->
+                <!--Enlazar archivos externos: hojas de estilo y scripts -->
+                    <link rel="stylesheet" href="../css/3estilosdeadmin.css"> <!--Enlazo mi pagina de 1_estilos_del_login-->
+                    <script src="../javascript/3scriptsdeadmin.js" defer></script>
+            <!-- ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥  ♥ ♥ ♥ ♥-->
+      </head>
 
 
+<!--  ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+      █                                                  B O D Y                                                             █
+      ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  -->  
+
+      <body>
+
+      <!--  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                            H E A D E R encabezado                                               ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  --> 
+
+            <header>
+              <div class="titulo">Panel de Administración </div>              
+            </header>
+
+      <!--  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                 💻     M A I N  contenido principal del body     💻                            ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  --> 
+
+            <main>
+            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                  ║                               T a b l a    i n v e n t a r i o   p r o d u c t o s                        ║                                                                        
+                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+
+                    <h2>Inventario de Productos</h2>
+                    <table id="productos-table">                           
+                                <tr>
+                                  <th>Nombre</th>
+                                  <th>Precio</th>
+                                  <th>Imagen</th>
+                                  <th>Descripción</th>
+                                  <th>Cantidad</th>
+                                </tr>
+                    </table>
+                          
+                            <!--    <td>Proteína Iso Whey 5lb</td>
+                                <td>Suplemento</td>
+                                <td>50</td>
+                                <td>$120.000</td>
+                          </tr>
+                          <tr>
+                                <td>Creatina Iron Nutrition</td>
+                                <td>Suplemento</td>
+                                <td>30</td>
+                                <td>$80.000</td>
+                          </tr>
+                          <tr>
+                                <td>Aminoácidos BCAA 1lb</td>
+                                <td>Suplemento</td>
+                                <td>20</td>
+                                <td>$90.000</td>
+                          </tr>
+                          <tr>
+                                <td>Shaker 750ml</td>
+                                <td>Accesorio</td>
+                                <td>100</td>
+                                <td>$30.000</td>
+                          </tr>
+                    </table>-->
+                        
+
+                    <button onclick="mostrarFormulario()" style="margin-top: 20px; padding: 10px 20px; background-color: #c20202; color: white; border: none; cursor: pointer;">
+                      Agregar producto </button>
+
+                    <button onclick="editarParametros()" id="btn-editar-parametros" class="btn-editar">Editar parámetros</button>
+
+            <!--  ╔══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╗
+                  ║                               T a b l a    i n v e n t a r i o   p r o d u c t o s                        ║                                                                        
+                  ╚══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══•══╝ -->
+
+                    <h2>Listado de Clientes Registrados</h2>
+                        <table id="clientes-table">
+                              <tr>
+                                <th>Correo</th>
+                                <th>Tipo de Cuenta</th>
+                              </tr>                          
+                          <!-- Los clientes se agregarán aquí desde el script -->
+                        </table>
+              </main>
+      <!--  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙
+            ◙                                                  F O O T E R                                                    ◙
+            ◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙  -->
+            
+            <footer>
+                      &copy; 2025 - Sistema de Administración
+            </footer>
 
 
-    <h2>Listado de Clientes Registrados</h2>
-    <table id="clientes-table">
-      <tr>
-        <th>Correo</th>
-        <th>Tipo de Cuenta</th>
-      </tr>
-      
-      <!-- Los clientes se agregarán aquí desde el script -->
-    </table>
-  </main>
-
-  <footer>
-    &copy; 2025 - Sistema de Administración
-  </footer>
 
 
-  <div id="modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);">
-    <div style="background: white; width: 300px; margin: 100px auto; padding: 20px; border-radius: 10px; text-align: left;">
-      <h3>Agregar Producto</h3>
-      <label>Nombre:</label><br>
-      <input type="text" id="nombreProducto" style="width: 100%;"><br><br>
-  
-      <label>Categoría:</label><br>
-      <input type="text" id="categoriaProducto" style="width: 100%;"><br><br>
-  
-      <label>Cantidad:</label><br>
-      <input type="number" id="cantidadProducto" style="width: 100%;"><br><br>
-  
-      <label>Precio:</label><br>
-      <input type="text" id="precioProducto" style="width: 100%;"><br><br>
-  
-      <button onclick="agregarProducto()" style="background-color: #c20202; color: white; padding: 8px 15px; border: none;">Guardar</button>
-      <button onclick="cerrarFormulario()" style="margin-left: 10px;">Cancelar</button>
-    </div>
-  </div>
 
-</body>
-</html>
+            
+        <div id="modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);">
+          <div style="background: white; width: 300px; margin: 100px auto; padding: 20px; border-radius: 10px; text-align: left;">
+            <h3>Agregar Producto</h3>
+
+            <label>Nombre:</label><br>
+            <input type="text" id="nombreProducto" style="width: 100%;"><br><br>
+
+            <label>Precio:</label><br>
+            <input type="text" id="precioProducto" style="width: 100%;"><br><br>
+        
+            <label>Imagen (URL o nombre) sin espacios ni comillas:</label><br>
+            <input type="text" id="imagenProducto"><br><br>
+
+            <label>Descripción:</label><br>
+            <input type="text" id="descripcionProducto"><br><br>
+
+            <label>Cantidad:</label><br>
+            <input type="number" id="cantidadProducto"><br><br>
+        
+
+        
+            <button onclick="agregarProducto()" style="background-color: #c20202; color: white; padding: 8px 15px; border: none;">Agregar producto</button>
+            <button onclick="cerrarFormulario()" style="margin-left: 10px;">Cancelar</button>
+          </div>
+        </div>
+
+      </body>
+      </html>
