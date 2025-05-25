@@ -1,5 +1,6 @@
 <?php
-ob_start();
+ob_start();  // Iniciar el buffer
+
 // Mostrar errores en desarrollo
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -13,17 +14,22 @@ $correo = $_POST['correo'] ?? null;
 $contrasena = $_POST['contrasena'] ?? null;
 $tipodeusuario = $_POST['tipodeusuario'] ?? ($_POST['tipodecuenta'] ?? null);
 
+// Manejo de errores por falta de datos
 if (!$correo || !$contrasena || !$tipodeusuario) {
+    ob_clean(); // 🔁 Limpiar el buffer antes de enviar la respuesta
     echo json_encode(["exito" => false, "mensaje" => "❌ Faltan datos en la solicitud."]);
     exit;
 }
 
-// Aquí iría tu conexión a la base de datos
+// Conexión a base de datos
 include("conexion.php");
 
-// Consulta de validación (ajusta según tu base de datos)
+// Consulta
 $query = "SELECT * FROM usuarios22 WHERE correo = $1 AND contrasena = $2 AND tipodeusuario = $3";
 $result = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
+
+// 🔁 Limpiar buffer antes de imprimir JSON
+ob_clean();
 
 if ($result && pg_num_rows($result) === 1) {
     echo json_encode([
@@ -36,5 +42,4 @@ if ($result && pg_num_rows($result) === 1) {
 }
 
 pg_close($conn);
-ob_clean();
-?>
+exit;
