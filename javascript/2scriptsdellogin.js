@@ -107,108 +107,108 @@ o cuando algo pase*/
 
 
 
-function validarInicioSesion(correo, contrasena, tipodecuenta) {
-    console.log("Enviando datos al servidor:", correo, contrasena, tipodecuenta);
-    
-    fetch('../php/2verificarusuario.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodecuenta=${encodeURIComponent(tipodecuenta)}`
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("Respuesta del servidor:", data);
-        console.log("Valor de data.redireccion:", data.redireccion);
-
-        if (data.exito) {
-            alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
+        function validarInicioSesion(correo, contrasena, tipodecuenta) {
+            console.log("Enviando datos al servidor:", correo, contrasena, tipodecuenta);
             
-            // Guardar usuario en localStorage
-            localStorage.setItem("usuarioLogueado", JSON.stringify({ correo: data.correo }));
+            fetch('../php/2verificarusuario.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodecuenta=${encodeURIComponent(tipodecuenta)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Respuesta del servidor:", data);
+                console.log("Valor de data.redireccion:", data.redireccion);
 
-            // Verificar si hay un producto pendiente
-            const productoPendiente = JSON.parse(localStorage.getItem("productoPendiente"));
+                if (data.exito) {
+                    alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
+                    
+                    // Guardar usuario en localStorage
+                    localStorage.setItem("usuarioLogueado", JSON.stringify({ correo: data.correo }));
 
-            if (productoPendiente) {
-                let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-                const productoExistente = carrito.find(p => p.nombre === productoPendiente.nombre);
+                    // Verificar si hay un producto pendiente
+                    const productoPendiente = JSON.parse(localStorage.getItem("productoPendiente"));
 
-                if (productoExistente) {
-                    productoExistente.cantidad += productoPendiente.cantidad;
+                    if (productoPendiente) {
+                        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                        const productoExistente = carrito.find(p => p.nombre === productoPendiente.nombre);
+
+                        if (productoExistente) {
+                            productoExistente.cantidad += productoPendiente.cantidad;
+                        } else {
+                            carrito.push(productoPendiente);
+                        }
+
+                        localStorage.setItem("carrito", JSON.stringify(carrito));
+                        localStorage.removeItem("productoPendiente"); // Limpiar el producto pendiente
+                        
+                        console.log("🔹 Producto pendiente agregado al carrito:", productoPendiente);
+                        window.location.href = "../html/5carritodecompras.html"; // Ir al carrito después del login
+                    } else {
+                        window.location.href = data.redireccion; // Si no había producto pendiente, ir a la página normal
+                    }
                 } else {
-                    carrito.push(productoPendiente);
+                    alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
                 }
-
-                localStorage.setItem("carrito", JSON.stringify(carrito));
-                localStorage.removeItem("productoPendiente"); // Limpiar el producto pendiente
-                
-                console.log("🔹 Producto pendiente agregado al carrito:", productoPendiente);
-                window.location.href = "../html/5carritodecompras.html"; // Ir al carrito después del login
-            } else {
-                window.location.href = data.redireccion; // Si no había producto pendiente, ir a la página normal
-            }
-        } else {
-            alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
+            })
+            .catch(error => console.error("Error en la autenticación:", error));
         }
-    })
-    .catch(error => console.error("Error en la autenticación:", error));
-}
 
 
 
-function iniciarSesion() {
-    const correo = document.getElementById("correo").value;
-    const contrasena = document.getElementById("contrasena").value;
-    const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
+        function iniciarSesion() {
+            const correo = document.getElementById("correo").value;
+            const contrasena = document.getElementById("contrasena").value;
+            const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
 
-    fetch("../php/verificarusuario.php", 
-    {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeusuario=${encodeURIComponent(tipodeusuario)}`
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.exito) {
-            alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
-            
-            // 🔥 **Guardar usuario en `localStorage` directamente**
-            localStorage.setItem("usuarioLogueado", JSON.stringify({ correo: data.correo }));
+            fetch("../php/verificarusuario.php", 
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeusuario=${encodeURIComponent(tipodeusuario)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.exito) {
+                    alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
+                    
+                    // 🔥 **Guardar usuario en `localStorage` directamente**
+                    localStorage.setItem("usuarioLogueado", JSON.stringify({ correo: data.correo }));
 
-            // 🔹 **Si había un producto pendiente, agregarlo al carrito**
-            const productoPendiente = JSON.parse(localStorage.getItem("productoPendiente"));
+                    // 🔹 **Si había un producto pendiente, agregarlo al carrito**
+                    const productoPendiente = JSON.parse(localStorage.getItem("productoPendiente"));
 
-            if (productoPendiente) {
-                let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-                const productoExistente = carrito.find(p => p.nombre === productoPendiente.nombre);
+                    if (productoPendiente) {
+                        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                        const productoExistente = carrito.find(p => p.nombre === productoPendiente.nombre);
 
-                if (productoExistente) {
-                    productoExistente.cantidad += productoPendiente.cantidad;
+                        if (productoExistente) {
+                            productoExistente.cantidad += productoPendiente.cantidad;
+                        } else {
+                            carrito.push(productoPendiente);
+                        }
+
+                        localStorage.setItem("carrito", JSON.stringify(carrito));
+                        localStorage.removeItem("productoPendiente"); // Limpiar el producto pendiente
+                        
+                        console.log("🔹 Producto pendiente agregado al carrito:", productoPendiente);
+                        window.location.href = "../html/5carritodecompras.html"; // Ir al carrito después del login
+                    } else {
+                        window.location.href = data.redireccion; // Si no había producto pendiente, ir a la página normal
+                    }
+
                 } else {
-                    carrito.push(productoPendiente);
+                    alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
+                    alert(data.mensaje);
                 }
-
-                localStorage.setItem("carrito", JSON.stringify(carrito));
-                localStorage.removeItem("productoPendiente"); // Limpiar el producto pendiente
-                
-                console.log("🔹 Producto pendiente agregado al carrito:", productoPendiente);
-                window.location.href = "../html/5carritodecompras.html"; // Ir al carrito después del login
-            } else {
-                window.location.href = data.redireccion; // Si no había producto pendiente, ir a la página normal
-            }
-
-        } else {
-            alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
-            alert(data.mensaje);
+            })
+            .catch(error => {
+                alert("❌ Error al conectar con el servidor.");
+                console.error(error);
+            });
         }
-    })
-    .catch(error => {
-        alert("❌ Error al conectar con el servidor.");
-        console.error(error);
-    });
-}
 
 
 
