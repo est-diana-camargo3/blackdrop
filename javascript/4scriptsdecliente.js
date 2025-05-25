@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const contenedor = boton.closest('.productogeneral');
       const nombreProducto = contenedor.dataset.nombre;
 
-
+      console.log("🧪 Nombre del producto enviado:", nombreProducto);
       // Enviar al servidor para descontar inventario
       fetch("https://blackdrop.onrender.com/php/descontar_inventario.php", {
         method: "POST",
