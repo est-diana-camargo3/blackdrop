@@ -27,7 +27,7 @@ function confirmarCompra() {
 
   alert("✅ Compra confirmada. Gracias por tu pedido.");
   sessionStorage.removeItem("carrito");
-  window.location.href = "../html/1indexdelhome.html";
+  window.location.href = "../html/9confirmarcompra.html";
 }
 
 
