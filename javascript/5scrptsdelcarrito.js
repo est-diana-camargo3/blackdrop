@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Recuperar productos del carrito desde localStorage
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
+
     console.log("🔹 Carrito cargado desde localStorage:", carrito);
 
     const tablaBody = document.querySelector(".tabla-carrito tbody");
