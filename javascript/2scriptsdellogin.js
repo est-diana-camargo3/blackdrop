@@ -110,7 +110,7 @@ o cuando algo pase*/
         function validarInicioSesion(correo, contrasena, tipodecuenta) {
             console.log("Enviando datos al servidor:", correo, contrasena, tipodecuenta);
             
-            fetch('../php/2verificarusuario.php', {
+            fetch('https://blackdrop.onrender.com/php/2verificarusuario.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodecuenta=${encodeURIComponent(tipodecuenta)}`
