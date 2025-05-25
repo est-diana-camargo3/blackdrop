@@ -118,15 +118,16 @@ o cuando algo pase*/
             .then(response => response.text())
             .then(data => {
                 console.log("Respuesta del servidor:", data);
+
                 const parsed = JSON.parse(data); 
                 console.log("Valor de parsed.redireccion:", parsed.redireccion);
                 
 
                 if (parsed.exito) {
-                    alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
+                    alert(`✅ Login correcto \n\n ✅ Bienvenido: ${parsed.correo}`);
                     
                     // Guardar usuario en localStorage
-                    localStorage.setItem("usuarioLogueado", JSON.stringify({ correo: data.correo }));
+                    localStorage.setItem("usuarioLogueado", JSON.stringify({ correo: parsed.correo }));
 
                     // Verificar si hay un producto pendiente
                     const productoPendiente = JSON.parse(localStorage.getItem("productoPendiente"));
