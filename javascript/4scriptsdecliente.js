@@ -15,71 +15,48 @@ document.addEventListener("DOMContentLoaded", function () {
     console.warn("No se encontró el correo en la URL");
   }
 
-
   // Activar comportamiento del botón comprar
   const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
   botonesComprar.forEach(function (boton) {
     boton.addEventListener("click", function (event) {
       event.stopPropagation();
 
-      // Extraer el nombre del producto desde el DOM
+      // Extraer el nombre y contenedor del producto
       const contenedor = boton.closest('.productogeneral');
       const nombreProducto = contenedor.dataset.nombre;
 
-      console.log("🧪 Nombre del producto enviado:", nombreProducto);
-      // Enviar al servidor para descontar inventario
-      fetch("https://blackdrop.onrender.com/php/descontar_inventario.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: `nombre=${encodeURIComponent(nombreProducto)}`
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          console.log("✅ Inventario actualizado");
+      console.log("🧪 Producto seleccionado:", nombreProducto);
 
-          // ⬇️ Obtener precio desde el DOM
-          const precioTexto = contenedor.querySelector('.precioproducto').innerText;
-          const precioLimpio = parseFloat(precioTexto.replace(/[$\s.]/g, "").replace(",", "."));
+      // Obtener precio desde el DOM
+      const precioTexto = contenedor.querySelector('.precioproducto').innerText;
+      const precioLimpio = parseFloat(precioTexto.replace(/[$\s.]/g, "").replace(",", "."));
 
-          const productoCarrito = {
-            nombre: nombreProducto,
-            precio: precioLimpio,
-            cantidad: 1
-          };
+      const productoCarrito = {
+        nombre: nombreProducto,
+        precio: precioLimpio,
+        cantidad: 1
+      };
 
-          // ⬇️ Obtener carrito actual desde sessionStorage
-          const carritoActual = JSON.parse(sessionStorage.getItem("carrito")) || [];
+      // Obtener carrito actual desde sessionStorage
+      const carritoActual = JSON.parse(sessionStorage.getItem("carrito")) || [];
 
-          // ⬇️ Verificar si ya está en el carrito
-          const existente = carritoActual.find(p => p.nombre === productoCarrito.nombre);
-          if (existente) {
-            existente.cantidad += 1;
-          } else {
-            carritoActual.push(productoCarrito);
-          }
+      // Verificar si ya está en el carrito
+      const existente = carritoActual.find(p => p.nombre === productoCarrito.nombre);
+      if (existente) {
+        existente.cantidad += 1;
+      } else {
+        carritoActual.push(productoCarrito);
+      }
 
-          // ⬇️ Guardar carrito actualizado
-          sessionStorage.setItem("carrito", JSON.stringify(carritoActual));
+      // Guardar carrito actualizado
+      sessionStorage.setItem("carrito", JSON.stringify(carritoActual));
 
-          // ⬇️ Redirigir al carrito
-          window.location.href = "../html/5carritodecompras.html";
-
-        } else {
-          alert(data.error || "❌ Error al procesar la compra.");
-        }
-      })
-      .catch(error => {
-        console.error("Error en la petición:", error);
-        alert("❌ No se pudo conectar al servidor.");
-      });
+      // Redirigir al carrito
+      window.location.href = "../html/5carritodecompras.html";
     });
-
   });
-  
 });
+
 
 
 // Trae el usuario desde localStorage
