@@ -26,31 +26,36 @@ document.addEventListener("DOMContentLoaded", function () {
       const contenedor = boton.closest('.productogeneral');
       const nombreProducto = contenedor.dataset.nombre;
 
-      console.log("🧪 Nombre del producto enviado:", nombreProducto);
-
 
       // Enviar al servidor para descontar inventario
-      fetch("../php/descontar_inventario.php", {
+      fetch("http://localhost:8000/php/descontar_inventario.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
         body: `nombre=${encodeURIComponent(nombreProducto)}`
       })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          console.log("✅ Inventario actualizado");
-          // Aquí puedes guardar los datos del producto en localStorage si se requiere mostrarlo en el carrito (más adelante)
-          window.location.href = "../html/5carritodecompras.html";
-        } else {
-          alert(data.error || "❌ Error al procesar la compra.");
+      .then(response => response.text()) // 👈 leer como texto plano
+      .then(text => {
+        console.log("📥 Respuesta cruda del servidor:", text);
+        try {
+          const data = JSON.parse(text);
+          if (data.success) {
+            console.log("✅ Inventario actualizado");
+            window.location.href = "../html/5carritodecompras.html";
+          } else {
+            alert(data.error || "❌ Error al procesar la compra.");
+          }
+        } catch (e) {
+          console.error("❌ Respuesta no es JSON válido:", e);
+          console.log("Contenido recibido:", text);
         }
       })
       .catch(error => {
         console.error("Error en la petición:", error);
         alert("❌ No se pudo conectar al servidor.");
       });
+
     });
 
   });

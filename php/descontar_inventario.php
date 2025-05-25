@@ -1,10 +1,9 @@
 <?php
 include("conexion.php");
 
-header("Content-Type: application/json");
 
-// Validar que llegó un nombre de producto
-<?php
+
+
 header("Content-Type: application/json");
 
 if (isset($_POST['nombre'])) {
