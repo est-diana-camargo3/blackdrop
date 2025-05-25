@@ -1,72 +1,38 @@
 <?php
+// Mostrar errores en desarrollo
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include("conexion.php"); // Asegúrate de tener un archivo con la conexión a la base de datos
+// Encabezado JSON
 header("Content-Type: application/json");
 
-
+// Validar que las claves existan
 $correo = $_POST['correo'] ?? null;
-$contrasena = $_POST['contrasena']?? null;
+$contrasena = $_POST['contrasena'] ?? null;
 $tipodeusuario = $_POST['tipodeusuario'] ?? ($_POST['tipodecuenta'] ?? null);
 
-// Buscar si el usuario existe
-$query = "SELECT correo, tipodeusuario FROM usuarios22 WHERE correo = $1 AND contrasena = $2 AND tipodeusuario= $3";
-$resultado = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
-
-// Si el usuario no existe 
-if (!$resultado) {
-    die("❌ Error en la consulta SQL: " . pg_last_error($conn));
+if (!$correo || !$contrasena || !$tipodeusuario) {
+    echo json_encode(["exito" => false, "mensaje" => "❌ Faltan datos en la solicitud."]);
+    exit;
 }
 
-// Si el usuario si existe
-if (pg_num_rows($resultado) > 0) 
-    {
-        $usuario = pg_fetch_assoc($resultado);
+// Aquí iría tu conexión a la base de datos
+include("conexion.php");
 
-        // Redirección según el tipo de usuario
-        if ($usuario['tipodeusuario'] === 'administrador') 
-                {
-                    header("Location: ../html/3paginaadministrador.html");
-                    $respuesta = 
-                                [
-                                    "exito" => true,
-                                    "correo" => $usuario['correo'],
-                                    "mensaje" => "✅ Autenticacion de administrador correcta"
-                                ]; 
-                    echo "<script>
-                            alert('✅ Autenticacion de administrador correcta.');
-                            
-                         </script>"; 
-                    /*window.location.href = '../html/4paginacliente.html?correo=" . urlencode($correo) . "';*/                  
-                    exit;
-                } 
-        else if ($usuario['tipodeusuario'] === 'cliente') 
-                {
-                    header("Location: ../html/4paginacliente.html");
-                    $respuesta = 
-                                [
-                                    "exito" => true,
-                                    "correo" => $usuario['correo'],
-                                    "mensaje" => "✅ Autenticacion de cliente correcta"
-                                ];              
-                    exit;
-                }        
-    } 
-else 
-    $respuesta = [
-                    "exito" => false,
-                    "mensaje" => "❌ Usuario o contraseña incorrectos"
-                 ];
-    header("Location: ../html/2indexdellogin.html");
+// Consulta de validación (ajusta según tu base de datos)
+$query = "SELECT * FROM usuarios22 WHERE correo = $1 AND contrasena = $2 AND tipodeusuario = $3";
+$result = pg_query_params($conn, $query, array($correo, $contrasena, $tipodeusuario));
 
-    
+if ($result && pg_num_rows($result) === 1) {
+    echo json_encode([
+        "exito" => true,
+        "correo" => $correo,
+        "redireccion" => ($tipodeusuario === "cliente") ? "../html/4paginacliente.html" : "../html/6paginaadmin.html"
+    ]);
+} else {
+    echo json_encode(["exito" => false, "mensaje" => "❌ Usuario o contraseña incorrectos"]);
+}
 
-// 🔧 Agrega esta línea para depurar:
-header("Content-Type: application/json");
-echo json_encode($respuesta);
+pg_close($conn);
 ?>
-
-
-
