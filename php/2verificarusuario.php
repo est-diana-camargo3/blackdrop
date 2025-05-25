@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // Mostrar errores en desarrollo
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -35,4 +36,5 @@ if ($result && pg_num_rows($result) === 1) {
 }
 
 pg_close($conn);
+ob_clean();
 ?>
