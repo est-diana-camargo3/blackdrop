@@ -148,6 +148,8 @@ o cuando algo pase*/
                         console.log("🔹 Producto pendiente agregado al carrito:", productoPendiente);
                         window.location.href = "../html/5carritodecompras.html"; // Ir al carrito después del login
                     } else {
+                        console.log("Redirigiendo a:", parsed.redireccion);
+
                         window.location.href = parsed.redireccion; // Si no había producto pendiente, ir a la página normal
                     }
                 } else {
@@ -159,7 +161,7 @@ o cuando algo pase*/
 
 
 
-        function iniciarSesion() {
+       /* function iniciarSesion() {
             const correo = document.getElementById("correo").value;
             const contrasena = document.getElementById("contrasena").value;
             const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
@@ -211,7 +213,7 @@ o cuando algo pase*/
                 alert("❌ Error al conectar con el servidor.");
                 console.error(error);
             });
-        }
+        }*/
 
 
 
