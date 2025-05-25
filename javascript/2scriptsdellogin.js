@@ -115,12 +115,14 @@ o cuando algo pase*/
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeusuario=${encodeURIComponent(tipodecuenta)}`
             })
-            .then(response => response.json())
+            .then(response => response.text())
             .then(data => {
                 console.log("Respuesta del servidor:", data);
-                console.log("Valor de data.redireccion:", data.redireccion);
+                const parsed = JSON.parse(data); 
+                console.log("Valor de parsed.redireccion:", parsed.redireccion);
+                
 
-                if (data.exito) {
+                if (parsed.exito) {
                     alert(`✅ Login correcto \n\n ✅ Bienvenido: ${data.correo}`);
                     
                     // Guardar usuario en localStorage
@@ -145,7 +147,7 @@ o cuando algo pase*/
                         console.log("🔹 Producto pendiente agregado al carrito:", productoPendiente);
                         window.location.href = "../html/5carritodecompras.html"; // Ir al carrito después del login
                     } else {
-                        window.location.href = data.redireccion; // Si no había producto pendiente, ir a la página normal
+                        window.location.href = parsed.redireccion; // Si no había producto pendiente, ir a la página normal
                     }
                 } else {
                     alert("❌ Correo, contraseña o tipo de cuenta incorrectos.");
