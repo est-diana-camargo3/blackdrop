@@ -6,12 +6,10 @@ include("conexion.php");
 
 header("Content-Type: application/json");
 
-if (isset($_POST['nombre'])) {
-    echo json_encode(["debug" => "Nombre recibido: " . $_POST['nombre']]);
-} else {
-    echo json_encode(["error" => "No llegó ningún nombre"]);
+if (!isset($_POST['nombre']) || empty($_POST['nombre'])) {
+    echo json_encode(["error" => "❌ No se recibió el nombre del producto."]);
+    exit;
 }
-exit;
 
 
 $nombre = $_POST['nombre'];
@@ -19,6 +17,12 @@ $nombre = $_POST['nombre'];
 // Consultar la cantidad actual
 $queryCheck = "SELECT cantidad FROM productos22 WHERE LOWER(nombre) = LOWER($1)";
 $resultCheck = pg_query_params($conn, $queryCheck, array($nombre));
+
+if (!$resultCheck) {
+    echo json_encode(["error" => "❌ Falló la consulta SELECT"]);
+    pg_close($conn);
+    exit;
+}
 
 if (!$resultCheck || pg_num_rows($resultCheck) === 0) {
     echo json_encode(["error" => "❌ Producto no encontrado."]);
