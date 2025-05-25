@@ -28,13 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       // Enviar al servidor para descontar inventario
-      fetch("http://localhost:8000/php/descontar_inventario.php", {
+      fetch("https://blackdrop.onrender.com/php/descontar_inventario.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
         body: `nombre=${encodeURIComponent(nombreProducto)}`
       })
+
       .then(response => response.text()) // 👈 leer como texto plano
       .then(text => {
         console.log("📥 Respuesta cruda del servidor:", text);
