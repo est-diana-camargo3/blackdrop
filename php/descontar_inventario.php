@@ -4,13 +4,18 @@ include("conexion.php");
 header("Content-Type: application/json");
 
 // Validar que llegó un nombre de producto
-if (!isset($_POST['nombre'])) {
-    echo json_encode(["error" => "❌ No se proporcionó el nombre del producto."]);
-    exit;
+<?php
+header("Content-Type: application/json");
+
+if (isset($_POST['nombre'])) {
+    echo json_encode(["debug" => "Nombre recibido: " . $_POST['nombre']]);
+} else {
+    echo json_encode(["error" => "No llegó ningún nombre"]);
 }
+exit;
+
 
 $nombre = $_POST['nombre'];
-echo json_encode(["debug" => "Nombre recibido: " . $nombre]); exit;
 
 // Consultar la cantidad actual
 $queryCheck = "SELECT cantidad FROM productos22 WHERE nombre = $1";
