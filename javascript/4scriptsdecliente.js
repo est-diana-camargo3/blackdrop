@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.warn("No se encontró el correo en la URL");
   }
 
+
   // Activar comportamiento del botón comprar
   const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
   botonesComprar.forEach(function (boton) {
@@ -24,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
       // Extraer el nombre del producto desde el DOM
       const contenedor = boton.closest('.productogeneral');
       const nombreProducto = contenedor.dataset.nombre;
+
+      console.log("🧪 Nombre del producto enviado:", nombreProducto);
+
 
       // Enviar al servidor para descontar inventario
       fetch("../php/descontar_inventario.php", {

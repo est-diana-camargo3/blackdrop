@@ -10,6 +10,7 @@ if (!isset($_POST['nombre'])) {
 }
 
 $nombre = $_POST['nombre'];
+echo json_encode(["debug" => "Nombre recibido: " . $nombre]); exit;
 
 // Consultar la cantidad actual
 $queryCheck = "SELECT cantidad FROM productos22 WHERE nombre = $1";
