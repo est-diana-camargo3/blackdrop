@@ -35,7 +35,7 @@ if ($result && pg_num_rows($result) === 1) {
     echo json_encode([
         "exito" => true,
         "correo" => $correo,
-        "redireccion" => ($tipodeusuario === "cliente") ? "../html/4paginacliente.html" : "../html/6paginaadmin.html"
+        "redireccion" => ($tipodeusuario === "cliente") ? "/html/4paginacliente.html" : "../html/6paginaadmin.html"
     ]);
 } else {
     echo json_encode(["exito" => false, "mensaje" => "❌ Usuario o contraseña incorrectos"]);
