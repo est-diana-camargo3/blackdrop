@@ -113,7 +113,7 @@ o cuando algo pase*/
             fetch('https://blackdrop.onrender.com/php/2verificarusuario.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodecuenta=${encodeURIComponent(tipodecuenta)}`
+                body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}&tipodeusuario=${encodeURIComponent(tipodecuenta)}`
             })
             .then(response => response.json())
             .then(data => {

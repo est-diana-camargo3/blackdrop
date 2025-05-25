@@ -1,11 +1,15 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include("conexion.php"); // Asegúrate de tener un archivo con la conexión a la base de datos
 header("Content-Type: application/json");
 
 
-$correo = $_POST['correo'];
-$contrasena = $_POST['contrasena'];
-$tipodeusuario = $_POST['tipodeusuario'];
+$correo = $_POST['correo'] ?? null;
+$contrasena = $_POST['contrasena']?? null;
+$tipodeusuario = $_POST['tipodeusuario'] ?? ($_POST['tipodecuenta'] ?? null);
 
 // Buscar si el usuario existe
 $query = "SELECT correo, tipodeusuario FROM usuarios22 WHERE correo = $1 AND contrasena = $2 AND tipodeusuario= $3";
