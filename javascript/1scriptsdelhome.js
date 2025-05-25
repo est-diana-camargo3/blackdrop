@@ -24,7 +24,8 @@ o cuando algo pase*/
         █                                  C O O K I E S   I N I C I A L E S  (vacias)                                         █
         ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  */
  
- 
+        localStorage.removeItem("usuarioLogueado");
+
         // creacion de cookies 
             if  (confirm("Esta página utiliza cookies, si continúas navegando aceptas su uso")) 
                 {

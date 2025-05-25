@@ -202,5 +202,15 @@ document.querySelectorAll('.productogeneral').forEach((productoDiv, index) => {
     }
   });
 });
+function cerrarSesion() {
+    localStorage.removeItem("usuarioLogueado");
+    // Opcional: también puedes limpiar el carrito y producto pendiente
+    localStorage.removeItem("carrito");
+    localStorage.removeItem("productoPendiente");
+
+    // Redirige al home
+    window.location.href = "../html/1indexdelhome.html";
+}
+
 
   
