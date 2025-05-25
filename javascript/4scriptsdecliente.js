@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Extraer el nombre del producto desde el DOM
       const contenedor = boton.closest('.productogeneral');
-      const nombreProducto = contenedor.querySelector('.nombreproducto').innerText.trim();
+      const nombreProducto = contenedor.dataset.nombre;
 
       // Enviar al servidor para descontar inventario
       fetch("../php/descontar_inventario.php", {
