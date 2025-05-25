@@ -19,14 +19,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
   botonesComprar.forEach(function (boton) {
     boton.addEventListener("click", function (event) {
-      event.stopPropagation(); // Evita doble navegación
-      window.location.href = "../html/5carritodecompras.html";
+      event.stopPropagation();
+
+      // Extraer el nombre del producto desde el DOM
+      const contenedor = boton.closest('.productogeneral');
+      const nombreProducto = contenedor.querySelector('.nombreproducto').innerText.trim();
+
+      // Enviar al servidor para descontar inventario
+      fetch("../php/descontar_inventario.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `nombre=${encodeURIComponent(nombreProducto)}`
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          console.log("✅ Inventario actualizado");
+          // Aquí puedes guardar los datos del producto en localStorage si se requiere mostrarlo en el carrito (más adelante)
+          window.location.href = "../html/5carritodecompras.html";
+        } else {
+          alert(data.error || "❌ Error al procesar la compra.");
+        }
+      })
+      .catch(error => {
+        console.error("Error en la petición:", error);
+        alert("❌ No se pudo conectar al servidor.");
+      });
     });
+
   });
   
 });
-
-
 
 
 // Trae el usuario desde localStorage
@@ -35,15 +60,6 @@ const usuario = JSON.parse(localStorage.getItem('usuarioLogueado'));
 const correoUsuario = document.getElementById('correoUsuario');
 const contrasena = document.getElementById('correoUsuario');
 
-
-/*if (usuario) {
-    // Mostrar el correo
-    correoUsuario.textContent = usuario.correo;
-
-} else {
-    // Si no hay sesión, redirige al login
-    window.location.href = '2paginalogin.html';
-}*/
 
 function toggleMenu() {
 const menu = document.getElementById("menuDesplegable");
@@ -62,20 +78,6 @@ document.querySelectorAll('.productogeneral').forEach(producto => {
     });
   });
   
-  /*
-  ya esta arriba
-  // Redirección directa al carrito si se hace clic en "Comprar"
-  document.addEventListener("DOMContentLoaded", function() {
-    const botonesComprar = document.querySelectorAll(".btn-comprarproducto");
-  
-    botonesComprar.forEach(function(boton) {
-      boton.addEventListener("click", function(event) {
-        event.stopPropagation(); // Previene que se dispare el evento del contenedor
-        window.location.href = "../html/5carritodecompras.html";
-      });
-    });
-  });
-*/
 
   const productos = [
   {
