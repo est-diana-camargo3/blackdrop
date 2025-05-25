@@ -1,0 +1,43 @@
+<?php
+include("conexion.php");
+
+header("Content-Type: application/json");
+
+// Validar que llegó un nombre de producto
+if (!isset($_POST['nombre'])) {
+    echo json_encode(["error" => "❌ No se proporcionó el nombre del producto."]);
+    exit;
+}
+
+$nombre = $_POST['nombre'];
+
+// Consultar la cantidad actual
+$queryCheck = "SELECT cantidad FROM productos22 WHERE nombre = $1";
+$resultCheck = pg_query_params($conn, $queryCheck, array($nombre));
+
+if (!$resultCheck || pg_num_rows($resultCheck) == 0) {
+    echo json_encode(["error" => "❌ Producto no encontrado."]);
+    exit;
+}
+
+$row = pg_fetch_assoc($resultCheck);
+$cantidadActual = intval($row['cantidad']);
+
+// Validar que haya inventario suficiente
+if ($cantidadActual <= 0) {
+    echo json_encode(["error" => "❌ Producto agotado."]);
+    exit;
+}
+
+// Descontar 1 unidad
+$queryUpdate = "UPDATE productos22 SET cantidad = cantidad - 1 WHERE nombre = $1";
+$resultUpdate = pg_query_params($conn, $queryUpdate, array($nombre));
+
+if (!$resultUpdate) {
+    echo json_encode(["error" => "❌ No se pudo actualizar el inventario."]);
+} else {
+    echo json_encode(["success" => "✅ Producto actualizado correctamente."]);
+}
+
+pg_close($conn);
+?>
