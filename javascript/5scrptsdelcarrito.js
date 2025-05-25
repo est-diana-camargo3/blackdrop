@@ -1,4 +1,5 @@
 function confirmarCompra() {
+    console.log("🧪 Función confirmarCompra() ejecutada");
   const carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
 
   if (carrito.length === 0) {
@@ -7,6 +8,7 @@ function confirmarCompra() {
   }
 
   carrito.forEach(producto => {
+     console.log(`⏳ Enviando producto: ${producto.nombre} (x${producto.cantidad})`);
     fetch("https://blackdrop.onrender.com/php/descontar_inventario.php", {
       method: "POST",
       headers: {
@@ -27,6 +29,7 @@ function confirmarCompra() {
   sessionStorage.removeItem("carrito");
   window.location.href = "../html/1indexdelhome.html";
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const carrito = JSON.parse(sessionStorage.getItem("carrito")) || [];
