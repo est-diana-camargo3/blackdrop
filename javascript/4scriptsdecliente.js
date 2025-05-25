@@ -35,28 +35,46 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         body: `nombre=${encodeURIComponent(nombreProducto)}`
       })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          console.log("✅ Inventario actualizado");
 
-      .then(response => response.text()) // 👈 leer como texto plano
-      .then(text => {
-        console.log("📥 Respuesta cruda del servidor:", text);
-        try {
-          const data = JSON.parse(text);
-          if (data.success) {
-            console.log("✅ Inventario actualizado");
-            window.location.href = "../html/5carritodecompras.html";
+          // ⬇️ Obtener precio desde el DOM
+          const precioTexto = contenedor.querySelector('.precioproducto').innerText;
+          const precioLimpio = parseFloat(precioTexto.replace(/[$\s.]/g, "").replace(",", "."));
+
+          const productoCarrito = {
+            nombre: nombreProducto,
+            precio: precioLimpio,
+            cantidad: 1
+          };
+
+          // ⬇️ Obtener carrito actual desde sessionStorage
+          const carritoActual = JSON.parse(sessionStorage.getItem("carrito")) || [];
+
+          // ⬇️ Verificar si ya está en el carrito
+          const existente = carritoActual.find(p => p.nombre === productoCarrito.nombre);
+          if (existente) {
+            existente.cantidad += 1;
           } else {
-            alert(data.error || "❌ Error al procesar la compra.");
+            carritoActual.push(productoCarrito);
           }
-        } catch (e) {
-          console.error("❌ Respuesta no es JSON válido:", e);
-          console.log("Contenido recibido:", text);
+
+          // ⬇️ Guardar carrito actualizado
+          sessionStorage.setItem("carrito", JSON.stringify(carritoActual));
+
+          // ⬇️ Redirigir al carrito
+          window.location.href = "../html/5carritodecompras.html";
+
+        } else {
+          alert(data.error || "❌ Error al procesar la compra.");
         }
       })
       .catch(error => {
         console.error("Error en la petición:", error);
         alert("❌ No se pudo conectar al servidor.");
       });
-
     });
 
   });
