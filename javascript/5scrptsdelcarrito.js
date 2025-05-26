@@ -100,11 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// 🔹 **Función para volver atrás**
 function volverAtras() {
-    if (document.referrer !== "") {
-        window.history.back();
-    } else {
-        window.location.href = "../html/1indexdelhome.html";
-    }
+  const params = new URLSearchParams(window.location.search);
+  const redirect = params.get("redirect");
+
+  // Si viene del flujo de compra -> login -> carrito
+  if (redirect === "carrito") {
+    window.location.href = "../html/4paginacliente.html";
+  } else if (document.referrer !== "") {
+    window.history.back();
+  } else {
+    window.location.href = "../html/1indexdelhome.html";
+  }
 }
