@@ -24,7 +24,7 @@ o cuando algo pase*/
             // si yo coloco addEventListener("click", funciona CON PARENTESIS()); , se ejecutara funciona, asi haya o no clic...no queremos eso 
 
             document.querySelector(".botoniniciarsesion").addEventListener("click", validarquetodoelformularioestediligenciado);
-
+                event.preventDefault();
                 function validarquetodoelformularioestediligenciado()
                 {
                     //copio y selecciono los inputs del formulario html a java 
