@@ -1,6 +1,12 @@
 <?php
 ob_start();  // Iniciar el buffer
 
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(403);
+    echo json_encode(["error" => "Acceso no permitido"]);
+    exit;
+}
+
 // Mostrar errores en desarrollo
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
