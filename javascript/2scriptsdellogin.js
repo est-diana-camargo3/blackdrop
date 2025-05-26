@@ -161,7 +161,7 @@ function iniciarSesion() {
     const contrasena = document.getElementById("contrasena").value;
     const tipodeusuario = document.querySelector('input[name="tipo_cuenta"]:checked').id;
 
-    fetch("../php/verificarusuario.php", 
+    fetch("../php/2verificarusuario.php", 
     {
         method: "POST",
         headers: {
