@@ -109,7 +109,7 @@ o cuando algo pase*/
 
         function validarInicioSesion(correo, contrasena, tipodecuenta) {
             console.log("Enviando datos al servidor:", correo, contrasena, tipodecuenta);
-            
+             // Guardar usuario en localStorage
             fetch('../php/2verificarusuario.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
